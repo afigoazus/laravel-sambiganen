@@ -8,28 +8,127 @@
   <!-- Fonts -->
 
   <!-- Swiper (If you use it) -->
-
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
   <!-- CSS File -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
   @vite('resources/css/app.css')
-
+  <script src="{{asset('assets/js/navbar.js')}}"></script>
+  <script type="module" src="{{asset('assets/js/swiper.js')}}"></script>
+  <script src="{{asset('assets/js/dokumen.js')}}"></script>
 </head>
 <body>
-  <header class="bg-primary">
-    <nav class="mx-auto w-11/12 flex justify-between py-4 text-white font-dusha">
-      <!-- LEFT SIDE -->
-      <div class="flex justify-between gap-2">
-        <img class="h-16 w-16" src="{{asset('assets/img/logo.svg')}}" alt="logo ponorogo">
-        <div class="flex flex-col justify-center">
-          <h1 class="text-lg">Desa Wringinanom</h1>
-          <div>
-            <p class="text-sm leading-4">Kec. Sambit, Kab. Ponorogo <br/> Jawa Timur</p>
-          </div>
+  <header class="bg-primary fixed top-0 left-0 right-0 z-20">
+    <nav class="mx-auto w-11/12 py-4 text-white font-dusha sm:flex sm:justify-between sm:items-center">
+        <div class="flex justify-between">
+            <!-- LEFT SIDE -->
+            <div class="flex justify-between gap-2">
+              <img class="h-16 w-16" src="{{asset('assets/img/logo.svg')}}" alt="logo ponorogo">
+              <div class="flex flex-col justify-center">
+                <h1 class="text-lg">Desa Wringinanom</h1>
+                <div>
+                  <p class="text-sm leading-4">Kec. Sambit, Kab. Ponorogo <br/> Jawa Timur</p>
+                </div>
+              </div>
+            </div>
+            <!-- RIGHT SIDE -->
+            <div onclick="toggleDropdownMenu('hamburger-list')" class="flex justify-center items-center cursor-pointer sm:hidden">
+              <i class="fa-solid fa-bars fa-2xl"></i>
+              <i class="fa-solid fa-xmark fa-2xl hidden"></i>
+            </div>
         </div>
-      </div>
-      <!-- RIGHT SIDE -->
-      <div class="flex justify-center items-center">
-        <i class="fa-solid fa-bars fa-2xl"></i>
-      </div>
+
+        <!-- Dropdown -->
+        <div id="hamburger-list" class="font-bold hidden sm:flex gap-5">
+            <!-- profil -->
+            <div class="my-5">
+                <div onclick="toggleDropdownMenu('dropdown-profil'), rotateArrow('profil')" id="profil" class="flex justify-between cursor-pointer">
+                    <span>Profil</span>
+                    <img class="h-5 w-5" src="{{asset('assets/img/arrow.svg')}}">
+                </div>
+
+                <!-- dd profil -->
+                <div id="dropdown-profil" class="pl-4 hidden my-5 sm:absolute sm:p-2 sm:bg-primary sm:rounded">
+                    <a href="#">Sejarah</a>
+
+                    <!-- lembaga -->
+                    <div onclick="toggleDropdown('dropdown-lembaga'), rotateArrow('lembaga')" id="lembaga" class="flex justify-between my-5 cursor-pointer">
+                      <span>Lembaga</span>
+                      <img class="h-5 w-5" src="{{asset('assets/img/arrow.svg')}}">
+                    </div>
+                    <!-- dd lembaga -->
+                    <div id="dropdown-lembaga" class="pl-5 hidden">
+                        <ul>
+                            <li class="my-5"><a href="#">Karang Taruna</a></li>
+                            <li class="my-5"><a href="#">PKK</a></li>
+                            <li class="my-5"><a href="#">BPD</a></li>
+                            <li class="my-5"><a href="#">BUMDes</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- agenda kreasi -->
+                    <div onclick="toggleDropdown('dropdown-agenda-kreasi'), rotateArrow('agenda-kreasi')" id="agenda-kreasi" class="flex justify-between my-5 cursor-pointer">
+                      <span>Agenda Kreasi</span>
+                      <img class="h-5 w-5" src="{{asset('assets/img/arrow.svg')}}">
+
+                    </div>
+                    <!-- dd agenda kreasi -->
+                    <div id="dropdown-agenda-kreasi" class="pl-5 hidden">
+                        <ul>
+                            <li class="my-5"><a href="#">Kesenian</a></li>
+                            <li class="my-5"><a href="#">Industri</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+          <!-- surat dan dokumen -->
+          <div class="my-5">
+              <div onclick="toggleDropdown('dropdown-surat-dan-dokumen'), rotateArrow('surat-dan-dokumen')" id="surat-dan-dokumen" class="flex justify-between cursor-pointer">
+                <span>Surat dan Dokumen</span>
+                <img class="h-5 w-5" src="{{asset('assets/img/arrow.svg')}}">
+              </div>
+
+              <!-- dd surat dan dokumen -->
+              <div id="dropdown-surat-dan-dokumen" class="pl-5 hidden sm:absolute sm:p-2 sm:bg-primary sm:rounded">
+                  <ul>
+                      <li class="my-5"><a href="#">Surat</a></li>
+                      <li class="my-5"><a href="#">Dokumen</a></li>
+                  </ul>
+              </div>
+          </div>
+
+          <!-- anggaran -->
+          <div class="my-5">
+              <div onclick="toggleDropdown('dropdown-anggaran'), rotateArrow('anggaran')" id="anggaran" class="flex justify-between cursor-pointer">
+                <span>Anggaran</span>
+                <img class="h-5 w-5" src="{{asset('assets/img/arrow.svg')}}">
+              </div>
+
+              <!-- dd anggaran -->
+              <div id="dropdown-anggaran" class="pl-5 hidden sm:absolute sm:p-2 sm:bg-primary sm:rounded">
+                  <ul>
+                      <li class="my-5"><a href="#">Tahun 2020 - 2021</a></li>
+                      <li class="my-5"><a href="#">Tahun 2021 - 2022</a></li>
+                      <li class="my-5"><a href="#">Tahun 2022 - 2023</a></li>
+                  </ul>
+              </div>
+          </div>
+
+          <!-- news -->
+          <div class="my-5">
+              <div class="flex justify-between">
+                <span>News</span>
+                <img class="h-5 w-5" src="{{asset('assets/img/arrow.svg')}}">
+              </div>
+          </div>
+
+          <!-- Galery -->
+          <a href="#" class="my-5"><span>Galery</span></a>
+
+          <!-- pengaduan -->
+          <a href="#" class="my-5"><span>Pengaduan</span></a>
+        </div>
     </nav>
   </header>

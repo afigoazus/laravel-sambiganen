@@ -16,7 +16,15 @@ export default {
                 dusha: ['dusha', 'sans-serif']
             },
             colors: {
-                primary: "#0081A7"
+                primary: "#0081A7",
+                secondary: "#00AFB9",
+                after: "#F5F5F5",
+                turqoise: "#00AFB9",
+                cyan: "#01B8EC",
+                lightBlue: "#67AEF0"
+            },
+            backgroundImage: {
+                'hero-image' : "url('/public/assets/img/img-breadcrumbs.png')"
             }
         },
     },
