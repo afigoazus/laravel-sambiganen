@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 // Home Routes
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/profil', [HomeController::class, 'profile']);
+Route::get('/sejarah', [HomeController::class, 'history']);
+Route::get('/agenda', [HomeController::class, 'agenda']);
 
 // Budget Routes
 Route::get('/anggaran', [BudgetController::class, 'index']);

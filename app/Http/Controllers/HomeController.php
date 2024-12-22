@@ -15,4 +15,14 @@ class HomeController extends Controller
     {
         return view('profile');
     }
+
+    public function history()
+    {
+        return view('history');
+    }
+
+    public function agenda()
+    {
+        return view('agenda');
+    }
 }
