@@ -26,3 +26,9 @@ Route::get('/lembaga', function () {
 Route::get('/profil', function () {
     return view('profile');
 });
+Route::get('/sejarah', function () {
+    return view('history');
+});
+Route::get('/agenda', function () {
+    return view('agenda');
+});
