@@ -28,10 +28,12 @@ return new class extends Migration
             $table->string('tool_time_used_daily', 255)->nullable(false);
             $table->string('jbt_consumption', 255)->nullable(false);
             $table->string('tool_sum2', 255)->nullable(false);
-            $table->string('volume_application', 255)->nullable(false);
+            $table->string('volume_allocation', 255)->nullable(false);
             $table->string('pick_up_place', 255)->nullable(false);
             $table->string('no_distributor', 255)->nullable(false);
             $table->string('address_distributor', 255)->nullable(false);
+            $table->string('purchasing_tools_used', 255)->nullable(false);
+            $table->year('year')->nullable(false)->default(now()->year);
             $table->timestamps();
         });
     }

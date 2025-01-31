@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'dusha';
-    src: url('./font/dusha.woff') format('woff');
+    font-family: "dusha";
+    src: url("./font/dusha.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }

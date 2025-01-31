@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -32,14 +33,16 @@ return new class extends Migration
             $table->string('name_mom', 255)->nullable(false);
             $table->string('nik_mom', 255)->nullable(false);
             $table->string('place_born_mom', 255)->nullable(false);
+            $table->string('date_born_mom', 255)->nullable(false);
             $table->string('nationality_mom', 255)->nullable(false);
             $table->string('nik_death', 255)->nullable(false);
             $table->string('name_death', 255)->nullable(false);
-            $table->string('year_death', 255)->nullable(false);
+            $table->string('date_death', 255)->nullable(false);
             $table->string('hour_death', 255)->nullable(false);
             $table->string('caused_death', 255)->nullable(false);
             $table->string('place_death', 255)->nullable(false);
             $table->string('info_death', 255)->nullable(false);
+            $table->year('year')->nullable(false)->default(Carbon::now()->year);
             $table->timestamps();
         });
     }

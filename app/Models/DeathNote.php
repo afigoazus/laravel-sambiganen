@@ -30,10 +30,38 @@ class DeathNote extends Model
         'nationality_mom',
         'nik_death',
         'name_death',
-        'year_death',
+        'date_death',
         'hour_death',
         'caused_death',
         'place_death',
         'info_death',
+        'year',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saving(function ($letter) {
+            $letterYear = $letter->year ?? now()->year;
+
+            // auto numbering when no_letter is empty
+            if (empty($letter->no_dok_journey)) {
+                $lastLetter = self::where('year', $letterYear)
+                    ->orderBy('no_dok_journey', 'desc')
+                    ->first();
+                $letter->no_dok_journey = $lastLetter ? $lastLetter->no_dok_journey + 1 : 1;
+            }
+
+            // Ensure no duplicate no_letter within the same year
+            $exist = self::where('no_dok_journey', $letter->no_dok_journey)
+                ->where('year', $letterYear)
+                ->where('id', '!=', $letter->id)
+                ->exists();
+
+            if ($exist) {
+                throw new \Exception('The letter number {$letter->no_letter} already exist for the year {$year}');
+            }
+        });
+    }
 }

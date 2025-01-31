@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -15,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->integer('no_letter')->nullable(false);
             $table->string('name', 255)->nullable(false);
+            $table->string('address', 255)->nullable(false);
             $table->string('no_ktp', 255)->nullable(false);
             $table->string('agriculture', 255)->nullable(true);
             $table->string('industry', 255)->nullable(true);
@@ -23,6 +25,7 @@ return new class extends Migration
             $table->string('handicraft', 255)->nullable(true);
             $table->string('service', 255)->nullable(true);
             $table->string('other', 255)->nullable(true);
+            $table->year('year')->nullable(false)->default(Carbon::now()->year);
             $table->timestamps();
         });
     }
