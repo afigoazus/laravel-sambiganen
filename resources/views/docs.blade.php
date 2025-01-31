@@ -32,6 +32,7 @@
             <!-- surat keterangan usaha -->
             <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto">
                 <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Surat Keterangan Usaha</p>
+                </div>
                 <p class="text-center">Ktp dan Kartu Keluarga</p>
             </div>
             <!-- surat keterangan usaha end -->

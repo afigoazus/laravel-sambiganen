@@ -1,7 +1,7 @@
 @include("layouts.header")
-<main class="mt-24 font-dusha">
-    <div class="bg-hero-image bg-center bg-cover h-64 bg-no-repeat flex items-center justify-center after:absolute after:left-0 after:right-0 after:bg-after after:w-screen after:h-64 after:opacity-80">
-        <div class="text-center relaitive z-10">
+<main class="mt-24 font-dusha sm:mt-0">
+    <div class="bg-hero-image bg-center bg-cover h-64 bg-no-repeat flex items-center justify-center after:absolute after:left-0 after:right-0 after:bg-after after:w-screen after:h-64 after:opacity-80 sm:h-dvh sm:after:h-dvh">
+        <div class="text-center relative z-10">
             <span class="text-4xl text-primary">Wringinanom</span> <br>
             <span class="text-4xl text-secondary">Kisahku</span>
         </div>
@@ -31,10 +31,12 @@
         <!-- sejarah -->
         <div class="bg-primary text-white py-2 rounded-xl">
             <!-- title -->
-            <div>
-                <h1 class="text-4xl text-center">Sejarah Desa <br> Wringinanom</h1>
+            <div class="w-11/12 mx-auto sm:flex sm:justify-center sm:gap-36 sm:items-center">
+                <div>
+                    <h1 class="text-4xl text-center">Sejarah Desa <br> Wringinanom</h1>
+                </div>
+                <img class="mx-auto sm:m-0 sm:w-1/2" src="{{asset('assets/img/bg-history.svg')}}" alt=""> 
             </div>
-            <img class="mx-auto" src="{{asset('assets/img/bg.png')}}" alt="">
             <div class="w-11/12 mx-auto text-justify font-sans">
                 <p class="my-4">
                 Bahwa terjadinya Desa Wringinanom adalah sebagai berikut : Dahulu  kala kira-kira usai perang Diponegoro tahun 1825-1830 ada perantau dari daerah Jawa Tengah, mengungsi sampai wilayah tenggara gunung  lawu, para perantau tersebut ada yang belajar di pondok  dan ada juga yang merantau ke wilayah pelosok.
@@ -78,34 +80,32 @@
             <!-- swiper perangkat desa -->
             <div id="swiper-perangkat-desa" class="swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
+                    <div class="swiper-slide flex flex-col items-center">
                         <img class="w-44" src="{{asset('assets/img/profil.png')}}">
                         <div class="bg-black bg-opacity-30 text-white text-center absolute w-44 bottom-0 py-2">
                             <span>Kepala Desa</span>
                             <p>Wahyu Suryono</p>
                         </div>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide flex flex-col items-center">
                         <img class="w-44" src="{{asset('assets/img/profil.png')}}">
                         <div class="bg-black bg-opacity-30 text-white text-center absolute w-44 bottom-0 py-2">
                             <span>Kepala Desa</span>
                             <p>Wahyu Suryono</p>
                         </div>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide flex flex-col items-center">
                         <img class="w-44" src="{{asset('assets/img/profil.png')}}">
                         <div class="bg-black bg-opacity-30 text-white text-center absolute w-44 bottom-0 py-2">
                             <span>Kepala Desa</span>
                             <p>Wahyu Suryono</p>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div>
-                            <img class="w-44" src="{{asset('assets/img/profil.png')}}">
-                            <div class="bg-black bg-opacity-30 text-white text-center absolute w-44 bottom-0 py-2">
-                                <span>Kepala Desa</span>
-                                <p>Wahyu Suryono</p>
-                            </div>
+                    <div class="swiper-slide flex flex-col items-center">
+                        <img class="w-44" src="{{asset('assets/img/profil.png')}}">
+                        <div class="bg-black bg-opacity-30 text-white text-center absolute w-44 bottom-0 py-2">
+                            <span>Kepala Desa</span>
+                            <p>Wahyu Suryono</p>
                         </div>
                     </div>
                 </div>

@@ -22,3 +22,14 @@ function onclickPersyaratan() {
 function onclickDokumen() {
     toggleTab('dokumenButton', 'persyaratanButton', 'dokumen', 'persyaratan');
 }
+
+function showLainnyaField() {
+    var alasanSelect = document.getElementById("alasan");
+    var otherField = document.getElementById("lainnyaField");
+    
+    if (alasanSelect.value === "Lainnya") {
+        otherField.classList.remove("hidden");
+    } else {
+        otherField.classList.add("hidden");
+    }
+}

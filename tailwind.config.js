@@ -24,7 +24,7 @@ export default {
                 lightBlue: "#67AEF0"
             },
             backgroundImage: {
-                'hero-image' : "url('/public/assets/img/img-breadcrumbs.png')"
+                'hero-image' : "url('/public/assets/img/img-breadcrumb.svg')"
             }
         },
     },
