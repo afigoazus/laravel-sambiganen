@@ -1,6 +1,6 @@
 @include("layouts.header")
-<main class="mt-24 font-dusha">
-    <div class="bg-hero-image bg-center bg-cover h-64 bg-no-repeat flex items-center justify-center after:absolute after:left-0 after:right-0 after:bg-after after:w-screen after:h-64 after:opacity-80">
+<main class="mt-24 font-dusha sm:m-0">
+    <div class="bg-hero-image bg-center bg-cover h-64 bg-no-repeat flex items-center justify-center after:absolute after:left-0 after:right-0 after:bg-after after:w-screen after:h-64 after:opacity-80 sm:h-dvh sm:after:h-dvh">
         <div class="text-center relative z-10">
             <span class="text-4xl text-primary">Wringinanom</span> <br>
             <span class="text-4xl text-secondary">Kisahku</span>
@@ -11,17 +11,17 @@
     <section>
         <!-- organization icon -->
         <div class="bg-primary">
-            <div class="flex justify-between mx-auto w-11/12">
-                <img class="w-20 bg-black rounded-lg" src="{{asset('assets/img/karang-taruna-sm.png')}}" alt="">
-                <img class="w-20 bg-black rounded-lg" src="{{asset('assets/img/karang-taruna-sm.png')}}" alt="">
-                <img class="w-20 bg-black rounded-lg" src="{{asset('assets/img/karang-taruna-sm.png')}}" alt="">
-                <img class="w-20 bg-black rounded-lg" src="{{asset('assets/img/karang-taruna-sm.png')}}" alt="">
+            <div class="p-4 flex justify-between mx-auto w-11/12 sm:justify-center sm:gap-36">
+                <img class="w-20 bg-black rounded-lg cursor-pointer icon organization-icon hover:outline hover:outline-secondary hover:outline-4 hover:outline-offset-2 focus:outline focus:outline-secondary focus:outline-4 focus:outline-offset-2" slide-index="0" tabindex="0" src="{{asset('assets/img/karang-taruna-sm.png')}}" alt="">
+                <img class="w-20 bg-black rounded-lg cursor-pointer icon organization-icon hover:outline hover:outline-secondary hover:outline-4 hover:outline-offset-2 focus:outline focus:outline-secondary focus:outline-4 focus:outline-offset-2" slide-index="1" tabindex="0" src="{{asset('assets/img/karang-taruna-sm.png')}}" alt="">
+                <img class="w-20 bg-black rounded-lg cursor-pointer icon organization-icon hover:outline hover:outline-secondary hover:outline-4 hover:outline-offset-2 focus:outline focus:outline-secondary focus:outline-4 focus:outline-offset-2" slide-index="2" tabindex="0" src="{{asset('assets/img/karang-taruna-sm.png')}}" alt="">
+                <img class="w-20 bg-black rounded-lg cursor-pointer icon organization-icon hover:outline hover:outline-secondary hover:outline-4 hover:outline-offset-2 focus:outline focus:outline-secondary focus:outline-4 focus:outline-offset-2" slide-index="3" tabindex="0" src="{{asset('assets/img/karang-taruna-sm.png')}}" alt="">
             </div>
         </div>
         <!-- organization icon end -->
 
         <div id="swiper-lembaga" class="swiper mx-auto w-11/12 my-10 text-white">
-            <div class="swiper-wrapper font-sans">
+            <div id="swiper-wrapper" class="swiper-wrapper font-sans transition-transform duration-500">
                 <!-- karang taruna description -->
                 <div class="swiper-slide bg-primary rounded-lg h-auto">
                     <div class=" p-12">

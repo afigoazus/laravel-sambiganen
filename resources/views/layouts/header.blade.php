@@ -51,7 +51,7 @@
 
                 <!-- dd profil -->
                 <div id="dropdown-profil" class="pl-4 hidden my-5 sm:absolute sm:p-2 sm:bg-primary sm:rounded">
-                    <a href="#">Sejarah</a>
+                    <a href="/sejarah"><p>Sejarah</p></a>
 
                     <!-- lembaga -->
                     <div onclick="toggleDropdown('dropdown-lembaga'), rotateArrow('lembaga')" id="lembaga" class="flex justify-between my-5 cursor-pointer">
@@ -61,10 +61,10 @@
                     <!-- dd lembaga -->
                     <div id="dropdown-lembaga" class="pl-5 hidden">
                         <ul>
-                            <li class="my-5"><a href="#">Karang Taruna</a></li>
-                            <li class="my-5"><a href="#">PKK</a></li>
-                            <li class="my-5"><a href="#">BPD</a></li>
-                            <li class="my-5"><a href="#">BUMDes</a></li>
+                            <li class="my-5"><a href="/lembaga"><p>Karang Taruna</p></a></li>
+                            <li class="my-5"><a href="/lembaga"><p>PKK</p></a></li>
+                            <li class="my-5"><a href="/lembaga"><p>BPD</p></a></li>
+                            <li class="my-5"><a href="/lembaga"><p>BUMDes</p></a></li>
                         </ul>
                     </div>
 
@@ -77,8 +77,8 @@
                     <!-- dd agenda kreasi -->
                     <div id="dropdown-agenda-kreasi" class="pl-5 hidden">
                         <ul>
-                            <li class="my-5"><a href="#">Kesenian</a></li>
-                            <li class="my-5"><a href="#">Industri</a></li>
+                            <li class="my-5"><a href="/agenda"><p>Kesenian</p></a></li>
+                            <li class="my-5"><a href="/agenda"><p>Industri</p></a></li>
                         </ul>
                     </div>
                 </div>
@@ -93,8 +93,8 @@
               <!-- dd surat dan dokumen -->
               <div id="dropdown-surat-dan-dokumen" class="pl-5 hidden sm:absolute sm:p-2 sm:bg-primary sm:rounded">
                   <ul>
-                      <li class="my-5"><a href="#">Surat</a></li>
-                      <li class="my-5"><a href="#">Dokumen</a></li>
+                      <li class="my-5"><a href="/dokumen"><p>Surat</p></a></li>
+                      <li class="my-5"><a href="/dokumen"><p>Dokumen</p></a></li>
                   </ul>
               </div>
           </div>
@@ -109,9 +109,9 @@
               <!-- dd anggaran -->
               <div id="dropdown-anggaran" class="pl-5 hidden sm:absolute sm:p-2 sm:bg-primary sm:rounded">
                   <ul>
-                      <li class="my-5"><a href="#">Tahun 2020 - 2021</a></li>
-                      <li class="my-5"><a href="#">Tahun 2021 - 2022</a></li>
-                      <li class="my-5"><a href="#">Tahun 2022 - 2023</a></li>
+                      <li class="my-5"><a href="#"><p>Tahun 2020 - 2021</p></a></li>
+                      <li class="my-5"><a href="#"><p>Tahun 2021 - 2022</p></a></li>
+                      <li class="my-5"><a href="#"><p>Tahun 2022 - 2023</p></a></li>
                   </ul>
               </div>
           </div>
@@ -131,4 +131,10 @@
           <a href="#" class="my-5"><span>Pengaduan</span></a>
         </div>
     </nav>
+
+    <style>
+      .clip-polygon {
+        clip-path: polygon(100% 10%, 60% 50%, 100% 100%, 0% 100%, 0% 10%);
+      }
+    </style>
   </header>
