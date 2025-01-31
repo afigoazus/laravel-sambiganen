@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->integer('no_letter')->nullable(false);
             $table->string('name', 255)->nullable(false);
-            $table->string('ttl', 255)->nullable(false);
+            $table->string('tgl_lahir', 255)->nullable(false);
+            $table->string('tempat_lahir', 255)->nullable(false);
             $table->string('gender', 255)->nullable(false);
-            $table->string('nationality', 255)->nullable(false);
+            $table->string('nationality', 255)->nullable(false)->default("WNI");
             $table->string('education', 255)->nullable(false);
             $table->string('job', 255)->nullable(false);
             $table->string('marriage', 255)->nullable(false);
@@ -25,10 +26,12 @@ return new class extends Migration
             $table->string('religion', 255)->nullable(false);
             $table->string('address', 255)->nullable(false);
             $table->string('name_child', 255)->nullable(false);
-            $table->string('ttl_child', 255)->nullable(false);
+            $table->string('tgl_lahir_child', 255)->nullable(false);
+            $table->string('tempat_lahir_child', 255)->nullable(false);
             $table->string('gender_child', 255)->nullable(false);
             $table->string('education_child', 255)->nullable(false);
             $table->string('address_child', 255)->nullable(false);
+            $table->year('year')->nullable(false)->default(now()->year);
             $table->timestamps();
         });
     }

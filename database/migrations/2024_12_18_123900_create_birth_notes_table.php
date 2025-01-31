@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -32,6 +33,7 @@ return new class extends Migration
             $table->string('name_mom', 255)->nullable(false);
             $table->string('nik_mom', 255)->nullable(false);
             $table->string('place_born_mom', 255)->nullable(false);
+            $table->string('date_born_mom', 255)->nullable(false);
             $table->string('nationality_mom', 255)->nullable(false);
             $table->string('no_kk_anak', 255)->nullable(false);
             $table->string('hub_keluarga', 255)->nullable(false);
@@ -50,6 +52,7 @@ return new class extends Migration
             $table->string('religion_child', 255)->nullable(false);
             $table->string('nationality_child', 255)->nullable(false);
             $table->string('disability', 255)->nullable(false);
+            $table->year('year')->nullable(false)->default(Carbon::now()->year);
             $table->timestamps();
         });
     }

@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->integer('no_letter')->nullable(false);
             $table->string('name', 255)->nullable(false);
-            $table->string('ttl', 255)->nullable(false);
+            $table->string('tempat_lahir', 255)->nullable(false);
+            $table->string('tgl_lahir', 255)->nullable(false);
             $table->string('gender', 255)->nullable(false);
             $table->string('nationality', 255)->nullable(false);
             $table->string('religion', 255)->nullable(false);
@@ -26,6 +27,7 @@ return new class extends Migration
             $table->string('no_kk', 255)->nullable(false);
             $table->string('address', 255)->nullable(false);
             $table->string('information', 255)->nullable(false);
+            $table->year('year')->nullable(false)->default(now()->year);
             $table->timestamps();
         });
     }
