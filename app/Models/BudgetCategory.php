@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Budget_category extends Model
+class BudgetCategory extends Model
 {
     protected $fillable = [
         'name'

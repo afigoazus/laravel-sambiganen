@@ -7,7 +7,8 @@
         </div>
     </div>
 
-    <form action="" method="POST" class="mx-auto my-10 w-11/12 max-w-prose p-4 flex flex-col items-center gap-4 font-sans">
+    <form action="{{ route('keterangan-usaha.store')}}" method="POST" class="mx-auto my-10 w-11/12 max-w-prose p-4 flex flex-col gap-4 font-sans">
+        @csrf
         <div class="bg-white p-4 w-full rounded-md">
             <span class="text-2xl font-medium">FORMULIR SURAT KETERANGAN USAHA</span>
             <p class="text-[#5F6368] font-normal">(Untuk pengajuan pengembangan usaha)</p> 
@@ -21,24 +22,18 @@
             </label>
         </div>
        
-        <!-- dukuh field -->
+        <!-- alamat field -->
         <div class="bg-white p-4 w-full rounded-md">
-            <label for="dukuh">Dukuh <span class="text-[#FF0000]">*</span> <br>
-                <input type="text" name="dukuh" id="dukuh" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Dukuh Anda" required> 
-            </label> 
-        </div>
-       
-        <!-- rt field -->
-        <div class="bg-white p-4 w-full rounded-md">
-            <label for="rt">RT <span class="text-[#FF0000]">*</span> <br>
-                <input type="text" name="rt" id="rt" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="RT Anda" required> 
+            <label for="alamat">Alamat <span class="text-[#FF0000]">*</span> <br>
+            <span class="font-medium">Untuk penulisan harus seperti berikut tanpa tanda (): RT (RT anda) RW (RW anda) Dukuh (Dukuh anda) Desa Wringinanom Kecamatan Sambit Kabupaten Ponorogo</span>
+                <textarea name="alamat" id="alamat" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required placeholder="Alamat"></textarea> 
             </label>
-        </div>
+        </div>        
 
-        <!-- rw field -->
+        <!-- nik -->
         <div class="bg-white p-4 w-full rounded-md">
-            <label for="rw">RW <span class="text-[#FF0000]">*</span> <br>
-                <input type="text" name="rw" id="rw" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="RW Anda" required> 
+            <label for="nik">NIK <span class="text-[#FF0000]">*</span> <br>
+                <input type="text" name="nik" id="nik" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="RW Anda" required> 
             </label>
         </div>
 

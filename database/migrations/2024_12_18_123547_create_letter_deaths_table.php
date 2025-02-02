@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('cause_death', 255)->nullable(false);
             $table->string('mom_name', 255)->nullable(false);
             $table->string('dad_name', 255)->nullable(false);
+            $table->year('year')->nullable(false)->default(now()->year);
             $table->timestamps();
         });
     }

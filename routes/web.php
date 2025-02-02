@@ -7,7 +7,9 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\OrganizationController;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 // Home Routes
 Route::get('/', [HomeController::class, 'index']);
@@ -23,6 +25,13 @@ Route::get('/pengaduan', [ComplaintController::class, 'index']);
 
 // Document Routes
 Route::get('/dokumen', [DocumentController::class, 'index']);
+Route::get('/kehilangan/{id}', [DocumentController::class, 'downloadLetterLost'])->name('surat.kehilangan');
+Route::get('/capil-lahir/{id}', [DocumentController::class, 'downloadBirthNote'])->name('capil.lahir');
+Route::get('/capil-kematian/{id}', [DocumentController::class, 'downloadDeathNote'])->name('capil.kematian');
+Route::get('/usaha/{id}', [DocumentController::class, 'downloadLetterBussiness'])->name('surat.usaha');
+Route::get('/kematian/{id}', [DocumentController::class, 'downloadLetterDeath'])->name('surat.kematian');
+Route::get('/tidak-mampu/{id}', [DocumentController::class, 'downloadLetterIncapacity'])->name('surat.tidakmampu');
+Route::get('/bbm/{id}', [DocumentController::class, 'downloadLetterFuel'])->name('surat.bbm');
 
 // Gallery Routes
 Route::get('/galeri', [GalleryController::class, 'index']);
@@ -48,3 +57,31 @@ Route::get('/dokumen/keringanan-sekolah', function () {
 Route::get('/dokumen/perpindahan-penduduk', function () {
     return view('surat-surat.perpindahan_penduduk');
 });
+
+Route::get('/dokumen/kematian-minimal', function () {
+    return view('surat-surat.kematian_minimal');
+});
+
+Route::get('/dokumen/kematian-nkri', function () {
+    return view('surat-surat.kematian_nkri');
+});
+
+Route::get('/dokumen/kelahiran', function () {
+    return view('surat-surat.kelahiran');
+});
+
+Route::get('/dokumen/kehilangan', function () {
+    return view('surat-surat.kehilangan');
+});
+
+Route::post('/dokumen/keterangan-usaha/store', [DocumentController::class, 'storeLetterBusiness'])->name('keterangan-usaha.store');
+
+Route::post('/dokumen/kelahiran/store', [DocumentController::class, 'storeBirthNote'])->name('kelahiran.store');
+
+Route::post('/dokumen/kematian-minimal/store', [DocumentController::class, 'storeLetterDeath'])->name('kematian-minimal.store');
+
+Route::post('/dokumen/kematian-nkri/store', [DocumentController::class, 'storeDeathNote'])->name('kematian-nkri.store');
+
+Route::post('/dokumen/keringanan-sekolah/store', [DocumentController::class, 'storeLetterIncapacity'])->name('keringanan-sekolah.store');
+
+Route::post('/dokumen/kehilangan/store', [DocumentController::class, 'storeLetterLost'])->name('kehilangan.store');
