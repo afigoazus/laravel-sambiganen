@@ -137,13 +137,25 @@
                 <div class="swiper-slide bg-primary rounded-2xl h-auto cursor-pointer">
                     <a class="flex flex-col items-center gap-4 p-10 text-center" href="#">
                         <img class="w-28" src="{{asset('assets/img/pdf-icon.png')}}" alt="">
-                        <p>Surat Kematian</p>
+                        <p>Surat Kematian Minimal</p>
+                    </a>
+                </div>
+                <div class="swiper-slide bg-primary rounded-2xl h-auto cursor-pointer">
+                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="#">
+                        <img class="w-28" src="{{asset('assets/img/pdf-icon.png')}}" alt="">
+                        <p>Surat Kematian NKRI</p>
                     </a>
                 </div>
                 <div class="swiper-slide bg-primary rounded-2xl h-auto cursor-pointer">
                     <a class="flex flex-col items-center gap-4 p-10 text-center" href="#">
                         <img class="w-28" src="{{asset('assets/img/pdf-icon.png')}}" alt="">
                         <p>Surat Kelahiran</p>
+                    </a>
+                </div>
+                <div class="swiper-slide bg-primary rounded-2xl h-auto cursor-pointer">
+                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="#">
+                        <img class="w-28" src="{{asset('assets/img/pdf-icon.png')}}" alt="">
+                        <p>Surat Kehilangan</p>
                     </a>
                 </div>
             </div>

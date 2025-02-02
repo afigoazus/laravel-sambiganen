@@ -9,7 +9,9 @@ class LetterLost extends Model
     protected $fillable = [
         'no_letter',
         'name',
-        'ttl',
+        // 'ttl',
+        'tempat_lahir',
+        'tgl_lahir',
         'gender',
         'nationality',
         'religion',

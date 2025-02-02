@@ -7,97 +7,202 @@
         </div>
     </div>
 
-    <form action="" method="POST" class="mx-auto my-10 w-11/12 max-w-prose p-4 flex flex-col items-center gap-4 font-sans">
+    <form action="{{ route('keringanan-sekolah.store')}}" method="POST" class="mx-auto my-10 w-11/12 p-4 font-sans flex flex-col gap-4">
+        @csrf
         <div class="bg-white p-4 w-full rounded-md">
             <span class="text-2xl font-medium">FORMULIR SURAT KERINGANAN SEKOLAH</span>
             <p class="text-[#5F6368] font-normal">(Untuk pengajuan keringanan sekolah)</p> 
             <p class="text-[#FF0000] font-normal">* Menunjukkan pertanyaan yang wajib diisi</p>
         </div>
         
-        <!-- name field -->
+        <!-- form orang tua -->
         <div class="bg-white p-4 w-full rounded-md">
-            <label for="parent-name">Nama Orang Tua<span class="text-[#FF0000]">*</span> <br>
-                <input type="text" name="parent-name" id="parent-name" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Nama Orang Tua" required> 
-            </label>
+            <span class="text-2xl font-medium">Formulir Data Orang Tua</span>
+           
+            <!-- form data ortu -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+                <!-- nama ortu field -->
+                <div>
+                    <label for="parent-name">Nama Orang Tua<span class="text-[#FF0000]">*</span> <br>
+                        <input type="text" name="parent-name" id="parent-name" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Nama" required> 
+                    </label>
+                </div>
+
+                <!-- tempat lahir ortu field -->
+                <div class="">
+                    <label for="tempat-lahir-ortu">Tempat Lahir <span class="text-[#FF0000]">*</span> <br>
+                        <input type="Tempat" name="tempat-lahir-ortu" id="tempat-lahir-ortu" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Tempat Lahir" required> 
+                    </label> 
+                </div>
+                
+                <!-- tanggal lahir ortu field -->
+                <div class="">
+                    <label for="tanggal-lahir-ortu">Tanggal Lahir <span class="text-[#FF0000]">*</span> <br>
+                        <input type="date" name="tanggal-lahir-ortu" id="tanggal-lahir-ortu" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required> 
+                    </label> 
+                </div>                
+
+                <!-- jenis kelamin field -->
+                <div class="">
+                    <span>Jenis Kelamin <span class="text-[#FF0000]">*</span></span>
+                    <div class="flex gap-10">
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <div class="flex-shrink-0 mt-1">
+                                <input type="radio" 
+                                        name="gender-ortu" 
+                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="Laki-Laki" required>
+                            </div>
+                            <span class="text-gray-700">Laki-Laki</span>
+                        </label>
+
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <div class="flex-shrink-0 mt-1">
+                                <input type="radio"
+                                        name="gender-ortu"  
+                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="Perempuan">
+                            </div>
+                            <span class="text-gray-700">Perempuan</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- kewarganegaraan field -->
+                <div class="">
+                    <span>Kewarganegaraan <span class="text-[#FF0000]">*</span></span>
+                    <div class="flex gap-10">
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <div class="flex-shrink-0 mt-1">
+                                <input type="radio" 
+                                        name="kewarganegaraan" 
+                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="WNI" required>
+                            </div>
+                            <span class="text-gray-700">WNI</span>
+                        </label>
+
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <div class="flex-shrink-0 mt-1">
+                                <input type="radio"
+                                        name="kewarganegaraan"  
+                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="WNA">
+                            </div>
+                            <span class="text-gray-700">WNA</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- pendidikan field -->
+                <div class="">
+                    <label for="parent-education">Pendidikan <span class="text-[#FF0000]">*</span> <br>
+                        <input type="text" name="parent-education" id="parent-education" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Pendidikan" required> 
+                    </label>
+                </div>
+
+                <!-- pekerjaan field -->
+                <div class="">
+                    <label for="job">Pekerjaan <span class="text-[#FF0000]">*</span> <br>
+                        <input type="text" name="job" id="job" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Pekerjaan" required> 
+                    </label>
+                </div>
+
+                <!-- status perkawinan field -->
+                <div class="">
+                    <label for="perkawinan">Status Perkawinan <span class="text-[#FF0000]">*</span> <br>
+                        <input type="text" name="perkawinan" id="perkawinan" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Status Perkawinan" required> 
+                    </label>
+                </div>
+
+                <!-- No ktp field -->
+                <div class="">
+                    <label for="no-ktp">No KTP/NIK <span class="text-[#FF0000]">*</span> <br>
+                        <input type="text" name="no-ktp" id="no-ktp" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="No KTP/NIK" required> 
+                    </label>
+                </div>
+
+                <!-- agama field -->
+                <div class="">
+                    <label for="agama">Agama <span class="text-[#FF0000]">*</span> <br>
+                        <input type="text" name="agama" id="agama" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="No KTP/NIK" required> 
+                    </label>
+                </div>
+
+                <!-- alamat field -->
+                <div class="">
+                    <label for="alamat-ortu">Alamat <span class="text-[#FF0000]">*</span> <br>
+                    <span class="font-medium">Untuk penulisan harus seperti berikut tanpa tanda (): RT (RT anda) RW (RW anda) Dukuh (Dukuh anda) Desa Wringinanom Kecamatan Sambit Kabupaten Ponorogo</span>
+                        <textarea name="alamat-ortu" id="alamat-ortu" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required placeholder="Alamat"></textarea> 
+                    </label>
+                </div>
+            </div>
         </div>
        
-        <!-- ttl ortu field -->
+        <!-- form anak -->
         <div class="bg-white p-4 w-full rounded-md">
-            <label for="parent-ttl">Tempat Tanggal Lahir Orang Tua <span class="text-[#FF0000]">*</span> <br>
-                <input type="date" name="parent-ttl" id="parent-ttl" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required> 
-            </label> 
-        </div>
-       
-        <!-- pendidikan field -->
-        <div class="bg-white p-4 w-full rounded-md">
-            <label for="parent-education">Pendidikan Orang Tua <span class="text-[#FF0000]">*</span> <br>
-                <input type="text" name="parent-education" id="parent-education" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Pendidikan Orang Tua" required> 
-            </label>
-        </div>
+            <span class="text-2xl font-medium">Formulir Data Anak</span>
+            
+            <!-- form data anak -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+                <!-- nama anak field -->
+                <div class="">
+                    <label for="child-name">Nama <span class="text-[#FF0000]">*</span> <br>
+                        <input type="text" name="child-name" id="child-name" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Nama" required> 
+                    </label>
+                </div>
 
-        <!-- pekerjaan field -->
-        <div class="bg-white p-4 w-full rounded-md">
-            <label for="job">Pekerjaan Orang Tua <span class="text-[#FF0000]">*</span> <br>
-                <input type="text" name="job" id="job" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="RW Anda" required> 
-            </label>
-        </div>
+                <!-- tempat lahir anak field -->
+                <div>
+                    <label for="tempat-lahir-anak">Tempat Lahir <span class="text-[#FF0000]">*</span> <br>
+                        <input type="text" name="tempat-lahir-anak" id="tempat-lahir-anak" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Tempat Lahir" required> 
+                    </label>
+                </div>
 
-        <!-- status perkawinan field -->
-        <div class="bg-white p-4 w-full rounded-md">
-            <label for="perkawinan">Status Perkawinan <span class="text-[#FF0000]">*</span> <br>
-                <input type="text" name="perkawinan" id="perkawinan" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Status Perkawinan" required> 
-            </label>
-        </div>
+                <!-- tanggal lahir anak field -->
+                <div class="">
+                    <label for="tanggal-lahir-anak">Tanggal Lahir <span class="text-[#FF0000]">*</span> <br>
+                        <input type="date" name="tanggal-lahir-anak" id="child-ttl" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required> 
+                    </label> 
+                </div> 
 
-        <!-- No ktp field -->
-        <div class="bg-white p-4 w-full rounded-md">
-            <label for="no-ktp">No KTP Orang Tua <span class="text-[#FF0000]">*</span> <br>
-                <input type="text" name="no-ktp" id="no-ktp" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="No KTP Orang Tua" required> 
-            </label>
+                <!-- jenis kelamin field -->
+                <div class="">
+                    <span>Jenis Kelamin <span class="text-[#FF0000]">*</span></span>
+                    <div class="flex gap-10">
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <div class="flex-shrink-0 mt-1">
+                                <input type="radio" 
+                                        name="gender-anak" 
+                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="Laki-Laki" required>
+                            </div>
+                            <span class="text-gray-700">Laki-Laki</span>
+                        </label>
+
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <div class="flex-shrink-0 mt-1">
+                                <input type="radio"
+                                        name="gender-anak"  
+                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="Perempuan">
+                            </div>
+                            <span class="text-gray-700">Perempuan</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- pendidikan anak field -->
+                <div class="">
+                    <label for="child-education">Pendidikan <span class="text-[#FF0000]">*</span> <br>
+                        <input type="text" name="child-education" id="child-education" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Pendidikan" required> 
+                    </label>
+                </div>
+
+                <!-- alamat field -->
+                <div class="">
+                    <label for="alamat-anak">Alamat <span class="text-[#FF0000]">*</span> <br>
+                    <span class="font-medium">Untuk penulisan harus seperti berikut tanpa tanda (): RT (RT anda) RW (RW anda) Dukuh (Dukuh anda) Desa Wringinanom Kecamatan Sambit Kabupaten Ponorogo</span>
+                        <textarea name="alamat-anak" id="alamat-anak" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required placeholder="Alamat"></textarea> 
+                    </label>
+                </div>
+            </div>
         </div>
         
-        <!-- dukuh field -->
-        <div class="bg-white p-4 w-full rounded-md">
-            <label for="dukuh">Dukuh <span class="text-[#FF0000]">*</span> <br>
-                <input type="text" name="dukuh" id="dukuh" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Dukuh Anda" required> 
-            </label> 
-        </div>
-       
-        <!-- rt field -->
-        <div class="bg-white p-4 w-full rounded-md">
-            <label for="rt">RT <span class="text-[#FF0000]">*</span> <br>
-                <input type="text" name="rt" id="rt" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="RT Anda" required> 
-            </label>
-        </div>
-
-        <!-- rw field -->
-        <div class="bg-white p-4 w-full rounded-md">
-            <label for="rw">RW <span class="text-[#FF0000]">*</span> <br>
-                <input type="text" name="rw" id="rw" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="RW Anda" required> 
-            </label>
-        </div>
-
-        <!-- nama anak field -->
-        <div class="bg-white p-4 w-full rounded-md">
-            <label for="child-name">Nama Anak <span class="text-[#FF0000]">*</span> <br>
-                <input type="text" name="child-nama" id="child-name" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Nama Anak" required> 
-            </label>
-        </div>
-
-        <!-- ttl anak field -->
-        <div class="bg-white p-4 w-full rounded-md">
-            <label for="child-ttl">Tempat Tanggal Lahir Anak <span class="text-[#FF0000]">*</span> <br>
-                <input type="date" name="child-ttl" id="child-ttl" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required> 
-            </label> 
-        </div>
-
-        <!-- pendidikan anak field -->
-        <div class="bg-white p-4 w-full rounded-md">
-            <label for="child-education">Pendidikan Anak <span class="text-[#FF0000]">*</span> <br>
-                <input type="text" name="child-education" id="child-education" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Pendidikan Anak" required> 
-            </label>
-        </div>
-
         <!-- submit button -->
         <div>
             <button type="submit" class="bg-primary text-white py-2 px-6 rounded-md">Kirim</button>

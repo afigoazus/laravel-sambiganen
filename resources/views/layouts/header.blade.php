@@ -120,7 +120,6 @@
           <div class="my-5">
               <div class="flex justify-between">
                 <span>News</span>
-                <img class="h-5 w-5" src="{{asset('assets/img/arrow.svg')}}">
               </div>
           </div>
 

@@ -57,3 +57,31 @@ Route::get('/dokumen/keringanan-sekolah', function () {
 Route::get('/dokumen/perpindahan-penduduk', function () {
     return view('surat-surat.perpindahan_penduduk');
 });
+
+Route::get('/dokumen/kematian-minimal', function () {
+    return view('surat-surat.kematian_minimal');
+});
+
+Route::get('/dokumen/kematian-nkri', function () {
+    return view('surat-surat.kematian_nkri');
+});
+
+Route::get('/dokumen/kelahiran', function () {
+    return view('surat-surat.kelahiran');
+});
+
+Route::get('/dokumen/kehilangan', function () {
+    return view('surat-surat.kehilangan');
+});
+
+Route::post('/dokumen/keterangan-usaha/store', [DocumentController::class, 'storeLetterBusiness'])->name('keterangan-usaha.store');
+
+Route::post('/dokumen/kelahiran/store', [DocumentController::class, 'storeBirthNote'])->name('kelahiran.store');
+
+Route::post('/dokumen/kematian-minimal/store', [DocumentController::class, 'storeLetterDeath'])->name('kematian-minimal.store');
+
+Route::post('/dokumen/kematian-nkri/store', [DocumentController::class, 'storeDeathNote'])->name('kematian-nkri.store');
+
+Route::post('/dokumen/keringanan-sekolah/store', [DocumentController::class, 'storeLetterIncapacity'])->name('keringanan-sekolah.store');
+
+Route::post('/dokumen/kehilangan/store', [DocumentController::class, 'storeLetterLost'])->name('kehilangan.store');
