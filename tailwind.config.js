@@ -14,6 +14,8 @@ export default {
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
                 dusha: ["dusha", "sans-serif"],
+                ibm: ['IBM Plex Sans', 'sans-serif'],
+                poppins: ['Poppins', 'sans-serif'],   
             },
             colors: {
                 primary: "#0081A7",
@@ -22,6 +24,8 @@ export default {
                 turqoise: "#00AFB9",
                 cyan: "#01B8EC",
                 lightBlue: "#67AEF0",
+                yellowCustom: "#FDFCDC", 
+                darkGray: "#4B5563" 
             },
             backgroundImage: {
                 'hero-image' : "url('/public/assets/img/img-breadcrumb.svg')"
