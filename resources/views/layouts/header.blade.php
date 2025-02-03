@@ -6,7 +6,9 @@
   <title>Desa Wringinanom</title>
 
   <!-- Fonts -->
-
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;700&display=swap');
+  </style>
   <!-- Swiper (If you use it) -->
   <link
   rel="stylesheet"
