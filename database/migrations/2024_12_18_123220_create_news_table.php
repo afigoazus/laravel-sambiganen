@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title', 255)->nullable(false);
             $table->text("content")->nullable(false);
             $table->string('photo_path', 255)->nullable(false);
+            $table->timestamp('published_at')->useCurrent();
             $table->timestamps();
         });
     }

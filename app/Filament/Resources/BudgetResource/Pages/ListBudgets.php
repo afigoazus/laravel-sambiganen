@@ -9,11 +9,12 @@ use Filament\Resources\Pages\ListRecords;
 class ListBudgets extends ListRecords
 {
     protected static string $resource = BudgetResource::class;
+    protected static ?string $title = "Anggaran";
 
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\CreateAction::make()->label("Anggaran Baru"),
         ];
     }
 }

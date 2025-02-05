@@ -24,6 +24,12 @@ class DatabaseSeeder extends Seeder
             LetterFuelSeeder::class,
             LetterIncapacitiesSeeder::class,
             LetterLostSeeder::class,
+            BudgetCategorySeeder::class,
+            BudgetSeeder::class,
+            DemographicSeeder::class,
+            CategorySeeder::class,
+            LocationSeeder::class,
+            NewsSeeder::class,
         ]);
     }
 }

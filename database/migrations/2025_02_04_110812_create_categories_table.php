@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('demographics', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->integer('dusun')->nullable(false);
-            $table->integer('rukun_warga')->nullable(false);
-            $table->integer('rukun_tetangga')->nullable(false);
-            $table->integer('jiwa')->nullable(false);
+            $table->string('name')->unique();
+            $table->timestamps();
         });
     }
 
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('demographics');
+        Schema::dropIfExists('categories');
     }
 };

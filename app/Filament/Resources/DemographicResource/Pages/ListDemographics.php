@@ -9,11 +9,10 @@ use Filament\Resources\Pages\ListRecords;
 class ListDemographics extends ListRecords
 {
     protected static string $resource = DemographicResource::class;
+    protected static ?string $title = "Demografi Penduduk";
 
     protected function getHeaderActions(): array
     {
-        return [
-            Actions\CreateAction::make(),
-        ];
+        return [];
     }
 }

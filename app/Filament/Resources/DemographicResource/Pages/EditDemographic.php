@@ -9,6 +9,7 @@ use Filament\Resources\Pages\EditRecord;
 class EditDemographic extends EditRecord
 {
     protected static string $resource = DemographicResource::class;
+    protected static ?string $title = "Edit Demografi Penduduk";
 
     protected function getHeaderActions(): array
     {

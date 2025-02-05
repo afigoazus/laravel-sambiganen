@@ -11,4 +11,6 @@ class Demographic extends Model
         'content',
         'photo_path',
     ];
+
+    public $timestamps = false;
 }

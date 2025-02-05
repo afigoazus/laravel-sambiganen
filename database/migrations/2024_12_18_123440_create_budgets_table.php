@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('budgets', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255)->nullable(false);
-            $table->integer('amount')->nullable(false);
+            $table->bigInteger('amount')->nullable(false);
+            $table->year('year')->nullable(false);
             $table->unsignedBigInteger('category_id')->nullable(false);
-            $table->timestamps();
 
             // Define category_id constraint
             $table->foreign('category_id')->on('budget_categories')->references('id')->onDelete('cascade');

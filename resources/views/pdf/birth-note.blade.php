@@ -748,7 +748,7 @@ $dayOfWeek = Carbon::parse($date)->locale('id')->isoFormat('dddd'); // Outputs f
 
     <div style="position: relative; font-size: 0.8rem">
         <div style="position: absolute; right: 5rem; text-align: center">
-            <p>Wringinanom, 20 April 2025</p>
+            <p>Wringinanom, {{ Carbon::parse($data->updated_at)->locale('id')->translatedFormat('d F Y') }}</p>
             <div style="text-align: left;">
                 <p style="margin-bottom: 4rem; text-align: center">Pelapor</p>
                 <p style="text-align: center;">Patrick Star</p>

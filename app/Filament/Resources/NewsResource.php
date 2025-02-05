@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Carbon;
 
 class NewsResource extends Resource
 {
@@ -25,14 +26,29 @@ class NewsResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('title')
+                    ->label("Judul Berita")
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('content')
+                Forms\Components\Select::make('categories')
+                    ->label("Kategori Berita")
+                    ->relationship('categories', 'name')
+                    ->multiple()
+                    ->preload()
+                    ->searchable(),
+                Forms\Components\Select::make('locations')
+                    ->label("Lokasi Berita")
+                    ->relationship('locations', 'name')
+                    ->multiple()
+                    ->preload()
+                    ->searchable(),
+                Forms\Components\FileUpload::make('photo_path')
+                    ->label("Gambar Berita")
                     ->required()
                     ->columnSpanFull(),
-                Forms\Components\TextInput::make('photo_path')
+                Forms\Components\RichEditor::make('content')
+                    ->label("Konten Berita")
                     ->required()
-                    ->maxLength(255),
+                    ->columnSpanFull(),
             ]);
     }
 
@@ -41,17 +57,17 @@ class NewsResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')
+                    ->label("Judul Berita")
                     ->searchable(),
-                Tables\Columns\TextColumn::make('photo_path')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('categories.name')
+                    ->label('Kategori Berita')
+                    ->badge(),
+                Tables\Columns\TextColumn::make('published_at')
+                    ->label("Waktu Unggah")
+                    ->formatStateUsing(fn($state) => Carbon::parse($state)->locale('id')->translatedFormat('d F Y')),
+                Tables\Columns\TextColumn::make('locations.name')
+                    ->label('Lokasi Berita')
+                    ->badge()
             ])
             ->filters([
                 //

@@ -5,9 +5,12 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\BudgetResource\Pages;
 use App\Filament\Resources\BudgetResource\RelationManagers;
 use App\Models\Budget;
+use App\Models\BudgetCategory;
 use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Support\RawJs;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -27,14 +30,26 @@ class BudgetResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
+                    ->label('Nama Anggaran')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('amount')
+                    ->label("Jumlah Anggaran")
                     ->required()
+                    ->numeric()
+                    ->mask(RawJs::make('$money($input)'))
+                    ->stripCharacters(',')
+                    ->numeric()
+                    ->maxLength(13)
                     ->numeric(),
-                Forms\Components\TextInput::make('category_id')
+                Forms\Components\DatePicker::make('year')
+                    ->format('Y')
+                    ->displayFormat('Y')
+                    ->native(false),
+                Forms\Components\Select::make('category_id')
+                    ->label('Kategori Anggaran')
+                    ->options(BudgetCategory::all()->pluck('name', 'id'))
                     ->required()
-                    ->numeric(),
             ]);
     }
 
@@ -43,12 +58,17 @@ class BudgetResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->label("Nama Anggaran")
                     ->searchable(),
                 Tables\Columns\TextColumn::make('amount')
+                    ->label("Jumlah Anggaran")
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('category_id')
-                    ->numeric()
+                Tables\Columns\TextColumn::make('budgetCategory.name')
+                    ->label("Kategori Anggaran")
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('year')
+                    ->label("Tahun")
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
@@ -60,7 +80,22 @@ class BudgetResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('category_id')
+                    ->label("Kategori Anggaran")
+                    ->options(
+                        BudgetCategory::pluck('name', 'id')
+                            ->toArray()
+                    ),
+                Tables\Filters\SelectFilter::make('year')
+                    ->label('Filter Berdasarkan Tahun')
+                    ->options(
+                        Budget::select('year')
+                            ->distinct()
+                            ->pluck('year', 'year')
+                            ->sort()
+                            ->toArray()
+                    )
+                    ->default(now()->year),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

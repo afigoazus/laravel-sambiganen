@@ -9,11 +9,12 @@ use Filament\Resources\Pages\ListRecords;
 class ListNews extends ListRecords
 {
     protected static string $resource = NewsResource::class;
+    protected static ?string $title = "Berita";
 
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\CreateAction::make()->label("Berita Baru"),
         ];
     }
 }

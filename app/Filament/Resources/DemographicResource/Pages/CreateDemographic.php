@@ -8,5 +8,6 @@ use Filament\Resources\Pages\CreateRecord;
 
 class CreateDemographic extends CreateRecord
 {
+    protected static ?string $title = "Buat Demografi Penduduk";
     protected static string $resource = DemographicResource::class;
 }

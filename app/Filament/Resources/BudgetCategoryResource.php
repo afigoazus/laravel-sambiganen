@@ -18,14 +18,17 @@ class BudgetCategoryResource extends Resource
     protected static ?string $model = BudgetCategory::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationLabel = 'Kategori Anggaran';
     protected static ?string $navigationGroup = 'Anggaran & Kependudukan';
+    protected static ?string $navigationLabel = 'Kategori Anggaran';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name')
+                    ->label("Nama Kategori Anggaran")
+                    ->required()
+                    ->maxLength(255),
             ]);
     }
 
@@ -33,13 +36,24 @@ class BudgetCategoryResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('name')
+                    ->label("Kategori Anggaran")
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make()->label('Hapus'),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -48,19 +62,10 @@ class BudgetCategoryResource extends Resource
             ]);
     }
 
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
-    }
-
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListBudgetCategories::route('/'),
-            'create' => Pages\CreateBudgetCategory::route('/create'),
-            'edit' => Pages\EditBudgetCategory::route('/{record}/edit'),
+            'index' => Pages\ManageBudgetCategories::route('/'),
         ];
     }
 }

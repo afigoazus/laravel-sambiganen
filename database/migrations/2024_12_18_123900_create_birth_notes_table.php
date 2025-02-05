@@ -42,7 +42,6 @@ return new class extends Migration
             $table->string('place_birth_child', 255)->nullable(false);
             $table->string('place_birth_child2', 255)->nullable(false);
             $table->string('date_birth_child', 255)->nullable(false);
-            $table->string('day_birth_child', 255)->nullable(false);
             $table->string('hour_birth_child', 255)->nullable(false);
             $table->string('type_birth_child', 255)->nullable(false);
             $table->string('no_birth_child', 255)->nullable(false);
