@@ -111,25 +111,23 @@
               <!-- dd anggaran -->
               <div id="dropdown-anggaran" class="pl-5 hidden sm:absolute sm:p-2 sm:bg-primary sm:rounded">
                   <ul>
-                      <li class="my-5"><a href="#"><p>Tahun 2020 - 2021</p></a></li>
-                      <li class="my-5"><a href="#"><p>Tahun 2021 - 2022</p></a></li>
-                      <li class="my-5"><a href="#"><p>Tahun 2022 - 2023</p></a></li>
+                      <li class="my-5"><a href="/anggaran"><p>Tahun 2020 - 2021</p></a></li>
+                      <li class="my-5"><a href="/anggaran"><p>Tahun 2021 - 2022</p></a></li>
+                      <li class="my-5"><a href="/anggaran"><p>Tahun 2022 - 2023</p></a></li>
                   </ul>
               </div>
           </div>
 
           <!-- news -->
           <div class="my-5">
-              <div class="flex justify-between">
-                <span>News</span>
-              </div>
+            <a href="/berita"><span>News</span></a> 
           </div>
 
           <!-- Galery -->
-          <a href="#" class="my-5"><span>Galery</span></a>
+          <a href="/galeri" class="my-5"><span>Galery</span></a>
 
           <!-- pengaduan -->
-          <a href="#" class="my-5"><span>Pengaduan</span></a>
+          <a href="/pengaduan" class="my-5"><span>Pengaduan</span></a>
         </div>
     </nav>
 

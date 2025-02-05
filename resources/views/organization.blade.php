@@ -2,8 +2,9 @@
 <main class="mt-24 font-dusha">
     <div class="bg-hero-image bg-center bg-cover h-64 bg-no-repeat flex items-center justify-center after:absolute after:left-0 after:right-0 after:bg-after after:w-screen after:h-64 after:opacity-80">
         <div class="text-center relative z-10">
-            <span class="text-4xl text-primary">Wringinanom</span> <br>
-            <span class="text-4xl text-secondary">Lembaga Desa</span>
+            <span class="text-4xl text-primary">Lembaga di</span> <br>
+            <span class="text-4xl text-secondary">Desa</span> <br>
+            <span class="text-4xl text-primary">Wringinanom</span>
         </div>
     </div>
 

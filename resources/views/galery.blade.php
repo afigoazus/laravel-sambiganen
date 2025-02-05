@@ -10,30 +10,215 @@
     <!-- galery section -->
     <section class="mx-auto w-11/12">
         <!-- img content -->
-        <div class="my-32 grid grid-cols-1 gap-6">
-            <!-- img -->
-            <div class="relative">
-                <img src="{{ asset('assets/img/img-breadcrumbs.png')}}" alt="" class="rounded-2xl w-full">
-                <div class="absolute bottom-10 left-6 text-white">
-                    <!-- title -->
-                    <span class=" text-2xl">Pawai Kendaraan</span>
-                    <!-- description -->
-                    <p>Description</p>
-                </div>
-            </div>
-            <!-- img end -->
+        <div class="my-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
 
-            <!-- img -->
-            <div class="relative">
-                <img src="{{ asset('assets/img/img-breadcrumbs.png')}}" alt="" class="rounded-2xl w-full">
-                <div class="absolute bottom-10 left-6 text-white">
-                    <!-- title -->
-                    <span class=" text-2xl">Pawai Kendaraan</span>
-                    <!-- description -->
-                    <p>Description</p>
+            <!-- div img 1 -->
+            <div class="flex flex-col gap-4">
+                <!-- img -->
+                <div class="relative">
+                    <img src="{{ asset('assets/img/dummy-galery/1.jpg')}}" alt="" class="rounded-2xl w-full">
+                    <div class="absolute bottom-10 left-6 text-white">
+                        <!-- title -->
+                        <span class=" text-2xl">Pawai Kendaraan</span>
+                        <!-- description -->
+                        <p>Description</p>
+                    </div>
                 </div>
+                <!-- img end -->
+
+                <!-- img -->
+                <div class="relative">
+                    <img src="{{ asset('assets/img/dummy-galery/2.jpg')}}" alt="" class="rounded-2xl w-full">
+                    <div class="absolute bottom-10 left-6 text-white">
+                        <!-- title -->
+                        <span class=" text-2xl">Pawai Kendaraan</span>
+                        <!-- description -->
+                        <p>Description</p>
+                    </div>
+                </div>
+                <!-- img end -->    
+
+                <!-- img -->
+                <div class="relative">
+                    <img src="{{ asset('assets/img/dummy-galery/3.jpg')}}" alt="" class="rounded-2xl w-full">
+                    <div class="absolute bottom-10 left-6 text-white">
+                        <!-- title -->
+                        <span class=" text-2xl">Pawai Kendaraan</span>
+                        <!-- description -->
+                        <p>Description</p>
+                    </div>
+                </div>
+                <!-- img end -->
+
+                <!-- img -->
+                <div class="relative">
+                    <img src="{{ asset('assets/img/dummy-galery/4.jpg')}}" alt="" class="rounded-2xl w-full">
+                    <div class="absolute bottom-10 left-6 text-white">
+                        <!-- title -->
+                        <span class=" text-2xl">Pawai Kendaraan</span>
+                        <!-- description -->
+                        <p>Description</p>
+                    </div>
+                </div>
+                <!-- img end -->
             </div>
-            <!-- img end -->
+            <!-- div img 1 end -->
+
+            <!-- div img 2 -->
+            <div class="flex flex-col gap-4">
+                <!-- img -->
+                <div class="relative">
+                    <img src="{{ asset('assets/img/dummy-galery/14.jpg')}}" alt="" class="rounded-2xl w-full">
+                    <div class="absolute bottom-10 left-6 text-white">
+                        <!-- title -->
+                        <span class=" text-2xl">Pawai Kendaraan</span>
+                        <!-- description -->
+                        <p>Description</p>
+                    </div>
+                </div>
+                <!-- img end -->
+
+               <!-- img -->
+                <div class="relative">
+                    <img src="{{ asset('assets/img/dummy-galery/5.jpg')}}" alt="" class="rounded-2xl w-full">
+                    <div class="absolute bottom-10 left-6 text-white">
+                        <!-- title -->
+                        <span class=" text-2xl">Pawai Kendaraan</span>
+                        <!-- description -->
+                        <p>Description</p>
+                    </div>
+                </div>
+                <!-- img end --> 
+
+                <!-- img -->
+                <div class="relative">
+                    <img src="{{ asset('assets/img/dummy-galery/6.jpg')}}" alt="" class="rounded-2xl w-full">
+                    <div class="absolute bottom-10 left-6 text-white">
+                        <!-- title -->
+                        <span class=" text-2xl">Pawai Kendaraan</span>
+                        <!-- description -->
+                        <p>Description</p>
+                    </div>
+                </div>
+                <!-- img end -->
+
+                <!-- img -->
+                <div class="relative">
+                    <img src="{{ asset('assets/img/dummy-galery/7.jpg')}}" alt="" class="rounded-2xl w-full">
+                    <div class="absolute bottom-10 left-6 text-white">
+                        <!-- title -->
+                        <span class=" text-2xl">Pawai Kendaraan</span>
+                        <!-- description -->
+                        <p>Description</p>
+                    </div>
+                </div>
+                <!-- img end -->
+            </div>
+            <!-- div img 2 end -->
+
+            <!-- div img 3 -->
+            <div class="flex flex-col gap-4">
+                <!-- img -->
+                <div class="relative">
+                    <img src="{{ asset('assets/img/dummy-galery/15.jpg')}}" alt="" class="rounded-2xl w-full">
+                    <div class="absolute bottom-10 left-6 text-white">
+                        <!-- title -->
+                        <span class=" text-2xl">Pawai Kendaraan</span>
+                        <!-- description -->
+                        <p>Description</p>
+                    </div>
+                </div>
+                <!-- img end -->
+
+                <!-- img -->
+                <div class="relative">
+                    <img src="{{ asset('assets/img/dummy-galery/8.jpg')}}" alt="" class="rounded-2xl w-full">
+                    <div class="absolute bottom-10 left-6 text-white">
+                        <!-- title -->
+                        <span class=" text-2xl">Pawai Kendaraan</span>
+                        <!-- description -->
+                        <p>Description</p>
+                    </div>
+                </div>
+                <!-- img end -->
+
+                <!-- img -->
+                <div class="relative">
+                    <img src="{{ asset('assets/img/dummy-galery/9.jpg')}}" alt="" class="rounded-2xl w-full">
+                    <div class="absolute bottom-10 left-6 text-white">
+                        <!-- title -->
+                        <span class=" text-2xl">Pawai Kendaraan</span>
+                        <!-- description -->
+                        <p>Description</p>
+                    </div>
+                </div>
+                <!-- img end -->
+
+                <!-- img -->
+                <div class="relative">
+                    <img src="{{ asset('assets/img/dummy-galery/10.jpg')}}" alt="" class="rounded-2xl w-full">
+                    <div class="absolute bottom-10 left-6 text-white">
+                        <!-- title -->
+                        <span class=" text-2xl">Pawai Kendaraan</span>
+                        <!-- description -->
+                        <p>Description</p>
+                    </div>
+                </div>
+                <!-- img end -->
+            </div>
+            <!-- div img 3 end -->
+
+            <!-- div img 4 -->
+            <div class="flex flex-col gap-4">
+                <!-- img -->
+                <div class="relative">
+                    <img src="{{ asset('assets/img/dummy-galery/16.jpg')}}" alt="" class="rounded-2xl w-full">
+                    <div class="absolute bottom-10 left-6 text-white">
+                        <!-- title -->
+                        <span class=" text-2xl">Pawai Kendaraan</span>
+                        <!-- description -->
+                        <p>Description</p>
+                    </div>
+                </div>
+                <!-- img end -->
+
+                <!-- img -->
+                <div class="relative">
+                    <img src="{{ asset('assets/img/dummy-galery/11.jpg')}}" alt="" class="rounded-2xl w-full">
+                    <div class="absolute bottom-10 left-6 text-white">
+                        <!-- title -->
+                        <span class=" text-2xl">Pawai Kendaraan</span>
+                        <!-- description -->
+                        <p>Description</p>
+                    </div>
+                </div>
+                <!-- img end -->
+
+                <!-- img -->
+                <div class="relative">
+                    <img src="{{ asset('assets/img/dummy-galery/12.jpg')}}" alt="" class="rounded-2xl w-full">
+                    <div class="absolute bottom-10 left-6 text-white">
+                        <!-- title -->
+                        <span class=" text-2xl">Pawai Kendaraan</span>
+                        <!-- description -->
+                        <p>Description</p>
+                    </div>
+                </div>
+                <!-- img end -->
+
+                <!-- img -->
+                <div class="relative">
+                    <img src="{{ asset('assets/img/dummy-galery/13.jpg')}}" alt="" class="rounded-2xl w-full">
+                    <div class="absolute bottom-10 left-6 text-white">
+                        <!-- title -->
+                        <span class=" text-2xl">Pawai Kendaraan</span>
+                        <!-- description -->
+                        <p>Description</p>
+                    </div>
+                </div>
+                <!-- img end -->
+            </div>
+            <!-- div img 4 end -->
         </div>
         <!-- img content end -->
     </section>
