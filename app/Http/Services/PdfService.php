@@ -11,6 +11,6 @@ class PdfService
         $dataPdf = $modelClass::findOrFail($id);
         $pdf = Pdf::loadView($view, ['data' => $dataPdf])->setPaper($paperSize);
 
-        return $pdf->download($filenamePrefix . $dataPdf['name'] . '.pdf');
+        return $pdf->download($filenamePrefix . "_" . $dataPdf['name'] . '.pdf');
     }
 }

@@ -9,7 +9,6 @@ use App\Http\Requests\StoreLetterDeathRequest;
 use App\Http\Requests\StoreLetterIncapacityRequest;
 use App\Http\Requests\StoreLetterLostRequest;
 use App\Http\Services\BirthNoteService;
-use App\Http\Services\BirthNoteServices;
 use App\Http\Services\DeathNoteService;
 use App\Http\Services\LetterBusinessService;
 use App\Http\Services\LetterDeathService;
@@ -23,8 +22,6 @@ use App\Models\LetterDeath;
 use App\Models\LetterFuel;
 use App\Models\LetterIncapacity;
 use App\Models\LetterLost;
-use Barryvdh\DomPDF\Facade\Pdf;
-use Illuminate\Http\Request;
 
 class DocumentController extends Controller
 {

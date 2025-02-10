@@ -29,6 +29,9 @@ class NewsResource extends Resource
                     ->label("Judul Berita")
                     ->required()
                     ->maxLength(255),
+                Forms\Components\DatePicker::make('published_at')
+                    ->label("Waktu Unggah")
+                    ->required(),
                 Forms\Components\Select::make('categories')
                     ->label("Kategori Berita")
                     ->relationship('categories', 'name')
@@ -38,7 +41,6 @@ class NewsResource extends Resource
                 Forms\Components\Select::make('locations')
                     ->label("Lokasi Berita")
                     ->relationship('locations', 'name')
-                    ->multiple()
                     ->preload()
                     ->searchable(),
                 Forms\Components\FileUpload::make('photo_path')
@@ -67,7 +69,6 @@ class NewsResource extends Resource
                     ->formatStateUsing(fn($state) => Carbon::parse($state)->locale('id')->translatedFormat('d F Y')),
                 Tables\Columns\TextColumn::make('locations.name')
                     ->label('Lokasi Berita')
-                    ->badge()
             ])
             ->filters([
                 //

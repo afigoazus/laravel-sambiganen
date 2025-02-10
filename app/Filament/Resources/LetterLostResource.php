@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\LetterLostResource\Pages;
 use App\Filament\Resources\LetterLostResource\RelationManagers;
+use App\Http\Services\LetterCounterService;
 use App\Models\LetterLost;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -21,7 +22,7 @@ class LetterLostResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static ?string $navigationGroup = 'Dokumen';
+    protected static ?string $navigationGroup = 'Dokumen Umum';
     protected static ?string $navigationLabel = 'Surat Kehilangan';
     public static function form(Form $form): Form
     {
@@ -30,48 +31,44 @@ class LetterLostResource extends Resource
                 Forms\Components\TextInput::make('no_letter')
                     ->label("Nomor Surat")
                     ->numeric()
-                    ->minValue(1)
-                    ->helperText("Ketika membuat dokumen baru anda bisa mengosongi form ini")
-                    ->rules([
-                        function ($get, $record) {
-                            return function ($attribute, $value, $fail) use ($get, $record) {
-                                $year = $record->year ?? now()->year;
-
-                                $exists = LetterLost::where('no_letter', $value)
-                                    ->where('year', $year)
-                                    ->when($record, fn($query) => $query->where('id', '!=', $record->id))
-                                    ->exists();
-
-                                if ($exists) {
-                                    $fail("Nomor Surat $value sudah ada pada tahun $year");
-                                }
-                            };
-                        }
-                    ]),
+                    ->helperText("Ketika Membuat Surat Baru, Nomor Surat Akan Diisi Otomatis"),
                 Forms\Components\TextInput::make('name')
                     ->label("Nama")
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('ttl')
+                Forms\Components\TextInput::make('tempat_lahir')
                     ->label("Tempat Tanggal Lahir")
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('gender')
+                Forms\Components\DatePicker::make('tgl_lahir')
+                    ->label("Tanggal Lahir")
+                    ->required(),
+                Forms\Components\Select::make('gender')
                     ->label("Jenis Kelamin")
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('nationality')
+                    ->options([
+                        "Laki-laki" => "Laki-laki",
+                        "Perempuan" => "Perempuan",
+                    ])
+                    ->required(),
+                Forms\Components\Select::make('nationality')
                     ->label("Kewarganegaraan")
                     ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('religion')
+                    ->options([1 => 'WNI', 2 => 'WNA'])
+                    ->default(1),
+                Forms\Components\Select::make('religion')
                     ->label("Agama")
                     ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('marriage')
+                    ->options([1 => 'Islam', 2 => 'Kristen', 3 => 'Katholik', 4 => 'Hindu', 5 => "Buddha", 6 => "Khonghucu", 7 => "Kepercayaan Terhadap Tuhan YME"])
+                    ->default(1),
+                Forms\Components\Select::make('marriage')
                     ->label("Status Perkawinan")
                     ->required()
-                    ->maxLength(255),
+                    ->options([
+                        "Belum Kawin" => "Belum Kawin",
+                        "Sudah Kawin" => "Sudah Kawin",
+                        "Janda" => "Janda",
+                        "Duda" => "Duda"
+                    ]),
                 Forms\Components\TextInput::make('job')
                     ->label("Pekerjaan")
                     ->required()
@@ -93,7 +90,7 @@ class LetterLostResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('information')
-                    ->label("Keterangan")
+                    ->label("Barang Hilang")
                     ->required()
                     ->maxLength(255),
             ]);
@@ -148,7 +145,10 @@ class LetterLostResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\DeleteBulkAction::make()
+                        ->after(function () {
+                            app(LetterCounterService::class)->resetRecentLetterNumber();
+                        }),
                 ]),
             ]);
     }

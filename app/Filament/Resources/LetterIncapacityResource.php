@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\LetterIncapacityResource\Pages;
 use App\Filament\Resources\LetterIncapacityResource\RelationManagers;
+use App\Http\Services\LetterCounterService;
 use App\Models\LetterIncapacity;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -21,7 +22,7 @@ class LetterIncapacityResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static ?string $navigationGroup = 'Dokumen';
+    protected static ?string $navigationGroup = 'Dokumen Umum';
     protected static ?string $navigationLabel = 'Surat Keterangan Tidak Mampu';
 
     public static function form(Form $form): Form
@@ -33,24 +34,7 @@ class LetterIncapacityResource extends Resource
                         Forms\Components\TextInput::make('no_letter')
                             ->label("Nomor Surat")
                             ->numeric()
-                            ->minValue(1)
-                            ->helperText("Ketika membuat dokumen baru anda bisa mengosongi form ini")
-                            ->rules([
-                                function ($get, $record) {
-                                    return function ($attribute, $value, $fail) use ($get, $record) {
-                                        $year = $record->year ?? now()->year;
-
-                                        $exists = LetterIncapacity::where('no_letter', $value)
-                                            ->where('year', $year)
-                                            ->when($record, fn($query) => $query->where('id', '!=', $record->id))
-                                            ->exists();
-
-                                        if ($exists) {
-                                            $fail("Nomor Surat $value sudah ada pada tahun $year");
-                                        }
-                                    };
-                                }
-                            ]),
+                            ->helperText("Ketika Membuat Surat Baru, Nomor Surat Akan Diisi Otomatis"),
                         Forms\Components\TextInput::make('name')
                             ->label("Nama")
                             ->required()
@@ -70,7 +54,7 @@ class LetterIncapacityResource extends Resource
                                 "Laki-laki" => "Laki-laki",
                                 "Perempuan" => "Perempuan",
                             ])
-                            ->required()
+                            ->required(),
                     ]),
                     Forms\Components\Grid::make(3)->schema([
                         Forms\Components\TextInput::make('education')
@@ -125,7 +109,7 @@ class LetterIncapacityResource extends Resource
                             ->maxLength(255),
                         Forms\Components\DatePicker::make('tgl_lahir_child')
                             ->label("Tanggal Lahir Anak")
-                            ->required()
+                            ->required(),
                     ]),
                     Forms\Components\Grid::make(3)->schema([
                         Forms\Components\Select::make('gender_child')
@@ -197,7 +181,10 @@ class LetterIncapacityResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\DeleteBulkAction::make()
+                        ->after(function () {
+                            app(LetterCounterService::class)->resetRecentLetterNumber();
+                        }),
                 ]),
             ]);
     }

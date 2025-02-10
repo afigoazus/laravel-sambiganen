@@ -27,8 +27,13 @@ class GaleryResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->required()
+                    ->label("Nama Gambar")
                     ->maxLength(255),
-                Forms\Components\TextInput::make('photo_path')
+                Forms\Components\FileUpload::make('photo_path')
+                    ->label("Gambar")
+                    ->required(),
+                Forms\Components\TextInput::make('description')
+                    ->label("Deskripsi")
                     ->required()
                     ->maxLength(255),
             ]);
@@ -39,9 +44,10 @@ class GaleryResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->label("Nama Gambar")
                     ->searchable(),
-                Tables\Columns\TextColumn::make('photo_path')
-                    ->searchable(),
+                Tables\Columns\ImageColumn::make('photo_path')
+                    ->label("Gambar"),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

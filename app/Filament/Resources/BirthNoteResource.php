@@ -22,7 +22,7 @@ class BirthNoteResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static ?string $navigationGroup = 'Dokumen';
+    protected static ?string $navigationGroup = 'Dokumen Khusus';
 
     protected static ?string $navigationLabel = 'Capil Kelahiran';
     protected static ?string $title = 'Capil Kelahiran';

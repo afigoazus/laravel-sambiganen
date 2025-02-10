@@ -9,11 +9,12 @@ use Filament\Resources\Pages\ListRecords;
 class ListGaleries extends ListRecords
 {
     protected static string $resource = GaleryResource::class;
+    protected static ?string $title = "Galeri Wringinanom";
 
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\CreateAction::make()->label("Galeri Baru"),
         ];
     }
 }

@@ -9,4 +9,5 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateOrganization extends CreateRecord
 {
     protected static string $resource = OrganizationResource::class;
+    protected static ?string $title = "Buat Organisasi Baru";
 }

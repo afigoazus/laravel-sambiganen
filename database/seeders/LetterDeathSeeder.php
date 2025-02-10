@@ -2,12 +2,14 @@
 
 namespace Database\Seeders;
 
+use App\Http\Services\LetterCounterService;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 class LetterDeathSeeder extends Seeder
 {
+    public function __construct(protected LetterCounterService $letterCounterService) {}
     /**
      * Run the database seeds.
      */
@@ -15,7 +17,7 @@ class LetterDeathSeeder extends Seeder
     {
         DB::table('letter_deaths')->insert([
             [
-                "no_letter" => 1,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2025),
                 "name" => "Konan",
                 "nik" => "9837463567894873",
                 "date_death" => "2010-12-03",
@@ -28,7 +30,7 @@ class LetterDeathSeeder extends Seeder
                 "updated_at" => "2024-09-26 01:21:32",
             ],
             [
-                "no_letter" => 2,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2025),
                 "name" => "Jiraiya",
                 "nik" => "9837463567894873",
                 "date_death" => "2010-12-03",
@@ -41,7 +43,7 @@ class LetterDeathSeeder extends Seeder
                 "updated_at" => "2024-09-26 01:21:32",
             ],
             [
-                "no_letter" => 3,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2025),
                 "name" => "Minato Namikaze",
                 "nik" => "9837463567894874",
                 "date_death" => "1999-10-10",
@@ -54,7 +56,7 @@ class LetterDeathSeeder extends Seeder
                 "updated_at" => "2025-01-29 12:00:00",
             ],
             [
-                "no_letter" => 4,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2025),
                 "name" => "Itachi Uchiha",
                 "nik" => "9837463567894875",
                 "date_death" => "2014-06-15",
@@ -67,7 +69,7 @@ class LetterDeathSeeder extends Seeder
                 "updated_at" => "2025-01-29 12:00:00",
             ],
             [
-                "no_letter" => 5,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2025),
                 "name" => "Neji Hyuga",
                 "nik" => "9837463567894876",
                 "date_death" => "2016-12-14",
@@ -80,7 +82,7 @@ class LetterDeathSeeder extends Seeder
                 "updated_at" => "2025-01-29 12:00:00",
             ],
             [
-                "no_letter" => 6,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2025),
                 "name" => "Madara Uchiha",
                 "nik" => "9837463567894877",
                 "date_death" => "2018-02-29",
@@ -93,7 +95,7 @@ class LetterDeathSeeder extends Seeder
                 "updated_at" => "2025-01-29 12:00:00",
             ],
             [
-                "no_letter" => 7,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2025),
                 "name" => "Obito Uchiha",
                 "nik" => "9837463567894878",
                 "date_death" => "2019-07-30",
@@ -106,7 +108,7 @@ class LetterDeathSeeder extends Seeder
                 "updated_at" => "2025-01-29 12:00:00",
             ],
             [
-                "no_letter" => 1,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2024),
                 "name" => "Hiruzen Sarutobi",
                 "nik" => "9837463567894879",
                 "date_death" => "2002-09-27",
@@ -119,7 +121,7 @@ class LetterDeathSeeder extends Seeder
                 "updated_at" => "2024-09-26 01:21:32",
             ],
             [
-                "no_letter" => 2,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2024),
                 "name" => "Danzo Shimura",
                 "nik" => "9837463567894880",
                 "date_death" => "2011-01-12",
@@ -132,7 +134,7 @@ class LetterDeathSeeder extends Seeder
                 "updated_at" => "2024-09-26 01:21:32",
             ],
             [
-                "no_letter" => 3,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2024),
                 "name" => "Asuma Sarutobi",
                 "nik" => "9837463567894881",
                 "date_death" => "2013-11-03",
@@ -145,7 +147,7 @@ class LetterDeathSeeder extends Seeder
                 "updated_at" => "2024-09-26 01:21:32",
             ],
             [
-                "no_letter" => 4,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2024),
                 "name" => "Kushina Uzumaki",
                 "nik" => "9837463567894882",
                 "date_death" => "1999-10-10",
@@ -158,7 +160,7 @@ class LetterDeathSeeder extends Seeder
                 "updated_at" => "2024-09-26 01:21:32",
             ],
             [
-                "no_letter" => 5,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2024),
                 "name" => "Zabuza Momochi",
                 "nik" => "9837463567894883",
                 "date_death" => "2010-08-15",
@@ -171,7 +173,7 @@ class LetterDeathSeeder extends Seeder
                 "updated_at" => "2024-09-26 01:21:32",
             ],
             [
-                "no_letter" => 1,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2023),
                 "name" => "Madara Uchiha",
                 "nik" => "9837463567894890",
                 "date_death" => "2018-12-24",
@@ -184,7 +186,7 @@ class LetterDeathSeeder extends Seeder
                 "updated_at" => "2023-09-26 01:21:32",
             ],
             [
-                "no_letter" => 2,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2023),
                 "name" => "Obito Uchiha",
                 "nik" => "9837463567894891",
                 "date_death" => "2019-05-10",
@@ -197,7 +199,7 @@ class LetterDeathSeeder extends Seeder
                 "updated_at" => "2023-09-26 01:21:32",
             ],
             [
-                "no_letter" => 1,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2022),
                 "name" => "Itachi Uchiha",
                 "nik" => "9837463567894892",
                 "date_death" => "2017-06-12",
@@ -210,7 +212,7 @@ class LetterDeathSeeder extends Seeder
                 "updated_at" => "2022-09-26 01:21:32",
             ],
             [
-                "no_letter" => 2,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2022),
                 "name" => "Neji Hyuga",
                 "nik" => "9837463567894893",
                 "date_death" => "2016-08-23",
@@ -223,7 +225,7 @@ class LetterDeathSeeder extends Seeder
                 "updated_at" => "2022-09-26 01:21:32",
             ],
             [
-                "no_letter" => 1,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2021),
                 "name" => "Haku",
                 "nik" => "9837463567894894",
                 "date_death" => "2015-03-30",
@@ -236,7 +238,7 @@ class LetterDeathSeeder extends Seeder
                 "updated_at" => "2021-09-26 01:21:32",
             ],
             [
-                "no_letter" => 2,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2021),
                 "name" => "Sakumo Hatake",
                 "nik" => "9837463567894895",
                 "date_death" => "2014-02-11",

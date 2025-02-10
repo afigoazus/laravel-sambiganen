@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\LetterFuelResource\Pages;
 use App\Filament\Resources\LetterFuelResource\RelationManagers;
+use App\Http\Services\LetterCounterService;
 use App\Models\LetterFuel;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -21,7 +22,7 @@ class LetterFuelResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static ?string $navigationGroup = 'Dokumen';
+    protected static ?string $navigationGroup = 'Dokumen Umum';
 
     protected static ?string $navigationLabel = 'Surat Izin BBM';
 
@@ -34,30 +35,13 @@ class LetterFuelResource extends Resource
                         Forms\Components\TextInput::make('no_letter')
                             ->label("Nomor Surat")
                             ->numeric()
-                            ->minValue(1)
-                            ->helperText("Ketika membuat dokumen baru anda bisa mengosongi form ini")
-                            ->rules([
-                                function ($get, $record) {
-                                    return function ($attribute, $value, $fail) use ($get, $record) {
-                                        $year = $record->year ?? now()->year;
-
-                                        $exists = LetterFuel::where('no_letter', $value)
-                                            ->where('year', $year)
-                                            ->when($record, fn($query) => $query->where('id', '!=', $record->id))
-                                            ->exists();
-
-                                        if ($exists) {
-                                            $fail("Nomor Surat $value sudah ada pada tahun $year");
-                                        }
-                                    };
-                                }
-                            ]),
+                            ->helperText("Ketika Membuat Surat Baru, Nomor Surat Akan Diisi Otomatis"),
                         Forms\Components\TextInput::make('name')
                             ->label('Nama')
                             ->required()
                             ->maxLength(255),
                     ]),
-                    Forms\Components\Grid::make(2)->schema([
+                    Forms\Components\Grid::make(3)->schema([
                         Forms\Components\TextInput::make('nik')
                             ->label('NIK')
                             ->required()
@@ -66,12 +50,12 @@ class LetterFuelResource extends Resource
                             ->label('Alamat')
                             ->required()
                             ->maxLength(255),
-                    ]),
-                    Forms\Components\Grid::make(3)->schema([
                         Forms\Components\TextInput::make('business_name')
                             ->required(false)
                             ->label('Nama Usaha')
                             ->maxLength(255),
+                    ]),
+                    Forms\Components\Grid::make(3)->schema([
                         Forms\Components\TextInput::make('user_consumer_sector')
                             ->label('Sektor Konsumen Pengguna')
                             ->required()
@@ -80,46 +64,55 @@ class LetterFuelResource extends Resource
                             ->label('Jenis Usaha')
                             ->required()
                             ->maxLength(255),
+                        Forms\Components\TextInput::make('tool_type')
+                            ->label('Jenis Alat / Mesin')
+                            ->default("Diesel")
+                            ->required()
+                            ->maxLength(255),
                     ])
                 ]),
                 Forms\Components\Section::make('Data Kebutuhan')->schema([
-                    Forms\Components\Grid::make(2)->schema([
-                        Forms\Components\TextInput::make('tool_type')
-                            ->label('Jenis Alat / Mesin')
-                            ->required()
-                            ->maxLength(255),
+                    Forms\Components\Grid::make(3)->schema([
                         Forms\Components\TextInput::make('tool_sum')
                             ->label('Jumlah Alat / Mesin')
+                            ->numeric()
                             ->required()
-                            ->maxLength(255),
-                    ]),
-                    Forms\Components\Grid::make(3)->schema([
+                            ->minValue(1)
+                            ->maxValue(10),
                         Forms\Components\TextInput::make('tool_use')
                             ->label('Fungsi Alat / Mesin')
                             ->required()
                             ->maxLength(255),
                         Forms\Components\TextInput::make('tool_sum2')
                             ->label('Jumlah Alat / Mesin')
+                            ->numeric()
                             ->required()
-                            ->maxLength(255),
+                            ->minValue(1)
+                            ->maxValue(10),
+                    ]),
+                    Forms\Components\Grid::make(2)->schema([
                         Forms\Components\TextInput::make('tool_power')
                             ->label('Daya Alat / Mesin')
                             ->required()
-                            ->maxLength(255),
-                    ]),
-                    Forms\Components\Grid::make(3)->schema([
+                            ->numeric()
+                            ->minValue(1),
                         Forms\Components\TextInput::make('tool_time_used_hour')
                             ->label('Lama Penggunaan Alat / Mesin (jam)')
                             ->required()
-                            ->maxLength(255),
+                            ->minValue(1)
+                            ->numeric(),
+                    ]),
+                    Forms\Components\Grid::make(2)->schema([
                         Forms\Components\TextInput::make('tool_time_used_daily')
                             ->label('Lama Operasional Alat / Mesin (hari/minggu/bulan)')
                             ->required()
-                            ->maxLength(255),
+                            ->minValue(1)
+                            ->numeric(),
                         Forms\Components\TextInput::make('jbt_consumption')
                             ->label('Konsumsi JBT / JBKP Alat / Mesin')
                             ->required()
-                            ->maxLength(255),
+                            ->minValue(1)
+                            ->numeric(),
                     ])
                 ]),
                 Forms\Components\Section::make('Data BBM')->schema([
@@ -128,20 +121,35 @@ class LetterFuelResource extends Resource
                             ->label('Alokasi Volume')
                             ->required()
                             ->maxLength(255),
-                        Forms\Components\TextInput::make('pick_up_place')
+                        Forms\Components\Select::make('pick_up_place')
                             ->label('Tempat Pengambilan')
                             ->required()
-                            ->maxLength(255),
+                            ->options([
+                                "SPBU Sambit" => "SPBU Sambit",
+                                "SPBU Nailan" => "SPBU Nailan"
+                            ])
+                            ->reactive()
+                            ->afterStateUpdated(function ($state, callable $set) {
+                                $set('address_distributor', match ($state) {
+                                    "SPBU Sambit" => "DS BESUKI KC. SAMBIT",
+                                    "SPBU Nailan" => "JL. RAYA DS.BALONG-SLAHUNG",
+                                });
+
+                                $set('no_distributor', match ($state) {
+                                    "SPBU Sambit" => "54.634.11", // Example value
+                                    "SPBU Nailan" => "54.634.12", // Example value
+                                });
+                            }),
                     ]),
                     Forms\Components\Grid::make(3)->schema([
-                        Forms\Components\TextInput::make('no_distributor')
-                            ->label('Nomor Penyalur')
-                            ->required()
-                            ->maxLength(255),
                         Forms\Components\TextInput::make('address_distributor')
                             ->label('Alamat Penyalur')
-                            ->required()
-                            ->maxLength(255),
+                            ->extraAttributes(['readonly' => true])
+                            ->required(),
+                        Forms\Components\TextInput::make('no_distributor')
+                            ->label("Nomer Distributor")
+                            ->extraAttributes(['readonly' => true])
+                            ->required(),
                         Forms\Components\TextInput::make('purchasing_tools_used')
                             ->label('Alat Pembelian yang Digunakan')
                             ->required()
@@ -200,7 +208,10 @@ class LetterFuelResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\DeleteBulkAction::make()
+                        ->after(function () {
+                            app(LetterCounterService::class)->resetRecentLetterNumber();
+                        }),
                 ]),
             ]);
     }

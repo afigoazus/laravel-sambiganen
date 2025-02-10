@@ -9,6 +9,7 @@ use Filament\Resources\Pages\EditRecord;
 class EditGalery extends EditRecord
 {
     protected static string $resource = GaleryResource::class;
+    protected static ?string $title = "Edit Galeri";
 
     protected function getHeaderActions(): array
     {
