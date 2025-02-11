@@ -20,6 +20,7 @@
   <script src="{{asset('assets/js/navbar.js')}}"></script>
   <script type="module" src="{{asset('assets/js/swiper.js')}}"></script>
   <script src="{{asset('assets/js/dokumen.js')}}"></script>
+  <script src="{{asset('assets/js/galery.js')}}" ></script>
 </head>
 <body>
   <header class="bg-primary fixed top-0 left-0 right-0 z-20">
@@ -124,10 +125,15 @@
           </div>
 
           <!-- Galery -->
-          <a href="/galeri" class="my-5"><span>Galery</span></a>
+          <div class="my-5">
+            <a href="/galeri" class="my-5"><span>Galery</span></a>
+          </div>
 
-          <!-- pengaduan -->
-          <a href="/pengaduan" class="my-5"><span>Pengaduan</span></a>
+          <!-- Pengaduan -->
+          <div class="my-5">
+            <a href="/pengaduan" class="my-5"><span>Pengaduan</span></a>
+          </div>
+          
         </div>
     </nav>
 
