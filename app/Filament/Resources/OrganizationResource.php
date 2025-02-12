@@ -25,14 +25,15 @@ class OrganizationResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('title')
+                    ->label("Judul Organisasi")
                     ->required()
                     ->maxLength(255),
                 Forms\Components\Textarea::make('content')
-                    ->required()
-                    ->columnSpanFull(),
-                Forms\Components\TextInput::make('photo_path')
-                    ->required()
-                    ->maxLength(255),
+                    ->label("Konten Organisasi")
+                    ->required(),
+                Forms\Components\FileUpload::make('photo_path')
+                    ->label("Foto Organisasi")
+                    ->required(),
             ]);
     }
 
@@ -41,9 +42,15 @@ class OrganizationResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')
+                    ->label("Nama Organisasi")
                     ->searchable(),
-                Tables\Columns\TextColumn::make('photo_path')
+                Tables\Columns\TextColumn::make('content')
+                    ->label("Konten Organisasi")
+                    ->limit(50)
                     ->searchable(),
+                Tables\Columns\ImageColumn::make('photo_path')
+                    ->label("Foto Organisasi")
+                    ->toggleable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

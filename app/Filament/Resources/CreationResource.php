@@ -26,14 +26,15 @@ class CreationResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('title')
+                    ->label("Judul Kreasi")
                     ->required()
                     ->maxLength(255),
                 Forms\Components\Textarea::make('content')
+                    ->label("Konten Kreasi")
+                    ->required(),
+                Forms\Components\FileUpload::make('photo_path')
+                    ->label("Foto Kreasi")
                     ->required()
-                    ->columnSpanFull(),
-                Forms\Components\TextInput::make('photo_path')
-                    ->required()
-                    ->maxLength(255),
             ]);
     }
 
@@ -42,10 +43,16 @@ class CreationResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')
+                    ->label("Judul Kreasi")
                     ->searchable(),
-                Tables\Columns\TextColumn::make('photo_path')
-                    ->searchable(),
+                Tables\Columns\TextColumn::make('content')
+                    ->label("Konten Kreasi")
+                    ->limit(50),
+                Tables\Columns\ImageColumn::make('photo_path')
+                    ->label("Foto Kreasi")
+                    ->toggleable(),
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label("Foto Kreasi")
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

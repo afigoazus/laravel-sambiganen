@@ -81,8 +81,6 @@ class DemographicResource extends Resource
     {
         return [
             'index' => Pages\ListDemographics::route('/'),
-            'create' => Pages\CreateDemographic::route('/create'),
-            'edit' => Pages\EditDemographic::route('/{record}/edit'),
         ];
     }
 }

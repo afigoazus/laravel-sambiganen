@@ -9,11 +9,12 @@ use Filament\Resources\Pages\ListRecords;
 class ListCreations extends ListRecords
 {
     protected static string $resource = CreationResource::class;
+    protected static ?string $title = "Kreasi";
 
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\CreateAction::make()->label("Kreasi Baru"),
         ];
     }
 }

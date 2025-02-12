@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\LetterDeathResource\Pages;
 use App\Filament\Resources\LetterDeathResource\RelationManagers;
+use App\Http\Services\LetterCounterService;
 use App\Models\LetterDeath;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -15,13 +16,15 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
+use function Livewire\after;
+
 class LetterDeathResource extends Resource
 {
     protected static ?string $model = LetterDeath::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static ?string $navigationGroup = 'Dokumen';
+    protected static ?string $navigationGroup = 'Dokumen Umum';
     protected static ?string $navigationLabel = 'Surat Keterangan Kematian';
     public static function form(Form $form): Form
     {
@@ -30,24 +33,7 @@ class LetterDeathResource extends Resource
                 Forms\Components\TextInput::make('no_letter')
                     ->label("Nomor Surat")
                     ->numeric()
-                    ->minValue(1)
-                    ->helperText("Ketika membuat dokumen baru anda bisa mengosongi form ini")
-                    ->rules([
-                        function ($get, $record) {
-                            return function ($attribute, $value, $fail) use ($get, $record) {
-                                $year = $record->year ?? now()->year;
-
-                                $exists = LetterDeath::where('no_letter', $value)
-                                    ->where('year', $year)
-                                    ->when($record, fn($query) => $query->where('id', '!=', $record->id))
-                                    ->exists();
-
-                                if ($exists) {
-                                    $fail("Nomor Surat $value sudah ada pada tahun $year");
-                                }
-                            };
-                        }
-                    ]),
+                    ->helperText("Ketika Membuat Surat Baru, Nomor Surat Akan Diisi Otomatis"),
                 Forms\Components\TextInput::make('name')
                     ->label("Nama Lengkap")
                     ->required()
@@ -118,7 +104,10 @@ class LetterDeathResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\DeleteBulkAction::make()
+                        ->after(function () {
+                            app(LetterCounterService::class)->resetRecentLetterNumber();
+                        }),
                 ]),
             ]);
     }

@@ -2,12 +2,14 @@
 
 namespace Database\Seeders;
 
+use App\Http\Services\LetterCounterService;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 class LetterIncapacitiesSeeder extends Seeder
 {
+    public function __construct(protected LetterCounterService $letterCounterService) {}
     /**
      * Run the database seeds.
      */
@@ -16,7 +18,7 @@ class LetterIncapacitiesSeeder extends Seeder
         DB::table('letter_incapacities')->insert([
             // Year 2021
             [
-                "no_letter" => 1,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2021),
                 "name" => "King Neptune",
                 "tgl_lahir" => '1970-07-01',
                 "tempat_lahir" => 'Bikini Bottom',
@@ -39,7 +41,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "updated_at" => "2021-07-15 10:30:22",
             ],
             [
-                "no_letter" => 2,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2021),
                 "name" => "Man Ray",
                 "tgl_lahir" => '1985-08-15',
                 "tempat_lahir" => 'Bikini Bottom',
@@ -64,7 +66,7 @@ class LetterIncapacitiesSeeder extends Seeder
 
             // Year 2022
             [
-                "no_letter" => 1,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2022),
                 "name" => "Grandma SquarePants",
                 "tgl_lahir" => '1945-03-03',
                 "tempat_lahir" => 'Bikini Bottom',
@@ -87,7 +89,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "updated_at" => "2022-03-20 09:15:33",
             ],
             [
-                "no_letter" => 2,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2022),
                 "name" => "Squilliam Fancyson",
                 "tgl_lahir" => '1985-04-25',
                 "tempat_lahir" => 'Bikini Bottom',
@@ -112,7 +114,7 @@ class LetterIncapacitiesSeeder extends Seeder
 
             // Year 2023
             [
-                "no_letter" => 1,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2023),
                 "name" => "Harold SquarePants",
                 "tgl_lahir" => '1965-09-10',
                 "tempat_lahir" => 'Bikini Bottom',
@@ -135,7 +137,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "updated_at" => "2023-09-15 11:25:17",
             ],
             [
-                "no_letter" => 2,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2023),
                 "name" => "Margaret SquarePants",
                 "tgl_lahir" => '1967-10-20',
                 "tempat_lahir" => 'Bikini Bottom',
@@ -160,7 +162,7 @@ class LetterIncapacitiesSeeder extends Seeder
 
             // Year 2024
             [
-                "no_letter" => 1,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2024),
                 "name" => "Euguene Krabs",
                 "tgl_lahir" => '1988-08-28',
                 "tempat_lahir" => 'Bikini Bottom',
@@ -183,7 +185,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "updated_at" => "2024-09-26 01:21:32",
             ],
             [
-                "no_letter" => 2,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2024),
                 "name" => "Patrick Star",
                 "tgl_lahir" => '1988-08-28',
                 "tempat_lahir" => 'Bikini Bottom',
@@ -206,7 +208,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "updated_at" => "2024-09-26 01:21:32",
             ],
             [
-                "no_letter" => 3,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2024),
                 "name" => "Squidward Tentacles",
                 "tgl_lahir" => '1985-10-15',
                 "tempat_lahir" => 'Bikini Bottom',
@@ -229,7 +231,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "updated_at" => "2024-09-26 01:21:32",
             ],
             [
-                "no_letter" => 5,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2024),
                 "name" => "Sheldon Plankton",
                 "tgl_lahir" => '1989-11-30',
                 "tempat_lahir" => 'Bikini Bottom',
@@ -254,7 +256,7 @@ class LetterIncapacitiesSeeder extends Seeder
 
             // Year 2025
             [
-                "no_letter" => 1,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2025),
                 "name" => "Mrs Puff",
                 "tgl_lahir" => '1980-01-03',
                 "tempat_lahir" => 'Bikini Bottom',
@@ -277,7 +279,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "updated_at" => "2025-01-15 09:45:22",
             ],
             [
-                "no_letter" => 2,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2025),
                 "name" => "Sandy Cheeks",
                 "tgl_lahir" => '1982-11-17',
                 "tempat_lahir" => 'Bikini Bottom',
@@ -300,7 +302,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "updated_at" => "2025-01-15 10:15:33",
             ],
             [
-                "no_letter" => 3,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2025),
                 "name" => "Eugene Krabs",
                 "tgl_lahir" => '1975-03-30',
                 "tempat_lahir" => 'Bikini Bottom',
@@ -323,7 +325,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "updated_at" => "2025-01-15 10:45:45",
             ],
             [
-                "no_letter" => 4,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2025),
                 "name" => "Patrick Star",
                 "tgl_lahir" => '1981-02-26',
                 "tempat_lahir" => 'Bikini Bottom',
@@ -346,7 +348,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "updated_at" => "2025-01-15 11:20:12",
             ],
             [
-                "no_letter" => 5,
+                "no_letter" => $this->letterCounterService->getNextLetterNumber(2025),
                 "name" => "Karen Plankton",
                 "tgl_lahir" => '1983-09-08',
                 "tempat_lahir" => 'Bikini Bottom',

@@ -9,4 +9,5 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateGalery extends CreateRecord
 {
     protected static string $resource = GaleryResource::class;
+    protected static ?string $title = "Galeri Baru";
 }

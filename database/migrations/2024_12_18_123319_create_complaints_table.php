@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('complaints', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255)->nullable(false);
-            $table->string('content', 255)->nullable(false);
+            $table->text('content')->nullable(false);
             $table->timestamps();
         });
     }

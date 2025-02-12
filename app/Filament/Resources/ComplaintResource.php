@@ -28,9 +28,10 @@ class ComplaintResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('content')
+                Forms\Components\Textarea::make('content')
+                    ->rows(10)
+                    ->cols(20)
                     ->required()
-                    ->maxLength(255),
             ]);
     }
 
@@ -38,8 +39,12 @@ class ComplaintResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('content')
+                Tables\Columns\TextColumn::make('name')
+                    ->label("Nama Pengadu")
                     ->searchable(),
+                Tables\Columns\TextColumn::make('content')
+                    ->label("Konten Aduan")
+                    ->limit(100),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -54,6 +59,7 @@ class ComplaintResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -73,8 +79,6 @@ class ComplaintResource extends Resource
     {
         return [
             'index' => Pages\ListComplaints::route('/'),
-            'create' => Pages\CreateComplaint::route('/create'),
-            'edit' => Pages\EditComplaint::route('/{record}/edit'),
         ];
     }
 }

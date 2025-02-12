@@ -21,9 +21,9 @@ class DocumentResource extends Resource
     protected static ?string $model = Document::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationLabel = 'Template PDF';
-    protected static ?string $navigationGroup = 'Dokumen';
-    protected static ?string $title = 'Template PDF';
+    protected static ?string $navigationLabel = 'Dokumen PDF';
+    protected static ?string $navigationGroup = 'Dokumen Khusus';
+    protected static ?string $title = 'Dokumen PDF';
     public static function form(Form $form): Form
     {
         return $form

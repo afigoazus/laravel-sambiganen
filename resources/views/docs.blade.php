@@ -18,7 +18,7 @@
 
     </section>
     <!-- menu button end -->
-    
+
     <!-- persyaratan section -->
     <section id="persyaratan" class="w-11/12 mx-auto my-8">
         <!-- title -->
@@ -28,79 +28,79 @@
         </div>
         <!-- title end -->
         <!-- content section -->
-        <div> 
+        <div>
             <!-- surat keterangan usaha -->
             <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto">
                 <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Surat Keterangan Usaha</p>
-                </div>
-                <p class="text-center">Ktp dan Kartu Keluarga</p>
             </div>
-            <!-- surat keterangan usaha end -->
+            <p class="text-center">Ktp dan Kartu Keluarga</p>
+        </div>
+        <!-- surat keterangan usaha end -->
 
-            <!-- surat BBM -->
-            <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto">
-                <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Surat BBM</p>
-                <p class="text-center">Ktp dan Kartu Keluarga</p>
-            </div>
-            <!-- surat BBM end -->
+        <!-- surat BBM -->
+        <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto">
+            <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Surat BBM</p>
+            <p class="text-center">Ktp dan Kartu Keluarga</p>
+        </div>
+        <!-- surat BBM end -->
 
-            <!-- surat keringanan sekolah -->
-            <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto">
-                <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Surat Keringanan Sekolah</p>
-                <p class="text-center">Ktp dan Kartu Keluarga</p>
-            </div>
-            <!-- surat keringanan sekolah end -->
+        <!-- surat keringanan sekolah -->
+        <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto">
+            <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Surat Keringanan Sekolah</p>
+            <p class="text-center">Ktp dan Kartu Keluarga</p>
+        </div>
+        <!-- surat keringanan sekolah end -->
 
-            <!-- surat perpindahan penduduk -->
-            <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto">
-                <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Surat Perpindahan Penduduk</p>
-                <p class="text-center">Ktp dan Kartu Keluarga Pemohon</p>
-            </div>
-            <!-- surat perpindahan penduduk end -->
+        <!-- surat perpindahan penduduk -->
+        <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto">
+            <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Surat Perpindahan Penduduk</p>
+            <p class="text-center">Ktp dan Kartu Keluarga Pemohon</p>
+        </div>
+        <!-- surat perpindahan penduduk end -->
 
-            <!-- surat kematian -->
-            <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto">
-                <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Surat Kematian</p>
-                <ul class="w-4/5 mx-auto space-y-1">
-                    <li>
-                        <i class="fa-solid fa-caret-up fa-rotate-90" style="color: #0081a7;"></i>
-                        Kartu Keluarga orang yang meninggal
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-caret-up fa-rotate-90" style="color: #0081a7;"></i>
-                        2 KTP Saksi
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-caret-up fa-rotate-90" style="color: #0081a7;"></i>
-                        1 KTP Pelapor
-                    </li>
-                </ul>
-            </div>
-            <!-- surat kematian end -->
+        <!-- surat kematian -->
+        <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto">
+            <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Surat Kematian</p>
+            <ul class="w-4/5 mx-auto space-y-1">
+                <li>
+                    <i class="fa-solid fa-caret-up fa-rotate-90" style="color: #0081a7;"></i>
+                    Kartu Keluarga orang yang meninggal
+                </li>
+                <li>
+                    <i class="fa-solid fa-caret-up fa-rotate-90" style="color: #0081a7;"></i>
+                    2 KTP Saksi
+                </li>
+                <li>
+                    <i class="fa-solid fa-caret-up fa-rotate-90" style="color: #0081a7;"></i>
+                    1 KTP Pelapor
+                </li>
+            </ul>
+        </div>
+        <!-- surat kematian end -->
 
-            <!-- surat kelahiran -->
-            <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto">
-                <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Surat Kelahiran</p>
-                <ul class="w-4/5 mx-auto space-y-1">
-                    <li>
-                        <i class="fa-solid fa-caret-up fa-rotate-90" style="color: #0081a7;"></i>
-                        Kartu Keluarga orang tua
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-caret-up fa-rotate-90" style="color: #0081a7;"></i>
-                        2 KTP Saksi
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-caret-up fa-rotate-90" style="color: #0081a7;"></i>
-                        1 KTP Pelapor
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-caret-up fa-rotate-90" style="color: #0081a7;"></i>
-                        Surat Keterangan Dari Dokter/Bidan
-                    </li>
-                </ul>
-            </div>
-            <!-- surat kelahiran end -->
+        <!-- surat kelahiran -->
+        <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto">
+            <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Surat Kelahiran</p>
+            <ul class="w-4/5 mx-auto space-y-1">
+                <li>
+                    <i class="fa-solid fa-caret-up fa-rotate-90" style="color: #0081a7;"></i>
+                    Kartu Keluarga orang tua
+                </li>
+                <li>
+                    <i class="fa-solid fa-caret-up fa-rotate-90" style="color: #0081a7;"></i>
+                    2 KTP Saksi
+                </li>
+                <li>
+                    <i class="fa-solid fa-caret-up fa-rotate-90" style="color: #0081a7;"></i>
+                    1 KTP Pelapor
+                </li>
+                <li>
+                    <i class="fa-solid fa-caret-up fa-rotate-90" style="color: #0081a7;"></i>
+                    Surat Keterangan Dari Dokter/Bidan
+                </li>
+            </ul>
+        </div>
+        <!-- surat kelahiran end -->
         </div>
     </section>
     <!-- persayaratan section end -->

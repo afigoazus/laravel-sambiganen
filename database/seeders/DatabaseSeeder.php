@@ -16,20 +16,29 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             UserSeeder::class,
+
+            // Document Seeder
+            DocumentSeeder::class,
             BirthNoteSeeder::class,
             DeathNoteSeeder::class,
-            DocumentSeeder::class,
             LetterDeathSeeder::class,
             LetterBusinessSeeder::class,
             LetterFuelSeeder::class,
             LetterIncapacitiesSeeder::class,
             LetterLostSeeder::class,
+
+            // Budget & Demographic Seeder
             BudgetCategorySeeder::class,
             BudgetSeeder::class,
             DemographicSeeder::class,
+
+            // Konten & Media Seeder
             CategorySeeder::class,
             LocationSeeder::class,
             NewsSeeder::class,
+            GalerySeeder::class,
+            OrganizationSeeder::class,
+            CreationSeeder::class,
         ]);
     }
 }

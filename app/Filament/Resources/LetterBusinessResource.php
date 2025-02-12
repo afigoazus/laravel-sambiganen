@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\LetterBusinessResource\Pages;
 use App\Filament\Resources\LetterBusinessResource\RelationManagers;
+use App\Http\Services\LetterCounterService;
 use App\Models\LetterBusiness;
 use Carbon\Carbon;
 use Filament\Forms;
@@ -22,7 +23,7 @@ class LetterBusinessResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static ?string $navigationGroup = 'Dokumen';
+    protected static ?string $navigationGroup = 'Dokumen Umum';
 
     protected static ?string $navigationLabel = 'Surat Keterangan Usaha';
 
@@ -33,24 +34,7 @@ class LetterBusinessResource extends Resource
                 Forms\Components\TextInput::make('no_letter')
                     ->label("Nomor Surat")
                     ->numeric()
-                    ->minValue(1)
-                    ->helperText("Ketika membuat dokumen baru anda bisa mengosongi form ini")
-                    ->rules([
-                        function ($get, $record) {
-                            return function ($attribute, $value, $fail) use ($get, $record) {
-                                $year = $record->year ?? now()->year;
-
-                                $exists = LetterBusiness::where('no_letter', $value)
-                                    ->where('year', $year)
-                                    ->when($record, fn($query) => $query->where('id', '!=', $record->id))
-                                    ->exists();
-
-                                if ($exists) {
-                                    $fail("Nomor Surat $value sudah ada pada tahun $year");
-                                }
-                            };
-                        }
-                    ]),
+                    ->helperText("Ketika Membuat Surat Baru, Nomor Surat Akan Diisi Otomatis"),
                 Forms\Components\TextInput::make('name')
                     ->name("Nama")
                     ->required()
@@ -127,7 +111,10 @@ class LetterBusinessResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\DeleteBulkAction::make()
+                        ->after(function () {
+                            app(LetterCounterService::class)->resetRecentLetterNumber();
+                        }),
                 ]),
             ]);
     }

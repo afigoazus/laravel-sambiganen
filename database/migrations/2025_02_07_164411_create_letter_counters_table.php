@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('galeries', function (Blueprint $table) {
+        Schema::create('letter_counters', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255)->nullable(false);
-            $table->string('photo_path', 255)->nullable(false);
-            $table->string('description', 255)->nullable(false);
+            $table->integer('latest_no')->default(0);
+            $table->year('year')->default(now()->year);
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('galeries');
+        Schema::dropIfExists('letter_counters');
     }
 };

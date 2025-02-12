@@ -12,11 +12,11 @@ use Illuminate\Support\Facades\Route;
 // Home Routes
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/profil', [HomeController::class, 'profile']);
-Route::get('/sejarah', [HomeController::class, 'history']);
-Route::get('/agenda', [HomeController::class, 'agenda']);
+Route::get('/sejarah', [HomeController::class, 'history'])->name('sejarah');
+Route::get('/agenda', [HomeController::class, 'agenda'])->name('agenda');
 Route::get('/galeri', [GalleryController::class, 'index']);
 Route::get('/berita', [NewsController::class, 'index']);
-Route::get('/lembaga', [OrganizationController::class, 'index']);
+Route::get('/lembaga', [OrganizationController::class, 'index'])->name('lembaga');
 Route::get('/anggaran', [BudgetController::class, 'index']);
 Route::get('/pengaduan', [ComplaintController::class, 'index']);
 

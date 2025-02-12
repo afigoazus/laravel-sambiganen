@@ -190,7 +190,7 @@
             <td class="border">{{$data['tool_sum']}}</td>
             <td class="border">{{$data['tool_use']}}</td>
             <td class="border">{{$data['tool_sum']}}</td>
-            <td class="border">{{$data['tool_power']}}</td>
+            <td class="border">{{$data['tool_power']}}Pk</td>
             <td class="border">{{$data['tool_time_used_hour']}}</td>
             <td class="border">{{$data['tool_time_used_daily']}}</td>
             <td class="border">{{$data['jbt_consumption']}}</td>

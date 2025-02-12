@@ -23,6 +23,13 @@ class AdminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
+            ->navigationGroups([
+                "Dokumen Khusus",
+                "Dokumen Umum",
+                "Anggaran & Kependudukan",
+                "Konten & Media",
+                "Pengaduan",
+            ])
             ->default()
             ->id('admin')
             ->path('admin')
