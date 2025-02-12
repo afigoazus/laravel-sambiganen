@@ -20,6 +20,7 @@
   <script src="{{asset('assets/js/navbar.js')}}"></script>
   <script type="module" src="{{asset('assets/js/swiper.js')}}"></script>
   <script src="{{asset('assets/js/dokumen.js')}}"></script>
+  <script src="{{asset('assets/js/galery.js')}}" ></script>
 </head>
 
 <body>
