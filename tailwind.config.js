@@ -29,6 +29,16 @@ export default {
             },
             backgroundImage: {
                 'hero-image' : "url('/public/assets/img/img-breadcrumb.svg')"
+            },
+            
+            keyframes: {
+                zoom: {
+                    '0%': { transform: 'scale(0)' },
+                    '100%': { transform: 'scale(1)' },
+                }
+            },
+            animation: {
+                zoom: 'zoom 0.6s',
             }
         },
     },
