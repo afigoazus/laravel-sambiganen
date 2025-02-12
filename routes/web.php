@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BudgetController;
 use App\Http\Controllers\ComplaintController;
+use App\Http\Controllers\CreationController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
@@ -10,15 +11,18 @@ use App\Http\Controllers\OrganizationController;
 use Illuminate\Support\Facades\Route;
 
 // Home Routes
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/profil', [HomeController::class, 'profile']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/profil', [HomeController::class, 'profile'])->name('profil');
 Route::get('/sejarah', [HomeController::class, 'history'])->name('sejarah');
-Route::get('/agenda', [HomeController::class, 'agenda'])->name('agenda');
-Route::get('/galeri', [GalleryController::class, 'index']);
-Route::get('/berita', [NewsController::class, 'index']);
+
+// Feature Routes
+Route::get('/agenda', [CreationController::class, 'index'])->name('agenda');
+Route::get('/galeri', [GalleryController::class, 'index'])->name('galeri');
+Route::get('/berita', [NewsController::class, 'index'])->name('berita');
 Route::get('/lembaga', [OrganizationController::class, 'index'])->name('lembaga');
-Route::get('/anggaran', [BudgetController::class, 'index']);
-Route::get('/pengaduan', [ComplaintController::class, 'index']);
+Route::get('/kreasi', [CreationController::class, 'index'])->name('kreasi');
+Route::get('/anggaran/{year?}', [BudgetController::class, 'index'])->name('anggaran');
+Route::get('/pengaduan', [ComplaintController::class, 'index'])->name('pengaduan');
 
 // Document Routes
 Route::prefix('dokumen')->group(function () {
@@ -37,7 +41,7 @@ Route::prefix('dokumen')->group(function () {
     ];
 
     foreach ($views as $uri => $view) {
-        Route::view("/$uri", $view);
+        Route::view("/$uri", $view)->name("surat-surat.$uri");
     }
 
     // Store routes

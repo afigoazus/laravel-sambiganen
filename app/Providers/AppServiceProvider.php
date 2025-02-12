@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Http\Services\BirthNoteService;
+use App\Http\Services\BudgetService;
 use App\Http\Services\DeathNoteService;
 use App\Http\Services\LetterBusinessService;
 use App\Http\Services\LetterCounterService;
@@ -12,6 +13,7 @@ use App\Http\Services\LetterLostService;
 use App\Http\Services\PdfService;
 use App\Http\Services\ServiceDependencies;
 use App\Models\LetterBusiness;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -29,8 +31,12 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
+    public function boot(BudgetService $budgetService): void
     {
-        //
+        // Share budget year list for every view
+        View::composer("*", function ($view) use ($budgetService) {
+            $budgetYearList = $budgetService->getAvailableYear();
+            $view->with('budgetYearList', $budgetYearList);
+        });
     }
 }

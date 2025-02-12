@@ -13,65 +13,33 @@
             <span class="p-2 px-4 bg-primary rounded-md text-white">Berita</span>
         </div>
         <div class="grid gap-4 grid-cols-1 sm:grid-cols-3">
+            @foreach ($allNews as $news)
             <!-- news -->
             <div class="p-4 w-11/12 mx-auto shadow-lg relative">
-                <img src="{{ asset('assets/img/img-breadcrumbs.png')}}" alt="" class="rounded-2xl w-auto">
+                <img src="{{ asset("storage/" . $news->photo_path)}}" alt="" class="rounded-2xl w-auto">
                 <div class="flex gap-2 absolute bottom-40 left-6">
-                    <!-- kategori -->
-                    <span class="py-1 px-4 rounded bg-[#FDFCDC]">Berita</span>
-                    <!-- dusun -->
-                    <span class="py-1 px-4 rounded bg-[#FDFCDC]">Krajan</span>
+                    @foreach ($news->categories as $category)
+                    <span class="bg-[#FDFCDC] text-black px-2 py-1 rounded text-sm">{{ $category->name }}</span>
+                    @endforeach
+
+                    <!-- Loop through locations -->
+                    @foreach ($news->locations as $location)
+                    <span class="bg-[#FDFCDC] text-black px-2 py-1 rounded text-sm">{{ $location->name }}</span>
+                    @endforeach
                 </div>
 
                 <!-- news title -->
-                <p class="my-2">Kemeriahan Karnafal Mobil Hias Desa Wringinanom Memperingati HUT RI Ke-79</p>
+                <p class="my-2">{{$news->title}}</p>
 
                 <!-- description -->
-                <p class="my-2">Description</p>
+                <p class="my-2">{{$news->content}}</p>
 
-                <a href="#"><p class="border-[#DBE2EA] border-2 rounded-md p-2 text-[#7C9CBF] inline-block">Selengkapnya</p></a>
+                <a href="#">
+                    <p class="border-[#DBE2EA] border-2 rounded-md p-2 text-[#7C9CBF] inline-block">Selengkapnya</p>
+                </a>
             </div>
             <!-- news end -->
-
-            <!-- news -->
-            <div class="p-4 w-11/12 mx-auto shadow-lg relative">
-                <img src="{{ asset('assets/img/img-breadcrumbs.png')}}" alt="" class="rounded-2xl w-auto">
-                <div class="flex gap-2 absolute bottom-40 left-6">
-                    <!-- kategori -->
-                    <span class="py-1 px-4 rounded bg-[#FDFCDC]">Berita</span>
-                    <!-- dusun -->
-                    <span class="py-1 px-4 rounded bg-[#FDFCDC]">Krajan</span>
-                </div>
-
-                <!-- news title -->
-                <p class="my-2">Kemeriahan Karnafal Mobil Hias Desa Wringinanom Memperingati HUT RI Ke-79</p>
-
-                <!-- description -->
-                <p class="my-2">Description</p>
-
-                <a href="#"><p class="border-[#DBE2EA] border-2 rounded-md p-2 text-[#7C9CBF] inline-block">Selengkapnya</p></a>
-            </div>
-
-            <!-- news -->
-            <div class="p-4 w-11/12 mx-auto shadow-lg relative">
-                <img src="{{ asset('assets/img/img-breadcrumbs.png')}}" alt="" class="rounded-2xl w-auto">
-                <div class="flex gap-2 absolute bottom-40 left-6">
-                    <!-- kategori -->
-                    <span class="py-1 px-4 rounded bg-[#FDFCDC]">Berita</span>
-                    <!-- dusun -->
-                    <span class="py-1 px-4 rounded bg-[#FDFCDC]">Krajan</span>
-                </div>
-
-                <!-- news title -->
-                <p class="my-2">Kemeriahan Karnafal Mobil Hias Desa Wringinanom Memperingati HUT RI Ke-79</p>
-
-                <!-- description -->
-                <p class="my-2">Description</p>
-
-                <a href="#"><p class="border-[#DBE2EA] border-2 rounded-md p-2 text-[#7C9CBF] inline-block">Selengkapnya</p></a>
-            </div>
-            <!-- news end -->
-        </div>
+            @endforeach
     </section>
 
 </main>

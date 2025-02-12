@@ -19,37 +19,50 @@ class BudgetSeeder extends Seeder
                 "name" => 'Pendapatan Asli Desa',
                 "amount" => 181800000,
                 "year" => 2024,
-                "category_id" => 1
+                "category_id" => 1,
+                "is_total" => false
             ],
             [
                 "name" => 'Dana Desa',
                 "amount" => 1235203000,
                 "year" => 2024,
-                "category_id" => 1
+                "category_id" => 1,
+                "is_total" => false
             ],
             [
                 "name" => 'Alokasi Dana Desa',
                 "amount" => 779650000,
                 "year" => 2024,
-                "category_id" => 1
+                "category_id" => 1,
+                "is_total" => false
             ],
             [
                 "name" => 'Bantuan Keuangan Kabupaten',
                 "amount" => 0,
                 "year" => 2024,
-                "category_id" => 1
+                "category_id" => 1,
+                "is_total" => false
             ],
             [
                 "name" => 'Penerima Bagi Hasil Pajak Dan Retribusi',
                 "amount" => 0,
                 "year" => 2024,
-                "category_id" => 1
+                "category_id" => 1,
+                "is_total" => false
             ],
             [
                 "name" => 'Lain-lain',
                 "amount" => 0,
                 "year" => 2024,
-                "category_id" => 1
+                "category_id" => 1,
+                "is_total" => false
+            ],
+            [
+                "name" => 'Total',
+                "amount" => 2196653000,
+                "year" => 2024,
+                "category_id" => 1,
+                "is_total" => true
             ],
 
             // Data Belanja Tahun 2024
@@ -57,49 +70,64 @@ class BudgetSeeder extends Seeder
                 "name" => 'Bidang Penyelenggaraan Pemerintah Desa',
                 "amount" =>  751684766,
                 "year" => 2024,
-                "category_id" => 2
+                "category_id" => 2,
+                "is_total" => false
             ],
             [
                 "name" => 'Bidang Pelaksaan Pembangunan Desa',
                 "amount" =>  682053000,
                 "year" => 2024,
-                "category_id" => 2
+                "category_id" => 2,
+                "is_total" => false
             ],
             [
                 "name" => 'Bidang Pembinaan Kemasyarakatan',
                 "amount" =>  349727064,
                 "year" => 2024,
-                "category_id" => 2
+                "category_id" => 2,
+                "is_total" => false
             ],
             [
                 "name" => 'Bidang Penanggulangan Bencana Darurat dan Mendesak Desa',
                 "amount" =>  152642224,
                 "year" => 2024,
-                "category_id" => 2
+                "category_id" => 2,
+                "is_total" => false
+            ],
+            [
+                "name" => 'Jumlah Belanja',
+                "amount" =>  2256607055,
+                "year" => 2024,
+                "category_id" => 2,
+                "is_total" => true
             ],
             [
                 "name" => 'Surplus/Defisit',
                 "amount" =>  59954055,
                 "year" => 2024,
-                "category_id" => 2
+                "category_id" => 2,
+                "is_total" => false
             ],
             [
                 "name" => 'Penerimaan Pembiayaan Penyertaan Modal Desa',
                 "amount" =>  64954055,
                 "year" => 2024,
-                "category_id" => 2
+                "category_id" => 2,
+                "is_total" => false
             ],
             [
                 "name" => 'Penerima Pembiayaan Penyertaan Modal Desa',
                 "amount" =>  5000000,
                 "year" => 2024,
-                "category_id" => 2
+                "category_id" => 2,
+                "is_total" => false
             ],
             [
                 "name" => 'Pembiayaan Netto',
                 "amount" =>  59954055,
                 "year" => 2024,
-                "category_id" => 2
+                "category_id" => 2,
+                "is_total" => false
             ],
 
             // Data Prioritas Dana 2024
@@ -107,19 +135,22 @@ class BudgetSeeder extends Seeder
                 "name" => 'Bantuan Langsung Tunai Desa',
                 "amount" =>  144000000,
                 "year" => 2024,
-                "category_id" => 3
+                "category_id" => 3,
+                "is_total" => false
             ],
             [
                 "name" => 'Ketahanan Pangan',
                 "amount" =>  260000000,
                 "year" => 2024,
-                "category_id" => 3
+                "category_id" => 3,
+                "is_total" => false
             ],
             [
                 "name" => 'Konvergensi Stanting',
                 "amount" =>  45250000,
                 "year" => 2024,
-                "category_id" => 3
+                "category_id" => 3,
+                "is_total" => false
             ],
 
             // Data Rencana Kegiatan Pembangunan Infrastruktur 2024
@@ -127,158 +158,151 @@ class BudgetSeeder extends Seeder
                 "name" => 'Pavingasi Jalan RT 01 RW 01 Dukuh Krajan',
                 "amount" =>  25000000,
                 "year" => 2024,
-                "category_id" => 4
+                "category_id" => 4,
+                "is_total" => false
             ],
             [
                 "name" => 'Pavingasi Jalan RT 05 Rw 01 Dukuh Krajan',
                 "amount" =>  75000000,
                 "year" => 2024,
-                "category_id" => 4
+                "category_id" => 4,
+                "is_total" => false
             ],
             [
                 "name" => 'Pemeliharaan/Reham Kantor Desa',
                 "amount" =>  100000000,
                 "year" => 2024,
-                "category_id" => 4
+                "category_id" => 4,
+                "is_total" => false
             ],
             [
                 "name" => 'Cadangan boss',
                 "amount" =>  0,
                 "year" => 2024,
-                "category_id" => 4
+                "category_id" => 4,
+                "is_total" => false
             ],
-            // Data Pendapatan Desa Tahun 2025
+            // Data Pendapatan Desa Tahun 2023
             [
                 "name" => 'Pendapatan Asli Desa',
-                "amount" => 190890000,
-                "year" => 2025,
-                "category_id" => 1
+                "amount" => 181065000,
+                "year" => 2023,
+                "category_id" => 1,
+                "is_total" => false
             ],
             [
                 "name" => 'Dana Desa',
-                "amount" => 1296963150,
-                "year" => 2025,
-                "category_id" => 1
+                "amount" => 1229576000,
+                "year" => 2023,
+                "category_id" => 1,
+                "is_total" => false
             ],
             [
                 "name" => 'Alokasi Dana Desa',
-                "amount" => 818632500,
-                "year" => 2025,
-                "category_id" => 1
+                "amount" => 683087566,
+                "year" => 2023,
+                "category_id" => 1,
+                "is_total" => false
             ],
             [
                 "name" => 'Bantuan Keuangan Kabupaten',
-                "amount" => 0,
-                "year" => 2025,
-                "category_id" => 1
+                "amount" => 450000000,
+                "year" => 2023,
+                "category_id" => 1,
+                "is_total" => false
             ],
             [
                 "name" => 'Penerima Bagi Hasil Pajak Dan Retribusi',
-                "amount" => 0,
-                "year" => 2025,
-                "category_id" => 1
+                "amount" => 14972047,
+                "year" => 2023,
+                "category_id" => 1,
+                "is_total" => false
             ],
             [
                 "name" => 'Lain-lain',
-                "amount" => 0,
-                "year" => 2025,
-                "category_id" => 1
+                "amount" => 407106988,
+                "year" => 2023,
+                "category_id" => 1,
+                "is_total" => false
+            ],
+            [
+                "name" => 'Total',
+                "amount" => 2965807601,
+                "year" => 2023,
+                "category_id" => 1,
+                "is_total" => true
             ],
 
-            // Data Belanja Tahun 2025
+            // Data Belanja Tahun 2023
             [
                 "name" => 'Bidang Penyelenggaraan Pemerintah Desa',
-                "amount" => 789269004,
-                "year" => 2025,
-                "category_id" => 2
+                "amount" => 787189130,
+                "year" => 2023,
+                "category_id" => 2,
+                "is_total" => false
             ],
             [
                 "name" => 'Bidang Pelaksaan Pembangunan Desa',
-                "amount" => 716155650,
-                "year" => 2025,
-                "category_id" => 2
+                "amount" => 1545075505,
+                "year" => 2023,
+                "category_id" => 2,
+                "is_total" => false
             ],
             [
                 "name" => 'Bidang Pembinaan Kemasyarakatan',
-                "amount" => 367213417,
-                "year" => 2025,
-                "category_id" => 2
+                "amount" => 314932160,
+                "year" => 2023,
+                "category_id" => 2,
+                "is_total" => false
             ],
             [
                 "name" => 'Bidang Penanggulangan Bencana Darurat dan Mendesak Desa',
-                "amount" => 160274335,
-                "year" => 2025,
-                "category_id" => 2
+                "amount" => 151819000,
+                "year" => 2023,
+                "category_id" => 2,
+                "is_total" => false
+            ],
+            [
+                "name" => 'Jumlah Belanja',
+                "amount" => 3049172995,
+                "year" => 2023,
+                "category_id" => 2,
+                "is_total" => true
             ],
             [
                 "name" => 'Surplus/Defisit',
-                "amount" => 62951758,
-                "year" => 2025,
-                "category_id" => 2
+                "amount" => 83365393,
+                "year" => 2023,
+                "category_id" => 2,
+                "is_total" => false
             ],
             [
-                "name" => 'Penerimaan Pembiayaan Penyertaan Modal Desa',
-                "amount" => 68201758,
-                "year" => 2025,
-                "category_id" => 2
+                "name" => 'Penerimaan Pembiayaan',
+                "amount" => 168319449,
+                "year" => 2023,
+                "category_id" => 2,
+                "is_total" => false
             ],
             [
-                "name" => 'Penerima Pembiayaan Penyertaan Modal Desa',
-                "amount" => 5250000,
-                "year" => 2025,
-                "category_id" => 2
+                "name" => 'Pengeluaran Pembiayaan',
+                "amount" => 20000000,
+                "year" => 2023,
+                "category_id" => 2,
+                "is_total" => false
             ],
             [
                 "name" => 'Pembiayaan Netto',
-                "amount" => 62951758,
-                "year" => 2025,
-                "category_id" => 2
-            ],
-
-            // Data Prioritas Dana 2025
-            [
-                "name" => 'Bantuan Langsung Tunai Desa',
-                "amount" => 151200000,
-                "year" => 2025,
-                "category_id" => 3
+                "amount" => 148319449,
+                "year" => 2023,
+                "category_id" => 2,
+                "is_total" => false
             ],
             [
-                "name" => 'Ketahanan Pangan',
-                "amount" => 273000000,
-                "year" => 2025,
-                "category_id" => 3
-            ],
-            [
-                "name" => 'Konvergensi Stanting',
-                "amount" => 47512500,
-                "year" => 2025,
-                "category_id" => 3
-            ],
-
-            // Data Rencana Kegiatan Pembangunan Infrastruktur 2025
-            [
-                "name" => 'Pavingasi Jalan RT 01 RW 01 Dukuh Krajan',
-                "amount" => 26250000,
-                "year" => 2025,
-                "category_id" => 4
-            ],
-            [
-                "name" => 'Pavingasi Jalan RT 05 Rw 01 Dukuh Krajan',
-                "amount" => 78750000,
-                "year" => 2025,
-                "category_id" => 4
-            ],
-            [
-                "name" => 'Pemeliharaan/Reham Kantor Desa',
-                "amount" => 105000000,
-                "year" => 2025,
-                "category_id" => 4
-            ],
-            [
-                "name" => 'Cadangan boss',
-                "amount" => 0,
-                "year" => 2025,
-                "category_id" => 4
+                "name" => 'SILPA/SILPA Tahun Berjalan',
+                "amount" => 64954055,
+                "year" => 2023,
+                "category_id" => 2,
+                "is_total" => false
             ],
         ]);
     }

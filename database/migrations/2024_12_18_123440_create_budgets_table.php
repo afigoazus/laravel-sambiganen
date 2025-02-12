@@ -17,6 +17,7 @@ return new class extends Migration
             $table->bigInteger('amount')->nullable(false);
             $table->year('year')->nullable(false);
             $table->unsignedBigInteger('category_id')->nullable(false);
+            $table->boolean('is_total')->nullable(false)->default(false);
 
             // Define category_id constraint
             $table->foreign('category_id')->on('budget_categories')->references('id')->onDelete('cascade');

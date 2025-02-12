@@ -6,7 +6,7 @@
             <span class="text-primary">Wringinanom</span>
         </div>
     </div>
-    
+
     <!-- main content -->
     <section class="mx-auto w-11/12 mt-8">
         <!-- menu button -->
@@ -22,59 +22,16 @@
         <!-- pendapatan -->
         <div class="mt-8">
             <h2 class="text-center text-2xl text-secondary">Pendapatan</h2>
-
             <!-- pendapatan content -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <!-- pendapatan asli -->
-                <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto sm:w-full">
-                    <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Pendapatan Asli Desa</p>
-                    <p class="text-center text-2xl">Rp. 181,800,000.00</p>
+                @foreach ($budgetData['pendapatan'] as $budget)
+                <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto {{ $budget->is_total ? "sm:col-span-3 sm:w-4/5" : "sm:w-full"}}">
+                    <p class="{{ $budget->is_total ? 'bg-[#F07167]' : 'bg-secondary' }} text-white p-1 rounded-t-lg w-auto">{{$budget->name}}</p>
+                    <p class="text-center text-2xl">Rp. {{ number_format($budget->amount, 0, ',', '.') }}</p>
                 </div>
-                <!-- pendapatan asli end -->
-
-                <!-- dana desa -->
-                <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto sm:w-full">
-                    <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Dana Desa</p>
-                    <p class="text-center text-2xl">Rp. 1,235,203,000.00</p>
-                </div>
-                <!-- dana desa end -->
-
-                <!-- alokasi dana -->
-                <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto sm:w-full">
-                    <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Alokasi Dana Desa</p>
-                    <p class="text-center text-2xl">Rp. 779,650,000.00</p>
-                </div>
-                <!-- alokasi dana end -->
-                
-                <!-- bantuan keuangan -->
-                <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto sm:w-full">
-                    <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Bantuan Keuangan Kabupaten</p>
-                    <p class="text-center text-2xl">Rp. 0.00</p>
-                </div>
-                <!-- bantuan keungan end -->
-            
-                <!-- bagi hasil -->
-                <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto sm:w-full">
-                    <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Penerima Bagi Hasil Pajak Dan Retribusi</p>
-                    <p class="text-center text-2xl">Rp. 0.00</p>
-                </div>
-                <!-- bagi hasil end -->
-                
-                <!-- lain-lain -->
-                <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto sm:w-full">
-                    <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Lain-lain</p>
-                    <p class="text-center text-2xl">Rp. 0.00</p>
-                </div>
-                <!-- lain-lain end -->
+                @endforeach
             </div>
             <!-- pendapatan content end -->
-            
-            <!-- total -->
-            <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto">
-                <p class="bg-[#F07167]  text-white p-1 rounded-t-lg w-auto">Total</p>
-                <p class="text-center text-2xl">Rp. 2,196,650,000.00</p>
-            </div>
-            <!-- total end -->
         </div>
         <!-- pendapatan end -->
 
@@ -83,146 +40,50 @@
             <h2 class="text-center text-2xl text-secondary">Belanja</h2>
 
             <!-- belanja content -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <!-- bidang penyelenggaraan -->
-                <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto sm:w-full">
-                    <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Bidang Penyelenggaraan Pemerintah Desa</p>
-                    <p class="text-center text-2xl">Rp. 751,684,766.95</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 justify-center">
+                @foreach ($budgetData['belanja'] as $index => $budget)
+                <div class="bg-slate-50 my-5 rounded-xl mx-auto {{ $budget->is_total ? 'sm:col-span-3 sm:w-4/5' : 'sm:w-full' }}">
+                    <p class="{{ $budget->is_total ? 'bg-[#F07167]' : 'bg-secondary' }} text-white p-1 rounded-t-lg w-auto">{{$budget->name}}</p>
+                    <p class="text-center text-2xl">Rp. {{ number_format($budget->amount, 0, ',', '.') }}</p>
                 </div>
-                <!-- bidang penyelenggaraan end -->
-
-                <!-- bidang pelaksaan -->
-                <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto sm:w-full">
-                    <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Bidang Pelaksaan Pembangunan Desa</p>
-                    <p class="text-center text-2xl">Rp. 682,053,000.00</p>
-                </div>
-                <!-- bidang pelaksaan end -->
-                    
-                <!-- bidang pemberdayaan -->
-                <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto sm:w-full">
-                    <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Bidang Pembinaan Kemasyarakatan</p>
-                    <p class="text-center text-2xl">Rp. 349,727,064.55</p>
-                </div>
-                <!-- bidang pemberdayaan end -->
-
-                <!-- bidang bencana -->
-                <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto sm:w-full sm:col-span-3 sm:w-4/5">
-                    <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Bidang Penanggulangan Bencana Darurat dan Mendesak Desa</p>
-                    <p class="text-center text-2xl">Rp. 152,642,224.00</p>
-                </div>
-                <!-- bidang bencana end -->
-            </div>
-            <!-- belanja content end -->
-
-            <!-- jumlah belanja -->
-            <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto">
-                <p class="bg-[#F07167] text-white p-1 rounded-t-lg w-auto">Jumlah Belanja</p>
-                <p class="text-center text-2xl">Rp. 2,256,607,055.50</p>
-            </div>
-            <!-- jumlah belanja end -->
-
-            <!-- belanja 2 -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <!-- surplus -->
-                <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto sm:w-full">
-                    <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Surplus/Defisit</p>
-                    <p class="text-center text-2xl">Rp. (59,954,055,50)</p>
-                </div>
-                <!-- surplus end -->
-
-                <!-- Penerimaan pembiayaan silpa -->
-                <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto sm:w-full">
-                    <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Penerimaan Pembiayaan Penyertaan Modal Desa</p>
-                    <p class="text-center text-2xl">Rp. 64,954,055.50</p>
-                </div>
-                <!-- penerimaan pembiayaan silpa end -->
-                
-                <!-- penerima pembiayaan modal -->
-                <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto sm:w-full">
-                    <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Penerima Pembiayaan Penyertaan Modal Desa</p>
-                    <p class="text-center text-2xl">Rp. 5,000,000.00</p>
-                </div>
-                <!-- penerima pembiayaan modal end -->
-
-                <!-- pembiayaan netto -->
-                <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto sm:w-4/5 sm:col-span-3">
-                    <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Pembiayaan Netto</p>
-                    <p class="text-center text-2xl">Rp. 59,954,055.50</p>
-                </div>
+                @endforeach
                 <!-- pembiayaan netto end -->
             </div>
             <!-- belanja 2 end -->
 
-            
+
         </div>
         <!-- belanja end -->
-        
+
         <!-- prioritas dana desa -->
-        <div class="mt-8"> 
-            <h2 class="text-center text-2xl text-secondary">Prioritas Dana Desa</h2> 
-            
+        <div class="mt-8">
+            <h2 class="text-center text-2xl text-secondary">Prioritas Dana Desa</h2>
 
             <!-- prioritas dana desa content -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <!-- bantuan langsung -->
-                <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto sm:w-full">
-                    <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Bantuan Langsung Tunai Desa</p>
-                    <p class="text-center text-2xl">Rp. 144,000,000.00</p>
+                @foreach ($budgetData['prioritas'] as $index => $budget)
+                <div class="bg-slate-50 my-5 rounded-xl mx-auto {{ $budget->is_total ? 'sm:col-span-3 sm:w-4/5' : 'sm:w-full' }}">
+                    <p class="{{ $budget->is_total ? 'bg-[#F07167]' : 'bg-secondary' }} text-white p-1 rounded-t-lg w-auto">{{$budget->name}}</p>
+                    <p class="text-center text-2xl">Rp. {{ number_format($budget->amount, 0, ',', '.') }}</p>
                 </div>
-                <!-- bantuan langsung end -->
-
-                <!-- ketahanan pangan -->
-                <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto sm:w-full">
-                    <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Ketahanan Pangan</p>
-                    <p class="text-center text-2xl">Rp. 260,000,000.00</p>
-                </div>
-                <!-- ketahanan pangan end -->
-
-                <!-- konvergensi stanting -->
-                <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto sm:w-full">
-                    <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Konvergensi Stanting</p>
-                    <p class="text-center text-2xl">Rp. 45,250,000.00</p>
-                </div>
-                <!-- korvengensi stanting end -->
+                @endforeach
             </div>
             <!-- prioritas dana desa content end -->
-
-            
         </div>
         <!-- prioritas desa end -->
 
         <!-- rencana kegiatan pembangunan -->
         <div class="my-8">
             <h2 class="text-center text-2xl text-secondary">Rencana Kegiatan Pembangunan <br> Infrastruktur</h2>
-
             <!-- rencana kegiatan content -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <!-- pavingasi jalan rt 01 rw 01 -->
-                <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto sm:w-full">
-                    <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Pavingasi Jalan RT 01 RW 01 Dukuh Krajan</p>
-                    <p class="text-center text-2xl">Rp. 25,000,000.00</p>
+                @foreach ($budgetData['pembangunan'] as $index => $budget)
+                <div class="bg-slate-50 my-5 rounded-xl mx-auto {{ $budget->is_total ? 'sm:col-span-3 sm:w-4/5' : 'sm:w-full' }}">
+                    <p class="{{ $budget->is_total ? 'bg-[#F07167]' : 'bg-secondary' }} text-white p-1 rounded-t-lg w-auto">{{$budget->name}}</p>
+                    <p class="text-center text-2xl">Rp. {{ number_format($budget->amount, 0, ',', '.') }}</p>
                 </div>
-                <!-- pavingansi jalan rt 01 rw 01 end -->
-
-                <!-- pavingasi jalan rt 05 rw 01 -->
-                <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto sm:w-full">
-                    <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Pavingasi Jalan RT 05 Rw 01 Dukuh Krajan</p>
-                    <p class="text-center text-2xl">Rp. 75,000,000.00</p>
-                </div>
-                <!-- pavingasi jalan rt 05 rw 01 end -->
-
-                <!-- pemeliharaan kantor -->
-                <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto sm:w-full">
-                    <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Pemeliharaan/Reham Kantor Desa</p>
-                    <p class="text-center text-2xl">Rp. 100,000,000.00</p>
-                </div>
-                <!-- pemeliharaan kantor end -->
-                
-                <!-- cadangan boss -->
-                <div class="bg-slate-50 my-5 rounded-xl w-4/5 mx-auto sm:w-full sm:col-span-3">
-                    <p class="bg-secondary text-white p-1 rounded-t-lg w-auto">Cadangan boss</p>
-                    <p class="text-center text-2xl">Rp. -</p>
-                </div>
+                @endforeach
                 <!-- cadangan boss end -->
             </div>
             <!-- rencana kegiatan content end -->
