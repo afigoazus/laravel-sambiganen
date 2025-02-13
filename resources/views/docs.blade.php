@@ -111,55 +111,55 @@
         <div id="swiper-dokumen" class="swiper">
             <div class="swiper-wrapper text-white">
                 <div class="swiper-slide bg-primary rounded-2xl h-auto cursor-pointer">
-                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="#">
+                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/keterangan-usaha">
                         <img class="w-28" src="{{asset('assets/img/pdf-icon.png')}}" alt="">
                         <p>Surat Keterangan Usaha</p>
                     </a>
                 </div>
                 <div class="swiper-slide bg-primary rounded-2xl h-auto cursor-pointer">
-                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="#">
+                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/bbm">
                         <img class="w-28" src="{{asset('assets/img/pdf-icon.png')}}" alt="">
                         <p>Surat BBM</p>
                     </a>
                 </div>
                 <div class="swiper-slide bg-primary rounded-2xl h-auto cursor-pointer">
-                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="#">
+                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/keringanan-sekolah">
                         <img class="w-28" src="{{asset('assets/img/pdf-icon.png')}}" alt="">
                         <p>Surat Keringanan Sekolah</p>
                     </a>
                 </div>
                 <div class="swiper-slide bg-primary rounded-2xl h-auto cursor-pointer">
-                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="#">
+                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/perpindahan-penduduk">
                         <img class="w-28" src="{{asset('assets/img/pdf-icon.png')}}" alt="">
                         <p>Surat Perpindahan Penduduk</p>
                     </a>
                 </div>
                 <div class="swiper-slide bg-primary rounded-2xl h-auto cursor-pointer">
-                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="#">
+                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/kematian-minimal">
                         <img class="w-28" src="{{asset('assets/img/pdf-icon.png')}}" alt="">
                         <p>Surat Kematian Minimal</p>
                     </a>
                 </div>
                 <div class="swiper-slide bg-primary rounded-2xl h-auto cursor-pointer">
-                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="#">
+                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/kematian-nkri">
                         <img class="w-28" src="{{asset('assets/img/pdf-icon.png')}}" alt="">
                         <p>Surat Kematian NKRI</p>
                     </a>
                 </div>
                 <div class="swiper-slide bg-primary rounded-2xl h-auto cursor-pointer">
-                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="#">
+                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/kelahiran">
                         <img class="w-28" src="{{asset('assets/img/pdf-icon.png')}}" alt="">
                         <p>Surat Kelahiran</p>
                     </a>
                 </div>
                 <div class="swiper-slide bg-primary rounded-2xl h-auto cursor-pointer">
-                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="#">
+                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/kehilangan">
                         <img class="w-28" src="{{asset('assets/img/pdf-icon.png')}}" alt="">
                         <p>Surat Kehilangan</p>
                     </a>
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination relative mt-4"></div>
         </div>
     </section>
     <!-- surat-surat end -->

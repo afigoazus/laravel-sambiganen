@@ -39,17 +39,28 @@
 
         <!-- kategori field -->
         <div class="bg-white p-4 w-full rounded-md">
-            <label for="kategori">Jenis Usaha <span class="text-[#FF0000]">*</span> <br>
-                <select name="kategori" id="kategori" class="mt-2 border border-black" required>
-                    <option disabled selected>Jenis Usaha</option>
-                    <option value="Pertanian">Pertanian</option>
-                    <option value="Perindustrian">Perindustrian</option>
-                    <option value="Perdagangan">Perdagangan</option>
-                    <option value="Perternakan">Perternakan</option>
-                    <option value="Kerajinan">Kerajinan</option>
-                    <option value="Jasa">Jasa</option>
-                    <option value="Lainnya">Lainnya</option>
-                </select> 
+            <span>Jenis Usaha</span> <span class="text-[#FF0000]"> *</span> <br>
+            <p class="font-medium">Isi dengan jenis usaha anda. Bisa mengisi lebih dari 1 bidang</p>
+            <label for="pertanian"> Pertanian <br>
+                <input type="text" name="pertanian" class="w-full my-2 outline-none border-b-2 border-black border-dotted focus:border-solid">
+            </label>
+            <label for="perindustrian"> Perindustrian <br>
+                <input type="text" name="perindustrian" class="w-full my-2 outline-none border-b-2 border-black border-dotted focus:border-solid">
+            </label>
+            <label for="perdagangan"> Perdagangan <br>
+                <input type="text" name="perdagangan" class="w-full my-2 outline-none border-b-2 border-black border-dotted focus:border-solid">
+            </label>
+            <label for="perternakan"> Perternakan <br>
+                <input type="text" name="perternakan" class="w-full my-2 outline-none border-b-2 border-black border-dotted focus:border-solid">
+            </label>
+            <label for="kerajinan"> Kerajinan <br>
+                <input type="text" name="kerajinan" class="w-full my-2 outline-none border-b-2 border-black border-dotted focus:border-solid">
+            </label>
+            <label for="jasa"> Jasa <br>
+                <input type="text" name="jasa" class="w-full my-2 outline-none border-b-2 border-black border-dotted focus:border-solid">
+            </label>
+            <label for="lainnya"> Lainnya <br>
+                <input type="text" name="lainnya" class="w-full my-2 outline-none border-b-2 border-black border-dotted focus:border-solid">
             </label>
         </div>
 
