@@ -3,7 +3,7 @@ import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs
 // konfigurasi responsif swiper
 let slidesViewValue = 1;
 
-if (document.getElementById('swiper-perangkat-desa') || document.getElementById('swiper-dokumen')) {
+if (document.getElementById('swiper-perangkat-desa') || document.getElementById('swiper-dokumen') || document.getElementById('swiper-surat')) {
   if (window.innerWidth >= 640) {
     slidesViewValue = 4;
   } else {
@@ -45,7 +45,6 @@ const swiper = new Swiper('.swiper', {
     pagination: {
       el: '.swiper-pagination',
     },
-
     slidesPerView: slidesViewValue,
     spaceBetween: 30
 });
