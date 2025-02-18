@@ -78,7 +78,7 @@
             <!-- title end -->
 
             <!-- swiper perangkat desa -->
-            <div id="swiper-perangkat-desa" class="swiper">
+            <div id="swiper-perangkat-desa" class="swiper pb-[54px]">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide flex flex-col items-center">
                         <img class="w-44" src="{{asset('assets/img/profil.png')}}">

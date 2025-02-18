@@ -45,9 +45,10 @@
       </div>
 
       <!-- Dropdown -->
-      <div id="hamburger-list" class="font-bold hidden md:flex sm:items-center gap-5">
+      <div id="hamburger-list" class="font-bold hidden md:flex sm:items-center gap-5 space-y-5 md:space-y-0 mt-5 md:mt-0">
         <!-- profil -->
-        <div onmouseover="openDropdown('dropdown-profil')" onmouseleave="closeDropdown('dropdown-profil')" class="relative">
+        <div onmouseover="openDropdown('dropdown-profil')" onmouseleave="closeDropdown('dropdown-profil')"
+          class="relative">
           <div onclick="toggleDropdown('dropdown-profil'), rotateArrow('profil')" id="profil"
             class="flex gap-1 items-center cursor-pointer">
             <span>Profil</span>
@@ -77,7 +78,8 @@
           </div>
         </div>
         <!-- surat dan dokumen -->
-        <div onmouseover="openDropdown('dropdown-surat-dan-dokumen')" onmouseleave="closeDropdown('dropdown-surat-dan-dokumen')" class="relative">
+        <div onmouseover="openDropdown('dropdown-surat-dan-dokumen')"
+          onmouseleave="closeDropdown('dropdown-surat-dan-dokumen')" class="relative">
           <div onclick="toggleDropdown('dropdown-surat-dan-dokumen'), rotateArrow('surat-dan-dokumen')"
             id="surat-dan-dokumen" class="flex gap-1 items-center cursor-pointer">
             <span>Surat dan Dokumen</span>
@@ -85,7 +87,8 @@
           </div>
 
           <!-- dd surat dan dokumen -->
-          <div id="dropdown-surat-dan-dokumen" class="pl-4 hidden py-5 md:absolute md:px-2 md:pt-10 md:bg-primary md:rounded md:w-max md:min-w-[150px]">
+          <div id="dropdown-surat-dan-dokumen"
+            class="pl-4 hidden py-5 md:absolute md:px-2 md:pt-10 md:bg-primary md:rounded md:w-max md:min-w-[150px]">
             <ul class="space-y-5">
               <li><a href="/dokumen">
                   <p>Surat</p>
@@ -98,7 +101,8 @@
         </div>
 
         <!-- anggaran -->
-        <div onmouseover="openDropdown('dropdown-anggaran')" onmouseleave="closeDropdown('dropdown-anggaran')" class="relative">
+        <div onmouseover="openDropdown('dropdown-anggaran')" onmouseleave="closeDropdown('dropdown-anggaran')"
+          class="relative">
           <div onclick="toggleDropdown('dropdown-anggaran'), rotateArrow('anggaran')" id="anggaran"
             class="flex gap-1 items-center cursor-pointer">
             <span>Anggaran</span>
@@ -106,7 +110,8 @@
           </div>
 
           <!-- dd anggaran -->
-          <div id="dropdown-anggaran" class="pl-4 hidden py-5 md:absolute md:px-2 md:pt-10 md:bg-primary md:rounded md:w-max md:min-w-[150px]">
+          <div id="dropdown-anggaran"
+            class="pl-4 hidden py-5 md:absolute md:px-2 md:pt-10 md:bg-primary md:rounded md:w-max md:min-w-[150px]">
             <ul class="space-y-5">
               <li><a href="/anggaran">
                   <p>Tahun 2020 - 2021</p>
@@ -130,7 +135,6 @@
         <div>
           <a href="#"><span>Galery</span></a>
         </div>
-
 
         <!-- pengaduan -->
         <div>
