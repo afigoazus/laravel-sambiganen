@@ -18,10 +18,11 @@
   <script src="{{asset('assets/js/navbar.js')}}"></script>
   <script type="module" src="{{asset('assets/js/swiper.js')}}"></script>
   <script src="{{asset('assets/js/dokumen.js')}}"></script>
-  <script src="{{asset('assets/js/galery.js')}}"></script>
+  <script src="{{asset('assets/js/galery.js')}}" ></script>
+  <script src="{{asset('assets/js/form.js')}}"></script>
 </head>
 
-<body>
+<body class="overflow-x-hidden">
   <header class="bg-primary fixed top-0 left-0 right-0 z-20">
     <nav class="mx-auto w-11/12 py-4 text-white font-dusha md:flex md:justify-between md:items-center">
       <div class="flex justify-between">

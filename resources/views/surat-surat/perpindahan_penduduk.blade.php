@@ -7,7 +7,7 @@
         </div>
     </div>
 
-    <form action="" method="POST" class="mx-auto my-10 max-w-3xl p-4 flex flex-col items-center gap-4 font-sans">
+    <form action="" method="POST" class="mx-auto my-10 max-w-3xl p-4 flex flex-col items-center gap-4 font-sans" id="myForm">
         <div class="bg-white p-4 w-full rounded-md">
             <span class="text-2xl font-medium">FORMULIR SURAT PERPINDAHAN PENDUDUK</span> 
             <p class="text-[#5F6368] font-normal">(Untuk pengajuan perpindahan domisili)</p> 
@@ -290,9 +290,20 @@
             </label>
         </div>
 
-        <!-- submit button -->
+        <!-- konfirmasi data -->
         <div>
-            <button type="submit" class="bg-primary text-white py-2 px-6 rounded-md">Kirim</button>
+            <label class=" flex gap-2 items-center font-semibold"> 
+                <input type="checkbox" id="confirmCheck" class="w-5 h-5 cursor-pointer"> Apakah data sudah benar?
+            </label>
+        </div>
+
+        <!-- submit and reset button -->
+        <div class="flex gap-6">
+            <!-- submit button -->
+            <button type="submit" id="submitButton" class=" bg-gray-400 text-white py-2 px-6 rounded-md cursor-not-allowed" disabled>Kirim</button>
+
+            <!-- reset button -->
+            <button id="resetButton" type="button" class=" bg-red-600 text-white py-2 px-6 rounded-md">Hapus</button>
         </div>
     </form>
 </main>

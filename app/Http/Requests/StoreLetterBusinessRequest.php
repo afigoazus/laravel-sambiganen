@@ -25,7 +25,13 @@ class StoreLetterBusinessRequest extends FormRequest
             'name' => 'required',
             'alamat' => 'required',
             'nik' => 'required',
-            'kategori' => 'required',
+            'pertanian' => 'nullable',
+            'perindustrian' => 'nullable',
+            'perdagangan' => 'nullable',
+            'perternakan' => 'nullable',
+            'kerajinan' => 'nullable',
+            'jasa' => 'nullable',
+            'lainnya' => 'nullable',
             'nama-usaha' => 'required',
         ];
     }

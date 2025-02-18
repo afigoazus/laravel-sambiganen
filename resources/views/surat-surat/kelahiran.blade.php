@@ -7,7 +7,7 @@
         </div>
     </div>
 
-    <form action="{{ route('kelahiran.store')}}" method="POST" class="mx-auto my-10 w-11/12 p-4 flex flex-col gap-4 font-sans">
+    <form action="{{ route('kelahiran.store')}}" method="POST" class="mx-auto my-10 w-11/12 p-4 flex flex-col gap-4 font-sans" id="myForm">
         @csrf
         <div class="bg-white p-4 w-full rounded-md">
             <span class="text-2xl font-medium">FORMULIR SURAT KELAHIRAN</span>
@@ -293,45 +293,15 @@
                 </div>
 
                 <!-- hubungan keluarga field -->
-                <div class="">
-                    <span>Hubungan Keluarga <span class="text-[#FF0000]">*</span></span>
-                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 mt-4">
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio" 
-                                        name="hubungan-keluarga" 
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="1" required>
-                            </div>
-                            <span class="text-gray-700">Anak</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="hubungan-keluarga"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="2">
-                            </div>
-                            <span class="text-gray-700">Cucu</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="hubungan-keluarga"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="3">
-                            </div>
-                            <span class="text-gray-700">Famili Lain</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="hubungan-keluarga"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="4">
-                            </div>
-                            <span class="text-gray-700">Lainnya</span>
-                        </label>
-                    </div>
+                <div class="flex flex-col gap-2">
+                    <span>Hubungan Keluarga <span class="text-[#FF0000]">*</span></span>                                        
+                    <select name="hubungan-keluarga" id="hubungan-keluarga" class="border-2 border-black" required>
+                        <option disabled selected>Pilih Hubungan Keluarga</option>
+                        <option value="1">Anak</option>
+                        <option value="2">Cucu</option>
+                        <option value="3">Famili Lain</option>
+                        <option value="4">Lainnya</option>
+                    </select>
                 </div>
                 
                 <!-- nama field -->
@@ -366,54 +336,16 @@
                 </div>
 
                 <!-- tempat dilahirkan field -->
-                <div class="">
+                <div class="flex flex-col gap-2">
                     <span>Tempat Dilahirkan <span class="text-[#FF0000]">*</span></span>
-                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 mt-4">
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio" 
-                                        name="tempat-dilahirkan" 
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="1" required>
-                            </div>
-                            <span class="text-gray-700">RS/RB</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="tempat-dilahirkan"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="2">
-                            </div>
-                            <span class="text-gray-700">Pukesmas</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="tempat-dilahirkan"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="3">
-                            </div>
-                            <span class="text-gray-700">Polindes</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="tempat-dilahirkan"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="4">
-                            </div>
-                            <span class="text-gray-700">Rumah</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="tempat-dilahirkan"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="5">
-                            </div>
-                            <span class="text-gray-700">Lainnya</span>
-                        </label>
-                    </div>
+                    <select name="tempat-dilahirkan" id="tempat-dilahirkan" class="border-2 border-black" required>
+                        <option disabled selected>Tempat Anak Dilahirkan</option>
+                        <option value="1">RS/RB</option>
+                        <option value="2">Puskesmas</option>
+                        <option value="3">Polindes</option>
+                        <option value="4">Rumah</option>
+                        <option value="5">Lainnya</option>
+                    </select>
                 </div>
 
                 <!-- tempat kelahiran -->
@@ -445,139 +377,41 @@
                 </div>
 
                 <!-- jenis kelahiran field -->
-                <div class="">
+                <div class="flex flex-col gap-2">
                     <span>Jenis Kelahiran <span class="text-[#FF0000]">*</span></span>
-                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 mt-4">
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio" 
-                                        name="jenis-kelahiran" 
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="1" required>
-                            </div>
-                            <span class="text-gray-700">Tunggal</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="jenis-kelahiran"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="2">
-                            </div>
-                            <span class="text-gray-700">Kembar 2</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="jenis-kelahiran"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="3">
-                            </div>
-                            <span class="text-gray-700">Kembar 3</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="jenis-kelahiran"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="4">
-                            </div>
-                            <span class="text-gray-700">Kembar 4</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="jenis-kelahiran"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="5">
-                            </div>
-                            <span class="text-gray-700">Lainnya</span>
-                        </label>
-                    </div>
+                    <select name="jenis-kelahiran" id="jenis-kelahiran" class="border-2 border-black" required>
+                        <option disabled selected>Jenis Kelahiran Anak</option>
+                        <option value="1">Tunggal</option>
+                        <option value="2">Kembar 2</option>
+                        <option value="3">Kembar 3</option>
+                        <option value="4">Kembar 4</option>
+                        <option value="5">Lainnya</option>
+                    </select>
                 </div>
 
                 <!-- kelahiran ke field -->
-                <div class="">
+                <div class="flex flex-col gap-2">
                     <span>Kelahiran Ke <span class="text-[#FF0000]">*</span></span>
-                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 mt-4">
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio" 
-                                        name="kelahiran-ke" 
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="1" required>
-                            </div>
-                            <span class="text-gray-700">1</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="kelahiran-ke"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="2">
-                            </div>
-                            <span class="text-gray-700">2</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="kelahiran-ke"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="3">
-                            </div>
-                            <span class="text-gray-700">3</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="kelahiran-ke"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="4">
-                            </div>
-                            <span class="text-gray-700">4</span>
-                        </label>
-                    </div>
-                </div>
+                    <select name="kelahiran-ke" id="kelahiran-ke" class="border-2 border-black">
+                        <option disabled selected>Kelahiran Ke</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div> 
 
                 <!-- penolong kelahiran field -->
-                <div class="">
+                <div class="flex flex-col gap-2">
                     <span>Penolong Kelahiran <span class="text-[#FF0000]">*</span></span>
-                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 mt-4">
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio" 
-                                        name="penolong-kelahiran" 
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="1" required>
-                            </div>
-                            <span class="text-gray-700">Dokter</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="penolong-kelahiran"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="2">
-                            </div>
-                            <span class="text-gray-700">Bidan/Perawat</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="penolong-kelahiran"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="3">
-                            </div>
-                            <span class="text-gray-700">Dukun</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="penolong-kelahiran"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="4">
-                            </div>
-                            <span class="text-gray-700">Lainnya</span>
-                        </label>
-                    </div>
-                </div>
+                    <select name="penolong-kelahiran" id="penolong-kelahiran" class="border-2 border-black" required>
+                        <option disabled selected>Penolong Kelahiran Anak</option>
+                        <option value="1">Dokter</option>
+                        <option value="2">Bidan/Perawat</option>
+                        <option value="3">Dukun</option>
+                        <option value="4">Lainnya</option>
+                    </select>
+                </div>               
 
                 <!-- berat bayi -->
                 <div>
@@ -603,132 +437,32 @@
                 </div>
 
                 <!-- agama field -->
-                <div class="">
+                <div class="flex flex-col gap-2">
                     <span>Agama <span class="text-[#FF0000]">*</span></span>
-                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 mt-4">
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio" 
-                                        name="agama-anak" 
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="1" required>
-                            </div>
-                            <span class="text-gray-700">Islam</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="agama-anak"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="2">
-                            </div>
-                            <span class="text-gray-700">Kristen</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="agaama-anak"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="3">
-                            </div>
-                            <span class="text-gray-700">Katolik</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="agama-anak"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="4">
-                            </div>
-                            <span class="text-gray-700">Hindu</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="agama-anak"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="5">
-                            </div>
-                            <span class="text-gray-700">Buddha</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="agama-anak"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="6">
-                            </div>
-                            <span class="text-gray-700">Konghucu</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="agama-anak"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="7">
-                            </div>
-                            <span class="text-gray-700">Kepercayaan terhadap Tuhan YME</span>
-                        </label>
-                    </div>
-                </div>
+                    <select name="agama-anak" id="agama" class="border-2 border-black" required>
+                        <option disabled selected>Agama Anak</option>
+                        <option value="1">Islam</option>
+                        <option value="2">Kristen</option>
+                        <option value="3">Katolik</option>
+                        <option value="4">Hindu</option>
+                        <option value="5">Buddha</option>
+                        <option value="6">Konghucu</option>
+                        <option value="7">Kepercayaan terhadap Tuhan YME</option>
+                    </select>
+                </div> 
 
                 <!-- kecacatan field -->
-                <div class="">
+                <div class="flex flex-col gap-2">
                     <span>Kecacatan <span class="text-[#FF0000]">*</span></span>
-                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 mt-4">
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio" 
-                                        name="kecacatan" 
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="1" required>
-                            </div>
-                            <span class="text-gray-700">Fisik</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="kecacatan"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="2">
-                            </div>
-                            <span class="text-gray-700">Netra</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="kecacatan"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="3">
-                            </div>
-                            <span class="text-gray-700">Rungu/Wicara</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="kecacatan"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="4">
-                            </div>
-                            <span class="text-gray-700">Mental</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="kecacatan"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="5">
-                            </div>
-                            <span class="text-gray-700">Fisik dan Mental</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="kecacatan"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="6">
-                            </div>
-                            <span class="text-gray-700">Lainnya</span>
-                        </label>
-                    </div>
+                    <select name="kecacatan" id="kecacatan" class="border-2 border-black" required>
+                        <option disabled selected>Kecacatan Pada Anak</option>
+                        <option value="1">Fisik</option>
+                        <option value="2">Netra</option>
+                        <option value="3">Rungu/Wicara</option>
+                        <option value="4">Mental</option>
+                        <option value="5">Fisik dan Mental</option>
+                        <option value="6">Lainnya</option>
+                    </select>
                 </div>
 
                 <!-- kewarganegaraan field -->
@@ -757,8 +491,21 @@
             </div>
         </div>
 
+        <!-- konfirmasi data -->
         <div>
-            <button type="submit" class="bg-primary text-white py-2 px-6 rounded-md">Kirim</button>
+            <label class=" flex gap-2 items-center font-semibold"> 
+                <input type="checkbox" id="confirmCheck" class="w-5 h-5 cursor-pointer">
+                Apakah data sudah benar?
+            </label>
+        </div>
+
+        <!-- submit and reset button -->
+        <div class="flex gap-6">
+            <!-- submit button -->
+            <button type="submit" id="submitButton" class=" bg-gray-400 text-white py-2 px-6 rounded-md cursor-not-allowed" disabled>Kirim</button>
+
+            <!-- reset button -->
+            <button id="resetButton" type="button" class=" bg-red-600 text-white py-2 px-6 rounded-md">Hapus</button>
         </div>
     </form>
 </main>

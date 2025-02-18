@@ -1,40 +1,36 @@
-function toggleTab(activeButtonId, inactiveButtonIds, activeContentId, inactiveContentIds) {
-    const activeButton = document.getElementById(activeButtonId);
-    const activeContent = document.getElementById(activeContentId);
+document.addEventListener("DOMContentLoaded", function() {
+    function toggleTab(activeButtonId, activeContentId) {
+        // Ambil semua tombol dan konten
+        const buttons = document.querySelectorAll("button[id$='Button']");
+        const contents = document.querySelectorAll("section[id$='Content']");
 
-    // menampilkan konten aktif
-    activeButton.classList.add('bg-primary', 'text-white')
-    activeButton.classList.remove('bg-[#A2A2A2]');
-    activeContent.classList.remove('hidden')
+        // Loop untuk reset semua tombol dan konten
+        buttons.forEach(button => {
+            button.classList.remove('bg-primary', 'text-white');
+            button.classList.add('bg-[#A2A2A2]');
+        });
 
-    // menyembunyikan konten tidak aktif
-    inactiveButtonIds.forEach(buttonId => {
-        const button = document.getElementById(buttonId)
-        if(button) {
-            button.classList.remove('bg-primary', 'text-white')
-            button.classList.add('bg-[#A2A2A2]')
-        }
-    });
+        contents.forEach(content => {
+            content.classList.add('hidden');
+        });
 
-    inactiveContentIds.forEach(contentId => {
-        const content = document.getElementById(contentId)
-        if(content) {
-            content.classList.add('hidden')
-        }
-    })
-}
+        // Aktifkan tombol dan konten yang dipilih
+        document.getElementById(activeButtonId).classList.add('bg-primary', 'text-white');
+        document.getElementById(activeButtonId).classList.remove('bg-[#A2A2A2]');
+        document.getElementById(activeContentId).classList.remove('hidden');
+    }
 
-function onclickPersyaratan() {
-    toggleTab('persyaratanButton', ['dokumenButton', 'suratButton'], 'persyaratan', ['dokumen', 'surat']);
-}
+    // Tambahkan event listener ke setiap tombol
+    document.getElementById("persyaratanButton").addEventListener("click", () => toggleTab("persyaratanButton", "persyaratanContent"));
 
-function onclickDokumen() {
-    toggleTab('dokumenButton', ['persyaratanButton', 'suratButton'], 'dokumen', ['persyaratan', 'surat']);
-}
+    document.getElementById("suratButton").addEventListener("click", () => toggleTab("suratButton", "suratContent"));
 
-function onclickSurat() {
-    toggleTab('suratButton', ['persyaratanButton', 'dokumenButton'], 'surat', ['persyaratan', 'dokumen'])
-}
+    document.getElementById("dokumenButton").addEventListener("click", () => toggleTab("dokumenButton", "dokumenContent"));
+});
+
+
+
+
 
 function showLainnyaField() {
     var alasanSelect = document.getElementById("alasan");

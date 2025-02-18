@@ -1,5 +1,5 @@
 <footer class="bg-primary">
-    <div class="container mx-auto w-11/12 py-4 text-white lg:flex lg:px-4 lg:justify-center lg:gap-40 lg:items-center">
+    <div class="container mx-auto w-11/12 py-4 text-white lg:flex lg:px-4 lg:justify-center lg:gap-20 lg:items-center">
         <div class="flex justify-between font-dusha lg:flex-col lg:justify-normal lg:gap-5 lg:flex-1 lg:max-w-[375px]">
             <!-- LEFT SIDE -->
             <div class="flex gap-2">
@@ -16,7 +16,7 @@
             <input class="hidden lg:block font-dusha px-4 py-2 rounded-xl border-none outline-none placeholder:text-white placeholder:opacity-100 bg-white/50" type="text" placeholder="Lapor kang...">
 
             <!-- RIGHT SIDE -->
-            <div class="flex justify-between items-center gap-2">
+            <div class="flex justify-between items-center gap-4">
                 <img class="lg:w-8 lg:h-8" src="{{asset('assets/img/em.svg')}}" alt="email logo">
                 <img class="lg:w-8 lg:h-8" src="{{asset('assets/img/ig.svg')}}" alt="instagram logo">
                 <img class="lg:w-8 lg:h-8" src="{{asset('assets/img/tt.svg')}}" alt="tiktok logo">
@@ -25,7 +25,7 @@
         </div>
 
         <!-- BOTTOM SIDE -->
-        <div class="flex flex-col gap-4 mt-4 lg:flex-1 lg:max-w-[375px]">
+        <div class="flex flex-col gap-4 mt-4 lg:flex-1 lg:max-w-[375px] font-poppins">
             <!-- UPPER SIDE -->
             <div class="flex justify-between lg:gap-16">
                 <div>
@@ -53,12 +53,43 @@
                 </div>
             </div>
         </div>
+        
+        <!-- kontak dan alamat -->
+        <div class="flex flex-col gap-4">
+            <!-- Kontak -->
+            <div class="font-poppins">
+                <p class="font-medium text-lg my-2 lg:mt-0 lg:mb-2">Kontak</p>
+                <!-- logo email -->
+                <div class="flex gap-4 mb-4">
+                    <img src="{{ asset('assets/img/email.svg')}}" alt="email.svg" class=" bg-white w-8 rounded p-1">
+                    <p class="font-medium outline outline-2 outline-white p-1 rounded">wringinanomp@gmail.com</p>
+                </div>   
+                
+                <!-- logo telepon -->
+                <div class="flex gap-4 mb-4">
+                    <img src="{{ asset('assets/img/phone.svg')}}" alt="phone.svg" class="bg-white w-8 rounded p-1">
+                    <p class="font-medium outline outline-2 outline-white p-1 rounded">(0352) 312896</p>
+                </div> 
+            </div>
+
+            <!-- alamat -->
+            <div class="font-poppins">
+                <p class="font-medium text-lg my-2">Alamat</p>
+                <p>Jalan Kresno Nomor 41, Desa Wringinanom,</p>
+                <p>Kecamatan Sambit, Kabupaten Ponorogo</p>
+            </div>
+        </div>
+
+        
 
         <!-- LAPOR KANG -->
         <div class="mt-4 flex justify-center lg:hidden">
-            <input class="w-9/12 max-w-[400px] font-dusha px-4 py-2 rounded-xl border-none outline-none placeholder:text-white placeholder:opacity-100 bg-white/50" type="text" placeholder="Lapor kang...">
+        <input class="w-9/12 max-w-[400px] font-dusha px-4 py-2 rounded-xl border-none outline-none placeholder:text-white placeholder:opacity-100 bg-white/50 lg:w-full lg:max-w-full" type="text" placeholder="Lapor kang...">
         </div>
     </div>
+    
+    <!-- watermark -->
+    <p class="font-poppins font-medium text-white text-center py-4">Copyright 2025 - Arcanum Code</p>
 </footer>
 </body>
 
