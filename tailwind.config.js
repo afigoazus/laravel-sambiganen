@@ -25,10 +25,13 @@ export default {
                 cyan: "#01B8EC",
                 lightBlue: "#67AEF0",
                 yellowCustom: "#FDFCDC", 
-                darkGray: "#4B5563" 
+                darkGray: "#4B5563",
+                yellow: "#FFB600",
+                skyblue: "#B3E0FF4D"
             },
             backgroundImage: {
-                'hero-image' : "url('/public/assets/img/img-breadcrumb.svg')"
+                'hero-image' : "url('/public/assets/img/img-breadcrumb.svg')",
+                'gradient-header': 'linear-gradient(to right, #003B4A, #0081A7)'
             },
             
             keyframes: {
