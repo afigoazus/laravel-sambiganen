@@ -13,13 +13,13 @@
         <!-- organization icon -->
         <div class="bg-primary">
             <div class="p-4 flex justify-between mx-auto w-11/12 sm:justify-center sm:gap-36">
-                <img class="w-20 bg-black rounded-lg cursor-pointer icon organization-icon hover:outline hover:outline-secondary hover:outline-4 hover:outline-offset-2 focus:outline focus:outline-secondary focus:outline-4 focus:outline-offset-2" slide-index="0" tabindex="0" src="{{asset('assets/img/karang-taruna-sm.png')}}" alt="">
+                <img class="w-20 bg-black rounded-lg cursor-pointer icon organization-icon hover:outline hover:outline-secondary hover:outline-4 hover:outline-offset-2 focus:outline focus:outline-secondary focus:outline-4 focus:outline-offset-2" slide-index="0" tabindex="0" src="{{asset('assets/img/Industri.png')}}" alt="">
                 <img class="w-20 bg-black rounded-lg cursor-pointer icon organization-icon hover:outline hover:outline-secondary hover:outline-4 hover:outline-offset-2 focus:outline focus:outline-secondary focus:outline-4 focus:outline-offset-2" slide-index="1" tabindex="0" src="{{asset('assets/img/karang-taruna-sm.png')}}" alt="">
             </div>
         </div>
         <!-- organization icon end -->
 
-        <div id="swiper-lembaga" class="swiper mx-auto w-11/12 my-10 text-white">
+        <div id="swiper-lembaga" class="swiper mx-auto w-11/12 my-10 text-white pb-[54px]">
             <div class="swiper-wrapper font-sans">
                 <!-- karang taruna description -->
                 <div class="swiper-slide bg-primary rounded-lg h-auto">
@@ -58,7 +58,7 @@
                 </div>
                 <!-- BPD description end -->
             </div>
-            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination !bottom-0"></div>
         </div>
     </section>
 </main>

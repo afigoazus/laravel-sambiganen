@@ -1,26 +1,39 @@
-function toggleTab(activeButtonId, inactiveButtonId, activeContentId, inactiveContentId) {
+function toggleTab(activeButtonId, inactiveButtonIds, activeContentId, inactiveContentIds) {
     const activeButton = document.getElementById(activeButtonId);
-    const inactiveButton = document.getElementById(inactiveButtonId);
     const activeContent = document.getElementById(activeContentId);
-    const inactiveContent = document.getElementById(inactiveContentId);
 
-    // Menyembunyikan konten yang tidak aktif
-    inactiveContent.classList.add('hidden');
-    inactiveButton.classList.remove('bg-primary', 'text-white');
-    inactiveButton.classList.add('bg-[#A2A2A2]');
-
-    // Menampilkan konten yang aktif
-    activeContent.classList.remove('hidden');
+    // menampilkan konten aktif
+    activeButton.classList.add('bg-primary', 'text-white')
     activeButton.classList.remove('bg-[#A2A2A2]');
-    activeButton.classList.add('bg-primary', 'text-white');
+    activeContent.classList.remove('hidden')
+
+    // menyembunyikan konten tidak aktif
+    inactiveButtonIds.forEach(buttonId => {
+        const button = document.getElementById(buttonId)
+        if(button) {
+            button.classList.remove('bg-primary', 'text-white')
+            button.classList.add('bg-[#A2A2A2]')
+        }
+    });
+
+    inactiveContentIds.forEach(contentId => {
+        const content = document.getElementById(contentId)
+        if(content) {
+            content.classList.add('hidden')
+        }
+    })
 }
 
 function onclickPersyaratan() {
-    toggleTab('persyaratanButton', 'dokumenButton', 'persyaratan', 'dokumen');
+    toggleTab('persyaratanButton', ['dokumenButton', 'suratButton'], 'persyaratan', ['dokumen', 'surat']);
 }
 
 function onclickDokumen() {
-    toggleTab('dokumenButton', 'persyaratanButton', 'dokumen', 'persyaratan');
+    toggleTab('dokumenButton', ['persyaratanButton', 'suratButton'], 'dokumen', ['persyaratan', 'surat']);
+}
+
+function onclickSurat() {
+    toggleTab('suratButton', ['persyaratanButton', 'dokumenButton'], 'surat', ['persyaratan', 'dokumen'])
 }
 
 function showLainnyaField() {

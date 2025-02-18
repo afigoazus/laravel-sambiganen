@@ -25,7 +25,7 @@
         </div>
         <!-- organization icon end -->
 
-        <div id="swiper-lembaga" class="swiper mx-auto w-11/12 my-10 text-white">
+        <div id="swiper-lembaga" class="swiper mx-auto w-11/12 my-10 text-white pb-[54px]">
             <div id="swiper-wrapper" class="swiper-wrapper font-sans transition-transform duration-500">
 
                 @foreach ($organizations as $organization)
@@ -43,7 +43,7 @@
                 </div>
                 @endforeach
             </div>
-            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination !bottom-0"></div>
         </div>
     </section>
 </main>
