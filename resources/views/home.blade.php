@@ -56,7 +56,7 @@
 
         <!-- News -->
         <section class="text-center space-y-8">
-            <h2 class="font-dusha text-3xl text-primary">NEWS</h2>
+            <h2 class="font-dusha text-3xl text-primary">Berita Terbaru</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
                 <article class="rounded-lg overflow-hidden shadow-lg bg-white">
                     <div class="relative">
@@ -87,10 +87,10 @@
         </section>
 
         <!-- Komen/Timbal Balik -->
-        <section class="w-11/12 max-w-screen-xl mx-auto mt-16 px-4">
-            <div class="flex items-start sm:items-center sm:justify-center gap-4">
-                <h2 class="text-xl font-dusha font-bold text-black">Ada Yang Ingin<br>Di Sampaikan</h2>
-                <a href="#" class="bg-yellow-300 text-black py-2 px-4 rounded-lg">Kirim di sini</a>
+        <section class="w-11/12 max-w-screen-xl mx-auto mt-16 px-4 md:hidden">
+            <div class="flex items-center justify-between gap-4 ">
+                <h2 class="text-2xl font-dusha font-bold text-black">Ada Yang Ingin Di Sampaikan</h2>
+                <a href="#" class="bg-yellow-300 text-white py-4 px-4 rounded-lg w-1/2 h-full font-dusha font-bold tracking-wider text-2xl text-center">Kirim di sini</a>
             </div>
         </section>
 
@@ -130,10 +130,10 @@
         </section>
 
         <!-- Unduh Dokumen -->
-        <section class="w-11/12 max-w-screen-xl mx-auto mt-16 px-4">
-            <div class="flex items-start sm:items-center sm:justify-center gap-4">
-                <h2 class="text-xl font-dusha font-bold text-black">Unduh Dokumen<br>Atau Surat</h2>
-                <a href="#" class="bg-yellow-300 text-black py-2 px-4 rounded-lg">Klik di sini</a>
+        <section class="w-11/12 max-w-screen-xl mx-auto mt-16 px-4 md:hidden">
+            <div class="flex items-center justify-between gap-4 ">
+                <h2 class="text-2xl font-dusha font-bold text-black">Unduh Dokumen Atau Surat</h2>
+                <a href="#" class="text-center bg-yellow-300 text-black py-4 px-4 rounded-lg w-1/2 h-full font-dusha font-bold tracking-wider text-2xl">Klik di sini</a>
             </div>
         </section>
 
@@ -143,19 +143,19 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <div class="space-y-2">
                     <h3 class="font-dusha text-5xl text-black">{{$demographic->dusun}}</h3>
-                    <p class="font-dusha text-sm text-primary uppercase">DUSUN</p>
+                    <p class="font-dusha  text-primary uppercase">DUSUN</p>
                 </div>
                 <div class="space-y-2">
                     <h3 class="text-5xl font-dusha text-black">{{$demographic->rukun_warga}}</h3>
-                    <p class="text-sm font-dusha text-primary uppercase">RUKUN WARGA</p>
+                    <p class="font-dusha text-primary uppercase">RUKUN WARGA</p>
                 </div>
                 <div class="space-y-2">
                     <h3 class="text-5xl font-dusha text-black">{{$demographic->rukun_tetangga}}</h3>
-                    <p class="text-sm font-dusha text-primary uppercase">RUKUN TETANGGA</p>
+                    <p class="font-dusha text-primary uppercase">RUKUN TETANGGA</p>
                 </div>
                 <div class="space-y-2">
                     <h3 class="text-5xl font-dusha text-black">{{$demographic->jiwa}}</h3>
-                    <p class="text-sm font-dusha text-primary uppercase">JIWA</p>
+                    <p class="font-dusha text-primary uppercase">JIWA</p>
                 </div>
             </div>
         </section>
@@ -165,7 +165,7 @@
             <h2 class="font-dusha text-2xl text-cyan-700">Geografis</h2>
             <div class="w-full h-[400px] rounded-lg overflow-hidden shadow-lg">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=BELUM_MINTAA_URL"
+                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2285.628181002434!2d112.5296592561572!3d-7.399809071003929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1skantor%20kepala%20desa%20Kec.%20Wringinanom%20!5e0!3m2!1sid!2sid!4v1739505876770!5m2!1sid!2sid"
                     class="w-full h-full"
                     style="border:0"
                     allowfullscreen=""
