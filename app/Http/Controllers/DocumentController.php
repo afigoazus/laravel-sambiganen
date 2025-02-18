@@ -81,7 +81,7 @@ class DocumentController extends Controller
     {
         $this->letterBusinessService->store($request->validated());
 
-        return redirect()->route('docs')->with('success', 'Data berhasil disimpan');
+        return redirect()->route('surat-surat.keterangan-usaha')->with('success', 'Data berhasil disimpan');
     }
 
     public function storeBirthNote(StoreBirthNoteRequest $request)

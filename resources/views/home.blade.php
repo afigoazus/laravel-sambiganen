@@ -9,11 +9,10 @@
             <!-- Search Bar - Mobile -->
             <div class="relative w-11/12 max-w-md md:hidden animate-zoom">
                 <div class="relative">
-                    <input 
+                    <input
                         type="text"
                         class="w-full px-6 py-3 rounded-full border border-white/50 bg-black/30 text-white placeholder-white/80 focus:outline-none backdrop-blur-md"
-                        placeholder="Search..."
-                    >
+                        placeholder="Search...">
                     <button class="absolute right-2 top-1/2 -translate-y-1/2">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -23,18 +22,17 @@
             </div>
             <!-- Search Bar - Desktop -->
             <div class="hidden md:flex items-center w-11/12 max-w-md relative animate-zoom">
-                <input 
+                <input
                     type="text"
                     class="w-full px-6 py-4 rounded-full border-2 border-white bg-white/20 text-white placeholder-white focus:outline-none backdrop-blur-sm"
-                    placeholder="Search..."
-                >
+                    placeholder="Search...">
                 <button class="absolute -right-6 top-1/2 -translate-y-1/2 bg-turqoise p-4 rounded-full hover:bg-secondary transition-colors duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                 </button>
             </div>
-        
+
             <!-- Social Links - Mobile -->
             <div class="flex justify-center gap-4 mt-4 md:hidden animate-zoom">
                 <a href="#" class="hover:opacity-80 transition-opacity duration-300">
@@ -65,7 +63,7 @@
                 <a href="#" class="bg-white rounded-full p-3 w-14 h-14 flex items-center justify-center hover:bg-after transition-colors duration-300">
                     <img src="{{asset('assets/img/fbdesk.png')}}" alt="facebook" class="w-8 h-8">
                 </a>
-        </div>
+            </div>
     </section>
 
     <!-- Content -->
@@ -85,16 +83,16 @@
                 </button>
             </div>
             <div class="w-1/2">
-                <img src="{{asset('assets/img/kisah.png')}}" alt="Wringinanom" class="w-full rounded-lg object-cover"/>
+                <img src="{{asset('assets/img/kisah.png')}}" alt="Wringinanom" class="w-full rounded-lg object-cover" />
             </div>
         </section>
 
         <!-- News -->
         <!-- Berita Terbaru - Desktop Only -->
         <section class="w-full hidden lg:block bg-white">
-            <div class="container mx-auto px-24 py-12 max-w-[1400px]"> 
-                <div class="flex items-center justify-center gap-16 mx-12"> 
-                    <div class="w-1/2 space-y-6 max-w-xl pl-12"> 
+            <div class="container mx-auto px-24 py-12 max-w-[1400px]">
+                <div class="flex items-center justify-center gap-16 mx-12">
+                    <div class="w-1/2 space-y-6 max-w-xl pl-12">
                         <h2 class="text-primary text-2xl font-dusha">Berita Terbaru</h2>
                         <h3 class="font-poppins text-2xl font-bold leading-relaxed">
                             Kemeriahan Karnafal Mobil hias Desa Wringinanom memperingati HUT RI KE-79
@@ -108,25 +106,24 @@
                         </button>
                     </div>
                     <div class="w-1/2 max-w-xl pr-12">
-                        <img 
-                            src="{{asset('assets/img/truk.jpg')}}" 
-                            alt="Karnafal" 
-                            class="w-full h-[250px] object-cover rounded-lg shadow-lg"
-                        />
+                        <img
+                            src="{{asset('assets/img/truk.jpg')}}"
+                            alt="Karnafal"
+                            class="w-full h-[250px] object-cover rounded-lg shadow-lg" />
                     </div>
                 </div>
             </div>
         </section>
         <section class="bg-white relative">
             <!-- Desktop Layout -->
-            <div class="w-full lg:px-0 px-4"> 
+            <div class="w-full lg:px-0 px-4">
                 <div class="hidden lg:block">
                     <div class="w-full bg-gradient-header">
                         <h2 class="font-dusha text-3xl text-white text-center py-4">News</h2>
                     </div>
-                    
+
                     <div class="bg-skyblue py-8">
-                        <div class="grid grid-cols-12 gap-4 px-4"> 
+                        <div class="grid grid-cols-12 gap-4 px-4">
                             <div class="col-span-8">
                                 <div class="bg-yellow h-[400px] rounded-lg"></div>
                             </div>
@@ -152,7 +149,7 @@
                     <h2 class="font-dusha text-3xl text-primary text-center mb-12">News</h2>
                     <article class="rounded-lg overflow-hidden shadow-lg bg-white">
                         <div class="relative">
-                            <img src="{{asset('assets/img/mbake.png')}}" alt="Karnafal" class="w-full h-48 object-cover"/>
+                            <img src="{{asset('assets/img/mbake.png')}}" alt="Karnafal" class="w-full h-48 object-cover" />
                             <div class="absolute bottom-0 left-0 p-4 flex gap-2">
                                 <span class="bg-yellowCustom text-darkGray px-2 py-1 rounded text-sm">Berita</span>
                                 <span class="bg-yellowCustom text-darkGray px-2 py-1 rounded text-sm">Krajan</span>
@@ -176,8 +173,6 @@
             </div>
         </section>
 
-
-
         <!-- Komen/Timbal Balik -->
         <section class="w-11/12 max-w-screen-xl mx-auto mt-16 px-4 md:hidden">
             <div class="flex items-start sm:items-center sm:justify-center gap-4">
@@ -194,15 +189,15 @@
                 <h2 class="text-3xl font-dusha text-primary mb-8 text-center">Agenda Kreasi</h2>
                 <div class="grid grid-cols-1 gap-8 justify-center">
                     <div class="text-center">
-                        <img src="{{asset('assets/img/seni.png')}}" alt="Kesenian" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover"/>
+                        <img src="{{asset('assets/img/seni.png')}}" alt="Kesenian" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" />
                         <button class="bg-red-400 text-white px-6 py-2 rounded-lg">
-                        Kesenian
+                            Kesenian
                         </button>
                     </div>
                     <div class="text-center">
-                        <img src="{{asset('assets/img/industri.png')}}" alt="Industri" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover"/>
+                        <img src="{{asset('assets/img/industri.png')}}" alt="Industri" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" />
                         <button class="bg-red-400 text-white px-6 py-2 rounded-lg">
-                        Industri
+                            Industri
                         </button>
                     </div>
                 </div>
@@ -231,22 +226,22 @@
             <!-- Mobile-->
             <div class="grid grid-cols-2 md:hidden gap-8 justify-center">
                 <div class="text-center">
-                    <img src="{{asset('assets/img/Katar.png')}}" alt="Karang Taruna" class="w-32 h-32 mx-auto rounded-full mb-4"/>
+                    <img src="{{asset('assets/img/Katar.png')}}" alt="Karang Taruna" class="w-32 h-32 mx-auto rounded-full mb-4" />
                     <h3 class="font-bold mb-2">Karang Taruna</h3>
                     <button class="bg-red-400 text-white px-4 py-1 rounded-lg text-sm">More</button>
                 </div>
                 <div class="text-center">
-                    <img src="{{asset('assets/img/pkk.png')}}" alt="PKK" class="w-32 h-32 mx-auto rounded-full mb-4"/>
+                    <img src="{{asset('assets/img/pkk.png')}}" alt="PKK" class="w-32 h-32 mx-auto rounded-full mb-4" />
                     <h3 class="font-bold mb-2">PKK</h3>
                     <button class="bg-red-400 text-white px-4 py-1 rounded-lg text-sm">More</button>
                 </div>
                 <div class="text-center">
-                    <img src="{{asset('assets/img/pkk.png')}}" alt="BPD" class="w-32 h-32 mx-auto rounded-full mb-4"/>
+                    <img src="{{asset('assets/img/pkk.png')}}" alt="BPD" class="w-32 h-32 mx-auto rounded-full mb-4" />
                     <h3 class="font-bold mb-2">BPD</h3>
                     <button class="bg-red-400 text-white px-4 py-1 rounded-lg text-sm">More</button>
                 </div>
                 <div class="text-center">
-                    <img src="{{asset('assets/img/pkk.png')}}" alt="BUMDes" class="w-32 h-32 mx-auto rounded-full mb-4"/>
+                    <img src="{{asset('assets/img/pkk.png')}}" alt="BUMDes" class="w-32 h-32 mx-auto rounded-full mb-4" />
                     <h3 class="font-bold mb-2">BUMDes</h3>
                     <button class="bg-red-400 text-white px-4 py-1 rounded-lg text-sm">More</button>
                 </div>
@@ -285,13 +280,13 @@
                 <div class="flex items-center gap-4">
                     <p class="font-bold text-left">Ada yang <br> Ingin Disampaikan?</p>
                     <div class="bg-white p-3 rounded-lg">
-                        <img src="{{asset('assets/img/inbox.png')}}" alt="Email Icon" class="w-12 h-12"/>
+                        <img src="{{asset('assets/img/inbox.png')}}" alt="Email Icon" class="w-12 h-12" />
                     </div>
                 </div>
                 <div class="flex items-center gap-4 ml-8">
-                    <p class="font-bold text-left">Unduh Dokumen <br> atau Surat!</p> 
+                    <p class="font-bold text-left">Unduh Dokumen <br> atau Surat!</p>
                     <div class="bg-white p-3 rounded-lg">
-                        <img src="{{asset('assets/img/up.png')}}" alt="Upload Icon" class="w-12 h-12"/>
+                        <img src="{{asset('assets/img/up.png')}}" alt="Upload Icon" class="w-12 h-12" />
                     </div>
                 </div>
             </div>
@@ -302,20 +297,20 @@
             <h2 class="font-dusha text-2xl text-primary">Demografis</h2>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <div class="space-y-2">
-                    <h3 class="font-dusha text-5xl text-black">4</h3>
-                    <p class="font-dusha text-sm text-primary uppercase">DUSUN</p>
+                    <h3 class="font-dusha text-5xl text-black">{{$demographic->dusun}}</h3>
+                    <p class="font-dusha  text-primary uppercase">DUSUN</p>
                 </div>
                 <div class="space-y-2">
-                    <h3 class="text-5xl font-dusha text-black">9</h3>
-                    <p class="text-sm font-dusha text-primary uppercase">RUKUN WARGA</p>   
+                    <h3 class="text-5xl font-dusha text-black">{{$demographic->rukun_warga}}</h3>
+                    <p class="font-dusha text-primary uppercase">RUKUN WARGA</p>
                 </div>
                 <div class="space-y-2">
-                    <h3 class="text-5xl font-dusha text-black">39</h3>
-                    <p class="text-sm font-dusha text-primary uppercase">RUKUN TETANGGA</p>
+                    <h3 class="text-5xl font-dusha text-black">{{$demographic->rukun_tetangga}}</h3>
+                    <p class="font-dusha text-primary uppercase">RUKUN TETANGGA</p>
                 </div>
                 <div class="space-y-2">
                     <h3 class="text-5xl font-dusha text-black">5212</h3>
-                    <p class="text-sm font-dusha text-primary uppercase">JIWA</p>   
+                    <p class="text-sm font-dusha text-primary uppercase">JIWA</p>
                 </div>
             </div>
         </section>
@@ -366,8 +361,8 @@
         <section class="text-center space-y-6">
             <h2 class="font-dusha text-2xl text-cyan-700 lg:hidden">Geografis</h2>
             <div class="w-full h-[400px] rounded-lg overflow-hidden shadow-lg">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=BELUM_MINTAA_URL"
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2285.628181002434!2d112.5296592561572!3d-7.399809071003929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1skantor%20kepala%20desa%20Kec.%20Wringinanom%20!5e0!3m2!1sid!2sid!4v1739505876770!5m2!1sid!2sid"
                     class="w-full h-full"
                     style="border:0"
                     allowfullscreen=""

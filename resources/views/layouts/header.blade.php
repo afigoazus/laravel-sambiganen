@@ -27,21 +27,22 @@
     <nav class="mx-auto w-11/12 py-4 text-white font-dusha md:flex md:justify-between md:items-center">
       <div class="flex justify-between">
         <!-- LEFT SIDE -->
-        <a href="/" class="flex justify-between gap-2">
-          <img class="h-16 w-16" src="{{asset('assets/img/logo.svg')}}" alt="logo ponorogo">
-          <div class="flex flex-col justify-center">
-            <h1 class="text-lg">Desa Wringinanom</h1>
-            <div>
-              <p class="text-sm leading-4">Kec. Sambit, Kab. Ponorogo <br /> Jawa Timur</p>
+        <a href="{{route('home')}}" class="flex justify-between gap-2">
+          <a href="/" class="flex justify-between gap-2">
+            <img class="h-16 w-16" src="{{asset('assets/img/logo.svg')}}" alt="logo ponorogo">
+            <div class="flex flex-col justify-center">
+              <h1 class="text-lg">Desa Wringinanom</h1>
+              <div>
+                <p class="text-sm leading-4">Kec. Sambit, Kab. Ponorogo <br /> Jawa Timur</p>
+              </div>
             </div>
+          </a>
+          <!-- RIGHT SIDE -->
+          <div onclick="toggleDropdownMenu('hamburger-list')"
+            class="flex justify-center items-center cursor-pointer md:hidden">
+            <i class="fa-solid fa-bars fa-2xl"></i>
+            <i class="fa-solid fa-xmark fa-2xl hidden"></i>
           </div>
-        </a>
-        <!-- RIGHT SIDE -->
-        <div onclick="toggleDropdownMenu('hamburger-list')"
-          class="flex justify-center items-center cursor-pointer md:hidden">
-          <i class="fa-solid fa-bars fa-2xl"></i>
-          <i class="fa-solid fa-xmark fa-2xl hidden"></i>
-        </div>
       </div>
 
       <!-- Dropdown -->
@@ -109,6 +110,7 @@
             <img class="h-5 w-5 transition-all ease-in-out duration-200" src="{{asset('assets/img/arrow.svg')}}">
           </div>
 
+
           <!-- dd anggaran -->
           <div id="dropdown-anggaran"
             class="pl-4 hidden py-5 md:absolute md:px-2 md:pt-10 md:bg-primary md:rounded md:w-max md:min-w-[150px]">
@@ -116,10 +118,10 @@
               <li><a href="/anggaran">
                   <p>Tahun 2020 - 2021</p>
                 </a></li>
-              <li><a href="/anggaran">
+              <li class="my-5"><a href="/anggaran">
                   <p>Tahun 2021 - 2022</p>
                 </a></li>
-              <li><a href="/anggaran">
+              <li class="my-5"><a href="/anggaran">
                   <p>Tahun 2022 - 2023</p>
                 </a></li>
             </ul>

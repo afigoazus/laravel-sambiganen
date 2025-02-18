@@ -5,10 +5,10 @@
             <div class="flex gap-2">
                 <img class="h-16 w-16 lg:h-24 lg:w-24" src="{{asset('assets/img/logo.svg')}}" alt="logo ponorogo">
                 <div class="flex flex-col justify-center lg:gap-2">
-                <h1 class="text-lg lg:text-3xl">Desa Wringinanom</h1>
-                <div>
-                    <p class="text-sm leading-4">Kec. Sambit, Kab. Ponorogo <br/> Jawa Timur</p>
-                </div>
+                    <h1 class="text-lg lg:text-3xl">Desa Wringinanom</h1>
+                    <div>
+                        <p class="text-sm leading-4">Kec. Sambit, Kab. Ponorogo <br /> Jawa Timur</p>
+                    </div>
                 </div>
             </div>
 
@@ -49,11 +49,9 @@
                     <p class="text-sm">Lembaga Desa</p>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-2">News</h3>
-                    <p class="text-sm">Berita</p>
-                    <p class="text-sm">Keluh Kesah</p>
+                    <h3 class="text-lg font-semibold mb-2 w-20">Berita</h3>
                 </div>
-             </div>
+            </div>
         </div>
         
         <!-- kontak dan alamat -->
@@ -94,4 +92,5 @@
     <p class="font-poppins font-medium text-white text-center py-4">Copyright 2025 - Arcanum Code</p>
 </footer>
 </body>
+
 </html>

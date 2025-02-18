@@ -12,6 +12,7 @@ class Budget extends Model
         'amount',
         'category_id',
         'year',
+        'is_total'
     ];
 
     public $timestamps = false;
