@@ -5,10 +5,10 @@
             <div class="flex gap-2">
                 <img class="h-16 w-16 lg:h-24 lg:w-24" src="{{asset('assets/img/logo.svg')}}" alt="logo ponorogo">
                 <div class="flex flex-col justify-center lg:gap-2">
-                <h1 class="text-lg lg:text-3xl">Desa Wringinanom</h1>
-                <div>
-                    <p class="text-sm leading-4">Kec. Sambit, Kab. Ponorogo <br/> Jawa Timur</p>
-                </div>
+                    <h1 class="text-lg lg:text-3xl">Desa Wringinanom</h1>
+                    <div>
+                        <p class="text-sm leading-4">Kec. Sambit, Kab. Ponorogo <br /> Jawa Timur</p>
+                    </div>
                 </div>
             </div>
 
@@ -49,18 +49,17 @@
                     <p class="text-sm">Lembaga Desa</p>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-2">News</h3>
-                    <p class="text-sm">Berita</p>
-                    <p class="text-sm">Keluh Kesah</p>
+                    <h3 class="text-lg font-semibold mb-2 w-20">Berita</h3>
                 </div>
-             </div>
+            </div>
         </div>
 
         <!-- LAPOR KANG -->
         <div class="mt-4 flex justify-center lg:hidden">
-        <input class="w-9/12 max-w-[400px] font-dusha px-4 py-2 rounded-xl border-none outline-none placeholder:text-white placeholder:opacity-100 bg-white/50" type="text" placeholder="Lapor kang...">
+            <input class="w-9/12 max-w-[400px] font-dusha px-4 py-2 rounded-xl border-none outline-none placeholder:text-white placeholder:opacity-100 bg-white/50" type="text" placeholder="Lapor kang...">
         </div>
     </div>
 </footer>
 </body>
+
 </html>
