@@ -1,6 +1,7 @@
 @include("layouts.header")
 <main class="mt-24 font-dusha">
-    <div class="bg-hero-image bg-center bg-cover h-64 bg-no-repeat flex items-center justify-center after:absolute after:left-0 after:right-0 after:bg-after after:w-screen after:h-64 after:opacity-80">
+    <div
+        class="bg-hero-image bg-center bg-cover h-64 bg-no-repeat flex items-center justify-center after:absolute after:left-0 after:right-0 after:bg-after after:w-screen after:h-64 after:opacity-80">
         <div class="text-center relative z-10">
             <span class="text-4xl text-primary">Persyaratan <span class="text-secondary">dan</span></span> <br>
             <span class="text-4xl text-primary">Surat - Surat</span>
@@ -11,8 +12,10 @@
     <section class="w-11/12 mx-auto mt-8">
         <!-- menu navigation -->
         <div class="flex gap-6 mb-2">
-            <button id="persyaratanButton" onclick="onclickPersyaratan()" class="bg-primary p-2 rounded-xl text-white">Persyaratan</button>
-            <button id="dokumenButton" onclick="onclickDokumen()" class="bg-[#A2A2A2] p-2 rounded-xl">Surat-Surat</button>
+            <button id="persyaratanButton" onclick="onclickPersyaratan()"
+                class="bg-primary p-2 rounded-xl text-white">Persyaratan</button>
+            <button id="suratButton" onclick="onclickSurat()" class="bg-[#A2A2A2] p-2 rounded-xl">Surat-Surat</button>
+            <button id="dokumenButton" onclick="onclickDokumen()" class="bg-[#A2A2A2] p-2 rounded-xl">Dokumen</button>
         </div>
         <!-- menu navigation end -->
 
@@ -106,9 +109,68 @@
     <!-- persayaratan section end -->
 
     <!-- surat-surat section -->
-    <section id="dokumen" class="w-11/12 mx-auto my-20 hidden">
+    <section id="surat" class="w-11/12 mx-auto my-20 hidden">
         <!-- surat-surat swiper -->
-        <div id="swiper-dokumen" class="swiper">
+        <div id="swiper-surat" class="swiper pb-[54px]">
+            <div class="swiper-wrapper text-white">
+                <div class="swiper-slide bg-primary rounded-2xl h-auto cursor-pointer">
+                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/keterangan-usaha">
+                        <img class="w-28" src="{{asset('assets/img/surat.png')}}" alt="">
+                        <p>Surat Keterangan Usaha</p>
+                    </a>
+                </div>
+                <div class="swiper-slide bg-secondary rounded-2xl h-auto cursor-pointer">
+                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/bbm">
+                        <img class="w-28" src="{{asset('assets/img/surat.png')}}" alt="">
+                        <p>Surat BBM</p>
+                    </a>
+                </div>
+                <div class="swiper-slide bg-primary rounded-2xl h-auto cursor-pointer">
+                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/keringanan-sekolah">
+                        <img class="w-28" src="{{asset('assets/img/surat.png')}}" alt="">
+                        <p>Surat Keringanan Sekolah</p>
+                    </a>
+                </div>
+                <div class="swiper-slide bg-secondary rounded-2xl h-auto cursor-pointer">
+                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/perpindahan-penduduk">
+                        <img class="w-28" src="{{asset('assets/img/surat.png')}}" alt="">
+                        <p>Surat Perpindahan Penduduk</p>
+                    </a>
+                </div>
+                <div class="swiper-slide bg-primary rounded-2xl h-auto cursor-pointer">
+                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/kematian-minimal">
+                        <img class="w-28" src="{{asset('assets/img/surat.png')}}" alt="">
+                        <p>Surat Kematian Minimal</p>
+                    </a>
+                </div>
+                <div class="swiper-slide bg-secondary rounded-2xl h-auto cursor-pointer">
+                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/kematian-nkri">
+                        <img class="w-28" src="{{asset('assets/img/surat.png')}}" alt="">
+                        <p>Surat Kematian NKRI</p>
+                    </a>
+                </div>
+                <div class="swiper-slide bg-primary rounded-2xl h-auto cursor-pointer">
+                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/kelahiran">
+                        <img class="w-28" src="{{asset('assets/img/surat.png')}}" alt="">
+                        <p>Surat Kelahiran</p>
+                    </a>
+                </div>
+                <div class="swiper-slide bg-secondary rounded-2xl h-auto cursor-pointer">
+                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="dokumen/kehilangan">
+                        <img class="w-28" src="{{asset('assets/img/surat.png')}}" alt="">
+                        <p>Surat Kehilangan</p>
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-pagination !bottom-0"></div>
+        </div>
+    </section>
+    <!-- surat-surat end -->
+
+    <!-- dokumen section -->
+    <section id="dokumen" class="w-11/12 mx-auto my-20 hidden">
+        <!-- dokumen swiper -->
+        <div id="swiper-dokumen" class="swiper pb-[54px]">
             <div class="swiper-wrapper text-white">
                 <div class="swiper-slide bg-primary rounded-2xl h-auto cursor-pointer">
                     <a class="flex flex-col items-center gap-4 p-10 text-center" href="#">
@@ -159,9 +221,9 @@
                     </a>
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination !bottom-0"></div>
         </div>
     </section>
-    <!-- surat-surat end -->
+    <!-- dokumen end -->
 </main>
 @include("layouts.footer")
