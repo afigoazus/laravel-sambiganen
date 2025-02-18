@@ -7,7 +7,7 @@
         </div>
     </div>
 
-    <form action="{{ route('kematian-nkri.store')}}" method="POST" class="mx-auto my-10 w-11/12 p-4 font-sans flex flex-col gap-4">
+    <form action="{{ route('kematian-nkri.store')}}" method="POST" class="mx-auto my-10 w-11/12 p-4 font-sans flex flex-col gap-4" id="myForm">
         @csrf
         <div class="bg-white p-4 w-full rounded-md">
             <span class="text-2xl font-medium">FORMULIR SURAT KETERANGAN KEMATIAN WILAYAH NKRI</span>
@@ -315,63 +315,17 @@
                 </div>
 
                 <!-- sebab kematian field -->
-                <div class="">
+                <div class="flex flex-col gap-2">
                     <span>Sebab Kematian <span class="text-[#FF0000]">*</span></span>
-                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 mt-4">
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio" 
-                                        name="sebab-kematian" 
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="1" required>
-                            </div>
-                            <span class="text-gray-700">Sakit biasa/tua</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="sebab-kematian"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="2">
-                            </div>
-                            <span class="text-gray-700">Wabah penyakit</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="sebab-kematian"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="3">
-                            </div>
-                            <span class="text-gray-700">Kecelakaan</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="sebab-kematian"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="4">
-                            </div>
-                            <span class="text-gray-700">Kriminalitas</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="sebab-kematian"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="5">
-                            </div>
-                            <span class="text-gray-700">Bunuh diri</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="sebab-kematian"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="6">
-                            </div>
-                            <span class="text-gray-700">Lainnya</span>
-                        </label>
-                    </div>
+                    <select name="sebab-kematian" id="sebab-kematian" class=" border-2 border-black" required>
+                        <option disabled selected>Pilih Sebab Kematian</option>
+                        <option value="1">Sakit biasa/tua</option>
+                        <option value="2">Wabah penyakit</option>
+                        <option value="3">Kecelakaan</option>
+                        <option value="4">Kriminalitas</option>
+                        <option value="5">Bunuh diri</option>
+                        <option value="6">Lainnya</option>
+                    </select>
                 </div>
 
                 <!-- tempat kematian -->
@@ -382,53 +336,36 @@
                 </div>
 
                 <!-- yang menerangkan field -->
-                <div class="">
+                <div class="flex flex-col gap-2">
                     <span>Yang Menerangkan <span class="text-[#FF0000]">*</span></span>
-                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 mt-4">
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio" 
-                                        name="yang-menerangkan" 
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="1" required>
-                            </div>
-                            <span class="text-gray-700">Dokter</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="yang-menerangkan"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="2">
-                            </div>
-                            <span class="text-gray-700">Tenaga Kesehatan</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="yang-menerangkan"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="3">
-                            </div>
-                            <span class="text-gray-700">Kepolisian</span>
-                        </label>
-
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                        name="yang-menerangkan"  
-                                        class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="4">
-                            </div>
-                            <span class="text-gray-700">Lainnya</span>
-                        </label>
-                    </div>
-                </div>                
+                    <select name="yang-menerangkan" id="yang-menerangkan" class="border-2 border-black" required>
+                        <option disabled selected>Yang Menerangkan Kematian</option>
+                        <option value="1">Dokter</option>
+                        <option value="2">Tenaga Kesehatan</option>
+                        <option value="3">Kepolisian</option>
+                        <option value="4">Lainnya</option>
+                    </select>
+                </div> 
             </div>
         </div>
 
-        <!-- submit button -->
+        <!-- konfirmasi data -->
         <div>
-            <button type="submit" class="bg-primary text-white py-2 px-6 rounded-md">Kirim</button>
+            <label class=" flex gap-2 items-center font-semibold"> 
+                <input type="checkbox" id="confirmCheck" class="w-5 h-5 cursor-pointer"> Apakah data sudah benar?
+            </label>
         </div>
+
+        <!-- submit and reset button -->
+        <div class="flex gap-6">
+            <!-- submit button -->
+            <button type="submit" id="submitButton" class=" bg-gray-400 text-white py-2 px-6 rounded-md cursor-not-allowed" disabled>Kirim</button>
+
+            <!-- reset button -->
+            <button id="resetButton" type="button" class=" bg-red-600 text-white py-2 px-6 rounded-md">Hapus</button>
+        </div>
+
+        
     </form>
 </main>
 @include("layouts.footer")

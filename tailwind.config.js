@@ -35,7 +35,7 @@ export default {
                 zoom: {
                     '0%': { transform: 'scale(0)' },
                     '100%': { transform: 'scale(1)' },
-                }
+                },
             },
             animation: {
                 zoom: 'zoom 0.6s',

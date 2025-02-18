@@ -7,7 +7,7 @@
         </div>
     </div>
 
-    <form action="{{ route('kehilangan.store')}}" method="POST" class="mx-auto my-10 w-11/12 max-w-prose p-4 flex flex-col gap-4 font-sans">
+    <form action="{{ route('kehilangan.store')}}" method="POST" class="mx-auto my-10 w-11/12 max-w-prose p-4 flex flex-col gap-4 font-sans" id="myForm">
         @csrf
         <div class="bg-white p-4 w-full rounded-md">
             <span class="text-2xl font-medium">FORMULIR SURAT KETERANGAN KEHILANGAN</span>
@@ -110,9 +110,20 @@
             </label>
         </div>
         
-        <!-- submit button -->
+        <!-- konfirmasi data -->
         <div>
-            <button type="submit" class="bg-primary text-white py-2 px-6 rounded-md">Kirim</button>
+            <label class=" flex gap-2 items-center font-semibold"> 
+                <input type="checkbox" id="confirmCheck" class="w-5 h-5 cursor-pointer"> Apakah data sudah benar?
+            </label>
+        </div>
+
+        <!-- submit and reset button -->
+        <div class="flex gap-6">
+            <!-- submit button -->
+            <button type="submit" id="submitButton" class=" bg-gray-400 text-white py-2 px-6 rounded-md cursor-not-allowed" disabled>Kirim</button>
+
+            <!-- reset button -->
+            <button id="resetButton" type="button" class=" bg-red-600 text-white py-2 px-6 rounded-md">Hapus</button>
         </div>
     </form>
 </main>

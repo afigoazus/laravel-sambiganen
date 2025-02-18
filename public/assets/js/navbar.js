@@ -31,7 +31,7 @@ function toggleDropdownMenu(id) {
 
     dropdowns.forEach((dropdown) => {
         dropdown.classList.add("hidden");
-    });
+    });    
 }
 
 function openDropdown(id) {

@@ -8,17 +8,17 @@
     </div>
 
     <!-- main section -->
-    <section class="mx-auto w-11/12 py-5">
+    <section class="mx-auto w-11/12 py-5 font-poppins">
         <!-- Visi -->
         <div class="text-center mb-10">
-            <h1 class="text-4xl text-primary">Visi</h1>
-            <p class="font-sans italic font-bold">"Kebersamaan Dan Keharmonisan dalam Membangun Desa Wringinanom Yang Lebih Maju, Amanah dan Religius"</p>
+            <h1 class="font-dusha text-4xl text-primary">Visi</h1>
+            <p class="italic font-bold">"Kebersamaan Dan Keharmonisan dalam Membangun Desa Wringinanom Yang Lebih Maju, Amanah dan Religius"</p>
         </div>
         <!-- Visi end -->
 
         <!-- misi -->
         <div>
-            <h1 class="text-4xl text-secondary text-center">Misi</h1>
+            <h1 class="font-dusha text-4xl text-secondary text-center">Misi</h1>
             <ol class=" list-decimal list-inside text-justify font-sans font font-normal">
                 <li class="my-4">Bersama masyarakat memperkuat kelembagaan desa yang ada sehingga dapat melayani masyarakat secara optimal;</li>
                 <li class="my-4">Bersama masyarakat dan kelembagaan desa menyelenggarakan pemerintahan dan melaksanakan pembangunan yang partisipatif</li>
@@ -31,9 +31,9 @@
         <!-- sejarah -->
         <div class="bg-primary text-white py-2 rounded-xl">
             <!-- title -->
-            <div class="w-11/12 mx-auto sm:flex sm:justify-center sm:gap-36 sm:items-center">
+            <div class="w-11/12 mx-auto flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-36 sm:items-center">
                 <div>
-                    <h1 class="text-4xl text-center">Sejarah Desa <br> Wringinanom</h1>
+                    <h1 class="font-dusha text-4xl text-center">Sejarah Desa <br> Wringinanom</h1>
                 </div>
                 <img class="mx-auto sm:m-0 sm:w-1/2" src="{{asset('assets/img/bg-history.svg')}}" alt=""> 
             </div>
@@ -56,13 +56,13 @@
                     <li>Kilauan aur disebelah timur yang terkena matahari airnya seakan akan hidup, akhirnya sampai sekarang dinamakan dusun banyuripan.</li>
                     <li>Menerawang kearah utara dari kejauhan seakan seperti kraton/ kerajaan maka tempat paling utara tersebut dinamakan dusun krajan hingga sekarang</li>
                 </ol>
-                <span class="italic my-4 font-bold">2.1.1 Perantau Lain</span>
+                <p class="italic my-4 font-bold">2.1.1 Perantau Lain</p>
                 <ol class="list-decimal list-inside space-y-2">
                     <li>Eyang Djainudin, mempunyai keturunan yang banyak sekali, hampir satu dusun krajan sampai ke dusun lain bahkan sampai ke Desa/Daerah lain.</li>
                     <li> Eyang Nurkhani, juga demikian hampir se-dusun nambang adalah keturunannya.</li>
                     <li>Eyang Iro Biri, Perantau ahli seni sekaligus pencipta seni gong gumbeng di Desa Wringinanom hingga sekarang.</li>
                 </ol>
-                <span class="italic my-4 font-bold">2.1.2 Mitos Duk Sumur</span>
+                <p class="italic my-4 font-bold">2.1.2 Mitos Duk Sumur</p>
                 <p class="my-2">Pada Jaman dulu disuatu hari banyak orang menuju kesuatu lokasi, dengan membawa sesaji dan banyak yang duduk diatas batu lebar, ada orang tua renta warga sekitar menyuruh memindah batu besar tempat duduk tersebut, benar saja setelah digeser ternyata apa yang dilihat, bahwa dibawah batu tersebut ternyata sebuah sumur, maka dengan sepakat tempat tersebut dinamakan Duk Sumur hingga sekarang.
                 </p>
             </div>
@@ -70,7 +70,7 @@
         <!-- sejarah end -->
 
         <!-- perangkat desa -->
-        <div class="my-16">
+        <div class="font-dusha my-16">
             <!-- title -->
             <div class="text-center text-4xl">
                 <span class="text-primary">Perangkat <span class="text-secondary">Desa</span> <br> Wringinanom</span>
@@ -110,7 +110,7 @@
                     </div>
                 </div>
 
-                <div class="swiper-pagination"></div>
+                <div class="swiper-pagination relative mt-4"></div>
             </div>
             <!-- swiper perangkat desa end -->
         </div>
