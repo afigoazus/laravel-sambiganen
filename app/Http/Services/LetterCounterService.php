@@ -2,6 +2,8 @@
 
 namespace App\Http\Services;
 
+use App\Models\BirthNote;
+use App\Models\DeathNote;
 use App\Models\LetterBusiness;
 use App\Models\LetterCounter;
 use App\Models\LetterDeath;
@@ -36,5 +38,22 @@ class LetterCounterService
         $counter = LetterCounter::firstOrCreate(['year' => $currentYear], ['latest_no' => 0]);
         $counter->latest_no = $maxNoLetter;
         $counter->save();
+    }
+
+    private function getNextNoteNumber($modelClass, $year = null)
+    {
+        $currentYear = now()->year;
+        $counter = $modelClass::orderByDesc('no_dok_journey')->firstOrCreate(['year' => $currentYear], ['no_dok_journey']);
+        return $counter->no_dok_journey + 1;
+    }
+
+    public function getNextBirthLetterNumber($year = null)
+    {
+        return $this->getNextNoteNumber(BirthNote::class, $year);
+    }
+
+    public function getNextDeathLetterNumber($year = null)
+    {
+        return $this->getNextNoteNumber(DeathNote::class, $year);
     }
 }

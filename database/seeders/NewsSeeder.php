@@ -20,7 +20,7 @@ class NewsSeeder extends Seeder
         $locations = Location::all();
 
         // Create dummy news article
-        News::factory()->count(5)->create()->each(function ($news) use ($categories, $locations) {
+        News::factory()->count(2)->create()->each(function ($news) use ($categories, $locations) {
             // Attach random categories (1 to 3) and locations (1 to 4)
             $news->categories()->attach($categories->random(rand(1, 3))->pluck('id'));
             $news->locations()->attach($locations->random(1)->pluck('id'));

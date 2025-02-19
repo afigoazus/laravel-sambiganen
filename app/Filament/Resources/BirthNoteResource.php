@@ -258,6 +258,7 @@ class BirthNoteResource extends Resource
                 Tables\Columns\TextColumn::make('no_dok_journey')
                     ->label("No. Dokumen")
                     ->searchable()
+                    ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('name')
                     ->label("Nama Pelapor")

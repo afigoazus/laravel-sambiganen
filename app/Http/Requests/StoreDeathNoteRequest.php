@@ -24,7 +24,6 @@ class StoreDeathNoteRequest extends FormRequest
         return [
             'nama-pelapor' => 'required',
             'nik' => 'required',
-            'no-dok-perjalanan' => 'required',
             'kewarganegaraan' => 'required',
             'no-hp' => 'required',
             'nama-saksi-1' => 'required',

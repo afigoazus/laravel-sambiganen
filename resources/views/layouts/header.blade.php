@@ -18,7 +18,7 @@
   <script src="{{asset('assets/js/navbar.js')}}"></script>
   <script type="module" src="{{asset('assets/js/swiper.js')}}"></script>
   <script src="{{asset('assets/js/dokumen.js')}}"></script>
-  <script src="{{asset('assets/js/galery.js')}}" ></script>
+  <script src="{{asset('assets/js/galery.js')}}"></script>
   <script src="{{asset('assets/js/form.js')}}"></script>
 </head>
 
@@ -28,21 +28,20 @@
       <div class="flex justify-between">
         <!-- LEFT SIDE -->
         <a href="{{route('home')}}" class="flex justify-between gap-2">
-          <a href="/" class="flex justify-between gap-2">
-            <img class="h-16 w-16" src="{{asset('assets/img/logo.svg')}}" alt="logo ponorogo">
-            <div class="flex flex-col justify-center">
-              <h1 class="text-lg">Desa Wringinanom</h1>
-              <div>
-                <p class="text-sm leading-4">Kec. Sambit, Kab. Ponorogo <br /> Jawa Timur</p>
-              </div>
+          <img class="h-16 w-16" src="{{asset('assets/img/logo.svg')}}" alt="logo ponorogo">
+          <div class="flex flex-col justify-center">
+            <h1 class="text-lg">Desa Wringinanom</h1>
+            <div>
+              <p class="text-sm leading-4">Kec. Sambit, Kab. Ponorogo <br /> Jawa Timur</p>
             </div>
-          </a>
-          <!-- RIGHT SIDE -->
-          <div onclick="toggleDropdownMenu('hamburger-list')"
-            class="flex justify-center items-center cursor-pointer md:hidden">
-            <i class="fa-solid fa-bars fa-2xl"></i>
-            <i class="fa-solid fa-xmark fa-2xl hidden"></i>
           </div>
+        </a>
+        <!-- RIGHT SIDE -->
+        <div onclick="toggleDropdownMenu('hamburger-list')"
+          class="flex justify-center items-center cursor-pointer md:hidden">
+          <i class="fa-solid fa-bars fa-2xl"></i>
+          <i class="fa-solid fa-xmark fa-2xl hidden"></i>
+        </div>
       </div>
 
       <!-- Dropdown -->
@@ -115,32 +114,30 @@
           <div id="dropdown-anggaran"
             class="pl-4 hidden py-5 md:absolute md:px-2 md:pt-10 md:bg-primary md:rounded md:w-max md:min-w-[150px]">
             <ul class="space-y-5">
-              <li><a href="/anggaran">
-                  <p>Tahun 2020 - 2021</p>
-                </a></li>
-              <li class="my-5"><a href="/anggaran">
-                  <p>Tahun 2021 - 2022</p>
-                </a></li>
-              <li class="my-5"><a href="/anggaran">
-                  <p>Tahun 2022 - 2023</p>
-                </a></li>
+              @foreach ($budgetYearList as $budgetYear)
+              <li class="{{ $loop->index === 0 ? "" : "my-5" }}">
+                <a href="{{ route('anggaran', ["year" => $budgetYear]) }}">
+                  <p>Tahun {{ $budgetYear - 1 }} - {{ $budgetYear }}</p>
+                </a>
+              </li>
+              @endforeach
             </ul>
           </div>
         </div>
 
         <!-- news -->
         <div>
-          <a href="/berita"><span>News</span></a>
+          <a href="{{ route('berita') }}"><span>News</span></a>
         </div>
 
         <!-- Galery -->
         <div>
-          <a href="#"><span>Galery</span></a>
+          <a href="{{ route('galeri') }}"><span>Galery</span></a>
         </div>
 
         <!-- pengaduan -->
         <div>
-          <a href="/pengaduan"><span>Pengaduan</span></a>
+          <a href="{{ route('pengaduan') }}"><span>Pengaduan</span></a>
         </div>
       </div>
     </nav>

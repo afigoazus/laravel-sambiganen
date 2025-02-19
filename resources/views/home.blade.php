@@ -95,19 +95,25 @@
                     <div class="w-1/2 space-y-6 max-w-xl pl-12">
                         <h2 class="text-primary text-2xl font-dusha">Berita Terbaru</h2>
                         <h3 class="font-poppins text-2xl font-bold leading-relaxed">
-                            Kemeriahan Karnafal Mobil hias Desa Wringinanom memperingati HUT RI KE-79
+                            <a href="{{ route('berita.get', ["id" => $news->id]) }}">{{ $news->title }}</a>
                         </h3>
                         <div class="flex gap-3">
-                            <span class="bg-primary text-white px-6 py-2 text-sm rounded font-ibm">Berita</span>
-                            <span class="bg-primary text-white px-6 py-2 text-sm rounded font-ibm">Krajan</span>
+                            <!-- Loop through categories -->
+                            @foreach ($news->categories as $category)
+                            <span class="bg-primary text-white px-6 py-2 text-sm rounded font-ibm">{{ $category->name }}</span>
+                            @endforeach
+                            <!-- Loop through locations -->
+                            @foreach ($news->locations as $location)
+                            <span class="bg-primary text-white px-6 py-2 text-sm rounded font-ibm">{{ $location->name }}</span>
+                            @endforeach
                         </div>
-                        <button class="bg-yellow text-white px-8 py-3 rounded font-poppins text-sm hover:opacity-90 transition-opacity">
+                        <a href="{{ route('berita') }}" class="inline-block bg-yellow text-white px-8 py-3 rounded font-poppins text-sm hover:opacity-90 transition-opacity">
                             Lihat semua berita>>>
-                        </button>
+                        </a>
                     </div>
                     <div class="w-1/2 max-w-xl pr-12">
                         <img
-                            src="{{asset('assets/img/truk.jpg')}}"
+                            src="{{asset('storage/' . $news->photo_path)}}"
                             alt="Karnafal"
                             class="w-full h-[250px] object-cover rounded-lg shadow-lg" />
                     </div>
@@ -124,22 +130,51 @@
 
                     <div class="bg-skyblue py-8">
                         <div class="grid grid-cols-12 gap-4 px-4">
+                            <!-- First row: One large image spanning 8 columns -->
                             <div class="col-span-8">
-                                <div class="bg-yellow h-[400px] rounded-lg"></div>
+                                <div class="bg-yellow h-[400px] rounded-lg">
+                                    @isset($allNews[0])
+                                    <img class="h-full w-full object-cover rounded-lg" src="{{ asset('storage/' . $allNews[0]->photo_path) }}" alt="">
+                                    @endisset
+                                </div>
                             </div>
+
+                            <!-- First row: Two small images spanning 4 columns -->
                             <div class="col-span-4 space-y-4">
-                                <div class="bg-yellow h-[190px] rounded-lg"></div>
-                                <div class="bg-yellow h-[190px] rounded-lg"></div>
+                                @isset($allNews[1])
+                                <div class="bg-yellow h-[190px] rounded-lg">
+                                    <img class="h-full w-full object-cover rounded-lg" src="{{ asset('storage/' . $allNews[1]->photo_path) }}" alt="">
+                                </div>
+                                @endisset
+                                @isset($allNews[2])
+                                <div class="bg-yellow h-[190px] rounded-lg">
+                                    <img class="h-full w-full object-cover rounded-lg" src="{{ asset('storage/' . $allNews[2]->photo_path) }}" alt="">
+                                </div>
+                                @endisset
                             </div>
+
+                            <!-- Second row: Three small images, each spanning 4 columns -->
+                            @isset($allNews[3])
                             <div class="col-span-4">
-                                <div class="bg-yellow h-[190px] rounded-lg"></div>
+                                <div class="bg-yellow h-[190px] rounded-lg">
+                                    <img class="h-full w-full object-cover rounded-lg" src="{{ asset('storage/' . $allNews[3]->photo_path) }}" alt="">
+                                </div>
                             </div>
+                            @endisset
+                            @isset($allNews[4])
                             <div class="col-span-4">
-                                <div class="bg-yellow h-[190px] rounded-lg"></div>
+                                <div class="bg-yellow h-[190px] rounded-lg">
+                                    <img class="h-full w-full object-cover rounded-lg" src="{{ asset('storage/' . $allNews[4]->photo_path) }}" alt="">
+                                </div>
                             </div>
+                            @endisset
+                            @isset($allNews[5])
                             <div class="col-span-4">
-                                <div class="bg-yellow h-[190px] rounded-lg"></div>
+                                <div class="bg-yellow h-[190px] rounded-lg">
+                                    <img class="h-full w-full object-cover rounded-lg" src="{{ asset('storage/' . $allNews[5]->photo_path) }}" alt="">
+                                </div>
                             </div>
+                            @endisset
                         </div>
                     </div>
                 </div>
@@ -149,18 +184,25 @@
                     <h2 class="font-dusha text-3xl text-primary text-center mb-12">News</h2>
                     <article class="rounded-lg overflow-hidden shadow-lg bg-white">
                         <div class="relative">
-                            <img src="{{asset('assets/img/mbake.png')}}" alt="Karnafal" class="w-full h-48 object-cover" />
+                            <img src="{{asset('storage/' . $news->photo_path)}}" alt="{{ $news->title }}" class="w-full h-48 object-cover" />
                             <div class="absolute bottom-0 left-0 p-4 flex gap-2">
-                                <span class="bg-yellowCustom text-darkGray px-2 py-1 rounded text-sm">Berita</span>
-                                <span class="bg-yellowCustom text-darkGray px-2 py-1 rounded text-sm">Krajan</span>
+                                <!-- Loop through categories -->
+                                @foreach ($news->categories as $category)
+                                <span class="bg-[#FDFCDC] text-black px-2 py-1 rounded text-sm">{{ $category->name }}</span>
+                                @endforeach
+
+                                <!-- Loop through locations -->
+                                @foreach ($news->locations as $location)
+                                <span class="bg-[#FDFCDC] text-black px-2 py-1 rounded text-sm">{{ $location->name }}</span>
+                                @endforeach
                             </div>
                         </div>
                         <div class="p-4 text-left space-y-4">
-                            <h3 class="font-poppins font-bold text-lg">Kemeriahan Karnafal Mobil Hias</h3>
-                            <p class="font-ibm text-darkGray">Description</p>
-                            <button class="font-ibm border border-darkGray text-darkGray hover:bg-gray-100 px-4 py-2 rounded transition">
+                            <h3 class="font-poppins font-bold text-lg">{{ $news->title }}</h3>
+                            <p class="font-ibm text-darkGray">{{Str::limit($news->content, 50, "...")}}</p>
+                            <a href="{{ route('berita.get', ["id" => $news->id]) }}" class="inline-block font-ibm border border-darkGray text-darkGray hover:bg-gray-100 px-4 py-2 rounded transition">
                                 Selengkapnya
-                            </button>
+                            </a>
                         </div>
                     </article>
                 </div>
@@ -177,7 +219,7 @@
         <section class="w-11/12 max-w-screen-xl mx-auto mt-16 px-4 md:hidden">
             <div class="flex items-start sm:items-center sm:justify-center gap-4">
                 <h2 class="text-xl font-dusha font-bold text-black">Ada Yang Ingin<br>Di Sampaikan</h2>
-                <a href="#" class="bg-yellow text-white py-2 px-4 rounded-lg">Kirim di sini</a>
+                <a href="{{ route('pengaduan') }}" class="bg-yellow text-white py-2 px-4 rounded-lg">Kirim di sini</a>
             </div>
         </section>
 
@@ -188,18 +230,12 @@
             <div class="block md:hidden">
                 <h2 class="text-3xl font-dusha text-primary mb-8 text-center">Agenda Kreasi</h2>
                 <div class="grid grid-cols-1 gap-8 justify-center">
+                    @foreach ($creations as $creation)
                     <div class="text-center">
-                        <img src="{{asset('assets/img/seni.png')}}" alt="Kesenian" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" />
-                        <button class="bg-red-400 text-white px-6 py-2 rounded-lg">
-                            Kesenian
-                        </button>
+                        <img src="{{asset('storage/' . $creation->photo_path)}}" alt="Kesenian" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" />
+                        <a href="{{ route('kreasi') }}" class="inline-block bg-red-400 text-white px-6 py-2 rounded-lg">{{ $creation->title }}</a>
                     </div>
-                    <div class="text-center">
-                        <img src="{{asset('assets/img/industri.png')}}" alt="Industri" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" />
-                        <button class="bg-red-400 text-white px-6 py-2 rounded-lg">
-                            Industri
-                        </button>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <!-- Desktop Version -->
@@ -210,8 +246,11 @@
                         <div class="grid grid-cols-[auto_1fr_auto] gap-8 items-center px-8">
                             <h3 class="text-2xl font-dusha text-white text-right">Kesenian</h3>
                             <div class="grid grid-cols-2 gap-16">
-                                <div class="bg-white rounded-lg p-4 min-h-[200px] flex items-center justify-center"></div>
-                                <div class="bg-white rounded-lg p-4 min-h-[200px] flex items-center justify-center"></div>
+                                @foreach ($creations as $creation)
+                                <a href="{{ route('kreasi') }}" class="bg-white rounded-lg p-4 h-[200px] flex items-center justify-center">
+                                    <img class="w-full h-full" src="{{ asset('storage/' . $creation->photo_path) }}" alt="{{ $creation->title }}">
+                                </a>
+                                @endforeach
                             </div>
                             <h3 class="text-2xl font-dusha text-white text-left">Industri</h3>
                         </div>
@@ -225,46 +264,25 @@
             <h2 class="text-3xl font-dusha text-primary mb-8">Lembaga Yang Ada Di Desa Wringinanom</h2>
             <!-- Mobile-->
             <div class="grid grid-cols-2 md:hidden gap-8 justify-center">
+                @foreach ($organizations as $organization)
                 <div class="text-center">
-                    <img src="{{asset('assets/img/Katar.png')}}" alt="Karang Taruna" class="w-32 h-32 mx-auto rounded-full mb-4" />
-                    <h3 class="font-bold mb-2">Karang Taruna</h3>
-                    <button class="bg-red-400 text-white px-4 py-1 rounded-lg text-sm">More</button>
+                    <img src="{{asset('storage/' . $organization->photo_path)}}" alt="{{ $organization->title }}" class="w-32 h-32 mx-auto rounded-full mb-4" />
+                    <h3 class="font-bold mb-2">{{ $organization->title }}</h3>
+                    <a href="{{ route('kreasi') }}" class="bg-red-400 text-white px-4 py-1 rounded-lg text-sm">More</a>
                 </div>
-                <div class="text-center">
-                    <img src="{{asset('assets/img/pkk.png')}}" alt="PKK" class="w-32 h-32 mx-auto rounded-full mb-4" />
-                    <h3 class="font-bold mb-2">PKK</h3>
-                    <button class="bg-red-400 text-white px-4 py-1 rounded-lg text-sm">More</button>
-                </div>
-                <div class="text-center">
-                    <img src="{{asset('assets/img/pkk.png')}}" alt="BPD" class="w-32 h-32 mx-auto rounded-full mb-4" />
-                    <h3 class="font-bold mb-2">BPD</h3>
-                    <button class="bg-red-400 text-white px-4 py-1 rounded-lg text-sm">More</button>
-                </div>
-                <div class="text-center">
-                    <img src="{{asset('assets/img/pkk.png')}}" alt="BUMDes" class="w-32 h-32 mx-auto rounded-full mb-4" />
-                    <h3 class="font-bold mb-2">BUMDes</h3>
-                    <button class="bg-red-400 text-white px-4 py-1 rounded-lg text-sm">More</button>
-                </div>
+                @endforeach
             </div>
 
             <!-- Desktop View -->
             <div class="hidden md:flex flex-wrap justify-center gap-8">
-                <div class="flex flex-col items-center">
-                    <div class="bg-primary w-40 h-40 flex items-center justify-center text-black font-bold rounded-lg"> </div>
-                    <p class="mt-2 font-bold">Karang Taruna</p>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="bg-cyan w-40 h-40 flex items-center justify-center text-black font-bold rounded-lg"> </div>
-                    <p class="mt-2 font-bold">PKK</p>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="bg-primary w-40 h-40 flex items-center justify-center text-black font-bold rounded-lg"> </div>
-                    <p class="mt-2 font-bold">BPD</p>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="bg-cyan w-40 h-40 flex items-center justify-center text-black font-bold rounded-lg"> </div>
-                    <p class="mt-2 font-bold">BUMDes</p>
-                </div>
+                @foreach ($organizations as $organization)
+                <a href="{{ route('lembaga') }}" class="flex flex-col items-center">
+                    <div class="bg-primary w-40 h-40 flex items-center justify-center text-black font-bold rounded-lg">
+                        <img class="w-full h-full" src="{{ asset('storage/' . $organization->photo_path) }}" alt="{{ $organization->title }}">
+                    </div>
+                    <p class="mt-2 font-bold">{{ $organization->title }}</p>
+                </a>
+                @endforeach
             </div>
         </section>
 
@@ -273,21 +291,21 @@
             <!-- MOBILE -->
             <div class="flex items-start sm:items-center sm:justify-center gap-4 md:hidden">
                 <h2 class="text-xl font-dusha font-bold text-black">Unduh Dokumen<br>Atau Surat</h2>
-                <a href="#" class="bg-yellow text-black py-2 px-4 rounded-lg">Klik di sini</a>
+                <a href="{{ route('surat-surat') }}" class="bg-yellow text-black py-2 px-4 rounded-lg">Klik di sini</a>
             </div>
             <!-- DESKT -->
             <div class="hidden md:flex bg-yellow w-full py-6 flex-row justify-center items-center text-white mb-0">
                 <div class="flex items-center gap-4">
                     <p class="font-bold text-left">Ada yang <br> Ingin Disampaikan?</p>
-                    <div class="bg-white p-3 rounded-lg">
+                    <a href="{{ route('pengaduan') }}" class="bg-white p-3 rounded-lg">
                         <img src="{{asset('assets/img/inbox.png')}}" alt="Email Icon" class="w-12 h-12" />
-                    </div>
+                    </a>
                 </div>
                 <div class="flex items-center gap-4 ml-8">
                     <p class="font-bold text-left">Unduh Dokumen <br> atau Surat!</p>
-                    <div class="bg-white p-3 rounded-lg">
+                    <a href="{{ route('surat-surat') }}" class="bg-white p-3 rounded-lg">
                         <img src="{{asset('assets/img/up.png')}}" alt="Upload Icon" class="w-12 h-12" />
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -309,7 +327,7 @@
                     <p class="font-dusha text-primary uppercase">RUKUN TETANGGA</p>
                 </div>
                 <div class="space-y-2">
-                    <h3 class="text-5xl font-dusha text-black">5212</h3>
+                    <h3 class="text-5xl font-dusha text-black">{{ $demographic->jiwa }}</h3>
                     <p class="text-sm font-dusha text-primary uppercase">JIWA</p>
                 </div>
             </div>
@@ -325,7 +343,7 @@
                     <!-- Dusun -->
                     <div class="flex flex-col items-center space-y-2">
                         <div class="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center bg-primary text-white font-dusha text-4xl md:text-5xl rounded-full shadow-lg">
-                            4
+                            {{ $demographic->dusun }}
                         </div>
                         <p class="font-dusha text-sm text-black">Dusun</p>
                     </div>
@@ -333,7 +351,7 @@
                     <!-- Rukun Warga -->
                     <div class="flex flex-col items-center space-y-2">
                         <div class="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center bg-primary text-white font-dusha text-4xl md:text-5xl rounded-full shadow-lg">
-                            9
+                            {{ $demographic->rukun_warga }}
                         </div>
                         <p class="font-dusha text-sm text-black">Rukun Warga</p>
                     </div>
@@ -341,7 +359,7 @@
                     <!-- Rukun Tetangga -->
                     <div class="flex flex-col items-center space-y-2">
                         <div class="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center bg-primary text-white font-dusha text-4xl md:text-5xl rounded-full shadow-lg">
-                            39
+                            {{ $demographic->rukun_tetangga }}
                         </div>
                         <p class="font-dusha text-sm text-black">Rukun Tetangga</p>
                     </div>
@@ -349,7 +367,7 @@
                     <!-- Jiwa -->
                     <div class="flex flex-col items-center space-y-2">
                         <div class="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center bg-primary text-white font-dusha text-4xl md:text-5xl rounded-full shadow-lg">
-                            5212
+                            {{ $demographic->jiwa }}
                         </div>
                         <p class="font-dusha text-sm text-black">Jiwa</p>
                     </div>

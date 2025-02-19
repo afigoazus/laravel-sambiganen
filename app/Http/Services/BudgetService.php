@@ -43,6 +43,6 @@ class BudgetService
 
     public function getAvailableYear()
     {
-        return Budget::select('year')->distinct()->pluck('year');
+        return Budget::select('year')->distinct()->pluck('year')->sort();
     }
 }

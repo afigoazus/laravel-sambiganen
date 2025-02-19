@@ -6,9 +6,11 @@ use App\Models\LetterIncapacity;
 
 class LetterIncapacityService
 {
+    public function __construct(protected LetterCounterService $letterCounterService) {}
     public function store(array $data)
     {
         return LetterIncapacity::create([
+            'no_letter' => $this->letterCounterService->getNextLetterNumber(),
             'name' => $data['parent-name'],
             'tgl_lahir' => $data['tanggal-lahir-ortu'],
             'tempat_lahir' => $data['tempat-lahir-ortu'],

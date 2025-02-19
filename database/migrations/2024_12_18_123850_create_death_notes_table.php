@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 255)->nullable(false);
             $table->string('nik', 255)->nullable(false);
-            $table->string('no_dok_journey', 255)->nullable(false);
+            $table->integer('no_dok_journey')->nullable(false);
             $table->string('nationality', 255)->nullable(false);
             $table->string('no_wa', 255)->nullable(false);
             $table->string('name_saksi', 255)->nullable(false);

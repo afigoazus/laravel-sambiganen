@@ -6,9 +6,11 @@ use App\Models\LetterLost;
 
 class LetterLostService
 {
+    public function __construct(protected LetterCounterService $letterCounterService) {}
     public function store(array $data)
     {
         return LetterLost::create([
+            'no_letter' => $this->letterCounterService->getNextLetterNumber(),
             'name' => $data['name'],
             'tempat_lahir' => $data['tempat-lahir'],
             'tgl_lahir' => $data['tanggal-lahir'],

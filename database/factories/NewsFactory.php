@@ -18,8 +18,8 @@ class NewsFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence,
-            'content' => $this->faker->paragraphs(3, true),
-            'photo_path' => 'https://via.placeholder.com/640x480.png',
+            'content' => $this->faker->paragraphs(1, true),
+            'photo_path' => '01JMCKEPJ27F112X5PTM9QE1H8.png',
             'published_at' => $this->faker->dateTimeThisYear(),
         ];
     }

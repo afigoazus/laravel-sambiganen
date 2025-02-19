@@ -13,9 +13,9 @@
         <div class="flex justify-between">
             <div class="text-xl">
                 <p>Info Grafik APBD</p>
-                <p>Realisasi Tahun Anggaran 2024</p>
+                <p>Realisasi Tahun Anggaran {{ $year }}</p>
             </div>
-            <button class="bg-primary text-white px-4 rounded-xl">2024</button>
+            <button class="bg-primary text-white px-4 rounded-xl">{{ $year }}</button>
         </div>
         <!-- menu button end -->
 

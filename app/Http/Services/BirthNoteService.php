@@ -6,12 +6,13 @@ use App\Models\BirthNote;
 
 class BirthNoteService
 {
+    public function __construct(protected LetterCounterService $letterCounterService) {}
     public function store(array $data)
     {
         return BirthNote::create([
             'name' => $data['nama-pelapor'],
             'nik' => $data['nik-pelapor'],
-            'no_dok_journey' => $data['no-dok-perjalanan'],
+            'no_dok_journey' => $this->letterCounterService->getNextBirthLetterNumber(),
             'nationality' => $data['kewarganegaraan-pelapor'],
             'no_wa' => $data['no-hp'],
             'name_saksi' => $data['nama-saksi-1'],
@@ -37,7 +38,6 @@ class BirthNoteService
             'place_birth_child' => $data['tempat-dilahirkan'],
             'place_birth_child2' => $data['tempat-kelahiran'],
             'date_birth_child' => $data['tanggal-kelahiran'],
-            'day_birth_child' => $data['hari-kelahiran'],
             'hour_birth_child' => $data['jam-kelahiran'],
             'type_birth_child' => $data['jenis-kelahiran'],
             'no_birth_child' => $data['kelahiran-ke'],

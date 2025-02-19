@@ -1,3 +1,8 @@
+@php
+// Define an array of colors
+$colors = ['bg-[#F07167]', 'bg-[#F0A267]'];
+@endphp
+
 @include("layouts.header")
 <main class="mt-24 font-dusha">
     <div class="bg-hero-image bg-center bg-cover h-64 bg-no-repeat flex items-center justify-center after:absolute after:left-0 after:right-0 after:bg-after after:w-screen after:h-64 after:opacity-80">
@@ -30,7 +35,7 @@
                 <!-- karang taruna description -->
                 @foreach ($creations as $creation)
                 <!-- karang taruna description -->
-                <div class="swiper-slide bg-primary rounded-lg h-auto">
+                <div class="swiper-slide {{ $colors[$loop->index % count($colors)] }} rounded-lg h-auto">
                     <div class=" p-12">
                         <!-- title -->
                         <div class="font-bold mb-4 flex flex-col items-center">

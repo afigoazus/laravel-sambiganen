@@ -7,33 +7,36 @@
         </div>
     </div>
 
+    <!-- Alert If the user success sent the data -->
+    @include('components.alert')
+
     <form action="{{ route('keterangan-usaha.store')}}" method="POST" class="mx-auto my-10 w-11/12 max-w-prose p-4 flex flex-col gap-4 font-sans" id="myForm">
         @csrf
         <div class="bg-white p-4 w-full rounded-md">
             <span class="text-2xl font-medium">FORMULIR SURAT KETERANGAN USAHA</span>
-            <p class="text-[#5F6368] font-normal">(Untuk pengajuan pengembangan usaha)</p> 
+            <p class="text-[#5F6368] font-normal">(Untuk pengajuan pengembangan usaha)</p>
             <p class="text-[#FF0000] font-normal">* Menunjukkan pertanyaan yang wajib diisi</p>
         </div>
-        
+
         <!-- name field -->
         <div class="bg-white p-4 w-full rounded-md">
             <label for="name">Nama <span class="text-[#FF0000]">*</span> <br>
-                <input type="text" name="name" id="name" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Nama Anda" required> 
+                <input type="text" name="name" id="name" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Nama Anda" required>
             </label>
         </div>
-       
+
         <!-- alamat field -->
         <div class="bg-white p-4 w-full rounded-md">
             <label for="alamat">Alamat <span class="text-[#FF0000]">*</span> <br>
-            <span class="font-medium">Untuk penulisan harus seperti berikut tanpa tanda (): RT (RT anda) RW (RW anda) Dukuh (Dukuh anda) Desa Wringinanom Kecamatan Sambit Kabupaten Ponorogo</span>
-                <textarea name="alamat" id="alamat" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required placeholder="Alamat"></textarea> 
+                <span class="font-medium">Untuk penulisan harus seperti berikut tanpa tanda (): RT (RT anda) RW (RW anda) Dukuh (Dukuh anda) Desa Wringinanom Kecamatan Sambit Kabupaten Ponorogo</span>
+                <textarea name="alamat" id="alamat" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required placeholder="Alamat"></textarea>
             </label>
-        </div>        
+        </div>
 
         <!-- nik -->
         <div class="bg-white p-4 w-full rounded-md">
             <label for="nik">NIK <span class="text-[#FF0000]">*</span> <br>
-                <input type="text" name="nik" id="nik" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="RW Anda" required> 
+                <input type="text" name="nik" id="nik" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="RW Anda" required>
             </label>
         </div>
 
@@ -67,25 +70,21 @@
         <!-- nama-usaha field -->
         <div class="bg-white p-4 w-full rounded-md">
             <label for="nama-usaha">Nama Usaha <span class="text-[#FF0000]">*</span> <br>
-                <input type="text" name="nama-usaha" id="nama-usaha" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Nama Usaha" required> 
-            </label>
-        </div>
-
-        <!-- konfirmasi data -->
-        <div>
-            <label class=" flex gap-2 items-center font-semibold"> 
-                <input type="checkbox" id="confirmCheck" class="w-5 h-5 cursor-pointer"> Apakah data sudah benar?
+                <input type="text" name="nama-usaha" id="nama-usaha" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Nama Usaha" required>
             </label>
         </div>
 
         <!-- submit and reset button -->
         <div class="flex gap-6">
-            <!-- submit button -->
-            <button type="submit" id="submitButton" class=" bg-gray-400 text-white py-2 px-6 rounded-md cursor-not-allowed" disabled>Kirim</button>
-
             <!-- reset button -->
             <button id="resetButton" type="button" class=" bg-red-600 text-white py-2 px-6 rounded-md">Hapus</button>
+            <!-- submit button -->
+            <button type="submit" class=" bg-blue-500 text-white py-2 px-6 rounded-md">Kirim</button>
         </div>
     </form>
 </main>
+
+<!-- Confirmation dialog before sbmit -->
+@include('components.confirm')
+
 @include("layouts.footer")

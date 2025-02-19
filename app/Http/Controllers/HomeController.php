@@ -22,11 +22,12 @@ class HomeController extends Controller
     public function index()
     {
         $news = $this->newsService->getRecentNews();
+        $allNews = $this->newsService->getAllNews();
         $creations = $this->creationService->getAllCreations();
         $organizations = $this->organizationService->getAllOrganizations();
         $demographic = $this->demographicService->getDemographic();
 
-        return view('home', compact('news', 'creations', 'organizations', 'demographic'));
+        return view('home', compact('news', 'creations', 'organizations', 'demographic', 'allNews'));
     }
 
     public function profile()

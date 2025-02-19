@@ -6,12 +6,16 @@ use App\Http\Requests\StoreBirthNoteRequest;
 use App\Http\Requests\StoreDeathNoteRequest;
 use App\Http\Requests\StoreLetterBusinessRequest;
 use App\Http\Requests\StoreLetterDeathRequest;
+use App\Http\Requests\StoreLetterFuel;
+use App\Http\Requests\StoreLetterFuelRequest;
 use App\Http\Requests\StoreLetterIncapacityRequest;
 use App\Http\Requests\StoreLetterLostRequest;
 use App\Http\Services\BirthNoteService;
 use App\Http\Services\DeathNoteService;
+use App\Http\Services\DocPdfService;
 use App\Http\Services\LetterBusinessService;
 use App\Http\Services\LetterDeathService;
+use App\Http\Services\LetterFuelService;
 use App\Http\Services\LetterIncapacityService;
 use App\Http\Services\LetterLostService;
 use App\Http\Services\PdfService;
@@ -22,6 +26,7 @@ use App\Models\LetterDeath;
 use App\Models\LetterFuel;
 use App\Models\LetterIncapacity;
 use App\Models\LetterLost;
+use Illuminate\Http\Request;
 
 class DocumentController extends Controller
 {
@@ -32,11 +37,14 @@ class DocumentController extends Controller
         protected DeathNoteService $deathNoteService,
         protected LetterIncapacityService $letterIncapacityService,
         protected LetterLostService $letterLostService,
-        protected PdfService $pdfService
+        protected LetterFuelService $letterFuelService,
+        protected PdfService $pdfService,
+        protected DocPdfService $docPdfService
     ) {}
     public function index()
     {
-        return view('docs');
+        $allDocs = $this->docPdfService->getAllPdf();
+        return view('docs', compact('allDocs'));
     }
 
     // Function for Download Letter
@@ -95,21 +103,21 @@ class DocumentController extends Controller
     {
         $this->letterDeathService->store($request->validated());
 
-        return redirect()->route('surat-surat.kematian_minimal')->with('success', 'Data berhasil disimpan');
+        return redirect()->route('surat-surat.kematian-minimal')->with('success', 'Data berhasil disimpan');
     }
 
     public function storeDeathNote(StoreDeathNoteRequest $request)
     {
         $this->deathNoteService->store($request->validated());
 
-        return redirect()->route('surat-surat.kematian_nkri')->with('success', 'Data berhasil disimpan');
+        return redirect()->route('surat-surat.kematian-nkri')->with('success', 'Data berhasil disimpan');
     }
 
     public function storeLetterIncapacity(StoreLetterIncapacityRequest $request)
     {
         $this->letterIncapacityService->store($request->validated());
 
-        return redirect()->route('surat-surat.keringanan_sekolah')->with('success', 'Data berhasil disimpan');
+        return redirect()->route('surat-surat.keringanan-sekolah')->with('success', 'Data berhasil disimpan');
     }
 
     public function storeLetterLost(StoreLetterLostRequest $request)
@@ -117,5 +125,12 @@ class DocumentController extends Controller
         $this->letterLostService->store($request->validated());
 
         return redirect()->route('surat-surat.kehilangan')->with('success', 'Data berhasil disimpan');
+    }
+
+    public function storeLetterFuel(StoreLetterFuelRequest $request)
+    {
+        $this->letterFuelService->store($request->validated());
+
+        return redirect()->route('surat-surat.bbm')->with('success', 'Data berhasil disimpan');
     }
 }
