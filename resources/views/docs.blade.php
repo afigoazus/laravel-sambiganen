@@ -117,7 +117,7 @@
                 <p>Surat Keterangan Usaha</p>
             </a>
         </div>
-        <div class="bg-primary rounded-2xl h-auto cursor-pointer">
+        <div class="bg-secondary rounded-2xl h-auto cursor-pointer">
             <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/bbm">
                 <img class="w-32" src="{{asset('assets/img/form.png')}}" alt="">
                 <p>Surat BBM</p>
@@ -129,13 +129,13 @@
                 <p>Surat Keringanan Sekolah</p>
             </a>
         </div>
-        <div class="bg-primary rounded-2xl h-auto cursor-pointer">
+        <div class="bg-secondary rounded-2xl h-auto cursor-pointer">
             <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/perpindahan-penduduk">
                 <img class="w-32" src="{{asset('assets/img/form.png')}}" alt="">
                 <p>Surat Perpindahan Penduduk</p>
             </a>
         </div>
-        <div class="bg-primary rounded-2xl h-auto cursor-pointer">
+        <div class="bg-secondary rounded-2xl h-auto cursor-pointer">
             <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/kematian-minimal">
                 <img class="w-32" src="{{asset('assets/img/form.png')}}" alt="">
                 <p>Surat Kematian Minimal</p>
@@ -147,7 +147,7 @@
                 <p>Surat Kematian NKRI</p>
             </a>
         </div>
-        <div class="bg-primary rounded-2xl h-auto cursor-pointer">
+        <div class="bg-secondary rounded-2xl h-auto cursor-pointer">
             <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/kelahiran">
                 <img class="w-32" src="{{asset('assets/img/form.png')}}" alt="">
                 <p>Surat Kelahiran</p>

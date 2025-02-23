@@ -28,10 +28,6 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("dokumenButton").addEventListener("click", () => toggleTab("dokumenButton", "dokumenContent"));
 });
 
-
-
-
-
 function showLainnyaField() {
     var alasanSelect = document.getElementById("alasan");
     var otherField = document.getElementById("lainnyaField");

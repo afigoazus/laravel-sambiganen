@@ -55,7 +55,7 @@
         </div>
         
         <!-- kontak dan alamat -->
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col">
             <!-- Kontak -->
             <div class="font-poppins">
                 <p class="font-medium text-lg my-2 lg:mt-0 lg:mb-2">Kontak</p>
