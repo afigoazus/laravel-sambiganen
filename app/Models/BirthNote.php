@@ -35,7 +35,6 @@ class BirthNote extends Model
         'place_birth_child',
         'place_birth_child2',
         'date_birth_child',
-        'day_birth_child',
         'hour_birth_child',
         'type_birth_child',
         'no_birth_child',

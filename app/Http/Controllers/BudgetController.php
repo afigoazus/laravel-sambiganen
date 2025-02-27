@@ -13,6 +13,6 @@ class BudgetController extends Controller
         $year = $year ?? 2024;
         $budgetData = $this->budgetService->getBudgetData($year);
 
-        return view('budget', compact('budgetData'));
+        return view('budget', compact('budgetData', 'year'));
     }
 }

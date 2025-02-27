@@ -6,12 +6,13 @@ use App\Models\DeathNote;
 
 class DeathNoteService
 {
+    public function __construct(protected LetterCounterService $letterCounterService) {}
     public function store(array $data)
     {
         $deathNote = DeathNote::create([
             'name' => $data['nama-pelapor'],
             'nik' => $data['nik'],
-            'no_dok_journey' => $data['no-dok-perjalanan'],
+            'no_dok_journey' => $this->letterCounterService->getNextDeathLetterNumber(),
             'nationality' => $data['kewarganegaraan'],
             'no_wa' => $data['no-hp'],
             'name_saksi' => $data['nama-saksi-1'],

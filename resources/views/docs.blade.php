@@ -1,7 +1,40 @@
 @include("layouts.header")
+@php
+$documents = [
+[
+'title' => 'Surat Keterangan Usaha',
+'route' => 'surat-surat.keterangan-usaha',
+],
+[
+'title' => 'Surat BBM',
+'route' => 'surat-surat.bbm',
+],
+[
+'title' => 'Surat Keringanan Sekolah',
+'route' => 'surat-surat.keringanan-sekolah',
+],
+[
+'title' => 'Surat Kematian Minimal',
+'route' => 'surat-surat.kematian-minimal',
+],
+[
+'title' => 'Surat Kematian NKRI',
+'route' => 'surat-surat.kematian-nkri',
+],
+[
+'title' => 'Surat Kelahiran',
+'route' => 'surat-surat.kelahiran',
+],
+[
+'title' => 'Surat Kehilangan',
+'route' => 'surat-surat.kehilangan',
+]
+];
+@endphp
+
 <main class="mt-24 font-dusha">
     <div
-        class="bg-hero-image bg-center bg-cover h-64 bg-no-repeat flex items-center justify-center after:absolute after:left-0 after:right-0 after:bg-after after:w-screen after:h-64 after:opacity-80">
+        class="bg-hero-image bg-center bg-cover h-64 bg-no-repeat flex items-center justify-center after:absolute after:left-0 after:right-0 after:bg-after after:w-screen after:h-64 after:opacity-50">
         <div class="text-center relative z-10">
             <span class="text-4xl text-primary">Persyaratan <span class="text-secondary">dan</span></span> <br>
             <span class="text-4xl text-primary">Surat - Surat</span>
@@ -14,7 +47,7 @@
         <div class="flex gap-6 mb-2 text-xl">
             <button id="persyaratanButton" class="bg-primary p-2 rounded-xl text-white">Persyaratan</button>
             <button id="suratButton" class="bg-[#A2A2A2] p-2 rounded-xl">Surat-Surat</button>
-            <button id="dokumenButton" class="bg-[#A2A2A2] p-2 rounded-xl" >Dokumen</button>
+            <button id="dokumenButton" class="bg-[#A2A2A2] p-2 rounded-xl">Dokumen</button>
         </div>
         <!-- menu navigation end -->
 
@@ -77,6 +110,10 @@
                         <i class="fa-solid fa-caret-up fa-rotate-90" style="color: #0081a7;"></i>
                         1 KTP Pelapor
                     </li>
+                    <li>
+                        <i class="fa-solid fa-caret-up fa-rotate-90" style="color: #0081a7;"></i>
+                        Surat Keterangan Dari Dokter/Bidan
+                    </li>
                 </ul>
             </div>
             <!-- surat kematian end -->
@@ -105,60 +142,20 @@
             </div>
             <!-- surat kelahiran end -->
         </div>
-        
+
     </section>
     <!-- persayaratan section end -->
 
     <!-- surat-surat section -->
     <section id="suratContent" class="w-11/12 mx-auto my-20 text-white font-poppins font-medium grid grid-cols-2 sm:grid-cols-4 gap-6 hidden">
+        @foreach($documents as $document)
         <div class="bg-primary rounded-2xl h-auto cursor-pointer">
-            <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/keterangan-usaha">
+            <a class="flex flex-col items-center gap-4 p-10 text-center" href="{{ route($document['route']) }}">
                 <img class="w-32" src="{{asset('assets/img/form.png')}}" alt="">
-                <p>Surat Keterangan Usaha</p>
+                <p>{{ $document['title'] }}</p>
             </a>
         </div>
-        <div class="bg-secondary rounded-2xl h-auto cursor-pointer">
-            <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/bbm">
-                <img class="w-32" src="{{asset('assets/img/form.png')}}" alt="">
-                <p>Surat BBM</p>
-            </a>
-        </div>
-        <div class="bg-primary rounded-2xl h-auto cursor-pointer">
-            <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/keringanan-sekolah">
-                <img class="w-32" src="{{asset('assets/img/form.png')}}" alt="">
-                <p>Surat Keringanan Sekolah</p>
-            </a>
-        </div>
-        <div class="bg-secondary rounded-2xl h-auto cursor-pointer">
-            <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/perpindahan-penduduk">
-                <img class="w-32" src="{{asset('assets/img/form.png')}}" alt="">
-                <p>Surat Perpindahan Penduduk</p>
-            </a>
-        </div>
-        <div class="bg-secondary rounded-2xl h-auto cursor-pointer">
-            <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/kematian-minimal">
-                <img class="w-32" src="{{asset('assets/img/form.png')}}" alt="">
-                <p>Surat Kematian Minimal</p>
-            </a>
-        </div>
-        <div class="bg-primary rounded-2xl h-auto cursor-pointer">
-            <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/kematian-nkri">
-                <img class="w-32" src="{{asset('assets/img/form.png')}}" alt="">
-                <p>Surat Kematian NKRI</p>
-            </a>
-        </div>
-        <div class="bg-secondary rounded-2xl h-auto cursor-pointer">
-            <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/kelahiran">
-                <img class="w-32" src="{{asset('assets/img/form.png')}}" alt="">
-                <p>Surat Kelahiran</p>
-            </a>
-        </div>
-        <div class="bg-primary rounded-2xl h-auto cursor-pointer">
-            <a class="flex flex-col items-center gap-4 p-10 text-center" href="/dokumen/kehilangan">
-                <img class="w-32" src="{{asset('assets/img/form.png')}}" alt="">
-                <p>Surat Kehilangan</p>
-            </a>
-        </div>
+        @endforeach
     </section>
     <!-- surat-surat end -->
 
@@ -167,24 +164,14 @@
         <!-- dokumen swiper -->
         <div id="swiper-dokumen" class="swiper">
             <div class="swiper-wrapper font-poppins font-medium text-white">
+                @foreach ($allDocs as $docs)
                 <div class="swiper-slide bg-primary rounded-2xl h-auto cursor-pointer">
-                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="#">
+                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="{{ asset('storage/' . $docs->pdf_path) }}">
                         <img class="w-28" src="{{asset('assets/img/pdf-icon.png')}}" alt="">
-                        <p>Realisasi APBDes Tahun Anggaran 2023</p>
+                        <p>{{ $docs->name }}</p>
                     </a>
                 </div>
-                <div class="swiper-slide bg-primary rounded-2xl h-auto cursor-pointer">
-                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="#">
-                        <img class="w-28" src="{{asset('assets/img/pdf-icon.png')}}" alt="">
-                        <p>Realisasi APBDes Tahun Anggaran 2024</p>
-                    </a>
-                </div>
-                <div class="swiper-slide bg-primary rounded-2xl h-auto cursor-pointer">
-                    <a class="flex flex-col items-center gap-4 p-10 text-center" href="#">
-                        <img class="w-28" src="{{asset('assets/img/pdf-icon.png')}}" alt="">
-                        <p>Realisasi APBDes Tahun Anggaran 2025</p>
-                    </a>
-                </div>    
+                @endforeach
             </div>
             <div class="swiper-pagination relative mt-4"></div>
         </div>

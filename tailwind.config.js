@@ -20,7 +20,7 @@ export default {
             colors: {
                 primary: "#0081A7",
                 secondary: "#01B8EC",
-                after: "#F5F5F5",
+                after: "#000000",
                 turqoise: "#00AFB9",
                 cyan: "#01B8EC",
                 lightBlue: "#67AEF0",

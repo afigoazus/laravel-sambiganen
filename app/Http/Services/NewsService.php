@@ -18,4 +18,16 @@ class NewsService
         $news = News::with(['categories', 'locations'])->first();
         return $news;
     }
+
+    public function getNews($id)
+    {
+        $news = News::with(['categories', 'locations'])->where('id', $id)->first();
+        return $news;
+    }
+
+    public function getNewsExceptId($id)
+    {
+        $news = News::where('id', '!=', $id)->get();
+        return $news;
+    }
 }

@@ -14,13 +14,13 @@ class LetterBusinessService
             'name' => $data['name'],
             'address' => $data['alamat'],
             'no_ktp' => $data['nik'],
-            'agriculture' => $data['kategori'] == 'Pertanian' ? $data['nama-usaha'] : null,
-            'industry' => $data['kategori'] == 'Perindustrian' ? $data['nama-usaha'] : null,
-            'trading' => $data['kategori'] == 'Perdagangan' ? $data['nama-usaha'] : null,
-            'stock_breeding' => $data['kategori'] == 'Peternakan' ? $data['nama-usaha'] : null,
-            'handicraft' => $data['kategori'] == 'Kerajinan' ? $data['nama-usaha'] : null,
-            'service' => $data['kategori'] == 'Jasa' ? $data['nama-usaha'] : null,
-            'other' => $data['kategori'] == 'Lainnya' ? $data['nama-usaha'] : null,
+            'agriculture' => $data['pertanian'],
+            'industry' => $data['perindustrian'],
+            'trading' => $data['perdagangan'],
+            'stock_breeding' => $data['perternakan'],
+            'handicraft' => $data['kerajinan'],
+            'service' => $data['jasa'],
+            'other' => $data['lainnya'],
         ]);
     }
 }

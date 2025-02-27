@@ -15,10 +15,15 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/profil', [HomeController::class, 'profile'])->name('profil');
 Route::get('/sejarah', [HomeController::class, 'history'])->name('sejarah');
 
+Route::get('/dtks', function () {
+    return view('surat-surat.dtks');
+});
+
 // Feature Routes
 Route::get('/agenda', [CreationController::class, 'index'])->name('agenda');
 Route::get('/galeri', [GalleryController::class, 'index'])->name('galeri');
 Route::get('/berita', [NewsController::class, 'index'])->name('berita');
+Route::get('/berita/{id}', [NewsController::class, 'get'])->name('berita.get');
 Route::get('/lembaga', [OrganizationController::class, 'index'])->name('lembaga');
 Route::get('/kreasi', [CreationController::class, 'index'])->name('kreasi');
 Route::get('/anggaran/{year?}', [BudgetController::class, 'index'])->name('anggaran');
@@ -26,7 +31,7 @@ Route::get('/pengaduan', [ComplaintController::class, 'index'])->name('pengaduan
 
 // Document Routes
 Route::prefix('dokumen')->group(function () {
-    Route::get('/', [DocumentController::class, 'index']);
+    Route::get('/', [DocumentController::class, 'index'])->name('surat-surat');
 
     // Static Views
     $views = [
@@ -49,6 +54,7 @@ Route::prefix('dokumen')->group(function () {
         'keterangan-usaha' => 'storeLetterBusiness',
         'kelahiran' => 'storeBirthNote',
         'kematian-minimal' => 'storeLetterDeath',
+        'bbm' => 'storeLetterFuel',
         'kematian-nkri' => 'storeDeathNote',
         'keringanan-sekolah' => 'storeLetterIncapacity',
         'kehilangan' => 'storeLetterLost',

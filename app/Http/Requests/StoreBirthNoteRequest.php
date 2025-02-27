@@ -24,7 +24,6 @@ class StoreBirthNoteRequest extends FormRequest
         return [
             'nama-pelapor' => 'required',
             'nik-pelapor' => 'required',
-            'no-dok-perjalanan' => 'required',
             'kewarganegaraan-pelapor' => 'required',
             'no-hp' => 'required',
             'nama-saksi-1' => 'required',
@@ -50,7 +49,6 @@ class StoreBirthNoteRequest extends FormRequest
             'tempat-dilahirkan' => 'required',
             'tempat-kelahiran' => 'required',
             'tanggal-kelahiran' => 'required|date',
-            'hari-kelahiran' => 'required',
             'jam-kelahiran' => 'required',
             'jenis-kelahiran' => 'required',
             'kelahiran-ke' => 'required|integer',
