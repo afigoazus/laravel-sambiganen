@@ -42,7 +42,6 @@
 
         <!-- kategori usaha -->
         <div class="bg-white p-4 w-full rounded-md flex flex-col gap-4">
-
             <span class="text-2xl font-medium">Formulir Jenis Usaha</span>
             <div>
                 <span>Jenis Usaha</span> <span class="text-[#FF0000]"> *</span> <br>
