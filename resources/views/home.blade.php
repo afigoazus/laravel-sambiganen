@@ -1,10 +1,10 @@
 @include("layouts.header")
 <main class="min-h-screen">
     <!-- Joglo Burammm -->
-    <section class="relative h-[400px] md:h-[600px] mb-16 font-poppins">
+    <section class="relative min-h-screen mb-16 font-poppins">
         <div class="relative">
             <!-- hero img -->
-            <div class="bg-hero-image bg-center bg-cover min-h-screen bg-no-repeat flex items-center justify-center after:absolute after:left-0 after:right-0 after:bg-after after:w-screen after:h-screen after:opacity-50">
+            <div class="bg-hero-image bg-center bg-cover h-screen bg-no-repeat flex items-center justify-center after:absolute after:left-0 after:right-0 after:bg-after after:w-screen after:h-screen after:opacity-50">
             </div>
 
             <!-- Search Bar -->
@@ -23,19 +23,7 @@
                         </button>
                     </div>
                 </div>
-                <!-- Search Bar - Desktop
-                <div class="hidden md:flex items-center w-11/12 max-w-md relative animate-zoom">
-                    <input
-                        type="text"
-                        class="w-full px-6 py-4 rounded-full border-2 border-white bg-white/20 text-white placeholder-white focus:outline-none backdrop-blur-sm"
-                        placeholder="Search...">
-                    <button class="absolute right-1 top-1/2 -translate-y-1/2 bg-turqoise p-4 rounded-full hover:bg-secondary transition-colors duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                    </button>
-                </div> -->
-
+                
                 <!-- Social Links - Mobile -->
                 <div class="flex justify-center gap-8 mt-4 animate-zoom">
                     <a href="#" class="hover:opacity-80 transition-opacity duration-300">
@@ -56,7 +44,7 @@
     </section>
 
     <!-- Content -->
-    <div class="container mx-auto mt-72 md:mt-40 px-4 space-y-16">
+    <div class="container mx-auto px-4 space-y-16">
         <!-- Kisah kisah -->
         <section class="flex flex-row gap-8 md:justify-center md:gap-16 md:px-24">
             <div class="w-1/2 space-y-4">
