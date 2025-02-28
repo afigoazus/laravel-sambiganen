@@ -31,7 +31,7 @@ class LetterFuelResource extends Resource
         return $form
             ->schema([
                 Forms\Components\Section::make('Data Pribadi')->schema([
-                    Forms\Components\Grid::make(2)->schema([
+                    Forms\Components\Grid::make(3)->schema([
                         Forms\Components\TextInput::make('no_letter')
                             ->label("Nomor Surat")
                             ->numeric()
@@ -39,6 +39,9 @@ class LetterFuelResource extends Resource
                         Forms\Components\TextInput::make('name')
                             ->label('Nama')
                             ->required()
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('no_wa')
+                            ->label("Nomer Whatsapp")
                             ->maxLength(255),
                     ]),
                     Forms\Components\Grid::make(3)->schema([
@@ -175,6 +178,9 @@ class LetterFuelResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('address_distributor')
                     ->label('Alamat Distributor')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('no_wa')
+                    ->label("No. Whatsapp")
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

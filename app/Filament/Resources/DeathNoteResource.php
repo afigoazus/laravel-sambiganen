@@ -35,7 +35,7 @@ class DeathNoteResource extends Resource
                             Forms\Components\TextInput::make('name')
                                 ->label("Nama Pelapor")
                                 ->required()
-                                ->maxLength(20),
+                                ->maxLength(44),
                             Forms\Components\TextInput::make('nik')
                                 ->label("NIK Pelapor")
                                 ->required()
@@ -81,7 +81,7 @@ class DeathNoteResource extends Resource
                             Forms\Components\TextInput::make('name_saksi')
                                 ->label("Nama Saksi 1")
                                 ->required()
-                                ->maxLength(20),
+                                ->maxLength(44),
                             Forms\Components\TextInput::make('nik_saksi')
                                 ->label("NIK Saksi 1")
                                 ->required()
@@ -96,7 +96,7 @@ class DeathNoteResource extends Resource
                             Forms\Components\TextInput::make('name_saksi2')
                                 ->label("Nama Saksi 2")
                                 ->required()
-                                ->maxLength(20),
+                                ->maxLength(44),
                             Forms\Components\TextInput::make('nik_saksi2')
                                 ->label("NIK Saksi 2")
                                 ->required()
@@ -114,7 +114,7 @@ class DeathNoteResource extends Resource
                             Forms\Components\TextInput::make('name_dad')
                                 ->label("Nama Ayah")
                                 ->required()
-                                ->maxLength(20),
+                                ->maxLength(44),
                             Forms\Components\TextInput::make('nik_dad')
                                 ->label("NIK Ayah")
                                 ->required()
@@ -138,7 +138,7 @@ class DeathNoteResource extends Resource
                             Forms\Components\TextInput::make('name_mom')
                                 ->label("Nama Ibu")
                                 ->required()
-                                ->maxLength(255),
+                                ->maxLength(44),
                             Forms\Components\TextInput::make('nik_mom')
                                 ->label("NIK Ibu")
                                 ->required()
@@ -170,7 +170,7 @@ class DeathNoteResource extends Resource
                             Forms\Components\TextInput::make('name_death')
                                 ->label("Nama")
                                 ->required()
-                                ->maxLength(20),
+                                ->maxLength(44),
 
                         ]),
                         Forms\Components\Grid::make(3)->schema([

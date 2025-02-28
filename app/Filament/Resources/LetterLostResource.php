@@ -93,6 +93,9 @@ class LetterLostResource extends Resource
                     ->label("Barang Hilang")
                     ->required()
                     ->maxLength(255),
+                Forms\Components\TextInput::make('no_wa')
+                    ->label("Nomer Whatsapp")
+                    ->maxLength(255),
             ]);
     }
 
@@ -112,6 +115,9 @@ class LetterLostResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('information')
                     ->label("Keterangan")
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('no_wa')
+                    ->label("No. Whatsapp")
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

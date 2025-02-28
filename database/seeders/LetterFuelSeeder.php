@@ -40,6 +40,7 @@ class LetterFuelSeeder extends Seeder
                 "address_distributor" => "DS BESUKI KC. SAMBIT",
                 "purchasing_tools_used" => "Uang",
                 "year" => 2024,
+                "no_wa" => '081234567900', // Add no_wa column
                 "created_at" => "2024-09-26 01:21:32",
                 "updated_at" => "2024-09-26 01:21:32",
             ],
@@ -65,6 +66,7 @@ class LetterFuelSeeder extends Seeder
                 "address_distributor" => "DS BESUKI KC. SAMBIT",
                 "purchasing_tools_used" => "Uang",
                 "year" => 2024,
+                "no_wa" => '081234567900', // Add no_wa column
                 "created_at" => "2024-09-26 01:21:32",
                 "updated_at" => "2024-09-26 01:21:32",
             ],
@@ -89,7 +91,9 @@ class LetterFuelSeeder extends Seeder
                 "no_distributor" => "54.634.11",
                 "address_distributor" => "DS BESUKI KC. SAMBIT",
                 "purchasing_tools_used" => "Uang",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2024,
+                "no_wa" => '081234567900', // Add no_wa column
                 "created_at" => "2024-09-26 01:21:32",
                 "updated_at" => "2024-09-26 01:21:32",
             ],
@@ -115,6 +119,7 @@ class LetterFuelSeeder extends Seeder
                 "address_distributor" => "JL. RAYA DS.BALONG-SLAHUNG",
                 "purchasing_tools_used" => "Uang",
                 "year" => 2024,
+                "no_wa" => '081234567900', // Add no_wa column
                 "created_at" => "2024-09-26 01:21:32",
                 "updated_at" => "2024-09-26 01:21:32",
             ],
@@ -140,6 +145,7 @@ class LetterFuelSeeder extends Seeder
                 "address_distributor" => "JL. RAYA DS.BALONG-SLAHUNG",
                 "purchasing_tools_used" => "Uang",
                 "year" => 2024,
+                "no_wa" => '081234567900', // Add no_wa column
                 "created_at" => "2024-09-26 01:21:32",
                 "updated_at" => "2024-09-26 01:21:32",
             ],
@@ -166,6 +172,7 @@ class LetterFuelSeeder extends Seeder
                 "no_distributor" => "54.634.12",
                 "address_distributor" => "JL. RAYA DS.BALONG-SLAHUNG",
                 "purchasing_tools_used" => "Uang",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => "2025-01-29 12:00:00",
                 "updated_at" => "2025-01-29 12:00:00",
@@ -191,6 +198,7 @@ class LetterFuelSeeder extends Seeder
                 "no_distributor" => "54.634.12",
                 "address_distributor" => "JL. RAYA DS.BALONG-SLAHUNG",
                 "purchasing_tools_used" => "Uang",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => "2025-01-29 12:00:00",
                 "updated_at" => "2025-01-29 12:00:00",
@@ -216,6 +224,7 @@ class LetterFuelSeeder extends Seeder
                 "no_distributor" => "54.634.12",
                 "address_distributor" => "JL. RAYA DS.BALONG-SLAHUNG",
                 "purchasing_tools_used" => "Uang",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => "2025-01-29 12:00:00",
                 "updated_at" => "2025-01-29 12:00:00",
@@ -241,6 +250,7 @@ class LetterFuelSeeder extends Seeder
                 "no_distributor" => "54.634.12",
                 "address_distributor" => "JL. RAYA DS.BALONG-SLAHUNG",
                 "purchasing_tools_used" => "Uang",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => "2025-01-29 12:00:00",
                 "updated_at" => "2025-01-29 12:00:00",
@@ -266,6 +276,7 @@ class LetterFuelSeeder extends Seeder
                 "no_distributor" => "54.634.12",
                 "address_distributor" => "JL. RAYA DS.BALONG-SLAHUNG",
                 "purchasing_tools_used" => "Uang",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => "2025-01-29 12:00:00",
                 "updated_at" => "2025-01-29 12:00:00",
@@ -292,6 +303,7 @@ class LetterFuelSeeder extends Seeder
                 "no_distributor" => "54.634.12",
                 "address_distributor" => "JL. RAYA DS.BALONG-SLAHUNG",
                 "purchasing_tools_used" => "Uang",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2023,
                 "created_at" => "2023-06-15 09:30:00",
                 "updated_at" => "2023-06-15 09:30:00",
@@ -317,6 +329,7 @@ class LetterFuelSeeder extends Seeder
                 "no_distributor" => "54.634.12",
                 "address_distributor" => "JL. RAYA DS.BALONG-SLAHUNG",
                 "purchasing_tools_used" => "Uang",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2023,
                 "created_at" => "2023-06-15 09:30:00",
                 "updated_at" => "2023-06-15 09:30:00",
@@ -344,6 +357,7 @@ class LetterFuelSeeder extends Seeder
                 "no_distributor" => "54.634.12",
                 "address_distributor" => "JL. RAYA DS.BALONG-SLAHUNG",
                 "purchasing_tools_used" => "Uang",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2022,
                 "created_at" => "2022-03-20 14:45:00",
                 "updated_at" => "2022-03-20 14:45:00",
@@ -369,6 +383,7 @@ class LetterFuelSeeder extends Seeder
                 "no_distributor" => "54.634.12",
                 "address_distributor" => "JL. RAYA DS.BALONG-SLAHUNG",
                 "purchasing_tools_used" => "Uang",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2022,
                 "created_at" => "2022-03-20 14:45:00",
                 "updated_at" => "2022-03-20 14:45:00",
@@ -396,6 +411,7 @@ class LetterFuelSeeder extends Seeder
                 "no_distributor" => "54.634.11",
                 "address_distributor" => "DS BESUKI KC. SAMBIT",
                 "purchasing_tools_used" => "Uang",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2021,
                 "created_at" => "2021-11-05 10:15:00",
                 "updated_at" => "2021-11-05 10:15:00",
@@ -421,6 +437,7 @@ class LetterFuelSeeder extends Seeder
                 "no_distributor" => "54.634.11",
                 "address_distributor" => "DS BESUKI KC. SAMBIT",
                 "purchasing_tools_used" => "Uang",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2021,
                 "created_at" => "2021-11-05 10:15:00",
                 "updated_at" => "2021-11-05 10:15:00",

@@ -87,7 +87,7 @@
             text-align: center;
             border: 1px solid #000;
             font-weight: bold;
-            padding: 1px 6px;
+            padding: 1px 5px;
             font-size: 0.6rem;
             width: 14px;
             display: inline-block;
@@ -158,11 +158,22 @@
                     <td>:</td>
                     <td></td>
                     <td class="input-grid">
-                        @foreach (str_split($data['name']) as $char)
-                        @if ($char === ' ')
-                        <span>&nbsp;</span>@else<span>{{ $char }}</span>
-                        @endif
-                        @endforeach
+                        @php
+                        $nameArray = str_split($data['name']); // Convert name into an array of characters
+                        $totalSpans = 44; // Fixed span count
+                        @endphp
+
+                        @for ($i = 0; $i < $totalSpans; $i++)
+                            @if (isset($nameArray[$i]))
+                            @if ($nameArray[$i]===' ' )
+                            <span>&nbsp;</span>
+                            @else
+                            <span>{{ $nameArray[$i] }}</span>
+                            @endif
+                            @else
+                            <span>&nbsp;</span> <!-- Fill remaining spans with spaces -->
+                            @endif
+                            @endfor
                     </td>
                 </tr>
                 <tr>
@@ -178,15 +189,13 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>No. Dok. Perjalanan</td>
+                    <td style="width: 90px;">No. Dok. Perjalanan</td>
                     <td>:</td>
                     <td></td>
                     <td class="input-grid">
-                        @foreach (str_split($data['no_dok_journey']) as $char)
-                        @if ($char === ' ')
-                        <span>&nbsp;</span>@else<span>{{ $char }}</span>
-                        @endif
-                        @endforeach
+                        @for($i = 0; $i < 15; $i++)
+                            <span>&nbsp;</span>
+                            @endfor
                     </td>
                 </tr>
                 <tr>
@@ -222,15 +231,26 @@
             <p style="font-weight: bolder; margin-left: 0.4em">SAKSI I</p>
             <table class="table-form">
                 <tr>
-                    <td>Nama</td>
+                    <td style="width: 90px;">Nama</td>
                     <td>:</td>
                     <td></td>
                     <td class="input-grid">
-                        @foreach (str_split($data['name_saksi']) as $char)
-                        @if ($char === ' ')
-                        <span>&nbsp;</span>@else<span>{{ $char }}</span>
-                        @endif
-                        @endforeach
+                        @php
+                        $nameArray = str_split($data['name_saksi']); // Convert name into an array of characters
+                        $totalSpans = 44; // Fixed span count
+                        @endphp
+
+                        @for ($i = 0; $i < $totalSpans; $i++)
+                            @if (isset($nameArray[$i]))
+                            @if ($nameArray[$i]===' ' )
+                            <span>&nbsp;</span>
+                            @else
+                            <span>{{ $nameArray[$i] }}</span>
+                            @endif
+                            @else
+                            <span>&nbsp;</span> <!-- Fill remaining spans with spaces -->
+                            @endif
+                            @endfor
                     </td>
                 </tr>
                 <tr>
@@ -263,15 +283,26 @@
             <p style="font-weight: bolder; margin-left: 0.4em; margin-top: 1em">SAKSI II</p>
             <table class="table-form">
                 <tr>
-                    <td>Nama</td>
+                    <td style="width: 90px;">Nama</td>
                     <td>:</td>
                     <td></td>
                     <td class="input-grid">
-                        @foreach (str_split($data['name_saksi2']) as $char)
-                        @if ($char === ' ')
-                        <span>&nbsp;</span>@else<span>{{ $char }}</span>
-                        @endif
-                        @endforeach
+                        @php
+                        $nameArray = str_split($data['name_saksi2']); // Convert name into an array of characters
+                        $totalSpans = 44; // Fixed span count
+                        @endphp
+
+                        @for ($i = 0; $i < $totalSpans; $i++)
+                            @if (isset($nameArray[$i]))
+                            @if ($nameArray[$i]===' ' )
+                            <span>&nbsp;</span>
+                            @else
+                            <span>{{ $nameArray[$i] }}</span>
+                            @endif
+                            @else
+                            <span>&nbsp;</span> <!-- Fill remaining spans with spaces -->
+                            @endif
+                            @endfor
                     </td>
                 </tr>
                 <tr>
@@ -307,15 +338,26 @@
             <p style="font-weight: bolder; margin-left: 0.4em">DATA ORANG TUA</p>
             <table class="table-form">
                 <tr>
-                    <td>Nama Ayah</td>
+                    <td style="width: 90px;">Nama Ayah</td>
                     <td>:</td>
                     <td></td>
                     <td class="input-grid">
-                        @foreach (str_split($data['name_dad']) as $char)
-                        @if ($char === ' ')
-                        <span>&nbsp;</span>@else<span>{{ $char }}</span>
-                        @endif
-                        @endforeach
+                        @php
+                        $nameArray = str_split($data['name_dad']); // Convert name into an array of characters
+                        $totalSpans = 44; // Fixed span count
+                        @endphp
+
+                        @for ($i = 0; $i < $totalSpans; $i++)
+                            @if (isset($nameArray[$i]))
+                            @if ($nameArray[$i]===' ' )
+                            <span>&nbsp;</span>
+                            @else
+                            <span>{{ $nameArray[$i] }}</span>
+                            @endif
+                            @else
+                            <span>&nbsp;</span> <!-- Fill remaining spans with spaces -->
+                            @endif
+                            @endfor
                     </td>
                 </tr>
                 <tr>
@@ -382,15 +424,26 @@
                     </td>
                 </tr>
                 <tr style="margin-top:1px">
-                    <td>Nama Ibu</td>
+                    <td style="width: 90px;">Nama Ibu</td>
                     <td>:</td>
                     <td></td>
                     <td class="input-grid">
-                        @foreach (str_split($data['name_mom']) as $char)
-                        @if ($char === ' ')
-                        <span>&nbsp;</span>@else<span>{{ $char }}</span>
-                        @endif
-                        @endforeach
+                        @php
+                        $nameArray = str_split($data['name_mom']); // Convert name into an array of characters
+                        $totalSpans = 44; // Fixed span count
+                        @endphp
+
+                        @for ($i = 0; $i < $totalSpans; $i++)
+                            @if (isset($nameArray[$i]))
+                            @if ($nameArray[$i]===' ' )
+                            <span>&nbsp;</span>
+                            @else
+                            <span>{{ $nameArray[$i] }}</span>
+                            @endif
+                            @else
+                            <span>&nbsp;</span> <!-- Fill remaining spans with spaces -->
+                            @endif
+                            @endfor
                     </td>
                 </tr>
                 <tr style="margin-top:1px">
@@ -475,15 +528,26 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Nama Lengkap</td>
+                    <td style="width: 90px;">Nama Lengkap</td>
                     <td>:</td>
                     <td></td>
                     <td class="input-grid">
-                        @foreach (str_split($data['name_death']) as $char)
-                        @if ($char === ' ')
-                        <span>&nbsp;</span>@else<span>{{ $char }}</span>
-                        @endif
-                        @endforeach
+                        @php
+                        $nameArray = str_split($data['name_death']); // Convert name into an array of characters
+                        $totalSpans = 44; // Fixed span count
+                        @endphp
+
+                        @for ($i = 0; $i < $totalSpans; $i++)
+                            @if (isset($nameArray[$i]))
+                            @if ($nameArray[$i]===' ' )
+                            <span>&nbsp;</span>
+                            @else
+                            <span>{{ $nameArray[$i] }}</span>
+                            @endif
+                            @else
+                            <span>&nbsp;</span> <!-- Fill remaining spans with spaces -->
+                            @endif
+                            @endfor
                     </td>
                 </tr>
                 <tr>

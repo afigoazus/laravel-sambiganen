@@ -72,4 +72,5 @@ Route::prefix('download')->group(function () {
     Route::get('/kematian/{id}', [DocumentController::class, 'downloadLetterDeath'])->name('surat.kematian');
     Route::get('/tidak-mampu/{id}', [DocumentController::class, 'downloadLetterIncapacity'])->name('surat.tidakmampu');
     Route::get('/bbm/{id}', [DocumentController::class, 'downloadLetterFuel'])->name('surat.bbm');
+    Route::get('/dtks/{id}', [DocumentController::class, 'downloadDTKS'])->name('surat.dtks');
 });
