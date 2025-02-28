@@ -28,6 +28,17 @@ class StoreLetterFuelRequest extends FormRequest
             'nama-usaha' => 'nullable',
             'sektor-pengguna' => 'required',
             'jenis-usaha' => 'required',
+            'no-wa' => 'required',
+            'jenis-alat' => 'required',
+            'jumlah-alat' => 'required',
+            'fungsi-alat' => 'required',
+            'daya-alat' => 'required',
+            'lama-penggunaan' => 'required',
+            'lama-operasional' => 'required',
+            'konsumsi' => 'required',
+            'alokasi-volume' => 'required',
+            'tempat-pengambilan' => 'required',
+            'alat-tukar' => 'required',
         ];
     }
 }

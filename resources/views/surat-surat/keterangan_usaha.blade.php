@@ -1,6 +1,6 @@
 @include("layouts.header")
 <main class="font-dusha mt-24 bg-[#F4F7F6] -mb-9">
-    <div class="bg-hero-image bg-center bg-cover h-64 bg-no-repeat flex items-center justify-center after:absolute after:left-0 after:right-0 after:bg-after after:w-screen after:h-64 after:opacity-80">
+    <div class="bg-hero-image bg-center bg-cover h-64 bg-no-repeat flex items-center justify-center after:absolute after:left-0 after:right-0 after:bg-after after:w-screen after:h-64 after:opacity-50">
         <div class="text-center relative z-10">
             <span class="text-4xl text-primary">Surat Keterangan</span> <br>
             <span class="text-4xl text-secondary">Usaha</span>
@@ -40,37 +40,43 @@
             </label>
         </div>
 
-        <!-- kategori field -->
-        <div class="bg-white p-4 w-full rounded-md">
-            <span>Jenis Usaha</span> <span class="text-[#FF0000]"> *</span> <br>
-            <p class="font-medium">Isi dengan jenis usaha anda. Bisa mengisi lebih dari 1 bidang</p>
-            <label for="pertanian"> Pertanian <br>
-                <input type="text" name="pertanian" class="w-full my-2 outline-none border-b-2 border-black border-dotted focus:border-solid">
-            </label>
-            <label for="perindustrian"> Perindustrian <br>
-                <input type="text" name="perindustrian" class="w-full my-2 outline-none border-b-2 border-black border-dotted focus:border-solid">
-            </label>
-            <label for="perdagangan"> Perdagangan <br>
-                <input type="text" name="perdagangan" class="w-full my-2 outline-none border-b-2 border-black border-dotted focus:border-solid">
-            </label>
-            <label for="perternakan"> Perternakan <br>
-                <input type="text" name="perternakan" class="w-full my-2 outline-none border-b-2 border-black border-dotted focus:border-solid">
-            </label>
-            <label for="kerajinan"> Kerajinan <br>
-                <input type="text" name="kerajinan" class="w-full my-2 outline-none border-b-2 border-black border-dotted focus:border-solid">
-            </label>
-            <label for="jasa"> Jasa <br>
-                <input type="text" name="jasa" class="w-full my-2 outline-none border-b-2 border-black border-dotted focus:border-solid">
-            </label>
-            <label for="lainnya"> Lainnya <br>
-                <input type="text" name="lainnya" class="w-full my-2 outline-none border-b-2 border-black border-dotted focus:border-solid">
-            </label>
+        <!-- kategori usaha -->
+        <div class="bg-white p-4 w-full rounded-md flex flex-col gap-4">
+            <span class="text-2xl font-medium">Formulir Jenis Usaha</span>
+            <div>
+                <span>Jenis Usaha</span> <span class="text-[#FF0000]"> *</span> <br>
+                <select name="kategori" id="kategori" class="border-2 border-black mt-2" required>
+                    <option disabled selected>Pilih Jenis Usaha</option>
+                    <option value="pertanian">Pertanian</option>
+                    <option value="perindustrian">Perindustrian</option>
+                    <option value="perdagangan">Perdagangan</option>
+                    <option value="peternakan">Perternakan</option>
+                    <option value="kerajinan">Kerajinan</option>
+                    <option value="jasa">Jasa</option>
+                    <option value="lainnya">Lainnya</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="">
+                    <span>Deskripsi Usaha</span> <span class="text-[#FF0000]"> *</span> <br>
+                    <input type="text" name="deskripsi" id="deskripsi" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Deskripsi Usaha" required>
+                </label>
+            </div>
+
         </div>
 
         <!-- nama-usaha field -->
         <div class="bg-white p-4 w-full rounded-md">
             <label for="nama-usaha">Nama Usaha <span class="text-[#FF0000]">*</span> <br>
                 <input type="text" name="nama-usaha" id="nama-usaha" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Nama Usaha" required>
+            </label>
+        </div>
+
+        <!-- no whatsapp -->
+        <div class="bg-white p-4 w-full rounded-md">
+            <label for="">No Telepon/Whatsapp <span class="text-[#FF0000]">*</span>
+                <input type="text" name="no-wa" id="no-wa" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="No Telepon/Whatsapp" required>
             </label>
         </div>
 

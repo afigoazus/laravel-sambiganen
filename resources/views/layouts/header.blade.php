@@ -20,6 +20,7 @@
   <script src="{{asset('assets/js/dokumen.js')}}"></script>
   <script src="{{asset('assets/js/galery.js')}}"></script>
   <script src="{{asset('assets/js/form.js')}}"></script>
+  <script src="{{asset('assets/js/dtks.js')}}"></script>
 </head>
 
 <body class="overflow-x-hidden">
@@ -90,12 +91,19 @@
           <div id="dropdown-surat-dan-dokumen"
             class="pl-4 hidden py-5 md:absolute md:px-2 md:pt-10 md:bg-primary md:rounded md:w-max md:min-w-[150px]">
             <ul class="space-y-5">
-              <li><a href="/dokumen">
+              <li><a href="/dokumen?tab=persyaratan">
+                  <p>Persyaratan</p>
+                </a>
+              </li>
+              <li>
+                <a href="/dokumen?tab=surat">
                   <p>Surat</p>
-                </a></li>
-              <li><a href="/dokumen">
+                </a>
+              </li>
+              <li><a href="/dokumen?tab=dokumen">
                   <p>Dokumen</p>
-                </a></li>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -129,6 +137,9 @@
         <div>
           <a href="{{ route('berita') }}"><span>News</span></a>
         </div>
+
+        <!-- dtks -->
+        <div><a href="/dtks"><span>DTKS</span></a></div>
 
         <!-- Galery -->
         <div>

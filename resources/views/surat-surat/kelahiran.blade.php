@@ -1,6 +1,6 @@
 @include("layouts.header")
 <main class="font-dusha mt-24 bg-[#F4F7F6] -mb-9">
-    <div class="bg-hero-image bg-center bg-cover h-64 bg-no-repeat flex items-center justify-center after:absolute after:left-0 after:right-0 after:bg-after after:w-screen after:h-64 after:opacity-80">
+    <div class="bg-hero-image bg-center bg-cover h-64 bg-no-repeat flex items-center justify-center after:absolute after:left-0 after:right-0 after:bg-after after:w-screen after:h-64 after:opacity-50">
         <div class="text-center relative z-10">
             <span class="text-4xl text-primary">Surat</span> <br>
             <span class="text-4xl text-secondary">Kelahiran</span>
@@ -478,6 +478,13 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- no whatsapp -->
+        <div class="bg-white p-4 w-full rounded-md">
+            <label for="">No Telepon/Whatsapp <span class="text-[#FF0000]">*</span>
+                <input type="text" name="no-wa" id="no-wa" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="No Telepon/Whatsapp" required>
+            </label>
         </div>
 
         <!-- submit and reset button -->

@@ -2,74 +2,63 @@
 <main class="min-h-screen">
     <!-- Joglo Burammm -->
     <section class="relative h-[400px] md:h-[600px] mb-16 font-poppins">
-        <img class="w-full h-full object-cover" src="{{asset('assets/img/img-breadcrumbs.png')}}" alt="joglo Wringinanom">
+        <div class="relative">
+            <!-- hero img -->
+            <div class="bg-hero-image bg-center bg-cover min-h-screen bg-no-repeat flex items-center justify-center after:absolute after:left-0 after:right-0 after:bg-after after:w-screen after:h-screen after:opacity-50">
+            </div>
 
-        <!-- Search Bar -->
-        <div class="absolute bottom-16 left-1/2 -translate-x-1/2 flex flex-col items-center w-full space-y-8">
-            <!-- Search Bar - Mobile -->
-            <div class="relative w-11/12 max-w-md md:hidden animate-zoom">
-                <div class="relative">
+            <!-- Search Bar -->
+            <div class="absolute bottom-60 left-1/2 -translate-x-1/2 flex flex-col items-center w-full space-y-8">
+                <!-- Search Bar -->
+                <div class="relative w-11/12 max-w-md animate-zoom">
+                    <div class="relative">
+                        <input
+                            type="text"
+                            class="w-full px-6 py-3 rounded-full border border-white/50 bg-black/30 text-white placeholder-white/80 focus:outline-none backdrop-blur-md"
+                            placeholder="Search...">
+                        <button class="absolute right-6 top-1/2 -translate-y-1/2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <!-- Search Bar - Desktop
+                <div class="hidden md:flex items-center w-11/12 max-w-md relative animate-zoom">
                     <input
                         type="text"
-                        class="w-full px-6 py-3 rounded-full border border-white/50 bg-black/30 text-white placeholder-white/80 focus:outline-none backdrop-blur-md"
+                        class="w-full px-6 py-4 rounded-full border-2 border-white bg-white/20 text-white placeholder-white focus:outline-none backdrop-blur-sm"
                         placeholder="Search...">
-                    <button class="absolute right-2 top-1/2 -translate-y-1/2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <button class="absolute right-1 top-1/2 -translate-y-1/2 bg-turqoise p-4 rounded-full hover:bg-secondary transition-colors duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                     </button>
-                </div>
-            </div>
-            <!-- Search Bar - Desktop -->
-            <div class="hidden md:flex items-center w-11/12 max-w-md relative animate-zoom">
-                <input
-                    type="text"
-                    class="w-full px-6 py-4 rounded-full border-2 border-white bg-white/20 text-white placeholder-white focus:outline-none backdrop-blur-sm"
-                    placeholder="Search...">
-                <button class="absolute -right-6 top-1/2 -translate-y-1/2 bg-turqoise p-4 rounded-full hover:bg-secondary transition-colors duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                </button>
-            </div>
+                </div> -->
 
-            <!-- Social Links - Mobile -->
-            <div class="flex justify-center gap-4 mt-4 md:hidden animate-zoom">
-                <a href="#" class="hover:opacity-80 transition-opacity duration-300">
-                    <img src="{{asset('assets/img/em.svg')}}" alt="email" class="w-8 h-8">
-                </a>
-                <a href="#" class="hover:opacity-80 transition-opacity duration-300">
-                    <img src="{{asset('assets/img/ig.svg')}}" alt="instagram" class="w-8 h-8">
-                </a>
-                <a href="#" class="hover:opacity-80 transition-opacity duration-300">
-                    <img src="{{asset('assets/img/tt.svg')}}" alt="tiktok" class="w-8 h-8">
-                </a>
-                <a href="#" class="hover:opacity-80 transition-opacity duration-300">
-                    <img src="{{asset('assets/img/fb.svg')}}" alt="facebook" class="w-8 h-8">
-                </a>
+                <!-- Social Links - Mobile -->
+                <div class="flex justify-center gap-8 mt-4 animate-zoom">
+                    <a href="#" class="hover:opacity-80 transition-opacity duration-300">
+                        <img src="{{asset('assets/img/em.svg')}}" alt="email" class="w-8 h-8">
+                    </a>
+                    <a href="#" class="hover:opacity-80 transition-opacity duration-300">
+                        <img src="{{asset('assets/img/ig.svg')}}" alt="instagram" class="w-8 h-8">
+                    </a>
+                    <a href="#" class="hover:opacity-80 transition-opacity duration-300">
+                        <img src="{{asset('assets/img/tt.svg')}}" alt="tiktok" class="w-8 h-8">
+                    </a>
+                    <a href="#" class="hover:opacity-80 transition-opacity duration-300">
+                        <img src="{{asset('assets/img/fb.svg')}}" alt="facebook" class="w-8 h-8">
+                    </a>
+                </div> 
             </div>
-
-            <!-- Social Links - Desktop -->
-            <div class="hidden md:flex gap-6 animate-zoom">
-                <a href="#" class="bg-white rounded-full p-3 w-14 h-14 flex items-center justify-center hover:bg-after transition-colors duration-300">
-                    <img src="{{asset('assets/img/maildesk.png')}}" alt="email" class="w-8 h-8">
-                </a>
-                <a href="#" class="bg-white rounded-full p-3 w-14 h-14 flex items-center justify-center hover:bg-after transition-colors duration-300">
-                    <img src="{{asset('assets/img/igdesk.png')}}" alt="instagram" class="w-8 h-8">
-                </a>
-                <a href="#" class="bg-white rounded-full p-3 w-14 h-14 flex items-center justify-center hover:bg-after transition-colors duration-300">
-                    <img src="{{asset('assets/img/ttdesk.png')}}" alt="tiktok" class="w-8 h-8">
-                </a>
-                <a href="#" class="bg-white rounded-full p-3 w-14 h-14 flex items-center justify-center hover:bg-after transition-colors duration-300">
-                    <img src="{{asset('assets/img/fbdesk.png')}}" alt="facebook" class="w-8 h-8">
-                </a>
-            </div>
+        </div>
     </section>
 
     <!-- Content -->
-    <div class="container mx-auto px-4 space-y-16">
+    <div class="container mx-auto mt-72 md:mt-40 px-4 space-y-16">
         <!-- Kisah kisah -->
-        <section class="flex flex-row gap-8 md:hidden">
+        <section class="flex flex-row gap-8 md:justify-center md:gap-16 md:px-24">
             <div class="w-1/2 space-y-4">
                 <div class="space-y-2">
                     <h1 class="font-dusha text-3xl md:text-4xl text-primary">Wringinanom</h1>
@@ -78,14 +67,42 @@
                 <p class="font-poppins text-sm md:text-base text-gray-700">
                     Desa Wringinanom adalah sebuah desa yang kaya akan kearifan lokal dan warisan budaya yang telah dilestarikan secara turun-temurun.
                 </p>
-                <button class="bg-yellow-300 hover:bg-yellow-400 text-black px-6 py-2 rounded-lg text-sm font-poppins transition">
-                    Selengkapnya..
-                </button>
+                <div class=" bg-yellow max-w-fit py-2 px-6 rounded-lg text-sm text-center font-poppins">
+                    <a href="{{ route('sejarah')}}"><p>Selengkapnya..</p></a>
+                </div>
             </div>
-            <div class="w-1/2">
+            <div class="w-1/2 md:w-1/4">
                 <img src="{{asset('assets/img/kisah.png')}}" alt="Wringinanom" class="w-full rounded-lg object-cover" />
             </div>
         </section>
+
+        <!-- Unduh Dokumen -->
+        <section class="w-full px-0">
+            <!-- MOBILE -->
+            <div class="flex items-start sm:items-center sm:justify-center gap-4 md:hidden">
+                <h2 class="text-4xl font-dusha font-bold text-black">Unduh Dokumen<br>Atau Surat</h2>
+                <div class="bg-yellow text-black my-auto text-4xl text-center py-4 px-4 rounded-lg">
+                    <a href="{{ route('surat-surat') }}"><p>Klik di sini</p></a>
+                </div>
+            </div>
+            <!-- DESKT -->
+            <div class="hidden md:flex bg-yellow w-full py-6 flex-row justify-center items-center text-white mb-0">
+                <div class="flex items-center gap-4">
+                    <p class="font-bold text-left">Ada yang <br> Ingin Disampaikan?</p>
+                    <a href="{{ route('pengaduan') }}" class="bg-white p-3 rounded-lg">
+                        <img src="{{asset('assets/img/inbox.png')}}" alt="Email Icon" class="w-12 h-12" />
+                    </a>
+                </div>
+                <div class="flex items-center gap-4 ml-8">
+                    <p class="font-bold text-left">Unduh Dokumen <br> atau Surat!</p>
+                    <a href="{{ route('surat-surat') }}" class="bg-white p-3 rounded-lg">
+                        <img src="{{asset('assets/img/up.png')}}" alt="Upload Icon" class="w-12 h-12" />
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        
 
         <!-- News -->
         <!-- Berita Terbaru - Desktop Only -->
@@ -120,12 +137,15 @@
                 </div>
             </div>
         </section>
+       
+        
+
         <section class="bg-white relative">
             <!-- Desktop Layout -->
             <div class="w-full lg:px-0 px-4">
                 <div class="hidden lg:block">
                     <div class="w-full bg-gradient-header">
-                        <h2 class="font-dusha text-3xl text-white text-center py-4">News</h2>
+                        <h2 class="font-dusha text-3xl text-white text-center py-4">Berita</h2>
                     </div>
 
                     <div class="bg-skyblue py-8">
@@ -207,13 +227,15 @@
                     </article>
                 </div>
 
-                <div class="lg:hidden text-center mt-8">
-                    <button class="bg-red-400 hover:bg-red-500 text-white px-8 py-2 rounded-lg font-poppins transition">
-                        Lihat semua berita
-                    </button>
+                <div class="lg:hidden bg-red-400 text-center text-white rounded-lg px-8 py-2 mt-8 max-w-fit mx-auto">
+                    <a href="{{ route('berita') }}" class="font-poppins">
+                        <p>Lihat semua berita</p>
+                    </a>
                 </div>
             </div>
         </section>
+
+        
 
         <!-- Komen/Timbal Balik -->
         <section class="w-11/12 max-w-screen-xl mx-auto mt-16 px-4 md:hidden">
@@ -233,7 +255,7 @@
                     @foreach ($creations as $creation)
                     <div class="text-center">
                         <img src="{{asset('storage/' . $creation->photo_path)}}" alt="Kesenian" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" />
-                        <a href="{{ route('kreasi') }}" class="inline-block bg-red-400 text-white px-6 py-2 rounded-lg">{{ $creation->title }}</a>
+                        <a href="{{ route('kreasi', ['slide' => $loop->index]) }}" class="inline-block bg-red-400 text-white px-6 py-2 rounded-lg">{{ $creation->title }}</a>
                     </div>
                     @endforeach
                 </div>
@@ -247,7 +269,7 @@
                             <h3 class="text-2xl font-dusha text-white text-right">Kesenian</h3>
                             <div class="grid grid-cols-2 gap-16">
                                 @foreach ($creations as $creation)
-                                <a href="{{ route('kreasi') }}" class="bg-white rounded-lg p-4 h-[200px] flex items-center justify-center">
+                                <a href="{{ route('kreasi', ['slide' => $loop->index]) }}" class="bg-white rounded-lg p-4 h-[200px] flex items-center justify-center">
                                     <img class="w-full h-full" src="{{ asset('storage/' . $creation->photo_path) }}" alt="{{ $creation->title }}">
                                 </a>
                                 @endforeach
@@ -268,7 +290,7 @@
                 <div class="text-center">
                     <img src="{{asset('storage/' . $organization->photo_path)}}" alt="{{ $organization->title }}" class="w-32 h-32 mx-auto rounded-full mb-4" />
                     <h3 class="font-bold mb-2">{{ $organization->title }}</h3>
-                    <a href="{{ route('kreasi') }}" class="bg-red-400 text-white px-4 py-1 rounded-lg text-sm">More</a>
+                    <a href="{{ route('lembaga', ['slide' => $loop->index]) }}" class="bg-red-400 text-white px-4 py-1 rounded-lg text-sm">More</a>
                 </div>
                 @endforeach
             </div>
@@ -276,9 +298,9 @@
             <!-- Desktop View -->
             <div class="hidden md:flex flex-wrap justify-center gap-8">
                 @foreach ($organizations as $organization)
-                <a href="{{ route('lembaga') }}" class="flex flex-col items-center">
+                <a href="{{ route('lembaga', ['slide' => $loop->index]) }}" class="flex flex-col items-center">
                     <div class="bg-primary w-40 h-40 flex items-center justify-center text-black font-bold rounded-lg">
-                        <img class="w-full h-full" src="{{ asset('storage/' . $organization->photo_path) }}" alt="{{ $organization->title }}">
+                        <img class="w-full h-full rounded-full" src="{{ asset('storage/' . $organization->photo_path) }}" alt="{{ $organization->title }}">
                     </div>
                     <p class="mt-2 font-bold">{{ $organization->title }}</p>
                 </a>
@@ -286,29 +308,7 @@
             </div>
         </section>
 
-        <!-- Unduh Dokumen -->
-        <section class="w-full px-0">
-            <!-- MOBILE -->
-            <div class="flex items-start sm:items-center sm:justify-center gap-4 md:hidden">
-                <h2 class="text-xl font-dusha font-bold text-black">Unduh Dokumen<br>Atau Surat</h2>
-                <a href="{{ route('surat-surat') }}" class="bg-yellow text-black py-2 px-4 rounded-lg">Klik di sini</a>
-            </div>
-            <!-- DESKT -->
-            <div class="hidden md:flex bg-yellow w-full py-6 flex-row justify-center items-center text-white mb-0">
-                <div class="flex items-center gap-4">
-                    <p class="font-bold text-left">Ada yang <br> Ingin Disampaikan?</p>
-                    <a href="{{ route('pengaduan') }}" class="bg-white p-3 rounded-lg">
-                        <img src="{{asset('assets/img/inbox.png')}}" alt="Email Icon" class="w-12 h-12" />
-                    </a>
-                </div>
-                <div class="flex items-center gap-4 ml-8">
-                    <p class="font-bold text-left">Unduh Dokumen <br> atau Surat!</p>
-                    <a href="{{ route('surat-surat') }}" class="bg-white p-3 rounded-lg">
-                        <img src="{{asset('assets/img/up.png')}}" alt="Upload Icon" class="w-12 h-12" />
-                    </a>
-                </div>
-            </div>
-        </section>
+        
 
         <!-- Demographics mobile -->
         <section class="text-center space-y-6 md:hidden">
@@ -342,34 +342,34 @@
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-center justify-center">
                     <!-- Dusun -->
                     <div class="flex flex-col items-center space-y-2">
-                        <div class="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center bg-primary text-white font-dusha text-4xl md:text-5xl rounded-full shadow-lg">
+                        <div class="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center bg-primary text-white font-dusha text-4xl md:text-4xl rounded-full shadow-lg">
                             {{ $demographic->dusun }}
                         </div>
-                        <p class="font-dusha text-sm text-black">Dusun</p>
+                        <p class="font-dusha text-lg text-black">Dusun</p>
                     </div>
 
                     <!-- Rukun Warga -->
                     <div class="flex flex-col items-center space-y-2">
-                        <div class="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center bg-primary text-white font-dusha text-4xl md:text-5xl rounded-full shadow-lg">
+                        <div class="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center bg-primary text-white font-dusha text-4xl md:text-4xl rounded-full shadow-lg">
                             {{ $demographic->rukun_warga }}
                         </div>
-                        <p class="font-dusha text-sm text-black">Rukun Warga</p>
+                        <p class="font-dusha text-lg text-black">Rukun Warga</p>
                     </div>
 
                     <!-- Rukun Tetangga -->
                     <div class="flex flex-col items-center space-y-2">
-                        <div class="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center bg-primary text-white font-dusha text-4xl md:text-5xl rounded-full shadow-lg">
+                        <div class="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center bg-primary text-white font-dusha text-4xl md:text-4xl rounded-full shadow-lg">
                             {{ $demographic->rukun_tetangga }}
                         </div>
-                        <p class="font-dusha text-sm text-black">Rukun Tetangga</p>
+                        <p class="font-dusha text-lg text-black">Rukun Tetangga</p>
                     </div>
 
                     <!-- Jiwa -->
                     <div class="flex flex-col items-center space-y-2">
-                        <div class="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center bg-primary text-white font-dusha text-4xl md:text-5xl rounded-full shadow-lg">
+                        <div class="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center bg-primary text-white font-dusha text-4xl md:text-4xl rounded-full shadow-lg">
                             {{ $demographic->jiwa }}
                         </div>
-                        <p class="font-dusha text-sm text-black">Jiwa</p>
+                        <p class="font-dusha text-lg text-black">Jiwa</p>
                     </div>
                 </div>
             </div>

@@ -15,6 +15,10 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/profil', [HomeController::class, 'profile'])->name('profil');
 Route::get('/sejarah', [HomeController::class, 'history'])->name('sejarah');
 
+Route::get('/dtks', function () {
+    return view('surat-surat.dtks');
+});
+
 // Feature Routes
 Route::get('/agenda', [CreationController::class, 'index'])->name('agenda');
 Route::get('/galeri', [GalleryController::class, 'index'])->name('galeri');

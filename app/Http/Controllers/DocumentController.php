@@ -135,6 +135,8 @@ class DocumentController extends Controller
     {
         $this->letterFuelService->store($request->validated());
 
+        dd($this->letterFuelService->store($request->validated()));
+
         return redirect()->route('surat-surat.bbm')->with('success', 'Data berhasil disimpan');
     }
 }

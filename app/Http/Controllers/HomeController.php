@@ -44,4 +44,9 @@ class HomeController extends Controller
     {
         return view('agenda');
     }
+
+    public function dtks()
+    {
+        return view('dtks');
+    }
 }
