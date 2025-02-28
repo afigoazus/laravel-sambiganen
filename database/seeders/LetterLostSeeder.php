@@ -32,6 +32,7 @@ class LetterLostSeeder extends Seeder
                 "no_kk" => '2317391729321801',
                 "address" => 'Shady Shoals Rest Home, Bikini Bottom',
                 "Information" => 'Utility Belt dengan Remote Control Mematikan/Menghidupkan',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2021,
                 "created_at" => "2021-03-15 09:30:00",
                 "updated_at" => "2021-03-15 09:30:00"
@@ -51,6 +52,7 @@ class LetterLostSeeder extends Seeder
                 "no_kk" => '2317391729321802',
                 "address" => 'Shady Shoals Rest Home, Bikini Bottom',
                 "Information" => 'Kacamata Superhero Anti Air',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2021,
                 "created_at" => "2021-07-22 14:15:30",
                 "updated_at" => "2021-07-22 14:15:30"
@@ -72,6 +74,7 @@ class LetterLostSeeder extends Seeder
                 "no_kk" => '2317391729321803',
                 "address" => 'Flying Dutchman Ship, Bikini Bottom Waters',
                 "Information" => 'Treasure Map Kuno',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2022,
                 "created_at" => "2022-04-13 23:45:00",
                 "updated_at" => "2022-04-13 23:45:00"
@@ -91,6 +94,7 @@ class LetterLostSeeder extends Seeder
                 "no_kk" => '2317391729321804',
                 "address" => 'Downtown Bikini Bottom',
                 "Information" => 'Buku Catatan Review Restoran',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2022,
                 "created_at" => "2022-11-30 12:20:15",
                 "updated_at" => "2022-11-30 12:20:15"
@@ -112,6 +116,7 @@ class LetterLostSeeder extends Seeder
                 "no_kk" => '2317391729321805',
                 "address" => 'Coral Avenue, Bikini Bottom',
                 "Information" => 'Dompet berisi SIM dan KTP',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2023,
                 "created_at" => "2023-06-18 08:45:30",
                 "updated_at" => "2023-06-18 08:45:30"
@@ -131,6 +136,7 @@ class LetterLostSeeder extends Seeder
                 "no_kk" => '2317391729321806',
                 "address" => 'Fish Hook Street, Bikini Bottom',
                 "Information" => 'Peralatan Pancing Premium Set',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2023,
                 "created_at" => "2023-12-05 16:30:00",
                 "updated_at" => "2023-12-05 16:30:00"
@@ -152,6 +158,7 @@ class LetterLostSeeder extends Seeder
                 "no_kk" => '2317391729321921',
                 "address" => 'Bikini Bottom',
                 "Information" => 'Iphone 15 Pro Max',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2024,
                 "created_at" => "2024-09-26 01:21:32",
                 "updated_at" => "2024-09-26 01:21:32"
@@ -171,6 +178,7 @@ class LetterLostSeeder extends Seeder
                 "no_kk" => '2317391729321921',
                 "address" => 'Bikini Bottom',
                 "Information" => 'Sandal Melly',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2024,
                 "created_at" => "2024-09-26 01:21:32",
                 "updated_at" => "2024-09-26 01:21:32"
@@ -190,6 +198,7 @@ class LetterLostSeeder extends Seeder
                 "no_kk" => '2317391729321923',
                 "address" => 'Treedome, Bikini Bottom',
                 "Information" => 'Laptop MacBook Pro',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2024,
                 "created_at" => "2024-09-27 14:30:15",
                 "updated_at" => "2024-09-27 14:30:15"
@@ -209,6 +218,7 @@ class LetterLostSeeder extends Seeder
                 "no_kk" => '2317391729321924',
                 "address" => 'Easter Island Head, Bikini Bottom',
                 "Information" => 'Clarinet Yamaha Professional',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2024,
                 "created_at" => "2024-09-28 09:15:45",
                 "updated_at" => "2024-09-28 09:15:45"
@@ -228,6 +238,7 @@ class LetterLostSeeder extends Seeder
                 "no_kk" => '2317391729321925',
                 "address" => 'Anchor House, Bikini Bottom',
                 "Information" => 'Dompet berisi uang Rp 5.000.000',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2024,
                 "created_at" => "2024-09-29 16:45:22",
                 "updated_at" => "2024-09-29 16:45:22"
@@ -249,6 +260,7 @@ class LetterLostSeeder extends Seeder
                 "no_kk" => '2317391729321925',
                 "address" => 'Anchor House, Bikini Bottom',
                 "Information" => 'Apple Watch Series 9',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => "2025-01-15 10:23:45",
                 "updated_at" => "2025-01-15 10:23:45"
@@ -268,6 +280,7 @@ class LetterLostSeeder extends Seeder
                 "no_kk" => '2317391729321927',
                 "address" => 'Chum Bucket, Bikini Bottom',
                 "Information" => 'Tablet Samsung Galaxy Tab S9 Ultra',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => "2025-01-18 14:55:30",
                 "updated_at" => "2025-01-18 14:55:30"
@@ -287,6 +300,7 @@ class LetterLostSeeder extends Seeder
                 "no_kk" => '2317391729321928',
                 "address" => 'Goo Lagoon, Bikini Bottom',
                 "Information" => 'Fitbit Sense 2 & Gym Membership Card',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => "2025-01-20 08:15:00",
                 "updated_at" => "2025-01-20 08:15:00"
@@ -306,6 +320,7 @@ class LetterLostSeeder extends Seeder
                 "no_kk" => '2317391729321927',
                 "address" => 'Chum Bucket, Bikini Bottom',
                 "Information" => 'External Hard Drive 2TB dengan Data Penting',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => "2025-01-25 16:40:20",
                 "updated_at" => "2025-01-25 16:40:20"
@@ -325,6 +340,7 @@ class LetterLostSeeder extends Seeder
                 "no_kk" => '2317391729321930',
                 "address" => 'Boating School, Bikini Bottom',
                 "Information" => 'Tas berisi dokumen lisensi mengajar dan kunci mobil',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => "2025-01-30 11:25:15",
                 "updated_at" => "2025-01-30 11:25:15"

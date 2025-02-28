@@ -29,6 +29,7 @@ class LetterBusinessSeeder extends Seeder
                 "handicraft" => null,
                 "service" => null,
                 "other" => null,
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2023,
                 "created_at" => "2023-08-15 10:00:00",
                 "updated_at" => "2023-08-15 10:00:00",
@@ -45,6 +46,7 @@ class LetterBusinessSeeder extends Seeder
                 "handicraft" => null,
                 "service" => "Boating School",
                 "other" => null,
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2023,
                 "created_at" => "2023-09-10 12:30:00",
                 "updated_at" => "2023-09-10 12:30:00",
@@ -61,6 +63,7 @@ class LetterBusinessSeeder extends Seeder
                 "handicraft" => null,
                 "service" => null,
                 "other" => "Supervillain Training",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2023,
                 "created_at" => "2023-10-05 14:00:00",
                 "updated_at" => "2023-10-05 14:00:00",
@@ -79,6 +82,7 @@ class LetterBusinessSeeder extends Seeder
                 "handicraft" => null,
                 "service" => "Gym Trainer",
                 "other" => null,
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2024,
                 "created_at" => now(),
                 "updated_at" => now(),
@@ -95,6 +99,7 @@ class LetterBusinessSeeder extends Seeder
                 "handicraft" => null,
                 "service" => null,
                 "other" => "Secret Formula Hunting",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2024,
                 "created_at" => now(),
                 "updated_at" => now(),
@@ -111,6 +116,7 @@ class LetterBusinessSeeder extends Seeder
                 "handicraft" => "Squirrel Themed Crafts",
                 "service" => null,
                 "other" => null,
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2024,
                 "created_at" => now(),
                 "updated_at" => now(),
@@ -127,6 +133,7 @@ class LetterBusinessSeeder extends Seeder
                 "handicraft" => "Genteng dan Batu bata",
                 "service" => "Angkutan",
                 "other" => "Kucing Peduli",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2024,
                 "created_at" => now(),
                 "updated_at" => now(),
@@ -145,6 +152,7 @@ class LetterBusinessSeeder extends Seeder
                 "handicraft" => null,
                 "service" => null,
                 "other" => null,
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => now(),
                 "updated_at" => now(),
@@ -161,6 +169,7 @@ class LetterBusinessSeeder extends Seeder
                 "handicraft" => null,
                 "service" => null,
                 "other" => null,
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => now(),
                 "updated_at" => now(),
@@ -177,6 +186,7 @@ class LetterBusinessSeeder extends Seeder
                 "handicraft" => null,
                 "service" => "Fish Market Services",
                 "other" => null,
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => now(),
                 "updated_at" => now(),
@@ -193,6 +203,7 @@ class LetterBusinessSeeder extends Seeder
                 "handicraft" => null,
                 "service" => "Luxury Goods Advisor",
                 "other" => null,
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => now(),
                 "updated_at" => now(),
@@ -211,6 +222,7 @@ class LetterBusinessSeeder extends Seeder
                 "handicraft" => null,
                 "service" => "Superhero Services",
                 "other" => null,
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2026,
                 "created_at" => "2026-05-20 09:45:00",
                 "updated_at" => "2026-05-20 09:45:00",
@@ -227,6 +239,7 @@ class LetterBusinessSeeder extends Seeder
                 "handicraft" => null,
                 "service" => "Sidekick Consulting",
                 "other" => null,
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2026,
                 "created_at" => "2026-06-18 11:30:00",
                 "updated_at" => "2026-06-18 11:30:00",
@@ -243,6 +256,7 @@ class LetterBusinessSeeder extends Seeder
                 "handicraft" => null,
                 "service" => null,
                 "other" => "Haunted Ship Tours",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2026,
                 "created_at" => "2026-07-26 17:00:00",
                 "updated_at" => "2026-07-26 17:00:00",
@@ -261,6 +275,7 @@ class LetterBusinessSeeder extends Seeder
                 "handicraft" => null,
                 "service" => "News Broadcasting",
                 "other" => null,
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2027,
                 "created_at" => "2027-03-14 08:20:00",
                 "updated_at" => "2027-03-14 08:20:00",
@@ -277,6 +292,7 @@ class LetterBusinessSeeder extends Seeder
                 "handicraft" => null,
                 "service" => null,
                 "other" => null,
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2027,
                 "created_at" => "2027-04-22 10:10:00",
                 "updated_at" => "2027-04-22 10:10:00",
@@ -293,6 +309,7 @@ class LetterBusinessSeeder extends Seeder
                 "handicraft" => null,
                 "service" => "Bubble Blowing Lessons",
                 "other" => null,
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2027,
                 "created_at" => "2027-05-30 13:55:00",
                 "updated_at" => "2027-05-30 13:55:00",

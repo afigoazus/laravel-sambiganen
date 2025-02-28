@@ -26,6 +26,7 @@ class LetterDeathSeeder extends Seeder
                 "mom_name" => "Tidak tau",
                 "dad_name" => "Tidak tau",
                 "year" => 2025,
+                "no_wa" => '081234567900', // Add no_wa column
                 "created_at" => "2024-09-26 01:21:32",
                 "updated_at" => "2024-09-26 01:21:32",
             ],
@@ -38,6 +39,7 @@ class LetterDeathSeeder extends Seeder
                 "cause_death" => "Dibunuh Pain",
                 "mom_name" => "Tidak tau",
                 "dad_name" => "Tidak tau",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => "2024-09-26 01:21:32",
                 "updated_at" => "2024-09-26 01:21:32",
@@ -51,6 +53,7 @@ class LetterDeathSeeder extends Seeder
                 "cause_death" => "Melindungi Konoha dari Kurama",
                 "mom_name" => "Tidak tau",
                 "dad_name" => "Tidak tau",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => "2025-01-29 12:00:00",
                 "updated_at" => "2025-01-29 12:00:00",
@@ -64,6 +67,7 @@ class LetterDeathSeeder extends Seeder
                 "cause_death" => "Pertarungan melawan Sasuke",
                 "mom_name" => "Mikoto Uchiha",
                 "dad_name" => "Fugaku Uchiha",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => "2025-01-29 12:00:00",
                 "updated_at" => "2025-01-29 12:00:00",
@@ -77,6 +81,7 @@ class LetterDeathSeeder extends Seeder
                 "cause_death" => "Melindungi Hinata dan Naruto",
                 "mom_name" => "Tidak diketahui",
                 "dad_name" => "Hizashi Hyuga",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => "2025-01-29 12:00:00",
                 "updated_at" => "2025-01-29 12:00:00",
@@ -90,6 +95,7 @@ class LetterDeathSeeder extends Seeder
                 "cause_death" => "Dikhianati Zetsu Hitam",
                 "mom_name" => "Tidak diketahui",
                 "dad_name" => "Tidak diketahui",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => "2025-01-29 12:00:00",
                 "updated_at" => "2025-01-29 12:00:00",
@@ -103,6 +109,7 @@ class LetterDeathSeeder extends Seeder
                 "cause_death" => "Berkorban untuk Naruto dan Sasuke",
                 "mom_name" => "Tidak diketahui",
                 "dad_name" => "Tidak diketahui",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => "2025-01-29 12:00:00",
                 "updated_at" => "2025-01-29 12:00:00",
@@ -116,6 +123,7 @@ class LetterDeathSeeder extends Seeder
                 "cause_death" => "Melawan Orochimaru",
                 "mom_name" => "Tidak diketahui",
                 "dad_name" => "Tidak diketahui",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2024,
                 "created_at" => "2024-09-26 01:21:32",
                 "updated_at" => "2024-09-26 01:21:32",
@@ -129,6 +137,7 @@ class LetterDeathSeeder extends Seeder
                 "cause_death" => "Dibunuh Sasuke",
                 "mom_name" => "Tidak diketahui",
                 "dad_name" => "Tidak diketahui",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2024,
                 "created_at" => "2024-09-26 01:21:32",
                 "updated_at" => "2024-09-26 01:21:32",
@@ -142,6 +151,7 @@ class LetterDeathSeeder extends Seeder
                 "cause_death" => "Dibunuh Hidan",
                 "mom_name" => "Tidak diketahui",
                 "dad_name" => "Hiruzen Sarutobi",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2024,
                 "created_at" => "2024-09-26 01:21:32",
                 "updated_at" => "2024-09-26 01:21:32",
@@ -155,6 +165,7 @@ class LetterDeathSeeder extends Seeder
                 "cause_death" => "Melindungi Naruto",
                 "mom_name" => "Tidak diketahui",
                 "dad_name" => "Tidak diketahui",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2024,
                 "created_at" => "2024-09-26 01:21:32",
                 "updated_at" => "2024-09-26 01:21:32",
@@ -168,6 +179,7 @@ class LetterDeathSeeder extends Seeder
                 "cause_death" => "Dibunuh oleh pasukan Gato",
                 "mom_name" => "Tidak diketahui",
                 "dad_name" => "Tidak diketahui",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2024,
                 "created_at" => "2024-09-26 01:21:32",
                 "updated_at" => "2024-09-26 01:21:32",
@@ -181,6 +193,7 @@ class LetterDeathSeeder extends Seeder
                 "cause_death" => "Dibunuh oleh Zetsu",
                 "mom_name" => "Tidak diketahui",
                 "dad_name" => "Tidak diketahui",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2023,
                 "created_at" => "2023-09-26 01:21:32",
                 "updated_at" => "2023-09-26 01:21:32",
@@ -194,6 +207,7 @@ class LetterDeathSeeder extends Seeder
                 "cause_death" => "Dibunuh oleh Kaguya",
                 "mom_name" => "Tidak diketahui",
                 "dad_name" => "Tidak diketahui",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2023,
                 "created_at" => "2023-09-26 01:21:32",
                 "updated_at" => "2023-09-26 01:21:32",
@@ -207,6 +221,7 @@ class LetterDeathSeeder extends Seeder
                 "cause_death" => "Bertarung dengan Sasuke",
                 "mom_name" => "Mikoto Uchiha",
                 "dad_name" => "Fugaku Uchiha",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2022,
                 "created_at" => "2022-09-26 01:21:32",
                 "updated_at" => "2022-09-26 01:21:32",
@@ -220,6 +235,7 @@ class LetterDeathSeeder extends Seeder
                 "cause_death" => "Melindungi Hinata dan Naruto",
                 "mom_name" => "Tidak diketahui",
                 "dad_name" => "Hizashi Hyuga",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2022,
                 "created_at" => "2022-09-26 01:21:32",
                 "updated_at" => "2022-09-26 01:21:32",
@@ -233,6 +249,7 @@ class LetterDeathSeeder extends Seeder
                 "cause_death" => "Dibunuh oleh Kakashi",
                 "mom_name" => "Tidak diketahui",
                 "dad_name" => "Tidak diketahui",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2021,
                 "created_at" => "2021-09-26 01:21:32",
                 "updated_at" => "2021-09-26 01:21:32",
@@ -246,6 +263,7 @@ class LetterDeathSeeder extends Seeder
                 "cause_death" => "Bunuh diri karena kehilangan kehormatan",
                 "mom_name" => "Tidak diketahui",
                 "dad_name" => "Tidak diketahui",
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2021,
                 "created_at" => "2021-09-26 01:21:32",
                 "updated_at" => "2021-09-26 01:21:32",

@@ -15,6 +15,10 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/profil', [HomeController::class, 'profile'])->name('profil');
 Route::get('/sejarah', [HomeController::class, 'history'])->name('sejarah');
 
+Route::get('/dtks', function () {
+    return view('surat-surat.dtks');
+});
+
 // Feature Routes
 Route::get('/agenda', [CreationController::class, 'index'])->name('agenda');
 Route::get('/galeri', [GalleryController::class, 'index'])->name('galeri');
@@ -72,5 +76,5 @@ Route::prefix('download')->group(function () {
     Route::get('/kematian/{id}', [DocumentController::class, 'downloadLetterDeath'])->name('surat.kematian');
     Route::get('/tidak-mampu/{id}', [DocumentController::class, 'downloadLetterIncapacity'])->name('surat.tidakmampu');
     Route::get('/bbm/{id}', [DocumentController::class, 'downloadLetterFuel'])->name('surat.bbm');
-    Route::get('/skpwni/{id}', [DocumentController::class, 'generatePdf'])->name('surat.skpwni');
+    Route::get('/dtks/{id}', [DocumentController::class, 'downloadDTKS'])->name('surat.dtks');
 });

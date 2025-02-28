@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('handicraft', 255)->nullable(true);
             $table->string('service', 255)->nullable(true);
             $table->string('other', 255)->nullable(true);
+            $table->string('no_wa', 255)->nullable(false);
             $table->year('year')->nullable(false)->default(Carbon::now()->year);
             $table->timestamps();
         });

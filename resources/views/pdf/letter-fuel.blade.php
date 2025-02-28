@@ -240,7 +240,7 @@
     </div>
 
     <p style="margin: 0; font-size: 0.9rem"><span style="margin-right: 1em">3.</span>Alat Pembelian yang Digunakan : {{$data['purchasing_tools_used']}}</p>
-    <p style="margin: 0; font-size: 0.9rem"><span style="margin-right: 1em">4.</span>Jangka waktu pemberlakuan Surat Rekomendasi sampai dengan tanggal : {{ \Carbon\Carbon::parse($data->updated_at)->addDays(30)->locale('id')->translatedFormat('d F Y') }}</p>
+    <p style="margin: 0; font-size: 0.9rem"><span style="margin-right: 1em">4.</span>Jangka waktu pemberlakuan Surat Rekomendasi sampai dengan tanggal : {{ \Carbon\Carbon::parse($data->updated_at)->addDays(90)->locale('id')->translatedFormat('d F Y') }}</p>
     <p style="margin: 0; font-size: 0.9rem; display: table">
         <span style="margin-right: 1em; display: table-cell; padding-right: 1em; white-space: nowrap;">5.</span>
         <span style="display: table-cell">Penyalur SPBU/SPBKB/SPBN/SPBUN wajib mencatat riwayat pembelian Konsumen Penggunaan dalam format Terlampir.</span>

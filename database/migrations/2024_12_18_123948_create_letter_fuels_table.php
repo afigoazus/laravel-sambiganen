@@ -33,6 +33,7 @@ return new class extends Migration
             $table->string('no_distributor', 255)->nullable(false);
             $table->string('address_distributor', 255)->nullable(false);
             $table->string('purchasing_tools_used', 255)->nullable(false);
+            $table->string('no_wa', 255)->nullable(false);
             $table->year('year')->nullable(false)->default(now()->year);
             $table->timestamps();
         });

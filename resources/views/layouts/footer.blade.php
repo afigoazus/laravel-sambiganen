@@ -13,8 +13,10 @@
             </div>
 
             <!-- LAPOR KANG -->
-            <input class="hidden lg:block font-dusha px-4 py-2 rounded-xl border-none outline-none placeholder:text-white placeholder:opacity-100 bg-white/50" type="text" placeholder="Lapor kang...">
-
+            <div class="hidden lg:block font-dusha px-4 py-2 rounded-xl bg-white/50">
+                <a href="{{ route('pengaduan') }}"><p>Lapor kang...</p></a>
+            </div>
+            
             <!-- RIGHT SIDE -->
             <div class="flex justify-between items-center gap-4">
                 <img class="lg:w-8 lg:h-8" src="{{asset('assets/img/em.svg')}}" alt="email logo">
@@ -55,7 +57,7 @@
         </div>
 
         <!-- kontak dan alamat -->
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col">
             <!-- Kontak -->
             <div class="font-poppins">
                 <p class="font-medium text-lg my-2 lg:mt-0 lg:mb-2">Kontak</p>
@@ -83,8 +85,8 @@
 
 
         <!-- LAPOR KANG -->
-        <div class="mt-4 flex justify-center lg:hidden">
-            <input class="w-9/12 max-w-[400px] font-dusha px-4 py-2 rounded-xl border-none outline-none placeholder:text-white placeholder:opacity-100 bg-white/50 lg:w-full lg:max-w-full" type="text" placeholder="Lapor kang...">
+        <div class="lg:hidden max-w-[400px] mx-auto mt-4 font-dusha px-4 py-2 rounded-xl bg-white/50">
+                <a href="{{ route('pengaduan') }}"><p>Lapor kang...</p></a>
         </div>
     </div>
 

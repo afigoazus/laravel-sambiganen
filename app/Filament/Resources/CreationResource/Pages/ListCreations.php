@@ -13,8 +13,6 @@ class ListCreations extends ListRecords
 
     protected function getHeaderActions(): array
     {
-        return [
-            Actions\CreateAction::make()->label("Kreasi Baru"),
-        ];
+        return [];
     }
 }

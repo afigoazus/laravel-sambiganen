@@ -28,6 +28,7 @@ class AdminPanelProvider extends PanelProvider
                 "Dokumen Umum",
                 "Anggaran & Kependudukan",
                 "Konten & Media",
+                "Data Terpadu",
                 "Pengaduan",
             ])
             ->default()

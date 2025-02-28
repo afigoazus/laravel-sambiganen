@@ -31,6 +31,7 @@ return new class extends Migration
             $table->string('gender_child', 255)->nullable(false);
             $table->string('education_child', 255)->nullable(false);
             $table->string('address_child', 255)->nullable(false);
+            $table->string('no_wa', 255)->nullable(false);
             $table->year('year')->nullable(false)->default(now()->year);
             $table->timestamps();
         });

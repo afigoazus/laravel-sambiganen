@@ -36,6 +36,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "gender_child" => 'Perempuan',
                 "education_child" => 'SMP',
                 "address_child" => 'Wringinanom',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2021,
                 "created_at" => "2021-07-15 10:30:22",
                 "updated_at" => "2021-07-15 10:30:22",
@@ -59,6 +60,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "gender_child" => 'Laki-laki',
                 "education_child" => 'SMA',
                 "address_child" => 'Wringinanom',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2021,
                 "created_at" => "2021-08-25 14:20:45",
                 "updated_at" => "2021-08-25 14:20:45",
@@ -84,6 +86,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "gender_child" => 'Laki-laki',
                 "education_child" => 'SMP',
                 "address_child" => 'Wringinanom',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2022,
                 "created_at" => "2022-03-20 09:15:33",
                 "updated_at" => "2022-03-20 09:15:33",
@@ -107,6 +110,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "gender_child" => 'Laki-laki',
                 "education_child" => 'SMA',
                 "address_child" => 'Wringinanom',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2022,
                 "created_at" => "2022-04-30 16:45:50",
                 "updated_at" => "2022-04-30 16:45:50",
@@ -132,6 +136,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "gender_child" => 'Laki-laki',
                 "education_child" => 'SMP',
                 "address_child" => 'Wringinanom',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2023,
                 "created_at" => "2023-09-15 11:25:17",
                 "updated_at" => "2023-09-15 11:25:17",
@@ -155,6 +160,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "gender_child" => 'Laki-laki',
                 "education_child" => 'SMA',
                 "address_child" => 'Wringinanom',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2023,
                 "created_at" => "2023-10-25 13:40:55",
                 "updated_at" => "2023-10-25 13:40:55",
@@ -180,6 +186,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "gender_child" => 'Laki-laki',
                 "education_child" => 'SMA',
                 "address_child" => 'Wringinanom',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2024,
                 "created_at" => "2024-09-26 01:21:32",
                 "updated_at" => "2024-09-26 01:21:32",
@@ -203,6 +210,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "gender_child" => 'Laki-laki',
                 "education_child" => 'SMA',
                 "address_child" => 'Wringinanom',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2024,
                 "created_at" => "2024-09-26 01:21:32",
                 "updated_at" => "2024-09-26 01:21:32",
@@ -226,6 +234,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "gender_child" => 'Perempuan',
                 "education_child" => 'SMA',
                 "address_child" => 'Wringinanom',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2024,
                 "created_at" => "2024-09-26 01:21:32",
                 "updated_at" => "2024-09-26 01:21:32",
@@ -249,6 +258,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "gender_child" => 'Perempuan',
                 "education_child" => 'SMA',
                 "address_child" => 'Wringinanom',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2024,
                 "created_at" => "2024-09-26 01:21:32",
                 "updated_at" => "2024-09-26 01:21:32",
@@ -274,6 +284,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "gender_child" => 'Laki-laki',
                 "education_child" => 'SMA',
                 "address_child" => 'Wringinanom',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => "2025-01-15 09:45:22",
                 "updated_at" => "2025-01-15 09:45:22",
@@ -297,6 +308,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "gender_child" => 'Perempuan',
                 "education_child" => 'SMA',
                 "address_child" => 'Wringinanom',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => "2025-01-15 10:15:33",
                 "updated_at" => "2025-01-15 10:15:33",
@@ -320,6 +332,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "gender_child" => 'Laki-laki',
                 "education_child" => 'SMA',
                 "address_child" => 'Wringinanom',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => "2025-01-15 10:45:45",
                 "updated_at" => "2025-01-15 10:45:45",
@@ -343,6 +356,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "gender_child" => 'Laki-laki',
                 "education_child" => 'SMA',
                 "address_child" => 'Wringinanom',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => "2025-01-15 11:20:12",
                 "updated_at" => "2025-01-15 11:20:12",
@@ -366,6 +380,7 @@ class LetterIncapacitiesSeeder extends Seeder
                 "gender_child" => 'Laki-laki',
                 "education_child" => 'SMA',
                 "address_child" => 'Wringinanom',
+                "no_wa" => '081234567900', // Add no_wa column
                 "year" => 2025,
                 "created_at" => "2025-01-15 12:05:55",
                 "updated_at" => "2025-01-15 12:05:55",

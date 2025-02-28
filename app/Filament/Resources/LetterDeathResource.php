@@ -61,6 +61,9 @@ class LetterDeathResource extends Resource
                     ->label("Nama Ayah")
                     ->required()
                     ->maxLength(255),
+                Forms\Components\TextInput::make('no_wa')
+                    ->label("Nomer Whatsapp")
+                    ->maxLength(255),
             ]);
     }
 
@@ -77,6 +80,9 @@ class LetterDeathResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('nik')
                     ->label("NIK/NIP")
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('no_wa')
+                    ->label("No. Whatsapp")
                     ->searchable(),
                 Tables\Columns\TextColumn::make('year')
                     ->label("Tahun")

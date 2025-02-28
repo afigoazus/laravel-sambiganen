@@ -6,7 +6,6 @@ use App\Http\Requests\StoreBirthNoteRequest;
 use App\Http\Requests\StoreDeathNoteRequest;
 use App\Http\Requests\StoreLetterBusinessRequest;
 use App\Http\Requests\StoreLetterDeathRequest;
-use App\Http\Requests\StoreLetterFuel;
 use App\Http\Requests\StoreLetterFuelRequest;
 use App\Http\Requests\StoreLetterIncapacityRequest;
 use App\Http\Requests\StoreLetterLostRequest;
@@ -21,12 +20,12 @@ use App\Http\Services\LetterLostService;
 use App\Http\Services\PdfService;
 use App\Models\BirthNote;
 use App\Models\DeathNote;
+use App\Models\Dtks;
 use App\Models\LetterBusiness;
 use App\Models\LetterDeath;
 use App\Models\LetterFuel;
 use App\Models\LetterIncapacity;
 use App\Models\LetterLost;
-use Illuminate\Http\Request;
 
 class DocumentController extends Controller
 {
@@ -83,6 +82,11 @@ class DocumentController extends Controller
         return $this->pdfService->generate(LetterFuel::class, 'pdf.letter-fuel', 'Surat_Perizinan_Solar', $id, [0, 0, 612, 1008]);
     }
 
+    public function downloadDTKS($id)
+    {
+        return $this->pdfService->generate(Dtks::class, 'pdf.dtks', 'Data Terpadu Kesejahteraan Sosial', $id, [0, 0, 612, 1008]);
+    }
+
     // Function for store letter to database
 
     public function storeLetterBusiness(StoreLetterBusinessRequest $request)
@@ -130,6 +134,8 @@ class DocumentController extends Controller
     public function storeLetterFuel(StoreLetterFuelRequest $request)
     {
         $this->letterFuelService->store($request->validated());
+
+        dd($this->letterFuelService->store($request->validated()));
 
         return redirect()->route('surat-surat.bbm')->with('success', 'Data berhasil disimpan');
     }

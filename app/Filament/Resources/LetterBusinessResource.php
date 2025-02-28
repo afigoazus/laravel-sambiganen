@@ -65,6 +65,9 @@ class LetterBusinessResource extends Resource
                 Forms\Components\TextInput::make('service')
                     ->label("Jasa")
                     ->maxLength(255),
+                Forms\Components\TextInput::make('no_wa')
+                    ->label("No. Whatsapp")
+                    ->maxLength(255),
                 Forms\Components\TextInput::make('other')
                     ->label("Lainnya")
                     ->maxLength(255),
@@ -96,6 +99,9 @@ class LetterBusinessResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('no_ktp')
                     ->label("NIK")
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('no_wa')
+                    ->label("No. Whatsapp")
                     ->searchable(),
                 Tables\Columns\TextColumn::make('year')
                     ->label("Tahun")
