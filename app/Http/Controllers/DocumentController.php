@@ -52,6 +52,11 @@ class DocumentController extends Controller
         return $this->pdfService->generate(LetterLost::class, 'pdf.letter-lost', 'Surat_Kehilangan_', $id);
     }
 
+    public function downloadSKPWNI($id)
+    {
+        return $this->pdfService->generateFilledPdf($id);
+    }
+
     public function downloadBirthNote($id)
     {
         return $this->pdfService->generate(BirthNote::class, 'pdf.birth-note', 'Capil_Kelahiran_', $id);

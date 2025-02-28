@@ -28,6 +28,10 @@ $documents = [
 [
 'title' => 'Surat Kehilangan',
 'route' => 'surat-surat.kehilangan',
+],
+[
+'title' => 'Surat Perpindahan Penduduk',
+'route' => 'surat-surat.perpindahan-penduduk',
 ]
 ];
 @endphp

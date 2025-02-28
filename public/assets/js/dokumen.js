@@ -1,14 +1,14 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // function menampilkan tab yang dipilih
     // function showTabFromUrl() {
-        const params = new URLSearchParams(window.location.search);
-        if (params.has('tab') && params.get('tab') === 'persyaratan') {
-            toggleTab("persyaratanButton", "persyaratanContent");
-        } else if (params.has('tab') && params.get('tab') === 'surat') {
-            toggleTab("suratButton", "suratContent");
-        } else {
-           toggleTab("dokumenButton", "dokumenContent"); 
-        }
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("tab") && params.get("tab") === "persyaratan") {
+        toggleTab("persyaratanButton", "persyaratanContent");
+    } else if (params.has("tab") && params.get("tab") === "surat") {
+        toggleTab("suratButton", "suratContent");
+    } else {
+        toggleTab("dokumenButton", "dokumenContent");
+    }
     // }
 
     function toggleTab(activeButtonId, activeContentId) {
@@ -17,33 +17,44 @@ document.addEventListener("DOMContentLoaded", function() {
         const contents = document.querySelectorAll("section[id$='Content']");
 
         // Loop untuk reset semua tombol dan konten
-        buttons.forEach(button => {
-            button.classList.remove('bg-primary', 'text-white');
-            button.classList.add('bg-[#A2A2A2]');
-        });
-
-        contents.forEach(content => {
-            content.classList.add('hidden');
+        contents.forEach((content) => {
+            content.classList.add("hidden");
         });
 
         // Aktifkan tombol dan konten yang dipilih
-        document.getElementById(activeButtonId).classList.add('bg-primary', 'text-white');
-        document.getElementById(activeButtonId).classList.remove('bg-[#A2A2A2]');
-        document.getElementById(activeContentId).classList.remove('hidden');
+        document
+            .getElementById(activeButtonId)
+            .classList.add("bg-primary", "text-white");
+        document
+            .getElementById(activeButtonId)
+            .classList.remove("bg-[#A2A2A2]");
+        document.getElementById(activeContentId).classList.remove("hidden");
     }
 
     // Tambahkan event listener ke setiap tombol
-    document.getElementById("persyaratanButton").addEventListener("click", () => toggleTab("persyaratanButton", "persyaratanContent"));
+    document
+        .getElementById("persyaratanButton")
+        .addEventListener("click", () =>
+            toggleTab("persyaratanButton", "persyaratanContent")
+        );
 
-    document.getElementById("suratButton").addEventListener("click", () => toggleTab("suratButton", "suratContent"));
+    document
+        .getElementById("suratButton")
+        .addEventListener("click", () =>
+            toggleTab("suratButton", "suratContent")
+        );
 
-    document.getElementById("dokumenButton").addEventListener("click", () => toggleTab("dokumenButton", "dokumenContent"));
+    document
+        .getElementById("dokumenButton")
+        .addEventListener("click", () =>
+            toggleTab("dokumenButton", "dokumenContent")
+        );
 });
 
 function showLainnyaField() {
     var alasanSelect = document.getElementById("alasan");
     var otherField = document.getElementById("lainnyaField");
-    
+
     if (alasanSelect.value === "Lainnya") {
         otherField.classList.remove("hidden");
     } else {
