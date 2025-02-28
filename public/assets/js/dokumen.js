@@ -1,4 +1,16 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // function menampilkan tab yang dipilih
+    // function showTabFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        if (params.has('tab') && params.get('tab') === 'persyaratan') {
+            toggleTab("persyaratanButton", "persyaratanContent");
+        } else if (params.has('tab') && params.get('tab') === 'surat') {
+            toggleTab("suratButton", "suratContent");
+        } else {
+           toggleTab("dokumenButton", "dokumenContent"); 
+        }
+    // }
+
     function toggleTab(activeButtonId, activeContentId) {
         // Ambil semua tombol dan konten
         const buttons = document.querySelectorAll("button[id$='Button']");
@@ -27,10 +39,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.getElementById("dokumenButton").addEventListener("click", () => toggleTab("dokumenButton", "dokumenContent"));
 });
-
-
-
-
 
 function showLainnyaField() {
     var alasanSelect = document.getElementById("alasan");
