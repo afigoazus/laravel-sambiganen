@@ -72,7 +72,7 @@
         <!-- perangkat desa -->
         <div class="font-dusha my-16">
             <!-- title -->
-            <div class="text-center text-4xl">
+            <div class="text-center text-4xl mb-10">
                 <span class="text-primary">Perangkat <span class="text-secondary">Desa</span> <br> Wringinanom</span>
             </div>
             <!-- title end -->
@@ -81,33 +81,90 @@
             <div id="swiper-perangkat-desa" class="swiper pb-[54px]">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide flex flex-col items-center">
-                        <img class="w-44" src="{{asset('assets/img/profil.png')}}">
+                        <img class="w-44 rounded-t-3xl" src="{{asset('assets/img/img_perangkat_desa/img12.jpg')}}">
                         <div class="bg-black bg-opacity-30 text-white text-center absolute w-44 bottom-0 py-2">
                             <span>Kepala Desa</span>
-                            <p>Wahyu Suryono</p>
+                            <p class="border-white border-t-2">Sutini</p>
                         </div>
                     </div>
                     <div class="swiper-slide flex flex-col items-center">
-                        <img class="w-44" src="{{asset('assets/img/profil.png')}}">
+                        <img class="w-44 rounded-t-3xl" src="{{asset('assets/img/img_perangkat_desa/img11.jpg')}}">
                         <div class="bg-black bg-opacity-30 text-white text-center absolute w-44 bottom-0 py-2">
-                            <span>Kepala Desa</span>
-                            <p>Wahyu Suryono</p>
+                            <span>Kepala Urusan Keuangan</span>
+                            <p class="border-white border-t-2">Septian Nur Azis</p>
                         </div>
                     </div>
                     <div class="swiper-slide flex flex-col items-center">
-                        <img class="w-44" src="{{asset('assets/img/profil.png')}}">
+                        <img class="w-44 rounded-t-3xl" src="{{asset('assets/img/img_perangkat_desa/img10.jpg')}}">
                         <div class="bg-black bg-opacity-30 text-white text-center absolute w-44 bottom-0 py-2">
-                            <span>Kepala Desa</span>
-                            <p>Wahyu Suryono</p>
+                            <span>Kamituwo Dukuh Nambang</span>
+                            <p class="border-white border-t-2">Wiwik Sutarto</p>
                         </div>
                     </div>
                     <div class="swiper-slide flex flex-col items-center">
-                        <img class="w-44" src="{{asset('assets/img/profil.png')}}">
+                        <img class="w-44 rounded-t-3xl" src="{{asset('assets/img/img_perangkat_desa/img9.jpg')}}">
                         <div class="bg-black bg-opacity-30 text-white text-center absolute w-44 bottom-0 py-2">
-                            <span>Kepala Desa</span>
-                            <p>Wahyu Suryono</p>
+                            <span>Staff Urusan Keuangan</span>
+                            <p class="border-white border-t-2">Supriono</p>
                         </div>
                     </div>
+                    <div class="swiper-slide flex flex-col items-center">
+                        <img class="w-44 rounded-t-3xl" src="{{asset('assets/img/img_perangkat_desa/img8.jpg')}}">
+                        <div class="bg-black bg-opacity-30 text-white text-center absolute w-44 bottom-0 py-2">
+                            <span>Kepala Seksi Pemerintahan</span>
+                            <p class="border-white border-t-2">Sunarto</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide flex flex-col items-center">
+                        <img class="w-44 rounded-t-3xl" src="{{asset('assets/img/img_perangkat_desa/img7.jpg')}}">
+                        <div class="bg-black bg-opacity-30 text-white text-center absolute w-44 bottom-0 py-2">
+                            <span>Staff Seksi Kesejahteraan</span>
+                            <p class="border-white border-t-2">Nur Rohmad</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide flex flex-col items-center">
+                        <img class="w-44 rounded-t-3xl" src="{{asset('assets/img/img_perangkat_desa/img6.jpg')}}">
+                        <div class="bg-black bg-opacity-30 text-white text-center absolute w-44 bottom-0 py-2">
+                            <span>Kamituwo Dukuh Tambong</span>
+                            <p class="border-white border-t-2">Lamijan</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide flex flex-col items-center">
+                        <img class="w-44 rounded-t-3xl" src="{{asset('assets/img/img_perangkat_desa/img5.jpg')}}">
+                        <div class="bg-black bg-opacity-30 text-white text-center absolute w-44 bottom-0 py-2">
+                            <span>Kepala Seksi Kesejahteraan</span>
+                            <p class="border-white border-t-2">Junjung Dwi Hartono</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide flex flex-col items-center">
+                        <img class="w-44 rounded-t-3xl" src="{{asset('assets/img/img_perangkat_desa/img4.jpg')}}">
+                        <div class="bg-black bg-opacity-30 text-white text-center absolute w-44 bottom-0 py-2">
+                            <span>Kepala Urusan Perencanaan</span>
+                            <p class="border-white border-t-2">Joko Suhermanto</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide flex flex-col items-center">
+                        <img class="w-44 rounded-t-3xl" src="{{asset('assets/img/img_perangkat_desa/img2.jpg')}}">
+                        <div class="bg-black bg-opacity-30 text-white text-center absolute w-44 bottom-0 py-2">
+                            <span>Ketua Urusan Tata Usaha dan Umum</span>
+                            <p class="border-white border-t-2">Gunarto</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide flex flex-col items-center">
+                        <img class="w-44 rounded-t-3xl" src="{{asset('assets/img/img_perangkat_desa/img3.jpg')}}">
+                        <div class="bg-black bg-opacity-30 text-white text-center absolute w-44 bottom-0 py-2">
+                            <span>Kepala Seksi Pelayanan</span>
+                            <p class="border-white border-t-2">Bandi</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide flex flex-col items-center">
+                        <img class="w-44 rounded-t-3xl" src="{{asset('assets/img/img_perangkat_desa/img1.jpg')}}">
+                        <div class="bg-black bg-opacity-30 text-white text-center absolute w-44 bottom-0 py-2">
+                            <span>Kamituwo Dukuh Banyuripan</span>
+                            <p class="border-white border-t-2">Andi Susilo</p>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div class="swiper-pagination relative mt-4"></div>
