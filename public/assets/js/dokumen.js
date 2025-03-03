@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
         toggleTab("dokumenButton", "dokumenContent");
     }
-    // }
 
+    // function toggle tab
     function toggleTab(activeButtonId, activeContentId) {
         // Ambil semua tombol dan konten
         const buttons = document.querySelectorAll("button[id$='Button']");
@@ -20,6 +20,12 @@ document.addEventListener("DOMContentLoaded", function () {
         contents.forEach((content) => {
             content.classList.add("hidden");
         });
+
+        // Loop untuk reset semua tombol
+        buttons.forEach((button) => {
+            button.classList.add("bg-[#A2A2A2]");
+            button.classList.remove("bg-primary", "text-white");
+        })
 
         // Aktifkan tombol dan konten yang dipilih
         document
@@ -50,14 +56,3 @@ document.addEventListener("DOMContentLoaded", function () {
             toggleTab("dokumenButton", "dokumenContent")
         );
 });
-
-function showLainnyaField() {
-    var alasanSelect = document.getElementById("alasan");
-    var otherField = document.getElementById("lainnyaField");
-
-    if (alasanSelect.value === "Lainnya") {
-        otherField.classList.remove("hidden");
-    } else {
-        otherField.classList.add("hidden");
-    }
-}
