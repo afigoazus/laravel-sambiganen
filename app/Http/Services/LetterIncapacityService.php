@@ -11,14 +11,14 @@ class LetterIncapacityService
     {
         return LetterIncapacity::create([
             'no_letter' => $this->letterCounterService->getNextLetterNumber(),
-            'name' => $data['parent-name'],
+            'name' => $data['nama-ortu'],
             'tgl_lahir' => $data['tanggal-lahir-ortu'],
             'tempat_lahir' => $data['tempat-lahir-ortu'],
             'gender' => $data['gender-ortu'],
             'nationality' => $data['kewarganegaraan'],
             'education' => $data['parent-education'],
             'job' => $data['job'],
-            'marriage' => $data['perkawinan'],
+            'marriage' => $data['status-perkawinan'],
             'nik' => $data['no-ktp'],
             'religion' => $data['agama'],
             'address' => $data['alamat-ortu'],
@@ -28,6 +28,7 @@ class LetterIncapacityService
             'gender_child' => $data['gender-anak'],
             'education_child' => $data['child-education'],
             'address_child' => $data['alamat-anak'],
+            'no_wa' => $data['no-wa'],
         ]);
     }
 }

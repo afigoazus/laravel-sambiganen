@@ -15,6 +15,7 @@ class LetterDeath extends Model
         'cause_death',
         'mom_name',
         'dad_name',
+        'no_wa',
     ];
 
     protected static function boot()

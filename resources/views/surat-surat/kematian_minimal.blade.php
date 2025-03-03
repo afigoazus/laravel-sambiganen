@@ -10,6 +10,9 @@
     <!-- Alert If the user success sent the data -->
     @include('components.alert')
 
+    <!-- Print the error to the front-end -->
+    @include('components.error')
+
     <form action="{{ route('kematian-minimal.store')}}" method="POST" class="mx-auto my-10 w-11/12 p-4 font-sans flex flex-col gap-4" id="myForm">
         @csrf
         <div class="bg-white p-4 w-full rounded-md">
@@ -27,14 +30,14 @@
                 <!-- nama ortu field -->
                 <div>
                     <label for="parent-name">Nama Lengkap<span class="text-[#FF0000]">*</span> <br>
-                        <input type="text" name="parent-name" id="parent-name" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Nama" required>
+                        <input type="text" name="nama-ortu" id="parent-name" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Nama" required>
                     </label>
                 </div>
 
                 <!-- nik field -->
                 <div class="">
                     <label for="nik">NIK <span class="text-[#FF0000]">*</span> <br>
-                        <input type="text" name="nik" id="nik" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="NIK" required>
+                        <input minlength="16" maxlength="16" type="text" name="nik" id="nik" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="NIK" required>
                     </label>
                 </div>
 

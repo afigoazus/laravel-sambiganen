@@ -22,17 +22,18 @@ class StoreLetterLostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required',
-            'tempat-lahir' => 'required',
-            'tanggal-lahir' => 'required',
-            'gender' => 'required',
-            'status-perkawinan' => 'required',
-            'pekerjaan' => 'required',
-            'pendidikan' => 'required',
-            'nik' => 'required',
-            'no-kk' => 'required',
-            'alamat' => 'required',
-            'barang-hilang' => 'required'
+            'name' => 'required|string|max:100',
+            'tempat-lahir' => 'required|string|max:100',
+            'tanggal-lahir' => 'required|date',
+            'gender' => 'required|max:10',
+            'status-perkawinan' => 'required|string|max:50',
+            'pekerjaan' => 'required|string|max:100',
+            'pendidikan' => 'required|string|max:100',
+            'nik' => 'required|digits:16',
+            'no-kk' => 'required|digits:16',
+            'alamat' => 'required|string|max:255',
+            'barang-hilang' => 'required|string|max:255',
+            'no-wa' => 'required|string|max:20'
         ];
     }
 }

@@ -49,6 +49,7 @@ class SuratUmumResource extends Resource
                         'name',
                         'no_letter',
                         'year',
+                        'no_wa',
                         DB::raw("'Surat Kematian' as type"),
                         'id as original_id',
                     ])
@@ -62,6 +63,7 @@ class SuratUmumResource extends Resource
                         'name',
                         'no_letter',
                         'year',
+                        'no_wa',
                         DB::raw("'Surat Keterangan Tidak Mampu' as type"),
                         'id as original_id'
                     ])
@@ -75,6 +77,7 @@ class SuratUmumResource extends Resource
                         'name',
                         'no_letter',
                         'year',
+                        'no_wa',
                         DB::raw("'Surat Kehilangan' as type"),
                         'id as original_id'
                     ])
@@ -88,6 +91,7 @@ class SuratUmumResource extends Resource
                         'name',
                         'no_letter',
                         'year',
+                        'no_wa',
                         DB::raw("'Surat Solar' as type"),
                         'id as original_id'
                     ])
@@ -101,6 +105,7 @@ class SuratUmumResource extends Resource
                         'name',
                         'no_letter',
                         'year',
+                        'no_wa',
                         DB::raw("'Surat Usaha' as type"),
                         'id as original_id'
                     ])
@@ -124,6 +129,8 @@ class SuratUmumResource extends Resource
                     ->label("Nama Pengaju Surat")
                     ->sortable()
                     ->searchable(),
+                Tables\Columns\TextColumn::make('no_wa')
+                    ->label("No. Whatsapp"),
                 Tables\Columns\TextColumn::make('year')
                     ->label("Tahun Surat"),
                 Tables\Columns\TextColumn::make('type')

@@ -19,19 +19,33 @@
     </div>
     <div>
         <h1>Foto KTP</h1>
-        <img style="max-width: 500px;" src="{{asset('storage/' . $data['foto_ktp'])}}" alt="">
+        <img style="width: 250px;" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('storage/' . $data['foto_ktp']))) }}" alt="Logo">
     </div>
     <div>
         <h1>Foto KK</h1>
-        <img style="max-width: 500px;" src="{{asset('storage/' . $data['foto_kk'])}}" alt="">
+        <img style="width: 500px;" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('storage/' . $data['foto_kk']))) }}" alt="Logo">
     </div>
-    <div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div style="margin-top: 5rem;">
         <h1>Foto Rumah</h1>
-        <img style="max-width: 500px;" src="{{asset('storage/' . $data['foto_rumah'])}}" alt="">
+        <img style="width: 500px;" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('storage/' . $data['foto_rumah']))) }}" alt="Logo">
     </div>
     <div>
         <h1>Foto Lantai Rumah</h1>
-        <img style="max-width: 500px;" src="{{asset('storage/' . $data['foto_lantai_rumah'])}}" alt="">
+        <img style="width: 500px;" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('storage/' . $data['foto_lantai_rumah']))) }}" alt="Logo">
     </div>
 </body>
 

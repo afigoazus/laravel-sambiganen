@@ -10,6 +10,9 @@
     <!-- Alert If the user success sent the data -->
     @include('components.alert')
 
+    <!-- Print the error to the front-end -->
+    @include('components.error')
+
     <form action="{{ route('keterangan-usaha.store')}}" method="POST" class="mx-auto my-10 w-11/12 max-w-prose p-4 flex flex-col gap-4 font-sans" id="myForm">
         @csrf
         <div class="bg-white p-4 w-full rounded-md">
@@ -36,7 +39,7 @@
         <!-- nik -->
         <div class="bg-white p-4 w-full rounded-md">
             <label for="nik">NIK <span class="text-[#FF0000]">*</span> <br>
-                <input type="text" name="nik" id="nik" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="RW Anda" required>
+                <input minlength="16" maxlength="16" type="text" name="nik" id="nik" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="NIK Anda" required>
             </label>
         </div>
 
@@ -56,7 +59,7 @@
                     <option value="lainnya">Lainnya</option>
                 </select>
             </div>
-            
+
             <div>
                 <label for="">
                     <span>Deskripsi Usaha</span> <span class="text-[#FF0000]"> *</span> <br>

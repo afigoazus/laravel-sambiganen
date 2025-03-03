@@ -27,5 +27,6 @@ class LetterFuel extends Model
         'no_distributor',
         'address_distributor',
         'purchasing_tools_used',
+        'no_wa'
     ];
 }

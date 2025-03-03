@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\KepindahanResource\Pages;
 use App\Filament\Resources\KepindahanResource\RelationManagers;
-use App\Models\Kepindahan;
+use App\Models\LetterPerpindahan;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Tables\Actions\Action;
@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class KepindahanResource extends Resource
 {
-    protected static ?string $model = Kepindahan::class;
+    protected static ?string $model = LetterPerpindahan::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationGroup = 'Dokumen Khusus';
@@ -180,20 +180,19 @@ class KepindahanResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('no_kk')
+                Tables\Columns\TextColumn::make('id')
+                    ->label("No. Dokumen")
+                    ->sortable()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('nama_lengkap')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('nik')
+                    ->label("Nama Pemohon")
                     ->searchable(),
                 Tables\Columns\TextColumn::make('desa')
+                    ->label("Desa Tujuan")
                     ->searchable(),
                 Tables\Columns\TextColumn::make('kecamatan')
+                    ->label("Kecamatan Tujuan")
                     ->searchable(),
-                Tables\Columns\TextColumn::make('anggota_pindah')
-                    ->label('Jumlah Anggota')
-                    ->numeric()
-                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -203,6 +202,7 @@ class KepindahanResource extends Resource
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->defaultSort('id', 'desc')
             ->filters([
                 //
             ])
@@ -212,7 +212,7 @@ class KepindahanResource extends Resource
                     ->label("Download PDF")
                     ->color(Color::hex('#2196F3'))
                     ->icon('heroicon-o-document-arrow-down')
-                    ->url(fn(Kepindahan $record): string => route('surat.skpwni', [$record->id]))
+                    ->url(fn(LetterPerpindahan $record): string => route('surat.skpwni', [$record->id]))
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

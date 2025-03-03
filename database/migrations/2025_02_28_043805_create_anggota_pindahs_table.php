@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('anggota_pindah', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('kepindahan_id')->constrained('kepindahan')->onDelete('cascade');
+            $table->foreignId('letter_perpindahan_id')->constrained('kepindahan')->onDelete('cascade');
             $table->string('nik', 20);
             $table->string('nama', 100);
             $table->string('status', 50)->comment('Relationship to main applicant');

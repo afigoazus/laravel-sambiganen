@@ -22,13 +22,14 @@ class StoreLetterDeathRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'parent-name' => 'required',
-            'nik' => 'required',
-            'tanggal-kematian' => 'required',
-            'jam-kematian' => 'required',
-            'sebab-kematian' => 'required',
-            'nama-ibu' => 'required',
-            'nama-ayah' => 'required',
+            'nama-ortu' => 'required|max:100',
+            'nik' => 'required|digits:16',
+            'tanggal-kematian' => 'required|date',
+            'jam-kematian' => 'required|date_format:H:i',
+            'sebab-kematian' => 'required|max:100',
+            'nama-ibu' => 'required|max:100',
+            'nama-ayah' => 'required|max:100',
+            'no-wa' => 'required|max:20',
         ];
     }
 }

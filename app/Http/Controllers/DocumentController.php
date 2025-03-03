@@ -4,19 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreBirthNoteRequest;
 use App\Http\Requests\StoreDeathNoteRequest;
+use App\Http\Requests\StoreDTKSRequest;
 use App\Http\Requests\StoreLetterBusinessRequest;
 use App\Http\Requests\StoreLetterDeathRequest;
 use App\Http\Requests\StoreLetterFuelRequest;
 use App\Http\Requests\StoreLetterIncapacityRequest;
 use App\Http\Requests\StoreLetterLostRequest;
+use App\Http\Requests\StoreLetterPerpindahanRequest;
 use App\Http\Services\BirthNoteService;
 use App\Http\Services\DeathNoteService;
 use App\Http\Services\DocPdfService;
+use App\Http\Services\DTKSService;
 use App\Http\Services\LetterBusinessService;
 use App\Http\Services\LetterDeathService;
 use App\Http\Services\LetterFuelService;
 use App\Http\Services\LetterIncapacityService;
 use App\Http\Services\LetterLostService;
+use App\Http\Services\LetterPerpindahanService;
 use App\Http\Services\PdfService;
 use App\Models\BirthNote;
 use App\Models\DeathNote;
@@ -26,6 +30,7 @@ use App\Models\LetterDeath;
 use App\Models\LetterFuel;
 use App\Models\LetterIncapacity;
 use App\Models\LetterLost;
+use Illuminate\Http\Request;
 
 class DocumentController extends Controller
 {
@@ -37,6 +42,8 @@ class DocumentController extends Controller
         protected LetterIncapacityService $letterIncapacityService,
         protected LetterLostService $letterLostService,
         protected LetterFuelService $letterFuelService,
+        protected LetterPerpindahanService $letterPerpindahanService,
+        protected DTKSService $dtksService,
         protected PdfService $pdfService,
         protected DocPdfService $docPdfService
     ) {}
@@ -93,7 +100,6 @@ class DocumentController extends Controller
     }
 
     // Function for store letter to database
-
     public function storeLetterBusiness(StoreLetterBusinessRequest $request)
     {
         $this->letterBusinessService->store($request->validated());
@@ -140,8 +146,20 @@ class DocumentController extends Controller
     {
         $this->letterFuelService->store($request->validated());
 
-        dd($this->letterFuelService->store($request->validated()));
-
         return redirect()->route('surat-surat.bbm')->with('success', 'Data berhasil disimpan');
+    }
+
+    public function storeLetterPerpindahan(StoreLetterPerpindahanRequest $request)
+    {
+        $this->letterPerpindahanService->store($request->validated());
+
+        return redirect()->route('surat-surat.perpindahan-penduduk')->with('success', 'Data berhasil disimpan');
+    }
+
+    public function storeDTKS(StoreDTKSRequest $request)
+    {
+        $this->dtksService->store($request);
+
+        return redirect()->route('surat-surat.dtks')->with('success', 'Data berhasil disimpan');
     }
 }

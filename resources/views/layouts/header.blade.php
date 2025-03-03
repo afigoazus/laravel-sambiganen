@@ -135,7 +135,7 @@
 
         <!-- news -->
         <div>
-          <a href="{{ route('berita') }}"><span>News</span></a>
+          <a href="{{ route('berita') }}"><span>Berita</span></a>
         </div>
 
         <!-- dtks -->

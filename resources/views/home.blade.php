@@ -23,22 +23,22 @@
                         </button>
                     </div>
                 </div>
-                
+
                 <!-- Social Links - Mobile -->
                 <div class="flex justify-center gap-8 mt-4 animate-zoom">
-                    <a href="#" class="hover:opacity-80 transition-opacity duration-300">
+                    <a href="" class="hover:opacity-80 transition-opacity duration-300">
                         <img src="{{asset('assets/img/em.svg')}}" alt="email" class="w-8 h-8">
                     </a>
                     <a href="#" class="hover:opacity-80 transition-opacity duration-300">
                         <img src="{{asset('assets/img/ig.svg')}}" alt="instagram" class="w-8 h-8">
                     </a>
-                    <a href="#" class="hover:opacity-80 transition-opacity duration-300">
+                    <a href="https://www.tiktok.com/@pemdes.wringinanom?_t=ZS-8uHVZEqJsbS&_r=1" target="_blank" class="hover:opacity-80 transition-opacity duration-300">
                         <img src="{{asset('assets/img/tt.svg')}}" alt="tiktok" class="w-8 h-8">
                     </a>
                     <a href="#" class="hover:opacity-80 transition-opacity duration-300">
                         <img src="{{asset('assets/img/fb.svg')}}" alt="facebook" class="w-8 h-8">
                     </a>
-                </div> 
+                </div>
             </div>
         </div>
     </section>
@@ -56,7 +56,9 @@
                     Desa Wringinanom adalah sebuah desa yang kaya akan kearifan lokal dan warisan budaya yang telah dilestarikan secara turun-temurun.
                 </p>
                 <div class=" bg-yellow max-w-fit py-2 px-6 rounded-lg text-sm text-center font-poppins">
-                    <a href="{{ route('sejarah')}}"><p>Selengkapnya..</p></a>
+                    <a href="{{ route('sejarah')}}">
+                        <p>Selengkapnya..</p>
+                    </a>
                 </div>
             </div>
             <div class="w-1/2 md:w-1/4">
@@ -70,7 +72,9 @@
             <div class="flex items-start sm:items-center sm:justify-center gap-4 md:hidden">
                 <h2 class="text-4xl font-dusha font-bold text-black">Unduh Dokumen<br>Atau Surat</h2>
                 <div class="bg-yellow text-black my-auto text-4xl text-center py-4 px-4 rounded-lg">
-                    <a href="{{ route('surat-surat') }}"><p>Klik di sini</p></a>
+                    <a href="{{ route('surat-surat') }}">
+                        <p>Klik di sini</p>
+                    </a>
                 </div>
             </div>
             <!-- DESKT -->
@@ -90,7 +94,7 @@
             </div>
         </section>
 
-        
+
 
         <!-- News -->
         <!-- Berita Terbaru - Desktop Only -->
@@ -125,8 +129,8 @@
                 </div>
             </div>
         </section>
-       
-        
+
+
 
         <section class="bg-white relative">
             <!-- Desktop Layout -->
@@ -223,7 +227,7 @@
             </div>
         </section>
 
-        
+
 
         <!-- Komen/Timbal Balik -->
         <section class="w-11/12 max-w-screen-xl mx-auto mt-16 px-4 md:hidden">
@@ -296,7 +300,7 @@
             </div>
         </section>
 
-        
+
 
         <!-- Demographics mobile -->
         <section class="text-center space-y-6 md:hidden">

@@ -10,6 +10,9 @@
     <!-- Alert If the user success sent the data -->
     @include('components.alert')
 
+    <!-- Print the error to the front-end -->
+    @include('components.error')
+
     <form action="{{ route('keringanan-sekolah.store')}}" method="POST" class="mx-auto my-10 w-11/12 p-4 font-sans flex flex-col gap-4" id="myForm">
         @csrf
         <div class="bg-white p-4 w-full rounded-md">
@@ -27,7 +30,7 @@
                 <!-- nama ortu field -->
                 <div>
                     <label for="parent-name">Nama Orang Tua<span class="text-[#FF0000]">*</span> <br>
-                        <input type="text" name="parent-name" id="parent-name" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Nama" required>
+                        <input type="text" name="nama-ortu" id="parent-name" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Nama" required>
                     </label>
                 </div>
 
@@ -108,24 +111,36 @@
                 </div>
 
                 <!-- status perkawinan field -->
-                <div class="">
-                    <label for="perkawinan">Status Perkawinan <span class="text-[#FF0000]">*</span> <br>
-                        <input type="text" name="perkawinan" id="perkawinan" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Status Perkawinan" required>
-                    </label>
+                <div class="flex flex-col gap-2">
+                    <span>Status Perkawinan <span class="text-[#FF0000]">*</span></span>
+                    <select name="status-perkawinan" id="status-perkawinan" class=" border-2 border-black" required>
+                        <option disabled selected>Pilih Status Perkawinan</option>
+                        <option value="Belum Kawin">Belum Kawin</option>
+                        <option value="Sudah Kawin">Sudah Kawin</option>
+                        <option value="Janda">Janda</option>
+                        <option value="Duda">Duda</option>
+                    </select>
                 </div>
 
                 <!-- No ktp field -->
                 <div class="">
                     <label for="no-ktp">No KTP/NIK <span class="text-[#FF0000]">*</span> <br>
-                        <input type="text" name="no-ktp" id="no-ktp" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="No KTP/NIK" required>
+                        <input type="text" minlength="16" maxlength="16" name="no-ktp" id="no-ktp" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="No KTP/NIK" required>
                     </label>
                 </div>
 
                 <!-- agama field -->
-                <div class="">
-                    <label for="agama">Agama <span class="text-[#FF0000]">*</span> <br>
-                        <input type="text" name="agama" id="agama" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="No KTP/NIK" required>
-                    </label>
+                <div class="flex flex-col gap-2">
+                    <span>Agama <span class="text-[#FF0000]">*</span></span>
+                    <select name="agama" id="agama" class=" border-2 border-black" required>
+                        <option disabled selected>Pilih Agama</option>
+                        <option value="Islam">Islam</option>
+                        <option value="Kristen">Kristen</option>
+                        <option value="Hindu">Hindu</option>
+                        <option value="Buddha">Buddha</option>
+                        <option value="Katolik">Katolik</option>
+                        <option value="Konghucu">Konghucu</option>
+                    </select>
                 </div>
 
                 <!-- alamat field -->
@@ -209,7 +224,7 @@
         <!-- no whatsapp -->
         <div class="bg-white p-4 w-full rounded-md">
             <label for="">No Telepon/Whatsapp <span class="text-[#FF0000]">*</span>
-                <input type="text" name="no-wa" id="no-wa" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="No Telepon/Whatsapp" required>
+                <input type="text" maxlength="20" name="no-wa" id="no-wa" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="No Telepon/Whatsapp" required>
             </label>
         </div>
 

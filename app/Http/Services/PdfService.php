@@ -3,6 +3,7 @@
 namespace App\Http\Services;
 
 use App\Models\Kepindahan;
+use App\Models\LetterPerpindahan;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
 use setasign\Fpdi\Fpdi;
@@ -12,7 +13,7 @@ class PdfService
     public function generate($modelClass, $view, $filenamePrefix, $id, $paperSize = [0, 0, 612, 1008])
     {
         $dataPdf = $modelClass::findOrFail($id);
-        /*return view($view, ["data" => $dataPdf]);*/
+        // return view($view, ["data" => $dataPdf]);
 
         $pdf = Pdf::loadView($view, ['data' => $dataPdf])->setPaper($paperSize);
         return $pdf->download($filenamePrefix . "_" . $dataPdf['name'] . '.pdf');
@@ -21,7 +22,7 @@ class PdfService
     public function generateFilledPdf($id)
     {
         // Retrieve data from database
-        $dataPdf = Kepindahan::findOrFail($id);
+        $dataPdf = LetterPerpindahan::findOrFail($id);
 
         // Initialize PDF with FPDI
         $pdf = new Fpdi();

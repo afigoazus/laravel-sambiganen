@@ -17,7 +17,7 @@ Route::get('/sejarah', [HomeController::class, 'history'])->name('sejarah');
 
 Route::get('/dtks', function () {
     return view('surat-surat.dtks');
-});
+})->name('surat-surat.dtks');
 
 // Feature Routes
 Route::get('/agenda', [CreationController::class, 'index'])->name('agenda');
@@ -58,6 +58,8 @@ Route::prefix('dokumen')->group(function () {
         'kematian-nkri' => 'storeDeathNote',
         'keringanan-sekolah' => 'storeLetterIncapacity',
         'kehilangan' => 'storeLetterLost',
+        'perpindahan-penduduk' => 'storeLetterPerpindahan',
+        'dtks' => 'storeDTKS',
     ];
 
     foreach ($storeRoutes as $uri => $method) {

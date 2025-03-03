@@ -24,6 +24,7 @@ class LetterLostService
             'no_kk' => $data['no-kk'],
             'address' => $data['alamat'],
             'information' => $data['barang-hilang'],
+            'no_wa' => $data['no-wa'],
         ]);
     }
 }

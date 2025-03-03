@@ -22,23 +22,22 @@ class StoreLetterFuelRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required',
-            'nik' => 'required',
-            'alamat' => 'required',
+            'name' => 'required|max:100',
+            'nik' => 'required|digits:16',
+            'alamat' => 'required|max:255',
             'nama-usaha' => 'nullable',
-            'sektor-pengguna' => 'required',
-            'jenis-usaha' => 'required',
-            'no-wa' => 'required',
-            'jenis-alat' => 'required',
-            'jumlah-alat' => 'required',
-            'fungsi-alat' => 'required',
-            'daya-alat' => 'required',
-            'lama-penggunaan' => 'required',
-            'lama-operasional' => 'required',
-            'konsumsi' => 'required',
-            'alokasi-volume' => 'required',
-            'tempat-pengambilan' => 'required',
-            'alat-tukar' => 'required',
+            'sektor-pengguna' => 'required|max:100',
+            'jenis-usaha' => 'required|max:100',
+            'no-wa' => 'required|max:20',
+            'jumlah-alat' => 'required|numeric',
+            'jumlah-alat2' => 'required|numeric',
+            'daya-alat' => 'required|numeric',
+            'lama-penggunaan' => 'required|numeric',
+            'lama-operasional' => 'required|numeric',
+            'konsumsi' => 'required|numeric',
+            'alokasi-volume' => 'required|numeric',
+            'tempat-pengambilan' => 'required|max:100',
+            'alat-beli' => 'required|max:100',
         ];
     }
 }

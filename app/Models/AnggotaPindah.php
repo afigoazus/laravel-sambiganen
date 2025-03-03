@@ -10,7 +10,7 @@ class AnggotaPindah extends Model
     protected $table = 'anggota_pindah';
 
     protected $fillable = [
-        'kepindahan_id',
+        'letter_perpindahan_id',
         'nik',
         'nama',
         'status'
@@ -18,6 +18,6 @@ class AnggotaPindah extends Model
 
     public function kepindahan(): BelongsTo
     {
-        return $this->belongsTo(Kepindahan::class);
+        return $this->belongsTo(LetterPerpindahan::class);
     }
 }

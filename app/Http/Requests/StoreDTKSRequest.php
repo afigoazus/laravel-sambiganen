@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreLetterBusinessRequest extends FormRequest
+class StoreDTKSRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,12 +23,11 @@ class StoreLetterBusinessRequest extends FormRequest
     {
         return [
             'name' => 'required|max:100',
-            'alamat' => 'required|max:255',
-            'nik' => 'required|digits:16',
-            'kategori' => 'required|max:100',
-            'deskripsi' => 'required|max:255',
-            'nama-usaha' => 'required|max:100',
-            'no-wa' => 'required|max:20',
+            'rt/rw' => 'required|max:100',
+            'image-ktp' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image-kk' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image-rumah' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image-lantai' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ];
     }
 }

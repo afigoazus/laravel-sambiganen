@@ -10,6 +10,9 @@
     <!-- Alert If the user success sent the data -->
     @include('components.alert')
 
+    <!-- Print the error to the front-end -->
+    @include('components.error')
+
     <form action="{{ route('kehilangan.store')}}" method="POST" class="mx-auto my-10 w-11/12 max-w-prose p-4 flex flex-col gap-4 font-sans" id="myForm">
         @csrf
         <div class="bg-white p-4 w-full rounded-md">
@@ -64,10 +67,15 @@
         </div>
 
         <!-- status perkawinan field -->
-        <div class="bg-white p-4 w-full rounded-md">
-            <label for="status-perkawinan">Status Perkawinan <span class="text-[#FF0000]">*</span> <br>
-                <input type="text" name="status-perkawinan" id="status-perkawinan" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Status Perkawinan Anda" required>
-            </label>
+        <div class="flex flex-col gap-2">
+            <span>Status Perkawinan <span class="text-[#FF0000]">*</span></span>
+            <select name="status-perkawinan" id="tempat-dilahirkan" class="border-2 border-black" required>
+                <option disabled selected>Status Perkawinan</option>
+                <option value="Belum Kawin">Belum Kawin</option>
+                <option value="Sudah Kawin">Sudah Kawin</option>
+                <option value="Janda">Janda</option>
+                <option value="Duda">Duda</option>
+            </select>
         </div>
 
         <!-- pekerjaan field -->
@@ -87,14 +95,14 @@
         <!-- nik field -->
         <div class="bg-white p-4 w-full rounded-md">
             <label for="nik">NIK <span class="text-[#FF0000]">*</span> <br>
-                <input type="text" name="nik" id="nik" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="NIK Anda" required>
+                <input minlength="16" maxlength="16" type="text" name="nik" id="nik" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="NIK Anda" required>
             </label>
         </div>
 
         <!-- no kk field -->
         <div class="bg-white p-4 w-full rounded-md">
             <label for="no-kk">No KK <span class="text-[#FF0000]">*</span> <br>
-                <input type="text" name="no-kk" id="no-kk" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="No KK Anda" required>
+                <input minlength="16" maxlength="16" type="text" name="no-kk" id="no-kk" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="No KK Anda" required>
             </label>
         </div>
 

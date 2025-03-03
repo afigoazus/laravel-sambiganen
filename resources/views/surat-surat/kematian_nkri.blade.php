@@ -10,6 +10,9 @@
     <!-- Alert If the user success sent the data -->
     @include('components.alert')
 
+    <!-- Print the error to the front-end -->
+    @include('components.error')
+
     <form action="{{ route('kematian-nkri.store')}}" method="POST" class="mx-auto my-10 w-11/12 p-4 font-sans flex flex-col gap-4" id="myForm">
         @csrf
         <div class="bg-white p-4 w-full rounded-md">
@@ -34,7 +37,7 @@
                 <!-- nik field -->
                 <div class="">
                     <label for="nik">NIK <span class="text-[#FF0000]">*</span> <br>
-                        <input type="text" name="nik" id="nik" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="NIK" required>
+                        <input type="text" minlength="16" maxlength="16" name="nik" id="nik" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="NIK" required>
                     </label>
                 </div>
 
@@ -87,7 +90,7 @@
                 <!-- nik field -->
                 <div class="">
                     <label for="nik-saksi-1">NIK <span class="text-[#FF0000]">*</span> <br>
-                        <input type="text" name="nik-saksi-1" id="nik-saksi-1" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="NIK" required>
+                        <input minlength="16" maxlength="16" type="text" name="nik-saksi-1" id="nik-saksi-1" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="NIK" required>
                     </label>
                 </div>
 
@@ -133,7 +136,7 @@
                 <!-- nik field -->
                 <div class="">
                     <label for="nik">NIK <span class="text-[#FF0000]">*</span> <br>
-                        <input type="text" name="nik-saksi-2" id="nik-saksi-2" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="NIK" required>
+                        <input minlength="16" maxlength="16" type="text" name="nik-saksi-2" id="nik-saksi-2" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="NIK" required>
                     </label>
                 </div>
 
@@ -179,7 +182,7 @@
                 <!-- nik ayah field -->
                 <div class="">
                     <label for="nik-ayah">NIK Ayah <span class="text-[#FF0000]">*</span> <br>
-                        <input type="text" name="nik-ayah" id="nik-ayah" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="NIK Ayah" required>
+                        <input minlength="16" maxlength="16" type="text" name="nik-ayah" id="nik-ayah" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="NIK Ayah" required>
                     </label>
                 </div>
 
@@ -231,7 +234,7 @@
                 <!-- nik ibu field -->
                 <div class="">
                     <label for="nik-ibu">NIK Ibu <span class="text-[#FF0000]">*</span> <br>
-                        <input type="text" name="nik-ibu" id="nik-ibu" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="NIK Ibu" required>
+                        <input minlength="16" maxlength="16" type="text" name="nik-ibu" id="nik-ibu" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="NIK Ibu" required>
                     </label>
                 </div>
 
@@ -285,7 +288,7 @@
                 <!-- nik -->
                 <div>
                     <label for="nik-kematian">NIK<span class="text-[#FF0000]">*</span> <br>
-                        <input type="text" name="nik-kematian" id="nik-kematian" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="NIK" required>
+                        <input minlength="16" maxlength="16" type="text" name="nik-kematian" id="nik-kematian" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="NIK" required>
                     </label>
                 </div>
 
@@ -343,13 +346,6 @@
                     </select>
                 </div>
             </div>
-        </div>
-
-        <!-- no whatsapp -->
-        <div class="bg-white p-4 w-full rounded-md">
-            <label for="">No Telepon/Whatsapp <span class="text-[#FF0000]">*</span>
-                <input type="text" name="no-wa" id="no-wa" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="No Telepon/Whatsapp" required>
-            </label>
         </div>
 
         <!-- submit and reset button -->

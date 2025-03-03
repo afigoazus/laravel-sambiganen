@@ -14,15 +14,28 @@
 
             <!-- LAPOR KANG -->
             <div class="hidden lg:block font-dusha px-4 py-2 rounded-xl bg-white/50">
-                <a href="{{ route('pengaduan') }}"><p>Lapor kang...</p></a>
+                <a href="{{ route('pengaduan') }}">
+                    <p>Lapor kang...</p>
+                </a>
             </div>
-            
+
             <!-- RIGHT SIDE -->
-            <div class="flex justify-between items-center gap-4">
-                <img class="lg:w-8 lg:h-8" src="{{asset('assets/img/em.svg')}}" alt="email logo">
-                <img class="lg:w-8 lg:h-8" src="{{asset('assets/img/ig.svg')}}" alt="instagram logo">
-                <img class="lg:w-8 lg:h-8" src="{{asset('assets/img/tt.svg')}}" alt="tiktok logo">
-                <img class="lg:w-8 lg:h-8" src="{{asset('assets/img/fb.svg')}}" alt="facebook logo">
+            <div class="flex justify-center items-center gap-4">
+                <!-- Social Links - Mobile -->
+                <div class="flex justify-center gap-8 mt-4 animate-zoom">
+                    <a href="" class="hover:opacity-80 transition-opacity duration-300">
+                        <img src="{{asset('assets/img/em.svg')}}" alt="email" class="w-8 h-8">
+                    </a>
+                    <a href="#" class="hover:opacity-80 transition-opacity duration-300">
+                        <img src="{{asset('assets/img/ig.svg')}}" alt="instagram" class="w-8 h-8">
+                    </a>
+                    <a href="https://www.tiktok.com/@pemdes.wringinanom?_t=ZS-8uHVZEqJsbS&_r=1" target="_blank" class="hover:opacity-80 transition-opacity duration-300">
+                        <img src="{{asset('assets/img/tt.svg')}}" alt="tiktok" class="w-8 h-8">
+                    </a>
+                    <a href="#" class="hover:opacity-80 transition-opacity duration-300">
+                        <img src="{{asset('assets/img/fb.svg')}}" alt="facebook" class="w-8 h-8">
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -32,26 +45,28 @@
             <div class="flex justify-between lg:gap-16">
                 <div>
                     <h3 class="text-lg font-semibold mb-2">Profil</h3>
-                    <p class="text-sm">Sejarah</p>
-                    <p class="text-sm">Struktur</p>
-                    <p class="text-sm">Lembaga Desa</p>
+                    <a href="{{ route('sejarah') }}" class="text-sm block">Sejarah</a>
+                    <a href="{{ route('agenda') }}" class="text-sm block">Struktur</a>
+                    <a href="{{ route('sejarah') }}" class="text-sm block">Lembaga Desa</a>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold mb-2">Anggaran</h3>
-                    <p class="text-sm">Tahun 2023</p>
-                    <p class="text-sm">Tahun 2024</p>
+                    <a href="{{ route('anggaran') }}" class="text-sm">Tahun 2023</a>
+                    <a href="{{ route('anggaran') }}" class="text-sm block">Tahun 2024</a>
                 </div>
             </div>
             <!-- LOWER SIDE -->
             <div class="flex justify-between lg:gap-16">
                 <div>
                     <h3 class="text-lg font-semibold mb-2">Surat dan Dokumen</h3>
-                    <p class="text-sm">Kehilangan</p>
-                    <p class="text-sm">Keterangan Tidak Mampu</p>
-                    <p class="text-sm">Lembaga Desa</p>
+                    <a href="{{ route('surat-surat') }}" class="text-sm block">Kehilangan</a>
+                    <a href="{{ route('surat-surat') }}" class="text-sm block">Keterangan Tidak Mampu</a>
+                    <a href="{{ route('surat-surat') }}" class="text-sm block">Lembaga Desa</a>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-2 w-20">Berita</h3>
+                    <a href="{{ route('berita') }}">
+                        <h3 class="text-lg font-semibold mb-2 w-20">Berita</h3>
+                    </a>
                 </div>
             </div>
         </div>
@@ -70,7 +85,7 @@
                 <!-- logo telepon -->
                 <div class="flex gap-4 mb-4">
                     <img src="{{ asset('assets/img/phone.svg')}}" alt="phone.svg" class="bg-white w-8 rounded p-1">
-                    <p class="font-medium outline outline-2 outline-white p-1 rounded">(0352) 312896</p>
+                    <p class="font-medium outline outline-2 outline-white p-1 rounded">+6287887390669</p>
                 </div>
             </div>
 
@@ -86,7 +101,9 @@
 
         <!-- LAPOR KANG -->
         <div class="lg:hidden max-w-[400px] mx-auto mt-4 font-dusha px-4 py-2 rounded-xl bg-white/50">
-                <a href="{{ route('pengaduan') }}"><p>Lapor kang...</p></a>
+            <a href="{{ route('pengaduan') }}">
+                <p>Lapor kang...</p>
+            </a>
         </div>
     </div>
 

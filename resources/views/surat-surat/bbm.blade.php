@@ -10,6 +10,9 @@
     <!-- Alert If the user success sent the data -->
     @include('components.alert')
 
+    <!-- Print the error to the front-end -->
+    @include('components.error')
+
     <form action="{{ route('bbm.store') }}" method="POST" class="mx-auto my-10 w-11/12 p-4 flex flex-col gap-4 font-sans" id="myForm">
         @csrf
         <div class="bg-white p-4 w-full rounded-md">
@@ -34,7 +37,7 @@
                 <!-- nik field -->
                 <div class="">
                     <label for="nik">NIK <span class="text-[#FF0000]">*</span> <br>
-                        <input type="text" name="nik" id="nik" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="NIK Anda" required>
+                        <input minlength="16" maxlength="16" type="text" name="nik" id="nik" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="NIK Anda" required>
                     </label>
                 </div>
 
@@ -57,7 +60,7 @@
                     <label for="sektor-pengguna">Sektor Konsumen Pengguna <span class="text-[#FF0000]">*</span> <br>
                         <input type="text" name="sektor-pengguna" id="sektor-pengguna" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Sektor Konsumen Pengguna" required>
                     </label>
-                    
+
                 </div>
 
                 <!-- jenis usaha field -->
@@ -70,7 +73,7 @@
                 <!-- no whatsapp -->
                 <div class="">
                     <label for="">No Telepon/Whatsapp <span class="text-[#FF0000]">*</span>
-                        <input type="text" name="no-wa" id="no-wa" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="No Telepon/Whatsapp" required>
+                        <input type="text" maxlength="20" name="no-wa" id="no-wa" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="No Telepon/Whatsapp" required>
                     </label>
                 </div>
             </div>
@@ -84,53 +87,60 @@
             <div class=" grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
                 <!-- jenis mesin -->
                 <div>
-                    <label for="jenis-mesin">Jenis Mesin/Alat <span class="text-[#FF0000]">*</span> 
-                        <input type="text" name="jenis-alat" id="fungsi-alat" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Jenis Alat" required>      
+                    <label for="jenis-mesin">Jenis Mesin/Alat <span class="text-[#FF0000]">*</span>
+                        <input disabled value="Diesel" type="text" name="jenis-alat" id="fungsi-alat" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Jenis Alat" required>
                     </label>
                 </div>
 
                 <!-- jumlah alat -->
                 <div>
-                    <label for="jumlah-alat">Jumlah Alat/Mesin <span class="text-[#FF0000]">*</span> 
-                        <input type="text" name="jumlah-alat" id="jumlah-alat" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Jumlah Alat/Mesin" required>      
+                    <label for="jumlah-alat">Jumlah Alat/Mesin <span class="text-[#FF0000]">*</span>
+                        <input type="number" min="1" max="10" name="jumlah-alat" id="jumlah-alat" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Jumlah Alat/Mesin" required>
                     </label>
                 </div>
 
                 <!-- fungsi alat -->
                 <div>
-                    <label for="fungsi-mesin">Fungsi Alat/Mesin <span class="text-[#FF0000]">*</span> 
-                        <input type="text" name="fungsi-alat" id="fungsi-alat" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Fungsi Alat/Mesin" required>      
+                    <label for="fungsi-mesin">Fungsi Alat/Mesin <span class="text-[#FF0000]">*</span>
+                        <input disabled value="Pertanian Industri" type="text" name="fungsi-alat" id="fungsi-alat" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Fungsi Alat/Mesin" required>
                     </label>
                 </div>
-               
+
+                <!-- jumlah alat -->
+                <div>
+                    <label for="jumlah-alat2">Jumlah Alat/Mesin <span class="text-[#FF0000]">*</span>
+                        <input type="number" min="1" max="10" name="jumlah-alat2" id="jumlah-alat2" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Jumlah Alat/Mesin" required>
+                    </label>
+                </div>
+
                 <!-- daya alat -->
                 <div>
-                    <label for="daya-mesin">Daya Alat/Mesin <span class="text-[#FF0000]">*</span> 
-                        <input type="text" name="daya-alat" id="daya-alat" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Daya Alat/Mesin" required>      
+                    <label for="daya-mesin">Daya Alat/Mesin <span class="text-[#FF0000]">*</span>
+                        <input type="number" name="daya-alat" id="daya-alat" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Daya Alat/Mesin" required>
                     </label>
                 </div>
 
                 <!-- lama penggunaan -->
                 <div>
                     <label for="lama-penggunaan">Lama Penggunaan Alat/Mesin <span class="text-[#FF0000]">*</span> <br>
-                    <span class="font-medium">(Jam per hari)</span>
-                        <input type="text" name="lama-penggunaan" id="lama-penggunaan" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Lama Penggunaan Per Hari" required>      
+                        <span class="font-medium">(Jam per hari)</span>
+                        <input type="number" min="1" max="24" name="lama-penggunaan" id="lama-penggunaan" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Lama Penggunaan Per Hari" required>
                     </label>
-                </div> 
+                </div>
 
                 <!-- lama operasional -->
                 <div>
                     <label for="lama-operasional">Lama Operasional Alat/Mesin <span class="text-[#FF0000]">*</span> <br>
-                    <span class="font-medium">(Hari/Minggu/Bulan)</span>
-                        <input type="text" name="lama-operasional" id="lama-operasional" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Lama Operasional" required>      
+                        <span class="font-medium">(Hari/Minggu/Bulan)</span>
+                        <input type="number" name="lama-operasional" id="lama-operasional" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Lama Operasional" required>
                     </label>
                 </div>
 
                 <!-- Konsumsi JBT/JBKP -->
                 <div>
                     <label for="konsumsi">Konsumsi JBT/JBKP Alat/Mesin <span class="text-[#FF0000]">*</span> <br>
-                    <span class="font-medium">(Liter per minggu/bulan)</span>
-                        <input type="text" name="konsumsi" id="konsumsi" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Konsumsi BBM" required>      
+                        <span class="font-medium">(Liter per minggu/bulan)</span>
+                        <input type="number" name="konsumsi" id="konsumsi" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Konsumsi BBM" required>
                     </label>
                 </div>
             </div>
@@ -145,15 +155,15 @@
                 <!-- alokasi volume -->
                 <div>
                     <label for="alokasi-volume">Alokasi Volume <span class="text-[#FF0000]">*</span> <br>
-                    <span class="font-medium">(Dalam Liter)</span>
-                        <input type="text" name="alokasi-volume" id="alokasi-volume" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Alokasi Volume" required>      
+                        <span class="font-medium">(Dalam Liter)</span>
+                        <input type="number" name="alokasi-volume" id="alokasi-volume" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Alokasi Volume" required>
                     </label>
                 </div>
 
                 <!-- tempat pengambilan -->
                 <div class="">
                     <span>Tempat Pengambilan <span class="text-[#FF0000]">*</span></span>
-                    <div class="flex gap-10">
+                    <div class="flex gap-10 mt-2">
                         <label class="flex items-start space-x-3 cursor-pointer">
                             <div class="flex-shrink-0 mt-1">
                                 <input type="radio"
@@ -176,8 +186,8 @@
 
                 <!-- alat pembelian -->
                 <div>
-                    <label for="alat-tukar">Alat Tukar Yang Digunakan <span class="text-[#FF0000]">*</span> <br>
-                        <input type="text" name="alat-tukar" id="alat-tukar" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Alat Tukar Yang Digunakan" required>      
+                    <label for="alat-beli">Alat Pembelian Yang Digunakan <span class="text-[#FF0000]">*</span> <br>
+                        <input type="text" name="alat-beli" id="alat-beli" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Alat Pembelian Yang Digunakan" required>
                     </label>
                 </div>
             </div>
