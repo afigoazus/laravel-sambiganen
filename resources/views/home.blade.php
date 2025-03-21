@@ -25,6 +25,7 @@
                     </form>
                 </div>
 
+
                 <!-- Social Links - Mobile -->
                 <div class="flex justify-center gap-8 mt-4 animate-zoom">
                     <a href="" class="hover:opacity-80 transition-opacity duration-300">
@@ -45,9 +46,9 @@
     </section>
 
     <!-- Content -->
-    <div class="container mx-auto px-4 space-y-16">
+    <div class="container mx-auto px-4 space-y-16 overflow-hidden">
         <!-- Kisah kisah -->
-        <section class="flex flex-row gap-8 md:justify-center md:gap-16 md:px-24">
+        <section class="flex flex-row gap-8 md:justify-center md:gap-16 md:px-24 fade-in-sec-one">
             <div class="w-1/2 space-y-4">
                 <div class="space-y-2">
                     <h1 class="font-dusha text-3xl md:text-4xl text-primary">Wringinanom</h1>
@@ -56,10 +57,10 @@
                 <p class="font-poppins text-sm md:text-base text-gray-700">
                     Desa Wringinanom adalah sebuah desa yang kaya akan kearifan lokal dan warisan budaya yang telah dilestarikan secara turun-temurun.
                 </p>
-                <div class=" bg-yellow max-w-fit py-2 px-6 rounded-lg text-sm text-center font-poppins">
-                    <a href="{{ route('sejarah')}}">
-                        <p>Selengkapnya..</p>
-                    </a>
+                <div>
+                    <a
+                        class=" bg-yellow max-w-fit block py-2 px-6 rounded-lg text-sm text-center font-poppins"
+                        href="{{ route('sejarah')}}">Selengkapnya..</a>
                 </div>
             </div>
             <div class="w-1/2 md:w-1/4">
@@ -70,25 +71,25 @@
         <!-- Unduh Dokumen -->
         <section class="w-full px-0">
             <!-- MOBILE -->
-            <div class="flex items-start sm:items-center sm:justify-center gap-4 md:hidden">
+            <div class="flex items-start sm:items-center sm:justify-center gap-4 md:hidden fade-in-sec-two">
                 <h2 class="text-4xl font-dusha font-bold text-black">Unduh Dokumen<br>Atau Surat</h2>
-                <div class="bg-yellow text-black my-auto text-4xl text-center py-4 px-4 rounded-lg">
+                <div class="bg-yellow text-black my-auto text-4xl text-center py-4 px-4 rounded-lg glow-btn">
                     <a href="{{ route('surat-surat') }}">
                         <p>Klik di sini</p>
                     </a>
                 </div>
             </div>
             <!-- DESKT -->
-            <div class="hidden md:flex bg-yellow w-full py-6 flex-row justify-center items-center text-white mb-0">
-                <div class="flex items-center gap-4">
+            <div class="hidden md:flex bg-yellow w-full py-6 flex-row justify-center items-center text-white mb-0 fade-in-sec-two">
+                <div class="flex items-center gap-4 first">
                     <p class="font-bold text-left">Ada yang <br> Ingin Disampaikan?</p>
-                    <a href="{{ route('pengaduan') }}" class="bg-white p-3 rounded-lg">
+                    <a href="{{ route('pengaduan') }}" class="bg-white p-3 rounded-lg hover:scale-110 transition-all ease-in-out duration-100">
                         <img src="{{asset('assets/img/inbox.png')}}" alt="Email Icon" class="w-12 h-12" />
                     </a>
                 </div>
-                <div class="flex items-center gap-4 ml-8">
+                <div class="flex items-center gap-4 ml-8 second">
                     <p class="font-bold text-left">Unduh Dokumen <br> atau Surat!</p>
-                    <a href="{{ route('surat-surat') }}" class="bg-white p-3 rounded-lg">
+                    <a href="{{ route('surat-surat') }}" class="bg-white p-3 rounded-lg hover:scale-110 transition-all ease-in-out duration-100">
                         <img src="{{asset('assets/img/up.png')}}" alt="Upload Icon" class="w-12 h-12" />
                     </a>
                 </div>
@@ -99,7 +100,7 @@
 
         <!-- News -->
         <!-- Berita Terbaru - Desktop Only -->
-        <section class="w-full hidden lg:block bg-white">
+        <section class="w-full hidden lg:block bg-white fade-in-sec-three">
             <div class="container mx-auto px-24 py-12 max-w-[1400px]">
                 <div class="flex items-center justify-center gap-16 mx-12">
                     <div class="w-1/2 space-y-6 max-w-xl pl-12">
@@ -117,7 +118,7 @@
                             <span class="bg-primary text-white px-6 py-2 text-sm rounded font-ibm">{{ $location->name }}</span>
                             @endforeach
                         </div>
-                        <a href="{{ route('berita') }}" class="inline-block bg-yellow text-white px-8 py-3 rounded font-poppins text-sm hover:opacity-90 transition-opacity">
+                        <a href="{{ route('berita') }}" class="inline-block bg-yellow text-white px-8 py-3 rounded font-poppins text-sm hover:opacity-90 detail">
                             Lihat semua berita>>>
                         </a>
                     </div>
@@ -135,9 +136,9 @@
 
         <section class="bg-white relative">
             <!-- Desktop Layout -->
-            <div class="w-full lg:px-0 px-4">
-                <div class="hidden lg:block">
-                    <div class="w-full bg-gradient-header">
+            <div class="w-full lg:px-0 px-4 fade-in-sec-four">
+                <div class="hidden lg:block desktop">
+                    <div class="w-full bg-gradient-header overflow-hidden">
                         <h2 class="font-dusha text-3xl text-white text-center py-4">Berita</h2>
                     </div>
 
@@ -199,7 +200,7 @@
                 </div>
 
                 <!-- Mobile Layout -->
-                <div class="lg:hidden grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="lg:hidden grid grid-cols-1 md:grid-cols-2 gap-4 mobile">
                     <h2 class="font-dusha text-3xl text-primary text-center mb-12">News</h2>
                     <article class="rounded-lg overflow-hidden shadow-lg bg-white">
                         <div class="relative">
@@ -226,7 +227,7 @@
                     </article>
                 </div>
 
-                <div class="lg:hidden bg-red-400 text-center text-white rounded-lg px-8 py-2 mt-8 max-w-fit mx-auto">
+                <div class="lg:hidden bg-red-400 text-center text-white rounded-lg px-8 py-2 mt-8 max-w-fit mx-auto detail">
                     <a href="{{ route('berita') }}" class="font-poppins">
                         <p>Lihat semua berita</p>
                     </a>
@@ -237,7 +238,7 @@
 
 
         <!-- Komen/Timbal Balik -->
-        <section class="w-11/12 max-w-screen-xl mx-auto mt-16 px-4 md:hidden">
+        <section class="w-11/12 max-w-screen-xl mx-auto mt-16 px-4 md:hidden fade-in-sec-five">
             <div class="flex items-start sm:items-center sm:justify-center gap-4">
                 <h2 class="text-xl font-dusha font-bold text-black">Ada Yang Ingin<br>Di Sampaikan</h2>
                 <a href="{{ route('pengaduan') }}" class="bg-yellow text-white py-2 px-4 rounded-lg">Kirim di sini</a>
@@ -246,13 +247,13 @@
 
 
         <!-- Agenda Kreasi-->
-        <section class="w-11/12 mx-auto mt-16">
+        <section class="w-11/12 mx-auto mt-16 fade-in-sec-six">
             <!-- Mobile Version -->
-            <div class="block md:hidden">
+            <div class="block md:hidden mobile">
                 <h2 class="text-3xl font-dusha text-primary mb-8 text-center">Agenda Kreasi</h2>
                 <div class="grid grid-cols-1 gap-8 justify-center">
                     @foreach ($creations as $creation)
-                    <div class="text-center">
+                    <div class="text-center creation-item">
                         <img src="{{asset('storage/' . $creation->photo_path)}}" alt="Kesenian" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" />
                         <a href="{{ route('kreasi', ['slide' => $loop->index]) }}" class="inline-block bg-red-400 text-white px-6 py-2 rounded-lg">{{ $creation->title }}</a>
                     </div>
@@ -260,9 +261,9 @@
                 </div>
             </div>
             <!-- Desktop Version -->
-            <div class="hidden md:block">
+            <div class="hidden md:block desktop">
                 <div class="relative">
-                    <div class="bg-primary rounded-lg p-8">
+                    <div class="bg-primary rounded-lg p-8 overflow-hidden">
                         <h2 class="text-4xl font-dusha text-white mb-12 text-center">Agenda Kreasi</h2>
                         <div class="grid grid-cols-[auto_1fr_auto] gap-8 items-center px-8">
                             <h3 class="text-2xl font-dusha text-white text-right">Kesenian</h3>
@@ -281,12 +282,12 @@
         </section>
 
         <!-- Lembaga -->
-        <section class="w-11/12 mx-auto mt-16 text-center">
+        <section class="w-11/12 mx-auto mt-16 text-center fade-in-sec-seven">
             <h2 class="text-3xl font-dusha text-primary mb-8">Lembaga Yang Ada Di Desa Wringinanom</h2>
             <!-- Mobile-->
-            <div class="grid grid-cols-2 md:hidden gap-8 justify-center">
+            <div class="grid grid-cols-2 md:hidden gap-8 justify-center mobile">
                 @foreach ($organizations as $organization)
-                <div class="text-center">
+                <div class="text-center lembaga-item-mobile">
                     <img src="{{asset('storage/' . $organization->photo_path)}}" alt="{{ $organization->title }}" class="w-32 h-32 mx-auto rounded-full mb-4" />
                     <h3 class="font-bold mb-2">{{ $organization->title }}</h3>
                     <a href="{{ route('lembaga', ['slide' => $loop->index]) }}" class="bg-red-400 text-white px-4 py-1 rounded-lg text-sm">More</a>
@@ -295,9 +296,9 @@
             </div>
 
             <!-- Desktop View -->
-            <div class="hidden md:flex flex-wrap justify-center gap-8">
+            <div class="hidden md:flex flex-wrap justify-center gap-8 desktop">
                 @foreach ($organizations as $organization)
-                <a href="{{ route('lembaga', ['slide' => $loop->index]) }}" class="flex flex-col items-center">
+                <a href="{{ route('lembaga', ['slide' => $loop->index]) }}" class="flex flex-col items-center lembaga-item-desktop">
                     <div class="bg-primary w-40 h-40 flex items-center justify-center text-black font-bold rounded-lg">
                         <img class="w-full h-full rounded-full" src="{{ asset('storage/' . $organization->photo_path) }}" alt="{{ $organization->title }}">
                     </div>
@@ -310,22 +311,22 @@
 
 
         <!-- Demographics mobile -->
-        <section class="text-center space-y-6 md:hidden">
+        <section class="text-center space-y-6 md:hidden fade-in-sec-eight-mobile">
             <h2 class="font-dusha text-2xl text-primary">Demografis</h2>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <div class="space-y-2">
+                <div class="space-y-2 item">
                     <h3 class="font-dusha text-5xl text-black">{{$demographic->dusun}}</h3>
                     <p class="font-dusha  text-primary uppercase">DUSUN</p>
                 </div>
-                <div class="space-y-2">
+                <div class="space-y-2 item">
                     <h3 class="text-5xl font-dusha text-black">{{$demographic->rukun_warga}}</h3>
                     <p class="font-dusha text-primary uppercase">RUKUN WARGA</p>
                 </div>
-                <div class="space-y-2">
+                <div class="space-y-2 item">
                     <h3 class="text-5xl font-dusha text-black">{{$demographic->rukun_tetangga}}</h3>
                     <p class="font-dusha text-primary uppercase">RUKUN TETANGGA</p>
                 </div>
-                <div class="space-y-2">
+                <div class="space-y-2 item">
                     <h3 class="text-5xl font-dusha text-black">{{ $demographic->jiwa }}</h3>
                     <p class="text-sm font-dusha text-primary uppercase">JIWA</p>
                 </div>
@@ -333,14 +334,14 @@
         </section>
 
         <!-- Demographics Desk -->
-        <section class="text-center hidden md:block w-full mt-0">
+        <section class="text-center hidden md:block w-full mt-0 fade-in-sec-eight-desktop">
             <div class="bg-gradient-header text-white py-3 rounded-t-lg">
                 <h2 class="font-dusha text-2xl">Demografis dan Geografis</h2>
             </div>
             <div class="bg-white py-6 px-4 rounded-b-lg">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-center justify-center">
                     <!-- Dusun -->
-                    <div class="flex flex-col items-center space-y-2">
+                    <div class="flex flex-col items-center space-y-2 item">
                         <div class="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center bg-primary text-white font-dusha text-4xl md:text-4xl rounded-full shadow-lg">
                             {{ $demographic->dusun }}
                         </div>
@@ -348,7 +349,7 @@
                     </div>
 
                     <!-- Rukun Warga -->
-                    <div class="flex flex-col items-center space-y-2">
+                    <div class="flex flex-col items-center space-y-2 item">
                         <div class="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center bg-primary text-white font-dusha text-4xl md:text-4xl rounded-full shadow-lg">
                             {{ $demographic->rukun_warga }}
                         </div>
@@ -356,7 +357,7 @@
                     </div>
 
                     <!-- Rukun Tetangga -->
-                    <div class="flex flex-col items-center space-y-2">
+                    <div class="flex flex-col items-center space-y-2 item">
                         <div class="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center bg-primary text-white font-dusha text-4xl md:text-4xl rounded-full shadow-lg">
                             {{ $demographic->rukun_tetangga }}
                         </div>
@@ -364,7 +365,7 @@
                     </div>
 
                     <!-- Jiwa -->
-                    <div class="flex flex-col items-center space-y-2">
+                    <div class="flex flex-col items-center space-y-2 item">
                         <div class="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center bg-primary text-white font-dusha text-4xl md:text-4xl rounded-full shadow-lg">
                             {{ $demographic->jiwa }}
                         </div>
@@ -390,4 +391,9 @@
         </section>
     </div>
 </main>
+
+@push('scripts')
+@vite('resources/js/homeAnimation.js')
+@endpush
+
 @include("layouts.footer")
