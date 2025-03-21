@@ -11,11 +11,11 @@ class LetterFuelService
     {
         if ($data['tempat-pengambilan'] == 1) {
             $data['spbu'] = "SPBU Sambit";
-            $data['nomor-penyalur'] = "54.63411";
+            $data['nomor-penyalur'] = "54.634.11";
             $data['alamat-penyalur'] = "Ds. Besuki, Kec. Sambit Kab. Ponorogo";
         } else {
             $data['spbu'] = "SPBU Nailan";
-            $data['nomor-penyalur'] = "54.63412";
+            $data['nomor-penyalur'] = "54.634.12";
             $data['alamat-penyalur'] = "JL. Raya Ds. Balong-Slahung Kab. Ponorogo";
         }
 

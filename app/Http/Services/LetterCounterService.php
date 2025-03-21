@@ -43,8 +43,19 @@ class LetterCounterService
     private function getNextNoteNumber($modelClass, $year = null)
     {
         $currentYear = now()->year;
-        $counter = $modelClass::orderByDesc('no_dok_journey')->firstOrCreate(['year' => $currentYear], ['no_dok_journey']);
-        return $counter->no_dok_journey + 1;
+
+        // Check whether any record exist in database
+        $latestRecord = $modelClass::where('year', $currentYear)
+            ->orderByDesc('no_dok_journey')
+            ->first();
+
+        if ($latestRecord) {
+            // If record exist, return next year
+            return $latestRecord->no_dok_journey + 1;
+        } else {
+            // If no record, return 1             
+            return 1;
+        }
     }
 
     public function getNextBirthLetterNumber($year = null)

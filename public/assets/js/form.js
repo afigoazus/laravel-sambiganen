@@ -48,6 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // reset button
     document
-        .getElementById("resetButton")
+        .getElementById("reset")
         .addEventListener("click", () => confirmReset());
 });

@@ -21,4 +21,12 @@ class NewsController extends Controller
         $differentNews = $this->newsService->getNewsExceptId($id);
         return view("news-detail", compact('news', "differentNews"));
     }
+
+    public function search(Request $request)
+    {
+        $searchTerm = $request->input('query');
+        $allNews = $this->newsService->searchNews($searchTerm);
+
+        return view("news", compact('allNews'));
+    }
 }

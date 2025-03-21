@@ -33,7 +33,7 @@
                 <p class="my-2">{{$news->title}}</p>
 
                 <!-- description -->
-                <p class="my-2">{{Str::limit($news->content, 50, "...")}}</p>
+                <div class="my-2">{!! Str::limit($news->content, 50, "...") !!}</div>
 
                 <a href="{{ route('berita.get', ["id" => $news->id]) }}">
                     <p class="border-[#DBE2EA] border-2 rounded-md p-2 text-[#7C9CBF] inline-block">Selengkapnya</p>

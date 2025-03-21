@@ -33,19 +33,19 @@
             <!-- title -->
             <div class="w-11/12 mx-auto flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-36 sm:items-center">
                 <div>
-                    <h1 class="font-dusha text-4xl text-center">Sejarah Desa <br> Wringinanom</h1>
+                    <h1 class="font-dusha text-4xl text-center">Cerita Rakyat <br> Wringinanom</h1>
                 </div>
-                <img class="mx-auto sm:m-0 sm:w-1/2" src="{{asset('assets/img/bg-history.svg')}}" alt=""> 
+                <img class="mx-auto sm:m-0 sm:w-1/2" src="{{asset('assets/img/bg-history.svg')}}" alt="">
             </div>
             <div class="w-11/12 mx-auto text-justify font-sans">
                 <p class="my-4">
-                Bahwa terjadinya Desa Wringinanom adalah sebagai berikut : Dahulu  kala kira-kira usai perang Diponegoro tahun 1825-1830 ada perantau dari daerah Jawa Tengah, mengungsi sampai wilayah tenggara gunung  lawu, para perantau tersebut ada yang belajar di pondok  dan ada juga yang merantau ke wilayah pelosok.
+                    Bahwa terjadinya Desa Wringinanom adalah sebagai berikut : Dahulu kala kira-kira usai perang Diponegoro tahun 1825-1830 ada perantau dari daerah Jawa Tengah, mengungsi sampai wilayah tenggara gunung lawu, para perantau tersebut ada yang belajar di pondok dan ada juga yang merantau ke wilayah pelosok.
                 </p>
                 <p class="my-4">Salah satu perantau tersebut bernama Ki Honggoduwo yang sangat kelihatan lelah sekali dan beristirahatlah dibawah salah satu pohon yang sangat rindang, pada saat istirahat tersebut Ki Honggoduwo menyaksikan beberapa keanehan antara lain ditempat tersebut banyak sekali pohon beringin dan anehnya semua daunnya muda (Enom), Ki Honggoduwo pun berujar dengan logat jawa (He Wargo Kabeh Mangertio, Suk Rejaning Jaman Papan iki tak wenehi tetenger Waringinanom) Warga semua perlu dimengerti besuk bila jaman sudah ramai tempat ini saya beri nama Wringinanom.
                 </p>
                 <p class="my-4">Perjalanan dilanjutkan keselatan, yang banyak ditumbuhi Pohon Gebang. Ki Honggoduwo Heran menyaksikan beberapa orang ditempat tersebut mengenam daun Gebang, akhirnya ditempat tersebut juga bersabda agar mudah diingat tempat ini besuk jaman ramai diberi nama Ngenam Gebang disingkat Nambang.
                 </p>
-                <p class="my-4">Perhjalanan dilanjutkan keselatan dan menyeberang Sungai, para pengikut Ki Honggoduwo Terlalu banyak tanya (Nambong  menjadi Tambong) mengenai perjalanan tersebut dan merasa haus kebetulan minta air pun tidak diberi bahkan kelihatan sombong, Ki Honggoduwo pun Bersabda wahai semuanya warga utara sungai dengan warga selatan sungai Besanan kurang baik.</p>
+                <p class="my-4">Perhjalanan dilanjutkan keselatan dan menyeberang Sungai, para pengikut Ki Honggoduwo Terlalu banyak tanya (Nambong menjadi Tambong) mengenai perjalanan tersebut dan merasa haus kebetulan minta air pun tidak diberi bahkan kelihatan sombong, Ki Honggoduwo pun Bersabda wahai semuanya warga utara sungai dengan warga selatan sungai Besanan kurang baik.</p>
                 <p class="my-4">Berlanjut kearah timur dan melihat air yang kena sinar matahari kelihatan kilauan seakan akan hidup, maka Ki Hoggoduwo bersabda tempat sebelah timur tersebut dimnamakan air hidup (Banyuripan). Disalah satu tempat Ki Honggoduwo melihat keutara dan kearah awal perjalanan, dilihat dari kejauhan disebelah utara sawah itu seperti kraton atau kerajaan maka jadilah hingga sekarang paling utara tersebut dinamakan Krajan. Sejarahpun akhirnya menyimpulkan bahwa:
                 </p>
                 <ol class="list-decimal list-inside space-y-2">

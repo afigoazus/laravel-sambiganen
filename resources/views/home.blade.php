@@ -11,17 +11,18 @@
             <div class="absolute bottom-60 left-1/2 -translate-x-1/2 flex flex-col items-center w-full space-y-8">
                 <!-- Search Bar -->
                 <div class="relative w-11/12 max-w-md animate-zoom">
-                    <div class="relative">
+                    <form method="GET" action="{{ route('berita.search') }}" class="relative">
                         <input
                             type="text"
+                            name="query"
                             class="w-full px-6 py-3 rounded-full border border-white/50 bg-black/30 text-white placeholder-white/80 focus:outline-none backdrop-blur-md"
-                            placeholder="Search...">
+                            placeholder="Cari Berita...">
                         <button class="absolute right-6 top-1/2 -translate-y-1/2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                             </svg>
                         </button>
-                    </div>
+                    </form>
                 </div>
 
                 <!-- Social Links - Mobile -->
@@ -146,7 +147,9 @@
                             <div class="col-span-8">
                                 <div class="bg-yellow h-[400px] rounded-lg">
                                     @isset($allNews[0])
-                                    <img class="h-full w-full object-cover rounded-lg" src="{{ asset('storage/' . $allNews[0]->photo_path) }}" alt="">
+                                    <a href="{{ route('berita.get', [$allNews[0]->id]) }}">
+                                        <img class="h-full w-full object-cover rounded-lg" src="{{ asset('storage/' . $allNews[0]->photo_path) }}" alt="">
+                                    </a>
                                     @endisset
                                 </div>
                             </div>
@@ -155,12 +158,16 @@
                             <div class="col-span-4 space-y-4">
                                 @isset($allNews[1])
                                 <div class="bg-yellow h-[190px] rounded-lg">
-                                    <img class="h-full w-full object-cover rounded-lg" src="{{ asset('storage/' . $allNews[1]->photo_path) }}" alt="">
+                                    <a href="{{ route('berita.get', [$allNews[1]->id]) }}">
+                                        <img class="h-full w-full object-cover rounded-lg" src="{{ asset('storage/' . $allNews[1]->photo_path) }}" alt="">
+                                    </a>
                                 </div>
                                 @endisset
                                 @isset($allNews[2])
                                 <div class="bg-yellow h-[190px] rounded-lg">
-                                    <img class="h-full w-full object-cover rounded-lg" src="{{ asset('storage/' . $allNews[2]->photo_path) }}" alt="">
+                                    <a href="{{ route('berita.get', [$allNews[2]->id]) }}">
+                                        <img class="h-full w-full object-cover rounded-lg" src="{{ asset('storage/' . $allNews[2]->photo_path) }}" alt="">
+                                    </a>
                                 </div>
                                 @endisset
                             </div>

@@ -112,6 +112,7 @@ class LetterLostResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('address')
                     ->label("Alamat")
+                    ->limit(20)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('information')
                     ->label("Keterangan")

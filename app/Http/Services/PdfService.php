@@ -13,10 +13,13 @@ class PdfService
     public function generate($modelClass, $view, $filenamePrefix, $id, $paperSize = [0, 0, 612, 1008])
     {
         $dataPdf = $modelClass::findOrFail($id);
-        // return view($view, ["data" => $dataPdf]);
 
         $pdf = Pdf::loadView($view, ['data' => $dataPdf])->setPaper($paperSize);
-        return $pdf->download($filenamePrefix . "_" . $dataPdf['name'] . '.pdf');
+
+        // Use ternary operator to check which field exists
+        $numberField = isset($dataPdf['no_letter']) ? $dataPdf['no_letter'] : $dataPdf['no_dok_journey'];
+
+        return $pdf->download($filenamePrefix . "_" . $dataPdf['name'] . '_' . $numberField . '.pdf');
     }
 
     public function generateFilledPdf($id)

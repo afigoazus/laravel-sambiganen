@@ -15,7 +15,7 @@ class NewsService
 
     public function getRecentNews()
     {
-        $news = News::with(['categories', 'locations'])->first();
+        $news = News::with(['categories', 'locations'])->latest()->first();
         return $news;
     }
 
@@ -29,5 +29,29 @@ class NewsService
     {
         $news = News::where('id', '!=', $id)->get();
         return $news;
+    }
+
+    public function searchNews($searchTerm = null)
+    {
+        // Start with a base query builder
+        $query = News::with(['categories', 'locations']);
+
+        if ($searchTerm) {
+            $query->where(function ($q) use ($searchTerm) {
+                // Search in news title
+                $q->where('title', 'LIKE', "%{$searchTerm}%")
+                    // Search in news categories
+                    ->orWhereHas('categories', function ($categoryQuery) use ($searchTerm) {
+                        $categoryQuery->where('name', 'LIKE', "%{$searchTerm}%");
+                    })
+                    // Search in news locations
+                    ->orWhereHas('locations', function ($locationQuery) use ($searchTerm) {
+                        $locationQuery->where('name', 'LIKE', "%{$searchTerm}%");
+                    });
+            });
+        }
+
+        // Return results ordered by latest first
+        return $query->latest()->get();
     }
 }

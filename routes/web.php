@@ -10,31 +10,58 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\OrganizationController;
 use Illuminate\Support\Facades\Route;
 
-// Home Routes
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/profil', [HomeController::class, 'profile'])->name('profil');
-Route::get('/sejarah', [HomeController::class, 'history'])->name('sejarah');
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+*/
 
-Route::get('/dtks', function () {
-    return view('surat-surat.dtks');
-})->name('surat-surat.dtks');
+// Home & Information Pages
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/', 'index')->name('home');
+    Route::get('/profil', 'profile')->name('profil');
+    Route::get('/sejarah', 'history')->name('sejarah');
+});
 
-// Feature Routes
-Route::get('/agenda', [CreationController::class, 'index'])->name('agenda');
+// Static Content Routes
+Route::view('/dtks', 'surat-surat.dtks')->name('surat-surat.dtks');
+
+// News Routes
+Route::controller(NewsController::class)->prefix('berita')->name('berita')->group(function () {
+    Route::get('/', 'index');
+    Route::get('/search', 'search')->name('.search');
+    Route::get('/{id}', 'get')->name('.get');
+});
+
+// Media & Community Routes
 Route::get('/galeri', [GalleryController::class, 'index'])->name('galeri');
-Route::get('/berita', [NewsController::class, 'index'])->name('berita');
-Route::get('/berita/{id}', [NewsController::class, 'get'])->name('berita.get');
 Route::get('/lembaga', [OrganizationController::class, 'index'])->name('lembaga');
-Route::get('/kreasi', [CreationController::class, 'index'])->name('kreasi');
-Route::get('/anggaran/{year?}', [BudgetController::class, 'index'])->name('anggaran');
-Route::get('/pengaduan', [ComplaintController::class, 'index'])->name('pengaduan');
 
-// Document Routes
+// Creation & Activity Routes
+Route::controller(CreationController::class)->group(function () {
+    Route::get('/agenda', 'index')->name('agenda');
+    Route::get('/kreasi', 'index')->name('kreasi');
+});
+
+// Finance Routes
+Route::get('/anggaran/{year?}', [BudgetController::class, 'index'])->name('anggaran');
+
+// Complaint Routes
+Route::controller(ComplaintController::class)->prefix('pengaduan')->name('pengaduan')->group(function () {
+    Route::get('/', 'index');
+    Route::post('/', 'store')->name('.store');
+});
+
+/*
+|--------------------------------------------------------------------------
+| Document Routes
+|--------------------------------------------------------------------------
+*/
 Route::prefix('dokumen')->group(function () {
     Route::get('/', [DocumentController::class, 'index'])->name('surat-surat');
 
-    // Static Views
-    $views = [
+    // Document Static Views
+    $documentViews = [
         'keterangan-usaha' => 'surat-surat.keterangan_usaha',
         'bbm' => 'surat-surat.bbm',
         'keringanan-sekolah' => 'surat-surat.keringanan_sekolah',
@@ -45,12 +72,12 @@ Route::prefix('dokumen')->group(function () {
         'kehilangan' => 'surat-surat.kehilangan',
     ];
 
-    foreach ($views as $uri => $view) {
+    foreach ($documentViews as $uri => $view) {
         Route::view("/$uri", $view)->name("surat-surat.$uri");
     }
 
-    // Store routes
-    $storeRoutes = [
+    // Document Store Routes
+    $documentStoreRoutes = [
         'keterangan-usaha' => 'storeLetterBusiness',
         'kelahiran' => 'storeBirthNote',
         'kematian-minimal' => 'storeLetterDeath',
@@ -62,22 +89,29 @@ Route::prefix('dokumen')->group(function () {
         'dtks' => 'storeDTKS',
     ];
 
-    foreach ($storeRoutes as $uri => $method) {
+    foreach ($documentStoreRoutes as $uri => $method) {
         Route::post("/$uri/store", [DocumentController::class, $method])->name("$uri.store");
     }
 });
 
-// Pdf Download Routes
-Route::prefix('download')->group(function () {
-    Route::get('/kehilangan/{id}', [DocumentController::class, 'downloadLetterLost'])->name('surat.kehilangan');
-    Route::get('/capil-lahir/{id}', [DocumentController::class, 'downloadBirthNote'])->name('capil.lahir');
-    Route::get('/kehilangan/{id}', [DocumentController::class, 'downloadLetterLost'])->name('surat.kehilangan');
-    Route::get('/capil-lahir/{id}', [DocumentController::class, 'downloadBirthNote'])->name('capil.lahir');
-    Route::get('/capil-kematian/{id}', [DocumentController::class, 'downloadDeathNote'])->name('capil.kematian');
-    Route::get('/usaha/{id}', [DocumentController::class, 'downloadLetterBussiness'])->name('surat.usaha');
-    Route::get('/kematian/{id}', [DocumentController::class, 'downloadLetterDeath'])->name('surat.kematian');
-    Route::get('/tidak-mampu/{id}', [DocumentController::class, 'downloadLetterIncapacity'])->name('surat.tidakmampu');
-    Route::get('/bbm/{id}', [DocumentController::class, 'downloadLetterFuel'])->name('surat.bbm');
-    Route::get('/dtks/{id}', [DocumentController::class, 'downloadDTKS'])->name('surat.dtks');
-    Route::get('/skpwni/{id}', [DocumentController::class, 'downloadSKPWNI'])->name('surat.skpwni');
+/*
+|--------------------------------------------------------------------------
+| PDF Download Routes
+|--------------------------------------------------------------------------
+*/
+Route::controller(DocumentController::class)->prefix('download')->group(function () {
+    // Special Documents
+    Route::get('/capil-lahir/{id}', 'downloadBirthNote')->name('capil.lahir');
+    Route::get('/capil-kematian/{id}', 'downloadDeathNote')->name('capil.kematian');
+    Route::get('/skpwni/{id}', 'downloadSKPWNI')->name('surat.skpwni');
+
+    // Official Letters
+    Route::get('/kehilangan/{id}', 'downloadLetterLost')->name('surat.kehilangan');
+    Route::get('/usaha/{id}', 'downloadLetterBussiness')->name('surat.usaha');
+    Route::get('/kematian/{id}', 'downloadLetterDeath')->name('surat.kematian');
+    Route::get('/tidak-mampu/{id}', 'downloadLetterIncapacity')->name('surat.tidakmampu');
+    Route::get('/bbm/{id}', 'downloadLetterFuel')->name('surat.bbm');
+
+    // Special Documents
+    Route::get('/dtks/{id}', 'downloadDTKS')->name('surat.dtks');
 });

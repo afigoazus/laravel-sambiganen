@@ -228,13 +228,8 @@
             </label>
         </div>
 
-        <!-- submit and reset button -->
-        <div class="flex gap-6">
-            <!-- reset button -->
-            <button id="resetButton" type="button" class=" bg-red-600 text-white py-2 px-6 rounded-md">Hapus</button>
-            <!-- submit button -->
-            <button type="submit" class=" bg-blue-500 text-white py-2 px-6 rounded-md">Kirim</button>
-        </div>
+        <!-- Submit and Reset Button -->
+        @include('components.submit-reset-button')
     </form>
 </main>
 

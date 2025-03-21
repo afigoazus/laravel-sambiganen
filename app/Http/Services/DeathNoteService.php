@@ -9,7 +9,7 @@ class DeathNoteService
     public function __construct(protected LetterCounterService $letterCounterService) {}
     public function store(array $data)
     {
-        $deathNote = DeathNote::create([
+        return DeathNote::create([
             'name' => $data['nama-pelapor'],
             'nik' => $data['nik'],
             'no_dok_journey' => $this->letterCounterService->getNextDeathLetterNumber(),

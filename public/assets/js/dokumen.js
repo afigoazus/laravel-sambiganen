@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         buttons.forEach((button) => {
             button.classList.add("bg-[#A2A2A2]");
             button.classList.remove("bg-primary", "text-white");
-        })
+        });
 
         // Aktifkan tombol dan konten yang dipilih
         document
