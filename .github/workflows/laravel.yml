@@ -22,5 +22,3 @@ jobs:
           script: |
             cd /var/www/arcanum || exit
             git pull origin main
-            npm install --production
-            pm2 restart app  # if using pm2
