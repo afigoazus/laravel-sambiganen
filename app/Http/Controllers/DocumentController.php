@@ -86,6 +86,7 @@ class DocumentController extends Controller
 
     public function downloadLetterIncapacity($id)
     {
+        log("hello");
         return $this->pdfService->generate(LetterIncapacity::class, 'pdf.letter-incapacity', 'Surat_Keterangan_Tidak_Mampu_', $id);
     }
 
