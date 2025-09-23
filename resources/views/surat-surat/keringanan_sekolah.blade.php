@@ -146,7 +146,7 @@
                 <!-- alamat field -->
                 <div class="">
                     <label for="alamat-ortu">Alamat <span class="text-[#FF0000]">*</span> <br>
-                        <span class="font-medium">Untuk penulisan harus seperti berikut tanpa tanda (): RT (RT anda) RW (RW anda) Dukuh (Dukuh anda) Desa Wringinanom Kecamatan Sambit Kabupaten Ponorogo</span>
+                        <span class="font-medium">Untuk penulisan harus seperti berikut tanpa tanda (): RT (RT anda) RW (RW anda) Dukuh (Dukuh anda) Desa Sambiganen Kecamatan Ngrayun Kabupaten Ponorogo</span>
                         <textarea name="alamat-ortu" id="alamat-ortu" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required placeholder="Alamat"></textarea>
                     </label>
                 </div>
@@ -214,7 +214,7 @@
                 <!-- alamat field -->
                 <div class="">
                     <label for="alamat-anak">Alamat <span class="text-[#FF0000]">*</span> <br>
-                        <span class="font-medium">Untuk penulisan harus seperti berikut tanpa tanda (): RT (RT anda) RW (RW anda) Dukuh (Dukuh anda) Desa Wringinanom Kecamatan Sambit Kabupaten Ponorogo</span>
+                        <span class="font-medium">Untuk penulisan harus seperti berikut tanpa tanda (): RT (RT anda) RW (RW anda) Dukuh (Dukuh anda) Desa Sambiganen Kecamatan Ngrayun Kabupaten Ponorogo</span>
                         <textarea name="alamat-anak" id="alamat-anak" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required placeholder="Alamat"></textarea>
                     </label>
                 </div>
