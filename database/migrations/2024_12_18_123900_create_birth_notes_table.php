@@ -15,6 +15,7 @@ return new class extends Migration
         Schema::create('birth_notes', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255)->nullable(false);
+            $table->string('address', 255)->nullable(false); // add address: tp string
             $table->string('nik', 255)->nullable(false);
             $table->integer('no_dok_journey')->nullable(false);
             $table->string('nationality', 255)->nullable(false);
@@ -29,11 +30,17 @@ return new class extends Migration
             $table->string('nik_dad', 255)->nullable(false);
             $table->string('place_born_dad', 255)->nullable(false);
             $table->string('date_born_dad', 255)->nullable(false);
+            $table->integer('age_dad')->nullable(false); // add age_dad: tp integer
+            $table->string('dad_job', 255)->nullable(false); // add dad_job: tp string
+            $table->string('address_dad', 255)->nullable(false); // add address_dad: tp string
             $table->string('nationality_dad', 255)->nullable(false);
             $table->string('name_mom', 255)->nullable(false);
             $table->string('nik_mom', 255)->nullable(false);
             $table->string('place_born_mom', 255)->nullable(false);
             $table->string('date_born_mom', 255)->nullable(false);
+            $table->integer('age_mom')->nullable(false); // add age_mom: tp integer
+            $table->string('mom_job', 255)->nullable(false); // add mom_job: tp string
+            $table->string('address_mom', 255)->nullable(false); // add address_mom: tp string
             $table->string('nationality_mom', 255)->nullable(false);
             $table->string('no_kk_anak', 255)->nullable(false);
             $table->string('hub_keluarga', 255)->nullable(false);

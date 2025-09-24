@@ -42,6 +42,13 @@ class LetterDeathResource extends Resource
                     ->label("NIK/NIP")
                     ->required()
                     ->maxLength(255),
+                Forms\Components\TextInput::make('place_birth')
+                    ->label("Tempat Kematian")
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\DatePicker::make('date_birth')
+                    ->label("Tanggal Lahir")
+                    ->required(),
                 Forms\Components\DatePicker::make('date_death')
                     ->label("Tanggal Kematian")
                     ->required(),
@@ -51,6 +58,14 @@ class LetterDeathResource extends Resource
                     ->seconds(false),
                 Forms\Components\TextInput::make('cause_death')
                     ->label("Sebab Kematian")
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('order_child')
+                    ->label("Urutan Anak")
+                    ->numeric()
+                    ->required(),
+                Forms\Components\TextInput::make('witness')
+                    ->label("Yang Menerangkan")
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('mom_name')
@@ -106,7 +121,8 @@ class LetterDeathResource extends Resource
                     ->label("Download PDF")
                     ->color(Color::hex('#2196F3'))
                     ->icon('heroicon-o-document-arrow-down')
-                    ->url(fn(LetterDeath $letterDeath): string => route('surat.kematian', [$letterDeath->id])),
+                    ->url(fn(LetterDeath $letterDeath): string => route('surat.kematian', [$letterDeath->id]))
+                    ->openUrlInNewTab(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

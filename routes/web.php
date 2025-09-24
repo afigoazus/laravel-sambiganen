@@ -9,6 +9,7 @@ use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\OrganizationController;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -100,6 +101,14 @@ Route::prefix('dokumen')->group(function () {
 | PDF Download Routes
 |--------------------------------------------------------------------------
 */
+
+// testing route
+Route::get('/test-pdf', function () {
+    $pdf = Pdf::loadView('pdf.combined-death-document');
+
+    return $pdf->download('combined_death_document.pdf');
+})->name('test.pdf');
+
 Route::controller(DocumentController::class)->prefix('download')->group(function () {
     // Special Documents
     Route::get('/capil-lahir/{id}', 'downloadBirthNote')->name('capil.lahir');
