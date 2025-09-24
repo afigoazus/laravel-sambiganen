@@ -71,10 +71,10 @@
 <body>
     <div style="text-align:center; font-family: Time 'Times New Roman', Times, serif;">
         <p style="font-weight: bold;">PEMERINTAH KABUPATEN PONOROGO</p>
-        <p style="font-weight: bold;">KECAMATAN SAMBIT</p>
-        <p style="font-weight: bold; font-size:1.5rem;">DESA WRINGINANOM</p>
-        <p>Jalan Kresno Nomor 41 Telephon ( 0352 ) 312896</p>
-        <p style="font-weight: bold; font-size:1.2rem;">WRINGINANOM</p>
+        <p style="font-weight: bold;">KECAMATAN </p>
+        <p style="font-weight: bold; font-size:1.5rem;">DESA SAMBIGANEN</p>
+        <p style="font-style: italic">Alamat : Jalan Tirta Argo No.15 Kode Pos 63463</p>
+        <p style="font-weight: bold; font-size:1.2rem;">SAMBIGANEN</p>
     </div>
     <p style="position:absolute; right:0; font-family: Time 'Times New Roman', Times, serif;">Kode Pos 63474</p>
     <div style="position:absolute; left:0; top:0; width: 140px; height: 140px;">
@@ -102,7 +102,7 @@
                 <td>Nama Lengkap</td>
                 <td></td>
                 <td>:</td>
-                <td>SUTINI</td>
+                <td>A.T.THEODOROS M.</td>
             </tr>
             <tr>
                 <td></td>
@@ -110,7 +110,7 @@
                 <td>NIK/NIP*</td>
                 <td></td>
                 <td>:</td>
-                <td>3502047112670002</td>
+                <td>-</td>
             </tr>
             <tr>
                 <td></td>
@@ -118,14 +118,22 @@
                 <td>Jabatan</td>
                 <td></td>
                 <td>:</td>
-                <td>KEPALA DESA</td>
+                <td>Kepala Desa</td>
             </tr>
         </table>
     </div>
 
-    <p style="margin-left:0rem; margin-top:1rem">Dengan ini menerangkan bahwa telah terjadi peristiwa kematian atas penduduk :</p>
+    <p style="margin-left:0rem; margin-top:1rem">Dengan ini menerangkan bahwa telah terjadi peristiwa kematian pada penduduk dengan identitas sebagai berikut :</p>
 
     <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>NIK jenazah</td>
+            <td></td>
+            <td>:</td>
+            <td>{{ $data['nik'] }}</td>
+        </tr>
         <tr>
             <td></td>
             <td></td>
@@ -137,10 +145,10 @@
         <tr>
             <td></td>
             <td></td>
-            <td>NIK</td>
+            <td>TTL</td>
             <td></td>
             <td>:</td>
-            <td>{{$data['nik']}}</td>
+            <td>{{$data['place_birth']}}, {{\Carbon\Carbon::parse($data['date_birth'])->locale('id')->translatedFormat('d F Y')}}</td>
         </tr>
         <tr>
             <td></td>
@@ -148,12 +156,12 @@
             <td>Tanggal Kematian</td>
             <td></td>
             <td>:</td>
-            <td>{{$data['date_death']}}</td>
+            <td>{{\Carbon\Carbon::parse($data['date_death'])->locale('id')->translatedFormat('d F Y')}}</td>
         </tr>
         <tr>
             <td></td>
             <td></td>
-            <td>Jam Kematian</td>
+            <td>Pukul</td>
             <td></td>
             <td>:</td>
             <td>{{$data['hour_death']}}</td>
@@ -173,6 +181,22 @@
             <td></td>
             <td>:</td>
             <td>KABUPATEN PONOROGO</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Urutan anak</td>
+            <td></td>
+            <td>:</td>
+            <td>{{$data['order_child']}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Yang menerangkan</td>
+            <td></td>
+            <td>:</td>
+            <td>{{$data['witness']}}</td>
         </tr>
         <tr>
             <td></td>
@@ -198,10 +222,10 @@
 
     <div style="margin-top:2rem; position: relative">
         <div style="position: absolute; right: 4rem; text-align: center;">
-            <p style="text-align: center">Wringinanom, {{ \Carbon\Carbon::parse($data->updated_at)->locale('id')->translatedFormat('d F Y') }}</p>
+            <p style="text-align: center">Ponorogo, {{ \Carbon\Carbon::parse($data->updated_at)->locale('id')->translatedFormat('d F Y') }}</p>
             <div style="text-align: center;">
-                <p style="margin-bottom: 3rem">Kepala Desa Wringinanom</p>
-                <p style="text-align: center; font-weight:bold; text-decoration: underline">SUTINI</p>
+                <p style="margin-bottom: 5rem">Kepala Desa Sambiganen</p>
+                <p style="text-align: center; font-weight:bold;">A.E.THEODOROS M.</p>
             </div>
         </div>
     </div>

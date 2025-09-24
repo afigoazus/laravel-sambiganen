@@ -130,13 +130,13 @@ $dayOfWeek = Carbon::parse($date)->locale('id')->isoFormat('dddd'); // Outputs f
             <td>Kecamatan</td>
             <td></td>
             <td>:</td>
-            <td>Sambit</td>
+            <td>Ngrayun</td>
         </tr>
         <tr>
             <td>Desa / Kelurahan</td>
             <td></td>
             <td>:</td>
-            <td>Wringinanom</td>
+            <td>Sambiganen</td>
         </tr>
         <tr>
             <td>Kode Wilayah</td>
@@ -812,7 +812,7 @@ $dayOfWeek = Carbon::parse($date)->locale('id')->isoFormat('dddd'); // Outputs f
 
     <div style="position: relative; font-size: 0.8rem">
         <div style="position: absolute; right: 5rem; text-align: center">
-            <p>Wringinanom, {{ Carbon::parse($data->updated_at)->locale('id')->translatedFormat('d F Y') }}</p>
+            <p>Sambiganen, {{ Carbon::parse($data->updated_at)->locale('id')->translatedFormat('d F Y') }}</p>
             <div style="text-align: left;">
                 <p style="margin-bottom: 4rem; text-align: center">Pelapor</p>
                 <p style="text-align: center;">Patrick Star</p>
