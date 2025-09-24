@@ -85,6 +85,66 @@
             </label>
         </div>
 
+        <!-- pekerjaan field -->
+        <div class="bg-white p-4 w-full rounded-md">
+            <span>Agama<span class="text-[#FF0000]">*</span></span>
+            <div class="flex gap-10">
+                <label class="flex items-start space-x-3 cursor-pointer">
+                    <div class="flex-shrink-0 mt-1">
+                        <input type="radio"
+                            name="agama"
+                            class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="Islam" required>
+                    </div>
+                    <span class="text-gray-700">Islam</span>
+                </label>
+
+                <label class="flex items-start space-x-3 cursor-pointer">
+                    <div class="flex-shrink-0 mt-1">
+                        <input type="radio"
+                            name="agama"
+                            class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="Kristen">
+                    </div>
+                    <span class="text-gray-700">Kristen</span>
+                </label>
+                
+                <label class="flex items-start space-x-3 cursor-pointer">
+                    <div class="flex-shrink-0 mt-1">
+                        <input type="radio"
+                            name="agama"
+                            class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="Katolik">
+                    </div>
+                    <span class="text-gray-700">Katolik</span>
+                </label>
+                
+                <label class="flex items-start space-x-3 cursor-pointer">
+                    <div class="flex-shrink-0 mt-1">
+                        <input type="radio"
+                            name="agama"
+                            class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="Hindu">
+                    </div>
+                    <span class="text-gray-700">Hindu</span>
+                </label>
+                
+                <label class="flex items-start space-x-3 cursor-pointer">
+                    <div class="flex-shrink-0 mt-1">
+                        <input type="radio"
+                            name="agama"
+                            class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="Budha">
+                    </div>
+                    <span class="text-gray-700">Budha</span>
+                </label>
+
+                <label class="flex items-start space-x-3 cursor-pointer">
+                    <div class="flex-shrink-0 mt-1">
+                        <input type="radio"
+                            name="agama"
+                            class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="Konghucu">
+                    </div>
+                    <span class="text-gray-700">Konghucu</span>
+                </label>
+            </div>
+        </div>
+
         <!-- pendidikan field -->
         <div class="bg-white p-4 w-full rounded-md">
             <label for="pendidikan">Pendidikan <span class="text-[#FF0000]">*</span> <br>

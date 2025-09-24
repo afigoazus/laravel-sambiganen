@@ -64,14 +64,7 @@
                         </label>
                     </div>
                 </div>
-                        <!--  fieurutan anak field -->
-                <div class="">
-                    <label for="urutan-anak">Urutan anak <span class="text-[#FF0000]">*</span> <br>
-                        <input type="text" name="urutan-anak" id="urutan-anak" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Urutan anak" required>
-                    </label>
-                </div>
-            </div>
-        </div>
+
                 <!-- no hp field -->
                 <div class="">
                     <label for="no-hp">No HP/WA <span class="text-[#FF0000]">*</span> <br>
@@ -355,6 +348,14 @@
             </div>
         </div>
 
+        <!--  urutan anak field -->
+        <div class="">
+                    <label for="urutan-anak">Urutan anak <span class="text-[#FF0000]">*</span> <br>
+                        <input type="text" name="urutan-anak" id="urutan-anak" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Urutan anak" required>
+                    </label>
+                </div>
+            </div>
+        </div>
         <!-- Submit and Reset Button -->
         @include('components.submit-reset-button')
     </form>
