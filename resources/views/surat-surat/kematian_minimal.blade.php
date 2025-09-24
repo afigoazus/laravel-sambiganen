@@ -16,14 +16,14 @@
     <form action="{{ route('kematian-minimal.store')}}" method="POST" class="mx-auto my-10 w-11/12 p-4 font-sans flex flex-col gap-4" id="myForm">
         @csrf
         <div class="bg-white p-4 w-full rounded-md">
-            <span class="text-2xl font-medium">FORMULIR SURAT KETERANGAN KEMATIAN WILAYAH WRINGINANOM</span>
-            <p class="text-[#5F6368] font-normal">(Untuk pengajuan keterangan kematian penduduk wringinanom)</p>
+            <span class="text-2xl font-medium">FORMULIR SURAT KETERANGAN KEMATIAN WILAYAH SAMBIGANEN</span>
+            <p class="text-[#5F6368] font-normal">(Untuk pengajuan keterangan kematian penduduk sambiganen)</p>
             <p class="text-[#FF0000] font-normal">* Menunjukkan pertanyaan yang wajib diisi</p>
         </div>
 
         <!-- form kematin -->
         <div class="bg-white p-4 w-full rounded-md">
-            <span class="text-2xl font-medium">Formulir Data Kematian Penduduk Wringinanom</span>
+            <span class="text-2xl font-medium">Formulir Data Kematian Penduduk Sambiganen</span>
 
             <!-- form data penduduk meninggal -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
@@ -59,6 +59,19 @@
                 <div class="">
                     <label for="job">Sebab Kematian <span class="text-[#FF0000]">*</span> <br>
                         <input type="text" name="sebab-kematian" id="sebab-kematian" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Sebab Kematian" required>
+                    </label>
+                </div>
+                <!--  Urutan anak field -->
+                <div class="">
+                    <label for="urutan-anak"> <span class="text-[#FF0000]">*</span> <br>
+                        <input type="text" name="urutan-anak" id="urutan-anak" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Urutan kematian" required>
+                    </label>
+                </div>
+
+                <!--  yang menerangkan field -->
+                <div class="">
+                    <label for="yang-menerangkan"> <span class="text-[#FF0000]">*</span> <br>
+                        <input type="text" name="yang-menerangkan" id="yang-menerangkan" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Yang menerangkan" required>
                     </label>
                 </div>
 
