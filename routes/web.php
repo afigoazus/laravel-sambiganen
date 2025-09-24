@@ -72,6 +72,7 @@ Route::prefix('dokumen')->group(function () {
         'kematian-nkri' => 'surat-surat.kematian_nkri',
         'kelahiran' => 'surat-surat.kelahiran',
         'kehilangan' => 'surat-surat.kehilangan',
+        'tidak-mampu' => 'surat-surat.tidak_mampu',
     ];
 
     foreach ($documentViews as $uri => $view) {
@@ -89,6 +90,8 @@ Route::prefix('dokumen')->group(function () {
         'kehilangan' => 'storeLetterLost',
         'perpindahan-penduduk' => 'storeLetterPerpindahan',
         'dtks' => 'storeDTKS',
+        'tidak-mampu' => 'surat-surat.tidak_mampu',
+
     ];
 
     foreach ($documentStoreRoutes as $uri => $method) {

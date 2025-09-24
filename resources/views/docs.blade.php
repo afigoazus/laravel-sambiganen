@@ -33,6 +33,11 @@ $documents = [
 'title' => 'Surat Perpindahan Penduduk',
 'route' => 'surat-surat.perpindahan-penduduk',
 ]
+
+[
+'title' => 'Surat Tidak mampu',
+'route' => 'surat-surat.tidak-mampu',
+]
 ];
 @endphp
 
