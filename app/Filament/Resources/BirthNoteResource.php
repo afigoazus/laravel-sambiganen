@@ -175,6 +175,10 @@ class BirthNoteResource extends Resource
                                 ->label("Nama")
                                 ->required()
                                 ->maxLength(44),
+                            Forms\Components\TextInput::make('address_child')
+                                ->label("Alamat")
+                                ->required()
+                                ->columnSpan(3)
                         ]),
                         Forms\Components\Grid::make(3)->schema([
                             Forms\Components\Select::make('gender_child')
@@ -300,6 +304,8 @@ class BirthNoteResource extends Resource
                     ->color(Color::hex('#2196F3'))
                     ->icon('heroicon-o-document-arrow-down')
                     ->url(fn(BirthNote $record): string => route('capil.lahir', [$record->id]))
+                    // ->url(route('test.download.pdf'))
+                    ->openUrlInNewTab(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

@@ -171,6 +171,17 @@ class DeathNoteResource extends Resource
                                 ->label("Nama")
                                 ->required()
                                 ->maxLength(44),
+                            Forms\Components\TextInput::make('place_born_death')
+                                ->label("Tempat Lahir")
+                                ->required()
+                                ->maxLength(255),
+                            Forms\Components\DatePicker::make('date_born_death')
+                                ->label("Tanggal Lahir")
+                                ->required(),
+                            Forms\Components\TextInput::make('order_death')
+                                ->label("Urutan Anak")
+                                ->numeric()
+                                ->required(),
 
                         ]),
                         Forms\Components\Grid::make(3)->schema([
@@ -247,8 +258,8 @@ class DeathNoteResource extends Resource
                     ->label("Download PDF")
                     ->color(Color::hex('#2196F3'))
                     ->icon('heroicon-o-document-arrow-down')
-                    // ->url(fn(DeathNote $record): string => route('capil.kematian', [$record->id]))
-                    ->url(route('test.pdf'))
+                    ->url(fn(DeathNote $record): string => route('capil.kematian', [$record->id]))
+                    // ->url(route('test.pdf'))
                     ->openUrlInNewTab(),
             ])
             ->bulkActions([

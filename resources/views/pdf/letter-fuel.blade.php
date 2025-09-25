@@ -131,7 +131,7 @@
             <td style="padding: 0; font-size: 0.9rem; vertical-align: baseline;">Nama</td>
             <td></td>
             <td style="padding-left: 1rem">:</td>
-            <td style="font-size: 0.9rem; padding-left: 3px;">{{ $data['name'] ?? "" }}</td>
+            <td style="font-size: 0.9rem; padding-left: 3px; font-weight: bold;">{{ $data['name'] ?? "" }}</td>
         </tr>
         <tr>
             <td style="margin-right: 5px">2.</td>

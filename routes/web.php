@@ -117,12 +117,23 @@ Route::prefix('dokumen')->group(function () {
 |--------------------------------------------------------------------------
 */
 
-// testing route
-Route::get('/test-pdf', function () {
-    $pdf = Pdf::loadView('pdf.combined-death-document');
+/*
+|--------------------------------------------------------------------------
+| Testing Routes (Temporary)
+|--------------------------------------------------------------------------
+*/
+// testing download pdf
+Route::get('/test-download-pdf', function () {
+    $paperSize = [0, 0, 612, 1008];
+    $pdf = Pdf::loadView('pdf.combined-birth-document')->setPaper($paperSize);
 
-    return $pdf->download('combined_death_document.pdf');
-})->name('test.pdf');
+    return $pdf->download('combined_birth_document.pdf');
+})->name('test.download.pdf');
+
+// testing view pdf
+Route::get('/test-pdf', function () {
+    return view('pdf.combined-birth-document');
+})->name('test.view.pdf');
 
 Route::controller(DocumentController::class)->prefix('download')->group(function () {
     // Special Documents

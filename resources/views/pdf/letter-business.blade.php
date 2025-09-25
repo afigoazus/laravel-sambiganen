@@ -70,10 +70,10 @@
 <body>
     <div style="text-align:center; font-family: Time 'Times New Roman', Times, serif;">
         <p style="font-weight: bold;">PEMERINTAH KABUPATEN PONOROGO</p>
-        <p style="font-weight: bold;">KECAMATAN SAMBIT</p>
-        <p style="font-weight: bold; font-size:1.5rem;">DESA WRINGINANOM</p>
-        <p>Jalan Kresno Nomor 41 Telephon ( 0352 ) 312896</p>
-        <p style="font-weight: bold; font-size:1.2rem;">WRINGINANOM</p>
+        <p style="font-weight: bold;">KECAMATAN NGRAYUN</p>
+        <p style="font-weight: bold; font-size:1.5rem;">DESA SAMBIGANEN</p>
+        <p style="font-style: italic">Alamat : Jalan TIrto Argo No. 15. Kode Pos 63464</p>
+        <p style="font-weight: bold; font-size:1.2rem;">SAMBIGANEN</p>
     </div>
     <p style="position:absolute; right:0; font-family: Time 'Times New Roman', Times, serif;">Kode Pos 63474</p>
     <div style="position:absolute; left:0; top:0; width: 140px; height: 140px;">
@@ -204,7 +204,7 @@
             <p>Wringinanom, {{ \Carbon\Carbon::parse($data->updated_at)->locale('id')->translatedFormat('d F Y') }}</p>
             <div style="text-align: center;">
                 <p style="margin-bottom: 4rem">Kepala Desa Wringinanom</p>
-                <p style="font-weight:bold; ">SUTINI</p>
+                <p style="font-weight:bold; ">A.E.THEODOROS M.</p>
             </div>
         </div>
     </div>

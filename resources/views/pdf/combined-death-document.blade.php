@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surat Keterangan Kematian</title>
+    <title>Surat Kematian {{$data->name_death}}</title>
 
     <style>
     /* Mengatur font default untuk keseluruhan dokumen */
@@ -173,14 +173,14 @@
         
         <div style="text-align:center; font-family: Time 'Times New Roman', Times, serif;">
             <p style="font-weight: bold;">PEMERINTAH KABUPATEN PONOROGO</p>
-            <p style="font-weight: bold;">KECAMATAN </p>
+            <p style="font-weight: bold;">KECAMATAN NGRAYUN</p>
             <p style="font-weight: bold; font-size:1.5rem;">DESA SAMBIGANEN</p>
             <p style="font-style: italic">Alamat : Jalan Tirta Argo No.15 Kode Pos 63463</p>
             <p style="font-weight: bold; font-size:1.2rem;">SAMBIGANEN</p>
         </div>
-        <p style="position:absolute; right:0; font-family: Time 'Times New Roman', Times, serif;">Kode Pos 63474</p>
+        <p style="position:absolute; right:0; font-family: Time 'Times New Roman', Times, serif;">Kode Wilayah harus diganti</p>
         <div style="position:absolute; left:0; top:0; width: 140px; height: 140px;">
-            <img style="width: 100%;" src="#" alt="Logo">
+            <img style="width: 100%;" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('img/logo.png'))) }}" alt="Logo">
         </div>
         <div style="margin-top: 2rem; border: 1px solid black;"></div>
         <div style="margin-top: 4px; border: 2px solid black;"></div>
@@ -190,9 +190,9 @@
                 SURAT KETERANGAN KEMATIAN
             </p>
             <p style="margin-top: 0">
-                Nomor : 470/<span class="min-width-23">
-                    042
-                </span>/405.29.04.02/2025
+                Nomor : 474.3/<span class="{{ empty($data['no_letter']) ? 'min-width-23' : '' }}">
+                    {{ isset($data['no_letter']) ? str_pad($data['no_letter'], 3, '0', STR_PAD_LEFT) : '' }}
+                </span>/405.29.02.09/{{ date('Y') }}
             </p>
         </div>
         <div style="margin-top: 1rem;">
@@ -234,7 +234,7 @@
                 <td>NIK jenazah</td>
                 <td></td>
                 <td>:</td>
-                <td>3502201234567890</td>
+                <td>{{ $data['nik_death'] }}</td>
             </tr>
             <tr>
                 <td></td>
@@ -242,7 +242,7 @@
                 <td>Nama Lengkap</td>
                 <td></td>
                 <td>:</td>
-                <td>BUDI SANTOSO</td>
+                <td>{{$data['name_death']}}</td>
             </tr>
             <tr>
                 <td></td>
@@ -250,7 +250,7 @@
                 <td>TTL</td>
                 <td></td>
                 <td>:</td>
-                <td>Ponorogo, 17 Agustus 1970</td>
+                <td>{{$data['place_born_death']}}, {{\Carbon\Carbon::parse($data['date_born_death'])->locale('id')->translatedFormat('d F Y')}}</td>
             </tr>
             <tr>
                 <td></td>
@@ -258,7 +258,7 @@
                 <td>Tanggal Kematian</td>
                 <td></td>
                 <td>:</td>
-                <td>23 September 2025</td>
+                <td>{{\Carbon\Carbon::parse($data['date_death'])->locale('id')->translatedFormat('d F Y')}}</td>
             </tr>
             <tr>
                 <td></td>
@@ -266,7 +266,7 @@
                 <td>Pukul</td>
                 <td></td>
                 <td>:</td>
-                <td>14:30</td>
+                <td>{{$data['hour_death']}}</td>
             </tr>
             <tr>
                 <td></td>
@@ -274,7 +274,7 @@
                 <td>Sebab Kematian</td>
                 <td></td>
                 <td>:</td>
-                <td>Sakit</td>
+                <td>{{$data['caused_death']}}</td>
             </tr>
             <tr>
                 <td></td>
@@ -282,7 +282,7 @@
                 <td>Tempat Kematian</td>
                 <td></td>
                 <td>:</td>
-                <td>KABUPATEN PONOROGO</td>
+                <td>{{$data['place_death']}}</td>
             </tr>
             <tr>
                 <td></td>
@@ -290,7 +290,7 @@
                 <td>Urutan anak</td>
                 <td></td>
                 <td>:</td>
-                <td>3</td>
+                <td>{{$data['order_death']}}</td>
             </tr>
             <tr>
                 <td></td>
@@ -298,7 +298,24 @@
                 <td>Yang menerangkan</td>
                 <td></td>
                 <td>:</td>
-                <td>Keluarga</td>
+                <td>
+                    @switch($data['info_death'])
+                        @case(1)
+                            Dokter
+                            @break
+                        @case(2)
+                            Tenaga Kesehatan
+                            @break
+                        @case(3)
+                            Kepolisian
+                            @break
+                        @case(4)
+                            Lainnya
+                            @break
+                        @default
+                            -
+                    @endswitch
+                </td>
             </tr>
             <tr>
                 <td></td>
@@ -306,7 +323,7 @@
                 <td>Nama Ibu</td>
                 <td></td>
                 <td>:</td>
-                <td>SITI AMINAH</td>
+                <td>{{$data['name_mom']}}</td>
             </tr>
             <tr>
                 <td></td>
@@ -314,7 +331,7 @@
                 <td>Nama Ayah</td>
                 <td></td>
                 <td>:</td>
-                <td>JOKO SUSILO</td>
+                <td>{{$data['name_dad']}}</td>
             </tr>
         </table>
 
@@ -324,7 +341,7 @@
 
         <div style="margin-top:2rem; position: relative">
             <div style="position: absolute; right: 4rem; text-align: center;">
-                <p style="text-align: center">Ponorogo, 24 September 2025</p>
+                <p style="text-align: center">Ponorogo, {{ \Carbon\Carbon::parse($data->updated_at)->locale('id')->translatedFormat('d F Y') }}</p>
                 <div style="text-align: center;">
                     <p style="margin-bottom: 5rem">Kepala Desa Sambiganen</p>
                     <p style="text-align: center; font-weight:bold;">A.E.THEODOROS M.</p>
@@ -354,13 +371,13 @@
                 <td>Kecamatan</td>
                 <td></td>
                 <td>:</td>
-                <td>Sambit</td>
+                <td>Ngrayun</td>
             </tr>
             <tr>
                 <td>Desa / Kelurahan</td>
                 <td></td>
                 <td>:</td>
-                <td>Wringinanom</td>
+                <td>Sambiganen</td>
             </tr>
             <tr>
                 <td>Kode Wilayah</td>
@@ -368,7 +385,7 @@
                 <td>:</td>
                 <td class="input-grid">
                     <span>3</span><span>5</span><span>0</span><span>2</span><span>2</span><span>0</span><span>0</span><span>2</span>
-                </td>
+                </td> perlu diubah
             </tr>
         </table>
 
@@ -380,6 +397,7 @@
             <h3>FORMULIR PELAPORAN PENCATATAN SIPIL DI DALAM WILAYAH NKRI</h3>
             <label>Jenis Pelaporan Pencatatan Sipil : <strong>KEMATIAN</strong></label>
 
+            <!-- Tabel 1 -->
             <div class="form-group">
                 <p style="font-weight: bolder; margin-left: 0.4em">DATA PELAPOR</p>
                 <table class="table-form">
@@ -388,7 +406,22 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            <span>J</span><span>A</span><span>N</span><span>E</span><span>&nbsp;</span><span>D</span><span>O</span><span>E</span>
+                            @php
+                            $nameArray = str_split($data['name']); // Convert name into an array of characters
+                            $totalSpans = 44; // Fixed span count
+                            @endphp
+
+                            @for ($i = 0; $i < $totalSpans; $i++)
+                                @if (isset($nameArray[$i]))
+                                @if ($nameArray[$i]===' ' )
+                                <span>&nbsp;</span>
+                                @else
+                                <span>{{ $nameArray[$i] }}</span>
+                                @endif
+                                @else
+                                <span>&nbsp;</span> <!-- Fill remaining spans with spaces -->
+                                @endif
+                                @endfor
                         </td>
                     </tr>
                     <tr>
@@ -396,7 +429,11 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            <span>3</span><span>5</span><span>0</span><span>2</span><span>2</span><span>0</span><span>9</span><span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span><span>0</span>
+                            @foreach (str_split($data['nik']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                         </td>
                     </tr>
                     <tr>
@@ -404,7 +441,9 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            <span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>
+                            @for($i = 0; $i < 15; $i++)
+                                <span>&nbsp;</span>
+                                @endfor
                         </td>
                     </tr>
                     <tr>
@@ -412,7 +451,11 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            <span>1</span>
+                            @foreach (str_split($data['nationality']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                             <label style="display: inline-block; font-size: 0.6rem; margin-left: 1em; vertical-align: bottom; padding-bottom: 2px">1. WNI</label>
                             <label style="display: inline-block; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px">2. WNA</label>
                         </td>
@@ -422,11 +465,16 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            <span>0</span><span>8</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span>
+                            @foreach (str_split($data['no_wa']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                         </td>
                     </tr>
                 </table>
             </div>
+            <!-- Tabel 2 -->
             <div class="form-group">
                 <p style="font-weight: bolder; margin-left: 0.4em">SAKSI I</p>
                 <table class="table-form">
@@ -435,7 +483,22 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            <span>S</span><span>A</span><span>K</span><span>S</span><span>I</span><span>&nbsp;</span><span>S</span><span>A</span><span>T</span><span>U</span>
+                            @php
+                            $nameArray = str_split($data['name_saksi']); // Convert name into an array of characters
+                            $totalSpans = 44; // Fixed span count
+                            @endphp
+
+                            @for ($i = 0; $i < $totalSpans; $i++)
+                                @if (isset($nameArray[$i]))
+                                @if ($nameArray[$i]===' ' )
+                                <span>&nbsp;</span>
+                                @else
+                                <span>{{ $nameArray[$i] }}</span>
+                                @endif
+                                @else
+                                <span>&nbsp;</span> <!-- Fill remaining spans with spaces -->
+                                @endif
+                                @endfor
                         </td>
                     </tr>
                     <tr>
@@ -443,7 +506,11 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            <span>3</span><span>5</span><span>0</span><span>2</span><span>2</span><span>0</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span>
+                            @foreach (str_split($data['nik_saksi']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                         </td>
                     </tr>
                     <tr>
@@ -451,7 +518,11 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            <span>1</span>
+                            @foreach (str_split($data['nationality_saksi']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                             <label style="display: inline-block; font-size: 0.6rem; margin-left: 1em; vertical-align: bottom; padding-bottom: 2px">1. WNI</label>
                             <label style="display: inline-block; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px">2. WNA</label>
                         </td>
@@ -464,7 +535,22 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            <span>S</span><span>A</span><span>K</span><span>S</span><span>I</span><span>&nbsp;</span><span>D</span><span>U</span><span>A</span>
+                            @php
+                            $nameArray = str_split($data['name_saksi2']); // Convert name into an array of characters
+                            $totalSpans = 44; // Fixed span count
+                            @endphp
+
+                            @for ($i = 0; $i < $totalSpans; $i++)
+                                @if (isset($nameArray[$i]))
+                                @if ($nameArray[$i]===' ' )
+                                <span>&nbsp;</span>
+                                @else
+                                <span>{{ $nameArray[$i] }}</span>
+                                @endif
+                                @else
+                                <span>&nbsp;</span> <!-- Fill remaining spans with spaces -->
+                                @endif
+                                @endfor
                         </td>
                     </tr>
                     <tr>
@@ -472,7 +558,11 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            <span>3</span><span>5</span><span>0</span><span>2</span><span>2</span><span>0</span><span>2</span><span>2</span><span>2</span><span>2</span><span>2</span><span>2</span><span>2</span><span>2</span><span>2</span><span>2</span>
+                            @foreach (str_split($data['nik_saksi2']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                         </td>
                     </tr>
                     <tr>
@@ -480,13 +570,18 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                           <span>1</span>
+                            @foreach (str_split($data['nationality_saksi2']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                             <label style="display: inline-block; font-size: 0.6rem; margin-left: 1em; vertical-align: bottom; padding-bottom: 2px">1. WNI</label>
                             <label style="display: inline-block; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px">2. WNA</label>
                         </td>
                     </tr>
                 </table>
             </div>
+            <!-- Tabel 3 -->
             <div class="form-group">
                 <p style="font-weight: bolder; margin-left: 0.4em">DATA ORANG TUA</p>
                 <table class="table-form">
@@ -495,7 +590,22 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            <span>J</span><span>O</span><span>K</span><span>O</span><span>&nbsp;</span><span>S</span><span>U</span><span>S</span><span>I</span><span>L</span><span>O</span>
+                            @php
+                            $nameArray = str_split($data['name_dad']); // Convert name into an array of characters
+                            $totalSpans = 44; // Fixed span count
+                            @endphp
+
+                            @for ($i = 0; $i < $totalSpans; $i++)
+                                @if (isset($nameArray[$i]))
+                                @if ($nameArray[$i]===' ' )
+                                <span>&nbsp;</span>
+                                @else
+                                <span>{{ $nameArray[$i] }}</span>
+                                @endif
+                                @else
+                                <span>&nbsp;</span> <!-- Fill remaining spans with spaces -->
+                                @endif
+                                @endfor
                         </td>
                     </tr>
                     <tr>
@@ -503,7 +613,11 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            <span>3</span><span>5</span><span>0</span><span>2</span><span>2</span><span>0</span><span>1</span><span>0</span><span>1</span><span>0</span><span>1</span><span>0</span><span>1</span><span>0</span><span>1</span><span>0</span>
+                            @foreach (str_split($data['nik_dad']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                         </td>
                     </tr>
                     <tr>
@@ -511,7 +625,11 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                           <span>M</span><span>A</span><span>D</span><span>I</span><span>U</span><span>N</span>
+                            @foreach (str_split($data['place_born_dad']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                         </td>
                     </tr>
                     <tr>
@@ -520,11 +638,23 @@
                         <td></td>
                         <td class="input-grid">
                             <label style="font-size: 0.6rem; text-transform: capitalize; display: inline-block; margin-left: 1em; margin-right: 2.8em; vertical-align: bottom; padding-bottom: 2px">Tgl :</label>
-                            <span>0</span><span>1</span>
+                            @foreach (str_split(explode('-', $data['date_born_dad'])[2]) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                             <label style="font-size: 0.6rem; text-transform: capitalize; display: inline-block; margin-left: 1em; margin-right: 2.8em; vertical-align: bottom; padding-bottom: 2px">Bln :</label>
-                            <span>0</span><span>1</span>
+                            @foreach (str_split(explode('-', $data['date_born_dad'])[1]) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                             <label style="font-size: 0.6rem; text-transform: capitalize; display: inline-block; margin-left: 1em; margin-right: 2.8em; vertical-align: bottom; padding-bottom: 2px">Thn :</label>
-                            <span>1</span><span>9</span><span>6</span><span>5</span>
+                            @foreach (str_split(explode('-', $data['date_born_dad'])[0]) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                         </td>
                     </tr>
                     <tr>
@@ -532,7 +662,11 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            <span>1</span>
+                            @foreach (str_split($data['nationality_dad']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                             <label style="display: inline-block; font-size: 0.6rem; margin-left: 1em; vertical-align: bottom; padding-bottom: 2px">1. WNI</label>
                             <label style="display: inline-block; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px">2. WNA</label>
                         </td>
@@ -542,7 +676,22 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                           <span>S</span><span>I</span><span>T</span><span>I</span><span>&nbsp;</span><span>A</span><span>M</span><span>I</span><span>N</span><span>A</span><span>H</span>
+                            @php
+                            $nameArray = str_split($data['name_mom']); // Convert name into an array of characters
+                            $totalSpans = 44; // Fixed span count
+                            @endphp
+
+                            @for ($i = 0; $i < $totalSpans; $i++)
+                                @if (isset($nameArray[$i]))
+                                @if ($nameArray[$i]===' ' )
+                                <span>&nbsp;</span>
+                                @else
+                                <span>{{ $nameArray[$i] }}</span>
+                                @endif
+                                @else
+                                <span>&nbsp;</span> <!-- Fill remaining spans with spaces -->
+                                @endif
+                                @endfor
                         </td>
                     </tr>
                     <tr style="margin-top:1px">
@@ -550,7 +699,11 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            <span>3</span><span>5</span><span>0</span><span>2</span><span>2</span><span>0</span><span>2</span><span>0</span><span>2</span><span>0</span><span>2</span><span>0</span><span>2</span><span>0</span><span>2</span><span>0</span>
+                            @foreach (str_split($data['nik_mom']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                         </td>
                     </tr>
                     <tr style="margin-top:1px">
@@ -558,7 +711,11 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                           <span>P</span><span>A</span><span>C</span><span>I</span><span>T</span><span>A</span><span>N</span>
+                            @foreach (str_split($data['place_born_mom']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                         </td>
                     </tr>
                     <tr style="margin-top:1px">
@@ -567,11 +724,23 @@
                         <td></td>
                         <td class="input-grid">
                             <label style="font-size: 0.6rem; text-transform: capitalize; display: inline-block; margin-left: 1em; margin-right: 2.8em; vertical-align: bottom; padding-bottom: 2px">Tgl :</label>
-                            <span>0</span><span>2</span>
+                            @foreach (str_split(explode('-', $data['date_born_mom'])[2]) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                             <label style="font-size: 0.6rem; text-transform: capitalize; display: inline-block; margin-left: 1em; margin-right: 2.8em; vertical-align: bottom; padding-bottom: 2px">Bln :</label>
-                           <span>0</span><span>2</span>
+                            @foreach (str_split(explode('-', $data['date_born_mom'])[1]) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                             <label style="font-size: 0.6rem; text-transform: capitalize; display: inline-block; margin-left: 1em; margin-right: 2.8em; vertical-align: bottom; padding-bottom: 2px">Thn :</label>
-                            <span>1</span><span>9</span><span>6</span><span>8</span>
+                            @foreach (str_split(explode('-', $data['date_born_mom'])[0]) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                         </td>
                     </tr>
                     <tr>
@@ -579,13 +748,18 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            <span>1</span>
+                            @foreach (str_split($data['nationality_mom']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                             <label style="display: inline-block; font-size: 0.6rem; margin-left: 1em; vertical-align: bottom; padding-bottom: 2px">1. WNI</label>
                             <label style="display: inline-block; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px">2. WNA</label>
                         </td>
                     </tr>
                 </table>
             </div>
+            <!-- Tabel 4 -->
             <div class="form-group">
                 <p style="font-weight: bolder; margin-left: 0.4em">DATA KEMATIAN</p>
                 <table class="table-form">
@@ -594,7 +768,11 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            <span>3</span><span>5</span><span>0</span><span>2</span><span>2</span><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span>
+                            @foreach (str_split($data['nik_death']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                         </td>
                     </tr>
                     <tr>
@@ -602,7 +780,22 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            <span>B</span><span>U</span><span>D</span><span>I</span><span>&nbsp;</span><span>S</span><span>A</span><span>N</span><span>T</span><span>O</span><span>S</span><span>O</span>
+                            @php
+                            $nameArray = str_split($data['name_death']); // Convert name into an array of characters
+                            $totalSpans = 44; // Fixed span count
+                            @endphp
+
+                            @for ($i = 0; $i < $totalSpans; $i++)
+                                @if (isset($nameArray[$i]))
+                                @if ($nameArray[$i]===' ' )
+                                <span>&nbsp;</span>
+                                @else
+                                <span>{{ $nameArray[$i] }}</span>
+                                @endif
+                                @else
+                                <span>&nbsp;</span> <!-- Fill remaining spans with spaces -->
+                                @endif
+                                @endfor
                         </td>
                     </tr>
                     <tr>
@@ -611,11 +804,23 @@
                         <td></td>
                         <td class="input-grid">
                             <label style="font-size: 0.6rem; text-transform: capitalize; display: inline-block; margin-left: 1em; margin-right: 1.3em; vertical-align: bottom; padding-bottom: 2px">Tgl :</label>
-                            <span>2</span><span>3</span>
+                            @foreach (str_split(explode('-', $data['date_death'])[2]) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                             <label style="font-size: 0.6rem; text-transform: capitalize; display: inline-block; margin-left: 1em; margin-right: 1.3em; vertical-align: bottom; padding-bottom: 2px">bln :</label>
-                            <span>0</span><span>9</span>
+                            @foreach (str_split(explode('-', $data['date_death'])[1]) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                             <label style="font-size: 0.6rem; text-transform: capitalize; display: inline-block; margin-left: 1em; margin-right: 1.3em; vertical-align: bottom; padding-bottom: 2px">Thn :</label>
-                            <span>2</span><span>0</span><span>2</span><span>5</span>
+                            @foreach (str_split(explode('-', $data['date_death'])[0]) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                         </td>
                     </tr>
                     <tr>
@@ -623,7 +828,11 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            <span>1</span><span>4</span><span>3</span><span>0</span>
+                            @foreach (str_split(str_replace(':', '', $data['hour_death'])) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                         </td>
                     </tr>
                     <tr>
@@ -631,7 +840,11 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            <span>1</span>
+                            @foreach (str_split($data['caused_death']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                             <label style="display: inline-block; text-transform: capitalize; font-size: 0.6rem; margin-left: 1em; vertical-align: bottom; padding-bottom: 2px">1. Sakit biasa/tua</label>
                             <label style="display: inline-block; text-transform: capitalize; font-size: 0.6rem; margin-left: 3.3em; vertical-align: bottom; padding-bottom: 2px">2. Wabah penyakit</label>
                             <label style="display: inline-block; text-transform: capitalize; font-size: 0.6rem; margin-left: 2.5em; vertical-align: bottom; padding-bottom: 2px">3. Kecelakaan</label>
@@ -647,7 +860,11 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                           <span>R</span><span>U</span><span>M</span><span>A</span><span>H</span><span>&nbsp;</span><span>S</span><span>A</span><span>K</span><span>I</span><span>T</span>
+                            @foreach (str_split($data['place_death']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                         </td>
                     </tr>
                     <tr>
@@ -655,7 +872,11 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            <span>1</span>
+                            @foreach (str_split($data['info_death']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
                             <label style="display: inline-block; text-transform:capitalize; font-size: 0.6rem; margin-left: 1em; vertical-align: bottom; padding-bottom: 2px">1. Dokter</label>
                             <label style="display: inline-block; text-transform:capitalize; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px">2. Tenaga Kesehatan</label>
                             <label style="display: inline-block; text-transform:capitalize; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px">3. Kepolisian</label>
@@ -671,14 +892,14 @@
                 <p>Mengetahui</p>
                 <div style="text-align: left;">
                     <p style="margin-bottom: 4rem">Petugas Pendaftaran</p>
-                    <p style="text-align: center;">BANDI</p>
+                    <p style="text-align: center;">PRANOTO</p>
                 </div>
             </div>
         </div>
 
         <div style="position: relative; font-size: 0.8rem">
             <div style="position: absolute; right: 5rem; text-align: center">
-                <p>Wringinanom, 24 September 2025</p>
+                <p>Sambiganen, {{ \Carbon\Carbon::parse($data->updated_at)->locale('id')->translatedFormat('d F Y') }}</p>
                 <div style="text-align: left;">
                     <p style="margin-bottom: 4rem; text-align: center">Pelapor</p>
                     <p style="text-align: center;">Patrick Star</p>

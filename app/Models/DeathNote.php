@@ -3,13 +3,17 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class DeathNote extends Model
 {
+    use HasFactory;
+
+    // Pastikan 'no_letter' dan 'year' tidak ada di sini
     protected $fillable =  [
         'name',
         'nik',
-        'no_dok_journey',
+        'no_dok_journey', // no_dok_journey bisa diisi manual, jadi tetap di fillable
         'nationality',
         'no_wa',
         'name_saksi',
@@ -30,37 +34,42 @@ class DeathNote extends Model
         'nationality_mom',
         'nik_death',
         'name_death',
+        'place_born_death',
+        'date_born_death',
         'date_death',
         'hour_death',
         'caused_death',
         'place_death',
         'info_death',
-        'year',
+        'order_death',
     ];
 
-    protected static function boot()
+    /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    protected static function booted(): void
     {
-        parent::boot();
+        // Gunakan event 'creating' untuk semua logika yang hanya berjalan sekali saat pembuatan
+        static::creating(function ($deathNote) {
+            // Tentukan tahun saat ini
+            $currentYear = now()->year;
+            $deathNote->year = $currentYear;
 
-        static::saving(function ($letter) {
-            $letterYear = $letter->year ?? now()->year;
+            // --- LOGIKA UNTUK no_letter (BARU) ---
+            // Cari record terakhir di tahun yang sama untuk mendapatkan no_letter berikutnya
+            $latestLetter = self::where('year', $currentYear)->latest('no_letter')->first();
+            // Jika sudah ada, tambah 1. Jika tidak, mulai dari 1.
+            $deathNote->no_letter = $latestLetter ? $latestLetter->no_letter + 1 : 1;
 
-            // auto numbering when no_letter is empty
-            if (empty($letter->no_dok_journey)) {
-                $lastLetter = self::where('year', $letterYear)
-                    ->orderBy('no_dok_journey', 'desc')
-                    ->first();
-                $letter->no_dok_journey = $lastLetter ? $lastLetter->no_dok_journey + 1 : 1;
-            }
-
-            // Ensure no duplicate no_letter within the same year
-            $exist = self::where('no_dok_journey', $letter->no_dok_journey)
-                ->where('year', $letterYear)
-                ->where('id', '!=', $letter->id)
-                ->exists();
-
-            if ($exist) {
-                throw new \Exception('The letter number {$letter->no_letter} already exist for the year {$year}');
+            // --- LOGIKA UNTUK no_dok_journey (YANG SUDAH ADA) ---
+            // Logika ini hanya berjalan jika no_dok_journey tidak diisi manual
+            if (empty($deathNote->no_dok_journey)) {
+                // Cari record terakhir di tahun yang sama untuk mendapatkan no_dok_journey berikutnya
+                $lastJourney = self::where('year', $currentYear)->orderBy('no_dok_journey', 'desc')->first();
+                // Jika sudah ada, tambah 1. Jika tidak, mulai dari 1.
+                $deathNote->no_dok_journey = $lastJourney ? $lastJourney->no_dok_journey + 1 : 1;
             }
         });
     }
