@@ -2,8 +2,8 @@
 <main class="font-dusha mt-24 bg-[#F4F7F6] -mb-9">
     <div class="bg-hero-image bg-center bg-cover h-64 bg-no-repeat flex items-center justify-center after:absolute after:left-0 after:right-0 after:bg-after after:w-screen after:h-64 after:opacity-50">
         <div class="text-center relative z-10">
-            <span class="text-4xl text-primary">Surat Ijin</span> <br>
-            <span class="text-4xl text-secondary">Keramaian</span>
+            <span class="text-4xl text-primary">Surat Keterangan</span> <br>
+            <span class="text-4xl text-secondary">Domisili</span>
         </div>
     </div>
 
@@ -13,10 +13,10 @@
     <!-- Print the error to the front-end -->
     @include('components.error')
 
-    <form action="{{ route('ijin-keramaian.store')}}" method="POST" class="mx-auto my-10 w-11/12 max-w-prose p-4 flex flex-col gap-4 font-sans" id="myForm">
+    <form action="{{ route('keterangan-domisili.store')}}" method="POST" class="mx-auto my-10 w-11/12 max-w-prose p-4 flex flex-col gap-4 font-sans" id="myForm">
         @csrf
         <div class="bg-white p-4 w-full rounded-md">
-            <span class="text-2xl font-medium">FORMULIR SURAT IZIN KERAMAIAN</span>
+            <span class="text-2xl font-medium">FORMULIR SURAT KETERANGAN DOMISILI</span>
             <p class="text-[#5F6368] font-normal">(Untuk pengajuan pengembangan usaha)</p>
             <p class="text-[#FF0000] font-normal">* Menunjukkan pertanyaan yang wajib diisi</p>
         </div>
@@ -30,11 +30,17 @@
 
          <!-- tempat lahir field -->
         <div class="bg-white p-4 w-full rounded-md">
-            <label for="umur">Umur (tahun) <span class="text-[#FF0000]">*</span> <br>
-                <input type="number" name="umur" id="umur" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="21" required>
+            <label for="tempat-lahir">Tempat Lahir <span class="text-[#FF0000]">*</span> <br>
+                <input type="text" name="tempat-lahir" id="tempat-lahir" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Tempat Lahir" required>
             </label>
         </div>
 
+        <!-- tanggal lahir field -->
+        <div class="bg-white p-4 w-full rounded-md">
+            <label for="tanggal-lahir">Tanggal Lahir <span class="text-[#FF0000]">*</span> <br>
+                <input type="date" name="tanggal-lahir" id="tanggal-lahir" class="w-full mt-1 outline-none border-b-2 border-black border-dotted focus:border-solid" required>
+            </label>
+        </div>
 
           <!-- jenis kelamin field -->
         <div class="bg-white p-4 w-full rounded-md">
@@ -60,9 +66,19 @@
             </div>
         </div>
 
-            
+               <!-- status perkawinan field -->
+        <div class="flex flex-col gap-2">
+            <span>Status Perkawinan <span class="text-[#FF0000]">*</span></span>
+            <select name="status-perkawinan" id="tempat-dilahirkan" class="border-2 border-black" required>
+                <option disabled selected>Status Perkawinan</option>
+                <option value="Belum Kawin">Belum Kawin</option>
+                <option value="Sudah Kawin">Sudah Kawin</option>
+                <option value="Janda">Janda</option>
+                <option value="Duda">Duda</option>
+            </select>
+        </div>
 
-        <!-- pekerjaan  field -->
+        <!-- pekerjaan ayah field -->
                 <div class="">
                     <label for="pekerjaan">Pekerjaan <span class="text-[#FF0000]">*</span> <br>
                         <input type="text" name="pekerjaan" id="pekerjaan" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Pekerjaan" required>
@@ -71,45 +87,12 @@
 
        <!-- alamat field -->
         <div class="bg-white p-4 w-full rounded-md">
-            <label for="alamat">Alamat <span class="text-[#FF0000]">*</span> <br>
-                <span class="font-medium">Untuk penulisan harus seperti berikut tanpa tanda (): RT (RT anda) RW (RW anda) Dukuh (Dukuh anda) Desa Sambiganen Kecamatan Ngrayun Kabupaten Ponorogo</span>
-                <textarea name="alamat" id="alamat" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required placeholder="Alamat"></textarea>
+            <label for="tanggal-domisili"> <span class="text-[#FF0000]">*</span> <br>
+                <span class="tanggal-domisili">Berdomisi dari tahun</span>
+                <textarea name="tanggal-domisili" id="tanggal-domisili" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required placeholder="2000"></textarea>
             </label>
         </div>
 
-        <!-- hari keramaian field -->
-                <div class="">
-                    <label for="hari">Hari <span class="text-[#FF0000]">*</span> <br>
-                        <input type="text" name="hari" id="hari" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="selasa - rabu" required>
-                    </label>
-                </div>
-        
-               <!-- hari keramaian field -->
-                <div>
-                <label for="tanggal_mulai">Tanggal Mulai<span class="text-[#FF0000]">*</span></label><br>
-                <input type="date" name="tanggal_mulai" id="tanggal_mulai"
-                        class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required>
-                </div>
-
-                <div class="mt-4">
-                <label for="tanggal_selesai">Tanggal Selesai<span class="text-[#FF0000]">*</span></label><br>
-                <input type="date" name="tanggal_selesai" id="tanggal_selesai"
-                        class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required>
-                </div>
-
-        <!-- keperluan field -->
-                <div class="">
-                    <label for="keperluan">keperluan<span class="text-[#FF0000]">*</span> <br>
-                        <input type="text" name="keperluan" id="keperluan" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="mantu" required>
-                    </label>
-                </div>
-        
-        <!-- field -->
-                <div class="">
-                    <label for="keterangan">keterangan<span class="text-[#FF0000]">*</span> <br>
-                        <input type="text" name="keterangan" id="keterangan" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="-" required>
-                    </label>
-                </div>
 
         <!-- Submit and Reset Button -->
         @include('components.submit-reset-button')

@@ -13,7 +13,7 @@
     <!-- Print the error to the front-end -->
     @include('components.error')
 
-    <form action="{{ route('keringanan-sekolah.store')}}" method="POST" class="mx-auto my-10 w-11/12 p-4 font-sans flex flex-col gap-4" id="myForm">
+    <form action="{{ route('tidak-mampu.store')}}" method="POST" class="mx-auto my-10 w-11/12 p-4 font-sans flex flex-col gap-4" id="myForm">
         @csrf
         <div class="bg-white p-4 w-full rounded-md">
             <span class="text-2xl font-medium">FORMULIR SURAT KETERANGAN TIDAK MAMPU</span>
@@ -24,8 +24,7 @@
                 <!-- form data ortu-->
         <div class="bg-white p-4 w-full rounded-md">
             <span class="text-2xl font-medium">Formulir Pemohon</span>
-
-            div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
                 <!-- nama ayah -->
                 <div>
                     <label for="nama-pemohon">Nama<span class="text-[#FF0000]">*</span> <br>
@@ -60,6 +59,7 @@
                         <input type="text" name="alamat-pemohon" id="alamat-pemohon" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="alamat pemohon" required>
                     </label>
                 </div>
+</div>
 
         <!-- form data ortu-->
         <div class="bg-white p-4 w-full rounded-md">
