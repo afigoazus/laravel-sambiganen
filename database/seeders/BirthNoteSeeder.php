@@ -12,6 +12,7 @@ class BirthNoteSeeder extends Seeder
     {
         DB::table('birth_notes')->insert([
             // Data Tahun 2024
+            [
                 'no_letter' => 1,
                 'name' => "Patrick Star",
                 'nik' => "3576447103910009",
