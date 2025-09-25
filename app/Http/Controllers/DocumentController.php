@@ -66,12 +66,12 @@ class DocumentController extends Controller
 
     public function downloadBirthNote($id)
     {
-        return $this->pdfService->generate(BirthNote::class, 'pdf.birth-note', 'Capil_Kelahiran_', $id);
+        return $this->pdfService->generate(BirthNote::class, 'pdf.combined-birth-document', 'Capil_Kelahiran_', $id);
     }
 
     public function downloadDeathNote($id)
     {
-        return $this->pdfService->generate(DeathNote::class, 'pdf.death-note', 'Capil_Kematian_', $id);
+        return $this->pdfService->generate(DeathNote::class, 'pdf.combined-death-document', 'Capil_Kematian_', $id);
     }
 
     public function downloadLetterDeath($id)
@@ -86,7 +86,6 @@ class DocumentController extends Controller
 
     public function downloadLetterIncapacity($id)
     {
-        log("hello");
         return $this->pdfService->generate(LetterIncapacity::class, 'pdf.letter-incapacity', 'Surat_Keterangan_Tidak_Mampu_', $id);
     }
 

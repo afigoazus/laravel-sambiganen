@@ -1,28 +1,31 @@
+@php
+use Carbon\Carbon;
+
+$date = $data['date_birth_child'];
+$dayOfWeek = Carbon::parse($date)->locale('id')->isoFormat('dddd');
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surat Keterangan Kematian</title>
+    <title>Surat Kelahiran {{ $data['name_child'] }}</title>
 
     <style>
-    /* Mengatur font default untuk keseluruhan dokumen */
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Times New Roman', Times, serif; /* Menggunakan font yang lebih formal */
+            font-size: 12pt;
         }
-
-        /* Aturan untuk memaksa pindah halaman */
+        
         .page-break {
             page-break-after: always;
         }
 
         /* --- STYLES KHUSUS UNTUK HALAMAN SATU --- */
         #page-one p {
-            margin: 0.2rem;
-        }
-
-        #page-one pre {
-            margin: 0.2rem;
+            margin: 0.2rem 0;
+            line-height: 1.5;
         }
 
         #page-one .min-width-23 {
@@ -32,47 +35,26 @@
 
         #page-one table {
             width: 100%;
-            margin-top: 2rem;
-            font-family: 'Times New Roman', Times, serif;
+            margin-top: 0.5rem; /* Mengurangi margin atas */
             border-collapse: collapse;
-            border-spacing: 0; /* Menambahkan ini untuk konsistensi */
-            font-size: 1rem; /* Menambahkan ini untuk konsistensi */
         }
 
+        /* Menghapus semua border dan merapikan padding */
         #page-one table tr td {
-            padding: 3px 5px;
+            padding: 2px;
             vertical-align: top;
-            line-height: 1.5; /* Menambahkan ini untuk konsistensi */
+            line-height: 1.5;
+            border: none; /* Menghapus border dari semua sel */
         }
 
-        #page-one table tr td:nth-child(2) {
-            text-align: center;
-            width: 30px;
-        }
-
-        #page-one table tr td:nth-child(3) {
-            width: 160px;
-        }
-
-        #page-one table tr td:nth-child(4) {
-            width: 30px;
-        }
-
-        #page-one table tr td:nth-child(5) {
-            text-align: center;
-            width: 20px;
-        }
-
-        #page-one table tr td:nth-child(6) {
-            width: auto;
-        }
+        /* Kelas untuk mengatur lebar kolom secara konsisten */
+        .kolom-nomor { width: 25px; }
+        .kolom-label { width: 180px; }
+        .kolom-pemisah { width: 15px; }
+        .kolom-data { width: auto; }
 
 
         /* --- STYLES KHUSUS UNTUK HALAMAN DUA --- */
-        #page-two {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        
         #page-two p {
             margin: 0;
             padding: 0;
@@ -82,10 +64,8 @@
             border-collapse: collapse;
             font-size: 0.7rem;
             border-spacing: 0;
-            width: 100%; /* Menambahkan ini untuk konsistensi */
-            margin-top: 0; /* Menambahkan ini untuk konsistensi */
         }
-        
+
         #page-two tr {
             margin: 0;
             padding: 0;
@@ -100,6 +80,7 @@
         #page-two table tr td {
             padding: 2px 5px;
             vertical-align: top;
+            /* Aligns all content to the top */
         }
 
         #page-two .form-container {
@@ -169,174 +150,156 @@
     </style>
 </head>
 <body>
+    {{-- ================================= HALAMAN PERTAMA ================================= --}}
     <div id="page-one">
-        
-        <div style="text-align:center; font-family: Time 'Times New Roman', Times, serif;">
+        <div style="text-align:center;">
             <p style="font-weight: bold;">PEMERINTAH KABUPATEN PONOROGO</p>
-            <p style="font-weight: bold;">KECAMATAN </p>
+            <p style="font-weight: bold;">KECAMATAN NGRAYUN</p>
             <p style="font-weight: bold; font-size:1.5rem;">DESA SAMBIGANEN</p>
             <p style="font-style: italic">Alamat : Jalan Tirta Argo No.15 Kode Pos 63463</p>
             <p style="font-weight: bold; font-size:1.2rem;">SAMBIGANEN</p>
         </div>
-        <p style="position:absolute; right:0; font-family: Time 'Times New Roman', Times, serif;">Kode Pos 63474</p>
         <div style="position:absolute; left:0; top:0; width: 140px; height: 140px;">
             <img style="width: 100%;" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('img/logo.png'))) }}" alt="Logo">
         </div>
-        <div style="margin-top: 2rem; border: 1px solid black;"></div>
-        <div style="margin-top: 4px; border: 2px solid black;"></div>
+        <div style="margin-top: 2rem; border-top: 1px solid black;"></div>
+        <div style="margin-top: 4px; border-top: 2px solid black;"></div>
 
         <div style="margin-top: 1.5rem; text-align:center">
             <p style="text-decoration: underline; letter-spacing: 1px; font-size:1.1rem; font-weight: bold; margin-bottom: 0;">
-                SURAT KETERANGAN KEMATIAN
+                SURAT KETERANGAN KELAHIRAN
             </p>
             <p style="margin-top: 0">
-                Nomor : 470/<span class="{{ empty($data['no_letter']) ? 'min-width-23' : '' }}">
-                    {{ isset($data['no_letter']) ? str_pad($data['no_letter'], 3, '0', STR_PAD_LEFT) : '' }}
-                </span>/405.29.04.02/{{ date('Y') }}
+                Nomor : 470/<span class="min-width-23">{{ str_pad($data['no_letter'], 3, '0', STR_PAD_LEFT) }}</span>/405.29.02.09/{{ $data['year'] }}
             </p>
         </div>
+
         <div style="margin-top: 1rem;">
-            <p style="margin-left:0rem;">Yang bertanda tangan di bawah ini :</p>
+            <p>
+                Yang bertanda tangan di bawah ini, Kepala Desa Sambiganen, Kecamatan Ngrayun, Kabupaten Ponorogo, dengan ini menerangkan dengan sebenarnya bahwa:
+            </p>
+            
+            {{-- TABEL DATA ANAK --}}
             <table>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td>Nama Lengkap</td>
-                    <td></td>
-                    <td>:</td>
-                    <td>A.T.THEODOROS M.</td>
+                    <td class="kolom-nomor">1.</td>
+                    <td class="kolom-label">Nama</td>
+                    <td class="kolom-pemisah">:</td>
+                    <td class="kolom-data"><strong>{{ $data['name_child'] }}</strong></td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td>NIK/NIP*</td>
-                    <td></td>
-                    <td>:</td>
-                    <td>-</td>
+                    <td class="kolom-nomor">2.</td>
+                    <td class="kolom-label">Jenis Kelamin</td>
+                    <td class="kolom-pemisah">:</td>
+                    <td class="kolom-data">{{ $data['gender_child'] == 1 ? 'Laki-Laki' : 'Perempuan' }}</td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td>Jabatan</td>
-                    <td></td>
-                    <td>:</td>
-                    <td>Kepala Desa</td>
+                    <td class="kolom-nomor">3.</td>
+                    <td class="kolom-label">Tempat, Tanggal Lahir</td>
+                    <td class="kolom-pemisah">:</td>
+                    <td class="kolom-data">{{ $data['place_birth_child2'] }}, {{ Carbon::parse($data['date_birth_child'])->locale('id')->translatedFormat('d F Y') }}</td>
                 </tr>
             </table>
+
+            <p>
+                Orang tersebut di atas adalah anak nomor {{ $data['no_birth_child'] }} dari perkawinan yang sah antara seorang laki-laki :
+            </p>
+
+            {{-- TABEL DATA AYAH --}}
+            <table>
+                <tr>
+                    <td class="kolom-nomor">1.</td>
+                    <td class="kolom-label">Nama</td>
+                    <td class="kolom-pemisah">:</td>
+                    <td class="kolom-data"><strong>{{ $data['name_dad'] }}</strong></td>
+                </tr>
+                <tr>
+                    <td class="kolom-nomor">2.</td>
+                    <td class="kolom-label">NIK</td>
+                    <td class="kolom-pemisah">:</td>
+                    <td class="kolom-data">{{ $data['nik_dad'] }}</td>
+                </tr>
+                <tr>
+                    <td class="kolom-nomor">3.</td>
+                    <td class="kolom-label">Umur</td>
+                    <td class="kolom-pemisah">:</td>
+                    <td class="kolom-data">{{ Carbon::parse($data['date_born_dad'])->age }} Tahun</td>
+                </tr>
+                <tr>
+                    <td class="kolom-nomor">4.</td>
+                    <td class="kolom-label">Pekerjaan</td>
+                    <td class="kolom-pemisah">:</td>
+                    <td class="kolom-data">{{ $data['dad_job'] }}</td>
+                </tr>
+                <tr>
+                    <td class="kolom-nomor">5.</td>
+                    <td class="kolom-label">Alamat</td>
+                    <td class="kolom-pemisah">:</td>
+                    <td class="kolom-data">{{ $data['address_dad'] }}</td>
+                </tr>
+            </table>
+
+            <p>
+                Dengan seorang perempuan :
+            </p>
+
+            {{-- TABEL DATA IBU --}}
+            <table>
+                <tr>
+                    <td class="kolom-nomor">1.</td>
+                    <td class="kolom-label">Nama</td>
+                    <td class="kolom-pemisah">:</td>
+                    <td class="kolom-data"><strong>{{ $data['name_mom'] }}</strong></td>
+                </tr>
+                <tr>
+                    <td class="kolom-nomor">2.</td>
+                    <td class="kolom-label">NIK</td>
+                    <td class="kolom-pemisah">:</td>
+                    <td class="kolom-data">{{ $data['nik_mom'] }}</td>
+                </tr>
+                <tr>
+                    <td class="kolom-nomor">3.</td>
+                    <td class="kolom-label">Umur</td>
+                    <td class="kolom-pemisah">:</td>
+                    <td class="kolom-data">{{ Carbon::parse($data['date_born_mom'])->age }} Tahun</td>
+                </tr>
+                <tr>
+                    <td class="kolom-nomor">4.</td>
+                    <td class="kolom-label">Pekerjaan</td>
+                    <td class="kolom-pemisah">:</td>
+                    <td class="kolom-data">{{ $data['mom_job'] }}</td>
+                </tr>
+                <tr>
+                    <td class="kolom-nomor">5.</td>
+                    <td class="kolom-label">Alamat</td>
+                    <td class="kolom-pemisah">:</td>
+                    <td class="kolom-data">{{ $data['address_mom'] }}</td>
+                </tr>
+            </table>
+
+            <p>
+                Yang berdasarkan daftar Kependudukan / Kelahiran benar-benar lahir di {{ $data['place_birth_child2'] }} pada Tanggal : {{ Carbon::parse($data['date_birth_child'])->locale('id')->translatedFormat('d F Y') }}
+            </p>
+
+            <p>
+                Demikian surat keterangan kelahiran ini dibuat dengan sebenarnya agar digunakan sebagaimana mestinya.
+            </p>
         </div>
 
-        <p style="margin-left:0rem; margin-top:1rem">Dengan ini menerangkan bahwa telah terjadi peristiwa kematian pada penduduk dengan identitas sebagai berikut :</p>
-
-        <table>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>NIK jenazah</td>
-                <td></td>
-                <td>:</td>
-                <td>{{ $data['nik'] }}</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>Nama Lengkap</td>
-                <td></td>
-                <td>:</td>
-                <td>{{$data['name']}}</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>TTL</td>
-                <td></td>
-                <td>:</td>
-                <td>{{$data['place_birth']}}, {{\Carbon\Carbon::parse($data['date_birth'])->locale('id')->translatedFormat('d F Y')}}</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>Tanggal Kematian</td>
-                <td></td>
-                <td>:</td>
-                <td>{{\Carbon\Carbon::parse($data['date_death'])->locale('id')->translatedFormat('d F Y')}}</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>Pukul</td>
-                <td></td>
-                <td>:</td>
-                <td>{{$data['hour_death']}}</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>Sebab Kematian</td>
-                <td></td>
-                <td>:</td>
-                <td>{{$data['cause_death']}}</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>Tempat Kematian</td>
-                <td></td>
-                <td>:</td>
-                <td>KABUPATEN PONOROGO</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>Urutan anak</td>
-                <td></td>
-                <td>:</td>
-                <td>{{$data['order_child']}}</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>Yang menerangkan</td>
-                <td></td>
-                <td>:</td>
-                <td>{{$data['witness']}}</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>Nama Ibu</td>
-                <td></td>
-                <td>:</td>
-                <td>{{$data['mom_name']}}</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>Nama Ayah</td>
-                <td></td>
-                <td>:</td>
-                <td>{{$data['dad_name']}}</td>
-            </tr>
-        </table>
-
-        <div style="margin-top: 0.5rem;">
-            <p>Demikian Surat Keterangan ini dibuat untuk dipergunakan sebagaimana mestinya</p>
-        </div>
-
-        <div style="margin-top:2rem; position: relative">
-            <div style="position: absolute; right: 4rem; text-align: center;">
-                <p style="text-align: center">Ponorogo, {{ \Carbon\Carbon::parse($data->updated_at)->locale('id')->translatedFormat('d F Y') }}</p>
-                <div style="text-align: center;">
-                    <p style="margin-bottom: 5rem">Kepala Desa Sambiganen</p>
-                    <p style="text-align: center; font-weight:bold;">A.E.THEODOROS M.</p>
-                </div>
+        <div style="margin-top: 2rem; width: 100%;">
+            <div style="width: 40%; float: right; text-align: center;">
+                <p>Sambiganen, {{ Carbon::parse($data['created_at'])->locale('id')->translatedFormat('d F Y') }}</p>
+                <p style="margin-bottom: 5rem;">Kepala Desa Sambiganen</p>
+                <p style="font-weight: bold; text-decoration: underline;">A.E.THEODOROS M.</p>
             </div>
+            <div style="clear: both;"></div>
         </div>
     </div>
 
     <div class="page-break"></div>
-        
+
+    {{-- ================================= HALAMAN KEDUA ================================= --}}
     <div id="page-two">
-        
         <table>
             <tr>
                 <td>Provinsi</td>
@@ -354,13 +317,13 @@
                 <td>Kecamatan</td>
                 <td></td>
                 <td>:</td>
-                <td>Sambit</td>
+                <td>Ngrayun</td>
             </tr>
             <tr>
                 <td>Desa / Kelurahan</td>
                 <td></td>
                 <td>:</td>
-                <td>Wringinanom</td>
+                <td>Sambiganen</td>
             </tr>
             <tr>
                 <td>Kode Wilayah</td>
@@ -378,7 +341,7 @@
 
         <div class="form-section">
             <h3>FORMULIR PELAPORAN PENCATATAN SIPIL DI DALAM WILAYAH NKRI</h3>
-            <label>Jenis Pelaporan Pencatatan Sipil : <strong>KEMATIAN</strong></label>
+            <label>Jenis Pelaporan Pencatatan Sipil : <strong>KELAHIRAN</strong></label>
 
             <!-- Tabel 1 -->
             <div class="form-group">
@@ -420,7 +383,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="width: 90px;">No. Dok. Perjalanan</td>
+                        <td style="width:90px">No. Dok. Perjalanan</td>
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
@@ -655,7 +618,7 @@
                         </td>
                     </tr>
                     <tr style="margin-top:1px">
-                        <td style="width: 90px;">Nama Ibu</td>
+                        <td style="width: 90px">Nama Ibu</td>
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
@@ -744,14 +707,14 @@
             </div>
             <!-- Tabel 4 -->
             <div class="form-group">
-                <p style="font-weight: bolder; margin-left: 0.4em">DATA KEMATIAN</p>
+                <p style="font-weight: bolder; margin-left: 0.4em">DATA ANAK</p>
                 <table class="table-form">
                     <tr>
-                        <td>NIK</td>
+                        <td>No. Kartu keluarga</td>
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            @foreach (str_split($data['nik_death']) as $char)
+                            @foreach (str_split($data['no_kk_anak']) as $char)
                             @if ($char === ' ')
                             <span>&nbsp;</span>@else<span>{{ $char }}</span>
                             @endif
@@ -759,12 +722,28 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="width: 90px;">Nama Lengkap</td>
+                        <td>Hubungan keluarga</td>
+                        <td>:</td>
+                        <td></td>
+                        <td class="input-grid">
+                            @foreach (str_split($data['hub_keluarga']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1em; vertical-align: bottom; padding-bottom: 2px; text-transform:capitalize">1. Anak</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px; text-transform:capitalize">2. Cucu</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px; text-transform:capitalize">3. Famili Lain</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px; text-transform:capitalize">4. Lainnya</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 90px;">Nama</td>
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
                             @php
-                            $nameArray = str_split($data['name_death']); // Convert name into an array of characters
+                            $nameArray = str_split($data['name_child']); // Convert name into an array of characters
                             $totalSpans = 44; // Fixed span count
                             @endphp
 
@@ -782,24 +761,73 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Tanggal Kematian</td>
+                        <td>Jenis Kelamin</td>
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            <label style="font-size: 0.6rem; text-transform: capitalize; display: inline-block; margin-left: 1em; margin-right: 1.3em; vertical-align: bottom; padding-bottom: 2px">Tgl :</label>
-                            @foreach (str_split(explode('-', $data['date_death'])[2]) as $char)
+                            @foreach (str_split($data['gender_child']) as $char)
                             @if ($char === ' ')
                             <span>&nbsp;</span>@else<span>{{ $char }}</span>
                             @endif
                             @endforeach
-                            <label style="font-size: 0.6rem; text-transform: capitalize; display: inline-block; margin-left: 1em; margin-right: 1.3em; vertical-align: bottom; padding-bottom: 2px">bln :</label>
-                            @foreach (str_split(explode('-', $data['date_death'])[1]) as $char)
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1em; vertical-align: bottom; padding-bottom: 2px; text-transform:capitalize">1. Laki-laki</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px; text-transform:capitalize">2. Perempuan</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tempat dilahirkan</td>
+                        <td>:</td>
+                        <td></td>
+                        <td class="input-grid">
+                            @foreach (str_split($data['place_birth_child']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1em; vertical-align: bottom; padding-bottom: 2px; text-transform:capitalize">1. RS/RB</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px; text-transform:capitalize">2. Puskesmas</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px; text-transform:capitalize">3. Polindes</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px; text-transform:capitalize">4. Rumah</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px; text-transform:capitalize">5. Lainnya</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tempat Kelahiran</td>
+                        <td>:</td>
+                        <td></td>
+                        <td class="input-grid">
+                            @foreach (str_split($data['place_birth_child2']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hari dan tanggal lahir</td>
+                        <td>:</td>
+                        <td></td>
+                        <td class="input-grid">
+                            <label style="font-size: 0.6rem; text-transform: capitalize; display: inline-block; margin-left: 1em; margin-right: 1.3em; vertical-align: bottom; padding-bottom: 2px">Hari :</label>
+                            @foreach (str_split($dayOfWeek) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
+                            <label style="font-size: 0.6rem; text-transform: capitalize; display: inline-block; margin-left: 1em; margin-right: 1.3em; vertical-align: bottom; padding-bottom: 2px">Tgl :</label>
+                            @foreach (str_split(explode('-', $data['date_birth_child'])[2]) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
+                            <label style="font-size: 0.6rem; text-transform: capitalize; display: inline-block; margin-left: 1em; margin-right: 1.3em; vertical-align: bottom; padding-bottom: 2px">Bln :</label>
+                            @foreach (str_split(explode('-', $data['date_birth_child'])[1]) as $char)
                             @if ($char === ' ')
                             <span>&nbsp;</span>@else<span>{{ $char }}</span>
                             @endif
                             @endforeach
                             <label style="font-size: 0.6rem; text-transform: capitalize; display: inline-block; margin-left: 1em; margin-right: 1.3em; vertical-align: bottom; padding-bottom: 2px">Thn :</label>
-                            @foreach (str_split(explode('-', $data['date_death'])[0]) as $char)
+                            @foreach (str_split(explode('-', $data['date_birth_child'])[0]) as $char)
                             @if ($char === ' ')
                             <span>&nbsp;</span>@else<span>{{ $char }}</span>
                             @endif
@@ -811,7 +839,7 @@
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            @foreach (str_split(str_replace(':', '', $data['hour_death'])) as $char)
+                            @foreach (str_split(str_replace(':', '', $data['hour_birth_child'])) as $char)
                             @if ($char === ' ')
                             <span>&nbsp;</span>@else<span>{{ $char }}</span>
                             @endif
@@ -819,31 +847,86 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Sebab Kematian</td>
+                        <td>Jenis Kelahiran</td>
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            @foreach (str_split($data['caused_death']) as $char)
+                            @foreach (str_split($data['type_birth_child']) as $char)
                             @if ($char === ' ')
                             <span>&nbsp;</span>@else<span>{{ $char }}</span>
                             @endif
                             @endforeach
-                            <label style="display: inline-block; text-transform: capitalize; font-size: 0.6rem; margin-left: 1em; vertical-align: bottom; padding-bottom: 2px">1. Sakit biasa/tua</label>
-                            <label style="display: inline-block; text-transform: capitalize; font-size: 0.6rem; margin-left: 3.3em; vertical-align: bottom; padding-bottom: 2px">2. Wabah penyakit</label>
-                            <label style="display: inline-block; text-transform: capitalize; font-size: 0.6rem; margin-left: 2.5em; vertical-align: bottom; padding-bottom: 2px">3. Kecelakaan</label>
-                            <div>
-                                <label style="display: inline-block; text-transform: capitalize; font-size: 0.6rem; margin-left: 4em; vertical-align: bottom; padding-bottom: 2px">4. Kriminalitas</label>
-                                <label style="display: inline-block; text-transform: capitalize; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px">5. Bunuh diri</label>
-                                <label style="display: inline-block; text-transform: capitalize; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px">6. Lainnya</label>
-                            </div>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1em; vertical-align: bottom; padding-bottom: 2px; text-transform:capitalize">1. Tunggal</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px; text-transform:capitalize">2. Kembar 2</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px; text-transform:capitalize">3. Kembar 3</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px; text-transform:capitalize">4. Kembar 4</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px; text-transform:capitalize">5. Lainnya</label>
                         </td>
                     </tr>
                     <tr>
-                        <td>Tempat Kematian</td>
+                        <td>Kelahiran Ke</td>
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            @foreach (str_split($data['place_death']) as $char)
+                            @foreach (str_split($data['no_birth_child']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1em; vertical-align: bottom; padding-bottom: 2px">1.</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 3em; vertical-align: bottom; padding-bottom: 2px">2.</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 3em; vertical-align: bottom; padding-bottom: 2px">3.</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 3em; vertical-align: bottom; padding-bottom: 2px">4.</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Penolong kelahiran</td>
+                        <td>:</td>
+                        <td></td>
+                        <td class="input-grid">
+                            @foreach (str_split($data['helper_birth']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1em; vertical-align: bottom; padding-bottom: 2px">1. Dokter</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px; text-transform:capitalize">2. Bidan/Perawat</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px; text-transform:capitalize">3. Dukun</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px; text-transform:capitalize">4. Lainnya</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Berat bayi</td>
+                        <td>:</td>
+                        <td></td>
+                        <td class="input-grid">
+                            @foreach (str_split($data['weight_child']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1em; vertical-align: bottom; padding-bottom: 2px; text-transform: lowercase;">gram</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Panjang bayi</td>
+                        <td>:</td>
+                        <td></td>
+                        <td class="input-grid">
+                            @foreach (str_split($data['height_child']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1em; vertical-align: bottom; padding-bottom: 2px; text-transform: lowercase;">cm</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Golongan Darah</td>
+                        <td>:</td>
+                        <td></td>
+                        <td class="input-grid">
+                            @foreach (str_split($data['blood_type_child']) as $char)
                             @if ($char === ' ')
                             <span>&nbsp;</span>@else<span>{{ $char }}</span>
                             @endif
@@ -851,19 +934,53 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Yang menerangkan</td>
+                        <td>Agama</td>
                         <td>:</td>
                         <td></td>
                         <td class="input-grid">
-                            @foreach (str_split($data['info_death']) as $char)
+                            @foreach (str_split($data['religion_child']) as $char)
                             @if ($char === ' ')
                             <span>&nbsp;</span>@else<span>{{ $char }}</span>
                             @endif
                             @endforeach
-                            <label style="display: inline-block; text-transform:capitalize; font-size: 0.6rem; margin-left: 1em; vertical-align: bottom; padding-bottom: 2px">1. Dokter</label>
-                            <label style="display: inline-block; text-transform:capitalize; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px">2. Tenaga Kesehatan</label>
-                            <label style="display: inline-block; text-transform:capitalize; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px">3. Kepolisian</label>
-                            <label style="display: inline-block; text-transform:capitalize; font-size: 0.6rem; margin-left: 5em; vertical-align: bottom; padding-bottom: 2px">4. Lainnya</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 0.5em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">1. Islam</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">2. Kristen</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">3. Katholik</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">4. Hindu</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">5. Buddha</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">6. Khonghucu</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">7. Kepercayaan terhadap Tuhan YME</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Kecacatan</td>
+                        <td>:</td>
+                        <td></td>
+                        <td class="input-grid">
+                            @foreach (str_split($data['disability']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 0.5em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">1. Fisik</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">2. Netra</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">3. Rungu / Wicara</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">4. Fisik dan mental</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">5. Lainnya</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Kewarganegaraan</td>
+                        <td>:</td>
+                        <td></td>
+                        <td class="input-grid">
+                            @foreach (str_split($data['nationality_child']) as $char)
+                            @if ($char === ' ')
+                            <span>&nbsp;</span>@else<span>{{ $char }}</span>
+                            @endif
+                            @endforeach
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 0.5em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">1. WNI</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">2. WNA</label>
                         </td>
                     </tr>
                 </table>
@@ -875,14 +992,14 @@
                 <p>Mengetahui</p>
                 <div style="text-align: left;">
                     <p style="margin-bottom: 4rem">Petugas Pendaftaran</p>
-                    <p style="text-align: center;">BANDI</p>
+                    <p style="text-align: center;">PRANOTO</p>
                 </div>
             </div>
         </div>
 
         <div style="position: relative; font-size: 0.8rem">
             <div style="position: absolute; right: 5rem; text-align: center">
-                <p>Wringinanom, {{ \Carbon\Carbon::parse($data->updated_at)->locale('id')->translatedFormat('d F Y') }}</p>
+                <p>Sambiganen, {{ Carbon::parse($data->updated_at)->locale('id')->translatedFormat('d F Y') }}</p>
                 <div style="text-align: left;">
                     <p style="margin-bottom: 4rem; text-align: center">Pelapor</p>
                     <p style="text-align: center;">Patrick Star</p>
