@@ -32,6 +32,34 @@ $documents = [
 [
 'title' => 'Surat Perpindahan Penduduk',
 'route' => 'surat-surat.perpindahan-penduduk',
+],
+[
+'title' => 'Surat Ijin Keramaian',
+'route' => 'surat-surat.ijin-keramaian',
+],
+[
+'title' => 'Surat Jual Beli Tanah',
+'route' => 'surat-surat.jualbeli-tanah',
+],
+[
+'title' => 'Surat Keterangan Domisili',
+'route' => 'surat-surat.keterangan-domisili',
+],
+[
+'title' => 'Surat keterangan Usaha',
+'route' => 'surat-surat.keterangan-usaha',
+],
+[
+'title' => 'Surat Reaktivasi PBI JK',
+'route' => 'surat-surat.reaktivasi-pbijk',
+],
+[
+'title' => 'Surat Taksiran Harga',
+'route' => 'surat-surat.taksiran-harga',
+],
+[
+'title' => 'Surat Tidak mampu',
+'route' => 'surat-surat.tidak-mampu',
 ]
 ];
 @endphp
