@@ -44,11 +44,14 @@ class StoreDeathNoteRequest extends FormRequest
             'kewarganegaraan-ibu' => 'required|string|max:50',
             'nik-kematian' => 'required|digits:16',
             'nama-kematian' => 'required|string|max:100',
+            'tempat-lahir-kematian' => 'required|string|max:100',
+            'tanggal-lahir-kematian' => 'required|date',
             'tanggal-kematian' => 'required|date',
             'jam-kematian' => 'required|date_format:H:i',
             'sebab-kematian' => 'required|string|max:100',
             'tempat-kematian' => 'required|string|max:100',
             'yang-menerangkan' => 'required|string|max:100',
+           'urutan-anak' => 'required|integer|min:1|max:20'
         ];
     }
 }

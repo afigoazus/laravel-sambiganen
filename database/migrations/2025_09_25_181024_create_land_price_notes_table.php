@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('land_price_notes', function (Blueprint $table) {
             $table->id();
             $table->integer('no_letter')->nullable(false);
-            $table->string('name', 255)->nullable(false);
+            $table->string('name')->nullable(false);
             $table->string('place_born')->nullable(false);
             $table->date('date_born')->nullable(false);
             $table->string('job')->nullable(false);

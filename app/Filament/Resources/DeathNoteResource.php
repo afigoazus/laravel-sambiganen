@@ -259,7 +259,6 @@ class DeathNoteResource extends Resource
                     ->color(Color::hex('#2196F3'))
                     ->icon('heroicon-o-document-arrow-down')
                     ->url(fn(DeathNote $record): string => route('capil.kematian', [$record->id]))
-                    // ->url(route('test.pdf'))
                     ->openUrlInNewTab(),
             ])
             ->bulkActions([

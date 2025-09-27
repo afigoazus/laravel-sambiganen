@@ -193,6 +193,13 @@
                     </label>
                 </div>
 
+                <!-- pekerjaan ayah field -->
+                <div class="">
+                    <label for="pekerjaan-ayah">Pekerjaan Ayah <span class="text-[#FF0000]">*</span> <br>
+                        <input type="text" name="pekerjaan-ayah" id="pekerjaan-ayah" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Pekerjaan Ayah" required>
+                    </label>
+                </div>
+
                 <!-- tanggal lahir field -->
                 <div class="">
                     <label for="tanggal-lahir-ayah">Tanggal Lahir Ayah <span class="text-[#FF0000]">*</span> <br>
@@ -223,7 +230,7 @@
                         </label>
                     </div>
                 </div>
-
+                
                 <!-- nama ibu -->
                 <div>
                     <label for="nama-ibu">Nama Ibu<span class="text-[#FF0000]">*</span> <br>
@@ -242,6 +249,13 @@
                 <div class="">
                     <label for="tempat-lahir-ibu">Tempat Lahir Ibu <span class="text-[#FF0000]">*</span> <br>
                         <input type="text" name="tempat-lahir-ibu" id="tempat-lahir-ibu" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Tempat Lahir Ibu" required>
+                    </label>
+                </div>
+
+                <!-- pekerjaan ibu field -->
+                <div class="">
+                    <label for="pekerjaan-ibut">Pekerjaan Ibu<span class="text-[#FF0000]">*</span> <br>
+                        <input type="text" name="pekerjaan-ibu" id="pekerjaan-ayah" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Pekerjaan Ibu" required>
                     </label>
                 </div>
 
@@ -274,6 +288,22 @@
                             <span class="text-gray-700">WNA</span>
                         </label>
                     </div>
+                </div>
+
+                <!-- alamat ayah field -->
+                <div class="bg-white w-full rounded-md">
+                    <label for="alamat-ayah">Alamat Ayah <span class="text-[#FF0000]">*</span> <br>
+                        <span class="font-medium">Untuk penulisan harus seperti berikut tanpa tanda (): RT (RT anda) RW (RW anda) Dukuh (Dukuh anda) Desa Sambiganen Kecamatan Ngrayun Kabupaten Ponorogo</span>
+                        <textarea name="alamat-ayah" id="alamat-ayah" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required placeholder="Alamat Ayah"></textarea>
+                    </label>
+                </div>
+        
+                <!-- alamat ibu field -->
+                <div class="bg-white w-full rounded-md">
+                    <label for="alamat-ibu">Alamat Ibu <span class="text-[#FF0000]">*</span> <br>
+                        <span class="font-medium">Untuk penulisan harus seperti berikut tanpa tanda (): RT (RT anda) RW (RW anda) Dukuh (Dukuh anda) Desa Sambiganen Kecamatan Ngrayun Kabupaten Ponorogo</span>
+                        <textarea name="alamat-ibu" id="alamat-ibu" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required placeholder="Alamat Ibu"></textarea>
+                    </label>
                 </div>
             </div>
         </div>
@@ -486,7 +516,16 @@
                         </label>
                     </div>
                 </div>
+
+                <!-- alamat anak field -->
+                <div class="bg-white w-full rounded-md">
+                    <label for="alamat-anak">Alamat Anak <span class="text-[#FF0000]">*</span> <br>
+                        <span class="font-medium">Untuk penulisan harus seperti berikut tanpa tanda (): RT (RT anda) RW (RW anda) Dukuh (Dukuh anda) Desa Sambiganen Kecamatan Ngrayun Kabupaten Ponorogo</span>
+                        <textarea name="alamat-anak" id="alamat-anak" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required placeholder="Alamat"></textarea>
+                    </label>
+                </div>
             </div>
+
         </div>
 
         <!-- Submit and Reset Button -->

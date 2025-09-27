@@ -25,11 +25,15 @@ class BirthNoteService
             'nik_dad' => $data['nik-ayah'],
             'place_born_dad' => $data['tempat-lahir-ayah'],
             'date_born_dad' => $data['tanggal-lahir-ayah'],
+            'dad_job' => $data['pekerjaan-ayah'], // adding dad_job
+            'address_dad' => $data['alamat-ayah'], // adding address_dad
             'nationality_dad' => $data['kewarganegaraan-ayah'],
             'name_mom' => $data['nama-ibu'],
             'nik_mom' => $data['nik-ibu'],
             'place_born_mom' => $data['tempat-lahir-ibu'],
             'date_born_mom' => $data['tanggal-lahir-ibu'],
+            'mom_job' => $data['pekerjaan-ibu'], // adding mom_job
+            'address_mom' => $data['alamat-ibu'], // adding address_mom
             'nationality_mom' => $data['kewarganegaraan-ibu'],
             'no_kk_anak' => $data['no-kk-anak'],
             'hub_keluarga' => $data['hubungan-keluarga'],
@@ -47,7 +51,8 @@ class BirthNoteService
             'blood_type_child' => $data['golongan-darah'],
             'religion_child' => $data['agama-anak'],
             'disability' => $data['kecacatan'],
-            'nationality_child' => $data['kewarganegaraan-anak']
+            'nationality_child' => $data['kewarganegaraan-anak'],
+            'address_child' => $data['alamat-anak'] // adding address_child
         ]);
     }
 }

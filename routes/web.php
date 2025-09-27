@@ -78,7 +78,7 @@ Route::prefix('dokumen')->group(function () {
         'keterangan-domisili'=> 'surat-surat.keterangan_domisili',
         'keterangan-usaha' => 'surat-surat.keterangan_usaha',
         'reaktivasi-pbijk' => 'surat-surat.reaktivasi_pbijk',
-        'taksiran-harga' => 'surat-surat.taksiran_harga',
+        'taksiran-harga-tanah' => 'surat-surat.taksiran_harga_tanah',
     ];
 
     foreach ($documentViews as $uri => $view) {
@@ -102,7 +102,7 @@ Route::prefix('dokumen')->group(function () {
         'keterangan-domisili'=> 'storeketerangandomisili',
         'keterangan-usaha' => 'storeketeranganusaha',
         'reaktivasi-pbijk' => 'storereaktivasipbijk',
-        'taksiran-harga' => 'storetaksiranharga',
+        'taksiran-harga-tanah' => 'storeLandPriceNote',
 
     ];
 
@@ -125,14 +125,14 @@ Route::prefix('dokumen')->group(function () {
 // testing download pdf
 Route::get('/test-download-pdf', function () {
     $paperSize = [0, 0, 612, 1008];
-    $pdf = Pdf::loadView('pdf.combined-birth-document')->setPaper($paperSize);
+    $pdf = Pdf::loadView('pdf.land-sale-agreement-note')->setPaper($paperSize);
 
-    return $pdf->download('combined_birth_document.pdf');
+    return $pdf->download('land_sale_agreement.pdf');
 })->name('test.download.pdf');
 
 // testing view pdf
 Route::get('/test-pdf', function () {
-    return view('pdf.combined-birth-document');
+    return view('pdf.land-sale-agreement-note');
 })->name('test.view.pdf');
 
 Route::controller(DocumentController::class)->prefix('download')->group(function () {
@@ -140,6 +140,7 @@ Route::controller(DocumentController::class)->prefix('download')->group(function
     Route::get('/capil-lahir/{id}', 'downloadBirthNote')->name('capil.lahir');
     Route::get('/capil-kematian/{id}', 'downloadDeathNote')->name('capil.kematian');
     Route::get('/skpwni/{id}', 'downloadSKPWNI')->name('surat.skpwni');
+    Route::get('/taksiran-harga-tanah/{id}', 'downloadLandPriceNote')->name('surat.taksiran-harga-tanah');
 
     // Official Letters
     Route::get('/kehilangan/{id}', 'downloadLetterLost')->name('surat.kehilangan');

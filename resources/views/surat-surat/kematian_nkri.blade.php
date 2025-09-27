@@ -64,14 +64,7 @@
                         </label>
                     </div>
                 </div>
-                        <!--  fieurutan anak field -->
-                <div class="">
-                    <label for="urutan-anak">Urutan anak <span class="text-[#FF0000]">*</span> <br>
-                        <input type="text" name="urutan-anak" id="urutan-anak" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Urutan anak" required>
-                    </label>
-                </div>
-            </div>
-        </div>
+
                 <!-- no hp field -->
                 <div class="">
                     <label for="no-hp">No HP/WA <span class="text-[#FF0000]">*</span> <br>
@@ -306,6 +299,21 @@
                     </label>
                 </div>
 
+                
+                <!-- tempat lahir kematian field -->
+                <div class="">
+                    <label for="tempat-lahir-kematian">Tempat Kelahiran <span class="text-[#FF0000]">*</span> <br>
+                        <input type="text" name="tempat-lahir-kematian" id="tempat-kelahiran-kematian" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Tempat Kelahiran" required>
+                    </label>
+                </div>
+                
+                <!-- tanggal lahir kematian field -->
+                <div class="">
+                    <label for="tanggal-lahir-kematian">Tanggal Lahir <span class="text-[#FF0000]">*</span> <br>
+                        <input type="date" name="tanggal-lahir-kematian" id="tanggal-lahir-kematian" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required>
+                    </label>
+                </div>
+
                 <!-- tanggal kematian field -->
                 <div class="">
                     <label for="tanggal-kematian">Tanggal Kematian <span class="text-[#FF0000]">*</span> <br>
@@ -338,6 +346,13 @@
                 <div>
                     <label for="tempat-kematian">Tempat Kematian<span class="text-[#FF0000]">*</span> <br>
                         <input type="text" name="tempat-kematian" id="tempat-kematian" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Tempat Kematian" required>
+                    </label>
+                </div>
+
+                <!-- Urutan Anak -->
+                <div>
+                    <label for="urutan-anak">Anak Ke<span class="text-[#FF0000]">*</span> <br>
+                        <input type="number" name="urutan-anak" id="urutan-anak" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Anak Ke" required>
                     </label>
                 </div>
 

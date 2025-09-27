@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class BirthNote extends Model
@@ -25,7 +24,7 @@ class BirthNote extends Model
         'name_dad',
         'nik_dad',
         'dad_job',
-        'dad_address',
+        'address_dad',
         'place_born_dad',
         'date_born_dad',
         'nationality_dad',
@@ -33,13 +32,14 @@ class BirthNote extends Model
         'nik_mom',
         'place_born_mom',
         'mom_job',
-        'mom_address',
+        'address_mom',
         'date_born_mom',
         'nationality_mom',
         'no_kk_anak',
         'hub_keluarga',
         'name_child',
         'gender_child',
+        'address_child',
         'place_birth_child',
         'place_birth_child2',
         'date_birth_child',
