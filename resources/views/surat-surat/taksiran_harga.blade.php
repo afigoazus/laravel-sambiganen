@@ -2,8 +2,8 @@
 <main class="font-dusha mt-24 bg-[#F4F7F6] -mb-9">
     <div class="bg-hero-image bg-center bg-cover h-64 bg-no-repeat flex items-center justify-center after:absolute after:left-0 after:right-0 after:bg-after after:w-screen after:h-64 after:opacity-50">
         <div class="text-center relative z-10">
-            <span class="text-4xl text-primary">Surat Perjanjian</span> <br>
-            <span class="text-4xl text-secondary">Jual Beli Tanah</span>
+            <span class="text-4xl text-primary">Surat Keterangan</span> <br>
+            <span class="text-4xl text-secondary">Taksiran Harga Tanah</span>
         </div>
     </div>
 
@@ -13,11 +13,11 @@
     <!-- Print the error to the front-end -->
     @include('components.error')
 
-    <form action="{{ route('jualbeli-tanah.store')}}" method="POST" class="mx-auto my-10 w-11/12 p-4 flex flex-col gap-4 font-sans" id="myForm">
+    <form action="{{ route('taksiran-harga.store')}}" method="POST" class="mx-auto my-10 w-11/12 max-w-prose p-4 flex flex-col gap-4 font-sans" id="myForm">
         @csrf
         <div class="bg-white p-4 w-full rounded-md">
-            <span class="text-2xl font-medium">FORMULIR SURAT JUAL BELI TANAH</span>
-            <p class="text-[#5F6368] font-normal">(Untuk bukti jual beli tanah)</p>
+            <span class="text-2xl font-medium">FORMULIR SURAT TAKSIRAN HARGA TANAH</span>
+            <p class="text-[#5F6368] font-normal">(Untuk Keterangan Taksiran Harga tanah)</p>
             <p class="text-[#FF0000] font-normal">* Menunjukkan pertanyaan yang wajib diisi</p>
         </div>
 
@@ -38,11 +38,11 @@
             </label>
         </div>
 
-       <!-- alamat-pihak-pertama field -->
+       <!-- alamat field -->
         <div class="bg-white p-4 w-full rounded-md">
-            <label for="alamat-pihak-pertama">alamat<span class="text-[#FF0000]">*</span> <br>
+            <label for="alamat">Alamat <span class="text-[#FF0000]">*</span> <br>
                 <span class="font-medium">Untuk penulisan harus seperti berikut tanpa tanda (): RT (RT anda) RW (RW anda) Dukuh (Dukuh anda) Desa Sambiganen Kecamatan Ngrayun Kabupaten Ponorogo</span>
-                <textarea name="alamat-pihak-pertama" id="alamat-pihak-pertama" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required placeholder="alamat"></textarea>
+                <textarea name="alamat" id="alamat" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required placeholder="Alamat"></textarea>
             </label>
         </div>
     </div>
@@ -64,26 +64,14 @@
             </label>
         </div>
 
-       <!-- alamat-pihak-kedua field -->
+       <!-- alamat field -->
         <div class="bg-white p-4 w-full rounded-md">
-            <label for="alamat-pihak-kedua">alamat <span class="text-[#FF0000]">*</span> <br>
+            <label for="alamat">Alamat <span class="text-[#FF0000]">*</span> <br>
                 <span class="font-medium">Untuk penulisan harus seperti berikut tanpa tanda (): RT (RT anda) RW (RW anda) Dukuh (Dukuh anda) Desa Sambiganen Kecamatan Ngrayun Kabupaten Ponorogo</span>
-                <textarea name="alamat-pihak-kedua" id="alamat-pihak-kedua" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required placeholder="alamat"></textarea>
+                <textarea name="alamat" id="alamat" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required placeholder="Alamat"></textarea>
             </label>
         </div>
     </div>
-
-
-    <div class="bg-white p-4 w-full rounded-md">
-    <span class="text-2xl font-medium">Formulir Isi perjanjian</span>
-        
-        <!-- hari-kesepakatan keramaian field -->
-                <div class="">
-                    <label for="hari-kesepakatan">hari kesepakatan <span class="text-[#FF0000]">*</span> <br>
-                        <input type="date" name="hari-kesepakatan" id="hari-kesepakatan" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="" required>
-                    </label>
-                </div>
-
 
         <!-- luas tanahfield -->
                 <div class="">
@@ -92,28 +80,12 @@
                     </label>
                 </div>
 
-                
-        <!-- luas tanahfield -->
-                <div class="">
-                    <label for="persil-nomor"> Persil-nomor <span class="text-[#FF0000]">*</span> <br>
-                        <input type="text" name="persil-nomor" id="persil-nomor" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="545898" required>
-                    </label>
-                </div>
-
         <!-- field -->
                 <div class="">
-                    <label for="sppt-nomor">SPPT nomor<span class="text-[#FF0000]">*</span> <br>
-                        <input type="text" name="sppt-nomor" id="sppt-nomor" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="SPPT nomer" required>
+                    <label for="Nomor-sertifikat">Nomor Sertifikat<span class="text-[#FF0000]">*</span> <br>
+                        <input type="text" name="Nomor-sertifikat" id="Nomor-sertifikat" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Nomer sertifikat" required>
                     </label>
                 </div>
-
-     <!-- Harga field -->
-                <div class="">
-                    <label for="harga">Harga Tanah <span class="text-[#FF0000]">*</span> <br>
-                        <input type="number" name="harga " id="harga " class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="contoh 5000" required>
-                    </label>
-                </div>
-        </div>
 
             <div class="bg-white p-4 w-full rounded-md">
             <span class="text-2xl font-medium">Batas Tanah</span>
@@ -142,49 +114,15 @@
                     </label>
                 </div>
             </div>
-        
-                <!-- Formulir Data Saksi -->
-    <div class="bg-white p-4 w-full rounded-md">
-        <span class="text-2xl font-medium">Formulir Data Saksi</span>
 
-        <!-- Saksi 1 -->
-        <div class="bg-white p-4 w-full rounded-md">
-            <label for="nama-saksi-1">Nama Saksi 1 <span class="text-[#FF0000]">*</span> <br>
-                <input type="text" name="nama-saksi-1" id="nama-saksi-1" 
-                       class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" 
-                       placeholder="Nama saksi pertama" required>
-            </label>
+     <!-- Harga field -->
+                <div class="">
+                    <label for="harga">Harga Tanah per meter <span class="text-[#FF0000]">*</span> <br>
+                        <input type="number" name="harga " id="harga " class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="contoh 5000" required>
+                    </label>
+                </div>
+                
         </div>
-
-        <div class="bg-white p-4 w-full rounded-md">
-            <label for="nik-saksi-1">NIK Saksi 1 <span class="text-[#FF0000]">*</span> <br>
-                <input minlength="16" maxlength="16" type="text" name="nik-saksi-1" id="nik-saksi-1" 
-                       class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" 
-                       placeholder="NIK saksi pertama" required>
-            </label>
-        </div>
-
-        <!-- Saksi 2 -->
-        <div class="bg-white p-4 w-full rounded-md">
-            <label for="nama-saksi-2">Nama Saksi 2 <span class="text-[#FF0000]">*</span> <br>
-                <input type="text" name="nama-saksi-2" id="nama-saksi-2" 
-                       class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" 
-                       placeholder="Nama saksi kedua" required>
-            </label>
-        </div>
-
-        <div class="bg-white p-4 w-full rounded-md">
-            <label for="nik-saksi-2">NIK Saksi 2 <span class="text-[#FF0000]">*</span> <br>
-                <input minlength="16" maxlength="16" type="text" name="nik-saksi-2" id="nik-saksi-2" 
-                       class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" 
-                       placeholder="NIK saksi kedua" required>
-            </label>
-        </div>
-    </div>
-
-
-
-        
 
         <!-- Submit and Reset Button -->
         @include('components.submit-reset-button')

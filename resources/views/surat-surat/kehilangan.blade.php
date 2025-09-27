@@ -13,7 +13,7 @@
     <!-- Print the error to the front-end -->
     @include('components.error')
 
-    <form action="{{ route('kehilangan.store')}}" method="POST" class="mx-auto my-10 w-11/12 max-w-prose p-4 flex flex-col gap-4 font-sans" id="myForm">
+    <form action="{{ route('kehilangan.store')}}" method="POST" class="mx-auto my-10 w-11/12 p-4 flex flex-col gap-4 font-sans" id="myForm">
         @csrf
         <div class="bg-white p-4 w-full rounded-md">
             <span class="text-2xl font-medium">FORMULIR SURAT KETERANGAN KEHILANGAN</span>
@@ -21,29 +21,33 @@
             <p class="text-[#FF0000] font-normal">* Menunjukkan pertanyaan yang wajib diisi</p>
         </div>
 
+<!-- data diri -->
+<div class="bg-white p-6 rounded-md shadow">
+    <h2 class="text-xl font-semibold mb-4">Data Diri</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <!-- name field -->
-        <div class="bg-white p-4 w-full rounded-md">
+        <div class="">
             <label for="name">Nama <span class="text-[#FF0000]">*</span> <br>
                 <input type="text" name="name" id="name" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Nama Anda" required>
             </label>
         </div>
 
         <!-- tempat lahir field -->
-        <div class="bg-white p-4 w-full rounded-md">
+        <div class="">
             <label for="tempat-lahir">Tempat Lahir <span class="text-[#FF0000]">*</span> <br>
                 <input type="text" name="tempat-lahir" id="tempat-lahir" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Tempat Lahir" required>
             </label>
         </div>
 
         <!-- tanggal lahir field -->
-        <div class="bg-white p-4 w-full rounded-md">
+        <div class="">
             <label for="tanggal-lahir">Tanggal Lahir <span class="text-[#FF0000]">*</span> <br>
                 <input type="date" name="tanggal-lahir" id="tanggal-lahir" class="w-full mt-1 outline-none border-b-2 border-black border-dotted focus:border-solid" required>
             </label>
         </div>
 
         <!-- jenis kelamin field -->
-        <div class="bg-white p-4 w-full rounded-md">
+        <div class="">
             <span>Jenis Kelamin <span class="text-[#FF0000]">*</span></span>
             <div class="flex gap-10">
                 <label class="flex items-start space-x-3 cursor-pointer">
@@ -79,14 +83,14 @@
         </div>
 
         <!-- pekerjaan field -->
-        <div class="bg-white p-4 w-full rounded-md">
+        <div class="">
             <label for="pekerjaan">Pekerjaan <span class="text-[#FF0000]">*</span> <br>
                 <input type="text" name="pekerjaan" id="pekerjaan" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Pekerjaan Anda" required>
             </label>
         </div>
 
-        <!-- pekerjaan field -->
-        <div class="bg-white p-4 w-full rounded-md">
+        <!-- agama field -->
+        <div class="">
             <span>Agama<span class="text-[#FF0000]">*</span></span>
             <div class="flex gap-10">
                 <label class="flex items-start space-x-3 cursor-pointer">
@@ -146,28 +150,35 @@
         </div>
 
         <!-- pendidikan field -->
-        <div class="bg-white p-4 w-full rounded-md">
+        <div class="">
             <label for="pendidikan">Pendidikan <span class="text-[#FF0000]">*</span> <br>
                 <input type="text" name="pendidikan" id="pendidikan" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Pendidikan Terakhir Anda" required>
             </label>
         </div>
 
         <!-- nik field -->
-        <div class="bg-white p-4 w-full rounded-md">
+        <div class="">
             <label for="nik">NIK <span class="text-[#FF0000]">*</span> <br>
                 <input minlength="16" maxlength="16" type="text" name="nik" id="nik" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="NIK Anda" required>
             </label>
         </div>
 
         <!-- no kk field -->
-        <div class="bg-white p-4 w-full rounded-md">
+        <div class="">
             <label for="no-kk">No KK <span class="text-[#FF0000]">*</span> <br>
                 <input minlength="16" maxlength="16" type="text" name="no-kk" id="no-kk" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="No KK Anda" required>
             </label>
         </div>
+    </div>
+</div>
+      
+<!-- Container 2: Detail Kehilangan -->
+<div class="bg-white p-6 rounded-md shadow">
+    <h2 class="text-xl font-semibold mb-4">Detail Kehilangan</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
         <!-- alamat field -->
-        <div class="bg-white p-4 w-full rounded-md">
+        <div class="">
             <label for="alamat">Alamat <span class="text-[#FF0000]">*</span> <br>
                 <span class="font-medium">Untuk penulisan harus seperti berikut tanpa tanda (): RT (RT anda) RW (RW anda) Dukuh (Dukuh anda) Desa Sambiganen Kecamatan Ngrayun Kabupaten Ponorogo</span>
                 <textarea name="alamat" id="alamat" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required placeholder="Alamat"></textarea>
@@ -175,18 +186,20 @@
         </div>
 
         <!-- barang hilang field -->
-        <div class="bg-white p-4 w-full rounded-md">
+        <div class="">
             <label for="barang-hilang">Barang Yang Hilang <span class="text-[#FF0000]">*</span> <br>
                 <input type="text" name="barang-hilang" id="barang-hilang" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Barang Yang Hilang" required>
             </label>
         </div>
 
         <!-- no whatsapp -->
-        <div class="bg-white p-4 w-full rounded-md">
+        <div class="">
             <label for="">No Telepon/Whatsapp <span class="text-[#FF0000]">*</span>
                 <input type="text" name="no-wa" id="no-wa" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="No Telepon/Whatsapp" required>
             </label>
         </div>
+    </div>
+</div>
 
         <!-- Submit and Reset Button -->
         @include('components.submit-reset-button')
