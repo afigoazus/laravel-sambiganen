@@ -19,7 +19,7 @@
         table tr td {
             padding: 1px 5px; /* Mengatur padding agar tidak terlalu renggang */
             vertical-align: top;
-        }
+       }
         /* Kelas untuk kolom label (misal: "Nama Lengkap") */
         td.label {
             width: 180px; /* Lebar tetap agar semua ':' sejajar */
