@@ -11,10 +11,12 @@ use App\Http\Requests\StoreLetterFuelRequest;
 use App\Http\Requests\StoreLetterIncapacityRequest;
 use App\Http\Requests\StoreLetterLostRequest;
 use App\Http\Requests\StoreLetterPerpindahanRequest;
+use App\Http\Requests\StoreLandPriceNoteRequest;
 use App\Http\Services\BirthNoteService;
 use App\Http\Services\DeathNoteService;
 use App\Http\Services\DocPdfService;
 use App\Http\Services\DTKSService;
+use App\Http\Services\LandPriceNoteService;
 use App\Http\Services\LetterBusinessService;
 use App\Http\Services\LetterDeathService;
 use App\Http\Services\LetterFuelService;
@@ -25,6 +27,7 @@ use App\Http\Services\PdfService;
 use App\Models\BirthNote;
 use App\Models\DeathNote;
 use App\Models\Dtks;
+use App\Models\LandPriceNote;
 use App\Models\LetterBusiness;
 use App\Models\LetterDeath;
 use App\Models\LetterFuel;
@@ -39,6 +42,7 @@ class DocumentController extends Controller
         protected LetterBusinessService $letterBusinessService,
         protected LetterDeathService $letterDeathService,
         protected DeathNoteService $deathNoteService,
+        protected LandPriceNoteService $landPriceNoteService,
         protected LetterIncapacityService $letterIncapacityService,
         protected LetterLostService $letterLostService,
         protected LetterFuelService $letterFuelService,
@@ -81,7 +85,12 @@ class DocumentController extends Controller
 
     public function downloadLetterBussiness($id)
     {
-        return $this->pdfService->generate(LetterBusiness::class, 'pdf.letter-business', 'Surat_Keterangan_Usaha_', $id);
+        return $this->pdfService->generate(LetterBusiness::class, 'pdf.letter-business', 'Surat_Keterangan_Taksiran_Harga_Tanah_', $id);
+    }
+
+    public function downloadLandPriceNote($id)
+    {
+        return $this->pdfService->generate(LandPriceNote::class, 'pdf.land-price-note', 'Surat_Keterangan_Taksiran_Harga_Tanah_', $id, [0, 0, 612, 1008]);
     }
 
     public function downloadLetterIncapacity($id)
@@ -112,6 +121,13 @@ class DocumentController extends Controller
         $this->birthNoteService->store($request->validated());
 
         return redirect()->route('surat-surat.kelahiran')->with('success', 'Data Berhasil Disimpan');
+    }
+
+    public function storeLandPriceNote(StoreLandPriceNoteRequest $request) 
+    {
+        $this->landPriceNoteService->store($request->validated());
+
+        return redirect()->route('surat-surat.taksiran-harga-tanah')->with('success', 'Data Berhasil Disimpan');
     }
 
     public function storeLetterDeath(StoreLetterDeathRequest $request)

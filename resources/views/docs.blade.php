@@ -55,7 +55,7 @@ $documents = [
 ],
 [
 'title' => 'Surat Taksiran Harga',
-'route' => 'surat-surat.taksiran-harga',
+'route' => 'surat-surat.taksiran-harga-tanah',
 ],
 [
 'title' => 'Surat Tidak mampu',

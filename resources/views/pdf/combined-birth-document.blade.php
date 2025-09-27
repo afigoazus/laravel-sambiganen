@@ -3,6 +3,11 @@ use Carbon\Carbon;
 
 $date = $data['date_birth_child'];
 $dayOfWeek = Carbon::parse($date)->locale('id')->isoFormat('dddd');
+
+$toWords = [
+        1 => 'satu', 2 => 'dua', 3 => 'tiga', 4 => 'empat'
+    ];
+
 @endphp
 
 <!DOCTYPE html>
@@ -170,7 +175,7 @@ $dayOfWeek = Carbon::parse($date)->locale('id')->isoFormat('dddd');
                 SURAT KETERANGAN KELAHIRAN
             </p>
             <p style="margin-top: 0">
-                Nomor : 470/<span class="min-width-23">{{ str_pad($data['no_letter'], 3, '0', STR_PAD_LEFT) }}</span>/405.29.02.09/{{ $data['year'] }}
+                Nomor : 470/<span>{{ str_pad($data['no_letter'], 3, '0', STR_PAD_LEFT) }}</span>/405.29.02.09/{{ $data['year'] }}
             </p>
         </div>
 
@@ -194,15 +199,15 @@ $dayOfWeek = Carbon::parse($date)->locale('id')->isoFormat('dddd');
                     <td class="kolom-data">{{ $data['gender_child'] == 1 ? 'Laki-Laki' : 'Perempuan' }}</td>
                 </tr>
                 <tr>
-                    <td class="kolom-nomor">3.</td>
-                    <td class="kolom-label">Tempat, Tanggal Lahir</td>
+                    <td class="kolom-nomor">2.</td>
+                    <td class="kolom-label">Alamat</td>
                     <td class="kolom-pemisah">:</td>
-                    <td class="kolom-data">{{ $data['place_birth_child2'] }}, {{ Carbon::parse($data['date_birth_child'])->locale('id')->translatedFormat('d F Y') }}</td>
+                    <td class="kolom-data">{{$data['address_child']}}</td>
                 </tr>
             </table>
 
             <p>
-                Orang tersebut di atas adalah anak nomor {{ $data['no_birth_child'] }} dari perkawinan yang sah antara seorang laki-laki :
+                Orang tersebut di atas adalah anak nomor {{ $data['no_birth_child'] }} ( {{$toWords[$data['no_birth_child']]}} ) dari perkawinan yang sah antara seorang laki-laki :
             </p>
 
             {{-- TABEL DATA AYAH --}}
@@ -212,12 +217,6 @@ $dayOfWeek = Carbon::parse($date)->locale('id')->isoFormat('dddd');
                     <td class="kolom-label">Nama</td>
                     <td class="kolom-pemisah">:</td>
                     <td class="kolom-data"><strong>{{ $data['name_dad'] }}</strong></td>
-                </tr>
-                <tr>
-                    <td class="kolom-nomor">2.</td>
-                    <td class="kolom-label">NIK</td>
-                    <td class="kolom-pemisah">:</td>
-                    <td class="kolom-data">{{ $data['nik_dad'] }}</td>
                 </tr>
                 <tr>
                     <td class="kolom-nomor">3.</td>
@@ -250,12 +249,6 @@ $dayOfWeek = Carbon::parse($date)->locale('id')->isoFormat('dddd');
                     <td class="kolom-label">Nama</td>
                     <td class="kolom-pemisah">:</td>
                     <td class="kolom-data"><strong>{{ $data['name_mom'] }}</strong></td>
-                </tr>
-                <tr>
-                    <td class="kolom-nomor">2.</td>
-                    <td class="kolom-label">NIK</td>
-                    <td class="kolom-pemisah">:</td>
-                    <td class="kolom-data">{{ $data['nik_mom'] }}</td>
                 </tr>
                 <tr>
                     <td class="kolom-nomor">3.</td>
@@ -965,8 +958,9 @@ $dayOfWeek = Carbon::parse($date)->locale('id')->isoFormat('dddd');
                             <label style="display: inline-block; font-size: 0.6rem; margin-left: 0.5em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">1. Fisik</label>
                             <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">2. Netra</label>
                             <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">3. Rungu / Wicara</label>
-                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">4. Fisik dan mental</label>
-                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">5. Lainnya</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">4. Fisik</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">5. Fisik dan Mental</label>
+                            <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">6. Lainnya</label>
                         </td>
                     </tr>
                     <tr>
@@ -1002,7 +996,7 @@ $dayOfWeek = Carbon::parse($date)->locale('id')->isoFormat('dddd');
                 <p>Sambiganen, {{ Carbon::parse($data->updated_at)->locale('id')->translatedFormat('d F Y') }}</p>
                 <div style="text-align: left;">
                     <p style="margin-bottom: 4rem; text-align: center">Pelapor</p>
-                    <p style="text-align: center;">Patrick Star</p>
+                    <p style="text-align: center;">{{$data['name']}}</p>
                 </div>
             </div>
         </div>

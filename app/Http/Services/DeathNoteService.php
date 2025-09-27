@@ -33,11 +33,14 @@ class DeathNoteService
             'nationality_mom' => $data['kewarganegaraan-ibu'],
             'nik_death' => $data['nik-kematian'],
             'name_death' => $data['nama-kematian'],
+            'place_born_death' => $data['tempat-lahir-kematian'],
+            'date_born_death' => $data['tanggal-lahir-kematian'],
             'date_death' => $data['tanggal-kematian'],
             'hour_death' => $data['jam-kematian'],
             'caused_death' => $data['sebab-kematian'],
             'place_death' => $data['tempat-kematian'],
             'info_death' => $data['yang-menerangkan'],
+            'order_death' => $data['urutan-anak']
         ]);
     }
 }

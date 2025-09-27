@@ -902,7 +902,7 @@
                 <p>Sambiganen, {{ \Carbon\Carbon::parse($data->updated_at)->locale('id')->translatedFormat('d F Y') }}</p>
                 <div style="text-align: left;">
                     <p style="margin-bottom: 4rem; text-align: center">Pelapor</p>
-                    <p style="text-align: center;">Patrick Star</p>
+                    <p style="text-align: center;">{{$data['name']}}</p>
                 </div>
             </div>
         </div>

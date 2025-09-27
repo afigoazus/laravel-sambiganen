@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
             DocumentSeeder::class,
             BirthNoteSeeder::class,
             DeathNoteSeeder::class,
+            LandPriceNoteSeeder::class,
+            LandSaleAgreementNoteSeeder::class,
             LetterDeathSeeder::class,
             LetterBusinessSeeder::class,
             LetterFuelSeeder::class,

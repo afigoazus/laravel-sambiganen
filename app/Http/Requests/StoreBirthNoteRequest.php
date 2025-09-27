@@ -36,11 +36,15 @@ class StoreBirthNoteRequest extends FormRequest
             'nik-ayah' => 'required|digits:16',
             'tempat-lahir-ayah' => 'required|string|max:100',
             'tanggal-lahir-ayah' => 'required|date',
+            'pekerjaan-ayah' => 'required|string|max:100', // adding pekerjaan ayah
+            'alamat-ayah' => 'required|string', // adding alamat ayah
             'kewarganegaraan-ayah' => 'required|string|max:50',
             'nama-ibu' => 'required|string|max:100',
             'nik-ibu' => 'required|digits:16',
             'tempat-lahir-ibu' => 'required|string|max:100',
             'tanggal-lahir-ibu' => 'required|date',
+            'pekerjaan-ibu' => 'required|string|max:100', // adding pekerjaan ibu
+            'alamat-ibu' => 'required|string', // adding alamat ibu
             'kewarganegaraan-ibu' => 'required|string|max:50',
             'no-kk-anak' => 'required|digits:16',
             'hubungan-keluarga' => 'required|string|max:50',
@@ -58,7 +62,8 @@ class StoreBirthNoteRequest extends FormRequest
             'golongan-darah' => 'required|string|in:A,B,AB,O',
             'agama-anak' => 'required|string|max:50',
             'kecacatan' => 'required|string|max:100',
-            'kewarganegaraan-anak' => 'required|string|max:50'
+            'kewarganegaraan-anak' => 'required|string|max:50',
+            'alamat-anak' => 'required|string' // adding alamat anak
         ];
     }
 }

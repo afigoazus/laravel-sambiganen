@@ -211,7 +211,7 @@ class BirthNoteResource extends Resource
                             Forms\Components\Select::make('no_birth_child')
                                 ->label("Kelahiran Ke")
                                 ->required()
-                                ->options([1 => '1', 2 => '2', 3 => '3', 4 => "4"]),
+                                ->options([1 => 1, 2 => 2, 3 => 3, 4 => 4]),
                             Forms\Components\Select::make('helper_birth')
                                 ->label("Penolong Kelahiran")
                                 ->required()
@@ -240,7 +240,7 @@ class BirthNoteResource extends Resource
                             Forms\Components\Select::make('disability')
                                 ->required()
                                 ->label("Kecacatan")
-                                ->options([1 => 'Fisik', 2 => 'Netra', 3 => 'Rungu / Wicara', 4 => 'Fisik Dan Mental', 5 => "Lainnya"])
+                                ->options([1 => 'Fisik', 2 => 'Netra', 3 => 'Rungu / Wicara', 4 => 'Mental', 5 => "Fisik dan mental", 6 => "Lainnya"])
                                 ->default(1),
                             Forms\Components\Select::make('nationality_child')
                                 ->required()

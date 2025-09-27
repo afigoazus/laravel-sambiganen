@@ -778,8 +778,9 @@ $dayOfWeek = Carbon::parse($date)->locale('id')->isoFormat('dddd'); // Outputs f
                         <label style="display: inline-block; font-size: 0.6rem; margin-left: 0.5em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">1. Fisik</label>
                         <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">2. Netra</label>
                         <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">3. Rungu / Wicara</label>
-                        <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">4. Fisik dan mental</label>
-                        <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">5. Lainnya</label>
+                        <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">4. Mental</label>
+                        <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">5. Fisik dan mental</label>
+                        <label style="display: inline-block; font-size: 0.6rem; margin-left: 1.7em; vertical-align: bottom; padding-bottom: 2px; text-transform: capitalize;">6. Lainnya</label>
                     </td>
                 </tr>
                 <tr>

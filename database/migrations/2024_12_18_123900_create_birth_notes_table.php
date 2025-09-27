@@ -50,7 +50,7 @@ return new class extends Migration
             $table->string('date_birth_child', 255)->nullable(false);
             $table->string('hour_birth_child', 255)->nullable(false);
             $table->string('type_birth_child', 255)->nullable(false);
-            $table->string('no_birth_child', 255)->nullable(false);
+            $table->integer('no_birth_child')->nullable(false); // change no_birth_child tp to integer
             $table->string('helper_birth', 255)->nullable(false);
             $table->string('weight_child', 255)->nullable(false);
             $table->string('height_child', 255)->nullable(false);

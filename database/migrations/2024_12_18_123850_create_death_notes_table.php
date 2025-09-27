@@ -45,7 +45,7 @@ return new class extends Migration
             $table->string('caused_death', 255)->nullable(false);
             $table->string('place_death', 255)->nullable(false);
             $table->string('info_death', 255)->nullable(false);
-            $table->integer('order_death')->nullable(false); // add order_child: tp integer
+            $table->integer('order_death')->nullable(false); // add order_death: tp integer
             $table->year('year')->nullable(false)->default(Carbon::now()->year);
             $table->timestamps();
 
