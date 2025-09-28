@@ -74,7 +74,7 @@ Route::prefix('dokumen')->group(function () {
         'kehilangan' => 'surat-surat.kehilangan',
         'tidak-mampu' => 'surat-surat.tidak_mampu',
         'ijin-keramaian'=>'surat-surat.ijin_keramaian',
-        'jualbeli-tanah' => 'surat-surat.jualbeli_tanah',
+        'jual-beli-tanah' => 'surat-surat.jual-beli-tanah',
         'keterangan-domisili'=> 'surat-surat.keterangan_domisili',
         'keterangan-usaha' => 'surat-surat.keterangan_usaha',
         'reaktivasi-pbijk' => 'surat-surat.reaktivasi_pbijk',
@@ -98,12 +98,12 @@ Route::prefix('dokumen')->group(function () {
         'dtks' => 'storeDTKS',
         'tidak-mampu' =>'Storetidakmampu',
         'ijin-keramaian'=>'storeijinkeramaian',
-        'jualbeli-tanah' => 'storejualbelitanah',
+        'jual-beli-tanah' => 'storejualbelitanah',
         'keterangan-domisili'=> 'storeketerangandomisili',
         'keterangan-usaha' => 'storeketeranganusaha',
         'reaktivasi-pbijk' => 'storereaktivasipbijk',
         'taksiran-harga-tanah' => 'storeLandPriceNote',
-
+        'jual-beli-tanah' => 'storeLandSaleAgreementNote',
     ];
 
     foreach ($documentStoreRoutes as $uri => $method) {
@@ -150,7 +150,7 @@ Route::controller(DocumentController::class)->prefix('download')->group(function
     Route::get('/tidak-mampu/{id}', 'downloadLetterIncapacity')->name('surat.tidakmampu');
     Route::get('/bbm/{id}', 'downloadLetterFuel')->name('surat.bbm');
     Route::get('/izin-keramaian/{id}', 'downloadLetterIncapacity')->name('surat.izin-keramaian');
-    Route::get('/jualbeli-tanah/{id}', 'downloadLetterIncapacity')->name('surat.jualbeli-tanah');
+    Route::get('/jual-beli-tanah/{id}', 'downloadLetterIncapacity')->name('surat.jual-beli-tanah');
     Route::get('/keterangan-domisili/{id}', 'downloadLetterIncapacity')->name('surat.keterangan-domisili');
     Route::get('/keterangan-usaha/{id}', 'downloadLetterIncapacity')->name('surat.keterangan-usaha');
     Route::get('/reaktivasi-pbijk/{id}', 'downloadLetterIncapacity')->name('surat.reaktivasi-pbijk');

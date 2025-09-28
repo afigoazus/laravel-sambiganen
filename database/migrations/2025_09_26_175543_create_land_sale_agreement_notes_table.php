@@ -18,10 +18,12 @@ return new class extends Migration
             $table->string('buyer_name')->nullable(false);
             $table->string('buyer_place_born')->nullable(false);
             $table->date('buyer_date_born')->nullable(false);
+            $table->string('buyer_nik')->nullable(false);
             $table->longText('buyer_address')->nullable(false);
             $table->string('seller_name')->nullable(false);
             $table->string('seller_place_born')->nullable(false);
             $table->date('seller_date_born')->nullable(false);
+            $table->string('seller_nik');
             $table->longText('seller_address')->nullable(false);
             $table->integer('land_area')->nullable(false);
             $table->string('no_persil')->nullable(false);

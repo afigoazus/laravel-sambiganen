@@ -39,7 +39,7 @@ $documents = [
 ],
 [
 'title' => 'Surat Jual Beli Tanah',
-'route' => 'surat-surat.jualbeli-tanah',
+'route' => 'surat-surat.jual-beli-tanah',
 ],
 [
 'title' => 'Surat Keterangan Domisili',

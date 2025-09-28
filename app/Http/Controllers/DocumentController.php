@@ -12,11 +12,13 @@ use App\Http\Requests\StoreLetterIncapacityRequest;
 use App\Http\Requests\StoreLetterLostRequest;
 use App\Http\Requests\StoreLetterPerpindahanRequest;
 use App\Http\Requests\StoreLandPriceNoteRequest;
+use App\Http\Requests\StoreLandSaleAgreementNoteRequest;
 use App\Http\Services\BirthNoteService;
 use App\Http\Services\DeathNoteService;
 use App\Http\Services\DocPdfService;
 use App\Http\Services\DTKSService;
 use App\Http\Services\LandPriceNoteService;
+use App\Http\Services\LandSaleAgreementNoteService;
 use App\Http\Services\LetterBusinessService;
 use App\Http\Services\LetterDeathService;
 use App\Http\Services\LetterFuelService;
@@ -44,6 +46,7 @@ class DocumentController extends Controller
         protected LetterDeathService $letterDeathService,
         protected DeathNoteService $deathNoteService,
         protected LandPriceNoteService $landPriceNoteService,
+        protected LandSaleAgreementNoteService $landSaleAgreementService,
         protected LetterIncapacityService $letterIncapacityService,
         protected LetterLostService $letterLostService,
         protected LetterFuelService $letterFuelService,
@@ -134,6 +137,13 @@ class DocumentController extends Controller
         $this->landPriceNoteService->store($request->validated());
 
         return redirect()->route('surat-surat.taksiran-harga-tanah')->with('success', 'Data Berhasil Disimpan');
+    }
+
+    public function storeLandSaleAgreementNote(StoreLandSaleAgreementNoteRequest $request)
+    {
+        $this->landSaleAgreementService->store($request->validated());
+
+        return redirect()->route('surat-surat.jual-beli-tanah')->with('success', 'Data Berhasil Disimpan');
     }
 
     public function storeLetterDeath(StoreLetterDeathRequest $request)
