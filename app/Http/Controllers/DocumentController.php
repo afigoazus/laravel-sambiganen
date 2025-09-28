@@ -28,6 +28,7 @@ use App\Models\BirthNote;
 use App\Models\DeathNote;
 use App\Models\Dtks;
 use App\Models\LandPriceNote;
+use App\Models\LandSaleAgreementNote;
 use App\Models\LetterBusiness;
 use App\Models\LetterDeath;
 use App\Models\LetterFuel;
@@ -76,6 +77,11 @@ class DocumentController extends Controller
     public function downloadDeathNote($id)
     {
         return $this->pdfService->generate(DeathNote::class, 'pdf.combined-death-document', 'Capil_Kematian_', $id);
+    }
+
+    public function downloadLandSaleAgreement($id)
+    {
+        return $this->pdfService->generate(LandSaleAgreementNote::class, 'pdf.land-sale-agreement-note', 'Surat_Perjanjian_Jual_Beli_Tanah_', $id);
     }
 
     public function downloadLetterDeath($id)

@@ -206,8 +206,8 @@ class LandSaleAgreementNoteResource extends Resource
                     ->label('Download PDF')
                     ->icon('heroicon-o-document-arrow-down')
                     ->color(Color::hex('#2196F3'))
-                    // ->url(fn (LandSaleAgreementNote $record): string => route('document.land-sale-agreement-note', $record))
-                    ->url(route('test.download.pdf'))
+                    ->url(fn (LandSaleAgreementNote $record): string => route('surat.perjanjian-jual-beli-tanah', [$record->id]))
+                    // ->url(route('test.download.pdf'))
                     ->openUrlInNewTab(),
             ])
             ->bulkActions([
