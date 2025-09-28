@@ -13,13 +13,18 @@
     <!-- Print the error to the front-end -->
     @include('components.error')
 
-    <form action="{{ route('perpindahan-penduduk.store') }}" method="POST" class="mx-auto my-10 max-w-3xl p-4 flex flex-col items-center gap-4 font-sans" id="myForm">
+    <form action="{{ route('perpindahan-penduduk.store') }}" method="POST" class="mx-auto my-10 w-11/12 p-4 flex flex-col gap-4 font-sans" id="myForm">
         @csrf
         <div class="bg-white p-4 w-full rounded-md">
             <span class="text-2xl font-medium">FORMULIR SURAT PERPINDAHAN PENDUDUK</span>
             <p class="text-[#5F6368] font-normal">(Untuk pengajuan perpindahan domisili)</p>
             <p class="text-[#FF0000] font-normal">* Menunjukkan pertanyaan yang wajib diisi</p>
         </div>
+    
+    <!-- Container 1: Data Diri -->
+<div class="bg-white p-6 rounded-md shadow">
+    <h2 class="text-xl font-semibold mb-4">Data Diri</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
         <!-- no kk field -->
         <div class="bg-white p-4 w-full rounded-md">
@@ -76,9 +81,16 @@
                 <input type="text" name="kode_pos_asal" id="pos" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="Kode Pos" required>
             </label>
         </div>
+    </div>
+    </div>
+
+    <!-- Container 2: Alasan Pindah -->
+<div class="bg-white p-6 rounded-md shadow">
+    <h2 class="text-xl font-semibold mb-4">Informasi Perpindahan</h2>
+
 
         <!-- klasifikasi perpindahan field -->
-        <div class="bg-white p-4 w-full rounded-md flex flex-col gap-2">
+        <div class="bg-white p-4 w-full rounded-md flex flex-col gap-4">
             <span>Klasifikasi Perpindahan <span class="text-[#FF0000]">*</span></span>
             <div class="space-y-4">
                 <label class="flex items-start space-x-3 cursor-pointer">
@@ -134,12 +146,13 @@
         </div>
 
         <!-- alamat pindah field -->
-        <div class="bg-white p-4 w-full rounded-md">
+                 <div class="bg-white p-4 w-full rounded-md">
             <label for="alamat_pindah">Alamat Pindah <span class="text-[#FF0000]">*</span> <br>
                 <textarea name="alamat_pindah" id="alamat_pindah" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" required placeholder="Alamat Asal Anda"></textarea>
             </label>
         </div>
 
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <!-- rt pindah field -->
         <div class="bg-white p-4 w-full rounded-md">
             <label for="rt-pindah">RT Pindah <span class="text-[#FF0000]">*</span> <br>
@@ -195,7 +208,7 @@
                 <input type="text" name="no_telp" id="telepon" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="ex: 083123456789" required>
             </label>
         </div>
-
+    </div>
         <!-- alasan pindah field -->
         <div class="bg-white p-4 w-full rounded-md">
             <label for="kategori">Alasan Pindah <span class="text-[#FF0000]">*</span> <br>
@@ -410,6 +423,8 @@
                 </div>
             </div>
         </div>
+    </div>
+
 
         <!-- Submit and Reset Button -->
         @include('components.submit-reset-button')

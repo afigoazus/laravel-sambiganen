@@ -59,14 +59,14 @@
                         <input type="text" name="alamat-pemohon" id="alamat-pemohon" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="alamat pemohon" required>
                     </label>
                 </div>
-</div>
+        </div>
+    </div>
 
         <!-- form data ortu-->
         <div class="bg-white p-4 w-full rounded-md">
-            <span class="text-2xl font-medium">Formulir Data Orang Tua</span>
-
-            <!-- form nama ortu -->
+            <span class="text-2xl font-medium">Formulir Data Ayah</span>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+
                 <!-- nama ayah -->
                 <div>
                     <label for="nama-ayah">Nama Ayah<span class="text-[#FF0000]">*</span> <br>
@@ -98,7 +98,7 @@
                 <!-- status perkawinan field -->
                 <div class="">
                     <span>Status perkawinan <span class="text-[#FF0000]">*</span></span>
-                    <div class="flex gap-10">
+                    <div class="flex flex-col gap-3">
                         <label class="flex items-start space-x-3 cursor-pointer">
                             <div class="flex-shrink-0 mt-1">
                                 <input type="radio"
@@ -120,9 +120,9 @@
                 </div>
 
         <!-- agama field -->
-        <div class="bg-white p-4 w-full rounded-md">
+        <div class="">
             <span>Agama<span class="text-[#FF0000]">*</span></span>
-            <div class="flex gap-10">
+            <div class="flex flex-col gap-3">
                 <label class="flex items-start space-x-3 cursor-pointer">
                     <div class="flex-shrink-0 mt-1">
                         <input type="radio"
@@ -192,7 +192,13 @@
                         <input type="text" name="alamat-ayah" id="alamat-ayah" class="w-full mt-2 outline-none border-b-2 border-black border-dotted focus:border-solid" placeholder="alamat" required>
                     </label>
                 </div>
+        </div>
+        </div>
 
+
+        <div class="bg-white p-4 w-full rounded-md">
+            <span class="text-2xl font-medium">Formulir Data Ibu</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
                 <!-- nama ibu -->
                 <div>
                     <label for="nama-ibu">Nama Ibu<span class="text-[#FF0000]">*</span> <br>
@@ -221,90 +227,68 @@
                     </label>
                 </div>
 
-                <!-- status perkawinan field -->
-                <div class="">
-                    <span>Status perkawinan <span class="text-[#FF0000]">*</span></span>
-                    <div class="flex gap-10">
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                    name="status-perkawinan-ibu"
-                                    class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="1" required>
-                            </div>
-                            <span class="text-gray-700">Kawin</span>
-                        </label>
 
-                        <label class="flex items-start space-x-3 cursor-pointer">
-                            <div class="flex-shrink-0 mt-1">
-                                <input type="radio"
-                                    name="status-perkawinan-ibu"
-                                    class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="2">
-                            </div>
-                            <span class="text-gray-700">Cerai</span>
-                        </label>
-                    </div>
-                </div>
+<!-- Status perkawinan field -->
+<div class="w-full">
+    <span>Status Perkawinan <span class="text-[#FF0000]">*</span></span>
+    <div class="flex flex-col gap-3 mt-2">
+        <label class="flex items-center space-x-3 cursor-pointer">
+            <input type="radio" name="status-perkawinan-ibu"
+                class="w-5 h-5 accent-sky-500 cursor-pointer"
+                value="1" required>
+            <span class="text-gray-700">Kawin</span>
+        </label>
+        <label class="flex items-center space-x-3 cursor-pointer">
+            <input type="radio" name="status-perkawinan-ibu"
+                class="w-5 h-5 accent-sky-500 cursor-pointer"
+                value="2">
+            <span class="text-gray-700">Cerai</span>
+        </label>
+    </div>
+</div>
 
-        <!-- agama field -->
-        <div class="bg-white p-4 w-full rounded-md">
-            <span>Agama<span class="text-[#FF0000]">*</span></span>
-            <div class="flex gap-10">
-                <label class="flex items-start space-x-3 cursor-pointer">
-                    <div class="flex-shrink-0 mt-1">
-                        <input type="radio"
-                            name="agama-ibu"
-                            class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="Islam" required>
-                    </div>
-                    <span class="text-gray-700">Islam</span>
-                </label>
-
-                <label class="flex items-start space-x-3 cursor-pointer">
-                    <div class="flex-shrink-0 mt-1">
-                        <input type="radio"
-                            name="agama-ibu"
-                            class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="Kristen">
-                    </div>
-                    <span class="text-gray-700">Kristen</span>
-                </label>
-                
-                <label class="flex items-start space-x-3 cursor-pointer">
-                    <div class="flex-shrink-0 mt-1">
-                        <input type="radio"
-                            name="agama-ibu"
-                            class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="Katolik">
-                    </div>
-                    <span class="text-gray-700">Katolik</span>
-                </label>
-                
-                <label class="flex items-start space-x-3 cursor-pointer">
-                    <div class="flex-shrink-0 mt-1">
-                        <input type="radio"
-                            name="agama-ibu"
-                            class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="Hindu">
-                    </div>
-                    <span class="text-gray-700">Hindu</span>
-                </label>
-                
-                <label class="flex items-start space-x-3 cursor-pointer">
-                    <div class="flex-shrink-0 mt-1">
-                        <input type="radio"
-                            name="agama-ibu"
-                            class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="Budha">
-                    </div>
-                    <span class="text-gray-700">Budha</span>
-                </label>
-
-                <label class="flex items-start space-x-3 cursor-pointer">
-                    <div class="flex-shrink-0 mt-1">
-                        <input type="radio"
-                            name="agama-ibu"
-                            class="w-5 h-5 accent-[#0ea5e9] cursor-pointer appearance-none checked:bg-[#0ea5e9] bg-white border border-gray-300 rounded-full" value="Konghucu">
-                    </div>
-                    <span class="text-gray-700">Konghucu</span>
-                </label>
-            </div>
-        </div>
-
+<!-- Agama field -->
+<div class="w-full">
+    <span>Agama <span class="text-[#FF0000]">*</span></span>
+    <div class="flex flex-col gap-3 mt-2">
+        <label class="flex items-center space-x-3 cursor-pointer">
+            <input type="radio" name="agama-ibu"
+                class="w-5 h-5 accent-sky-500 cursor-pointer"
+                value="Islam" required>
+            <span class="text-gray-700">Islam</span>
+        </label>
+        <label class="flex items-center space-x-3 cursor-pointer">
+            <input type="radio" name="agama-ibu"
+                class="w-5 h-5 accent-sky-500 cursor-pointer"
+                value="Kristen">
+            <span class="text-gray-700">Kristen</span>
+        </label>
+        <label class="flex items-center space-x-3 cursor-pointer">
+            <input type="radio" name="agama-ibu"
+                class="w-5 h-5 accent-sky-500 cursor-pointer"
+                value="Katolik">
+            <span class="text-gray-700">Katolik</span>
+        </label>
+        <label class="flex items-center space-x-3 cursor-pointer">
+            <input type="radio" name="agama-ibu"
+                class="w-5 h-5 accent-sky-500 cursor-pointer"
+                value="Hindu">
+            <span class="text-gray-700">Hindu</span>
+        </label>
+        <label class="flex items-center space-x-3 cursor-pointer">
+            <input type="radio" name="agama-ibu"
+                class="w-5 h-5 accent-sky-500 cursor-pointer"
+                value="Budha">
+            <span class="text-gray-700">Budha</span>
+        </label>
+        <label class="flex items-center space-x-3 cursor-pointer">
+            <input type="radio" name="agama-ibu"
+                class="w-5 h-5 accent-sky-500 cursor-pointer"
+                value="Konghucu">
+            <span class="text-gray-700">Konghucu</span>
+        </label>
+    </div>
+</div>
                 <!-- pekerjaan ayah field -->
                 <div class="">
                     <label for="pekerjaan-ibu">Pekerjaan <span class="text-[#FF0000]">*</span> <br>
