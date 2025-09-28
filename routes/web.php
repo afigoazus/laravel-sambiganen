@@ -141,6 +141,7 @@ Route::controller(DocumentController::class)->prefix('download')->group(function
     Route::get('/capil-kematian/{id}', 'downloadDeathNote')->name('capil.kematian');
     Route::get('/skpwni/{id}', 'downloadSKPWNI')->name('surat.skpwni');
     Route::get('/taksiran-harga-tanah/{id}', 'downloadLandPriceNote')->name('surat.taksiran-harga-tanah');
+    Route::get('/perjanjian-jual-beli-tanah/{id}', 'downloadLandSaleAgreement')->name('surat.perjanjian-jual-beli-tanah');
 
     // Official Letters
     Route::get('/kehilangan/{id}', 'downloadLetterLost')->name('surat.kehilangan');

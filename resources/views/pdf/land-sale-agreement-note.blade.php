@@ -1,168 +1,238 @@
+@php
+use Carbon\Carbon;
+
+$date = $data['updated_at'];
+$dayOfWeek = Carbon::parse($date)->locale('id')->isoFormat('dddd');
+@endphp
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surat Perjanjian Jual Beli Tanah</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Surat Perjanjian Jual Beli Tanah {{$data['buyer_name']}}</title>
     <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12pt;
+        }
         p {
             margin: 0;
             padding: 0;
+            text-align: justify;
         }
-
         table {
             width: 100%;
-            margin-left: 2rem;
+            border-collapse: collapse; /* Menghilangkan spasi antar border */
         }
-
-        table tr td {
+        /* Mengatur alignment vertikal untuk semua sel tabel */
+        td, th {
             vertical-align: top;
-            border-spacing: 0;
-            border: solid 1px black;
+            text-align: left;
         }
-
-        ol {
-            padding-left: 0.5rem;
+        .header {
+            text-align: center;
+            font-weight: bold;
+            font-size: 14pt;
+            text-decoration: underline;
+            margin-bottom: 30px;
         }
-
-        .strip {
-            width: 2%;
+        /* Tabel utama untuk data penjual & pembeli */
+        .table-pihak {
+            margin-bottom: 15px;
         }
-
-        .label {
-            width: 15%;
+        .table-pihak .nomor {
+            width: 5%;
+        }
+        .table-pihak .label {
+            width: 20%;
             padding-left: 10px;
         }
-
-        .colon {
+        .table-pihak .colon {
             width: 5%;
             text-align: center;
         }
-
-        .direction {
-            width: 10%;
-            padding-left: 10px;
+        /* Tabel untuk batas tanah */
+        .table-batas {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        /* Tabel untuk saksi */
+        .table-saksi {
+            margin-top: 15px;
+        }
+        .table-saksi th, .table-saksi td {
+            padding: 5px;
+        }
+        .table-saksi th {
+            font-weight: bold;
+        }
+        /* Mencegah paragraf atau tabel terpotong antar halaman */
+        .no-break {
+            page-break-inside: avoid;
+        }
+        .signature-table {
+            margin-top: 40px;
+        }
+        .signature-table td {
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <div>
-        <p style="text-decoration: underline; text-align: center; font-weight: bold; font-size: 16pt; margin-bottom: 20px;">
-            SURAT PERJANJIAN JUAL BELI TANAH
-        </p>
-    </div> 
+    <p class="header">SURAT PERJANJIAN JUAL BELI TANAH</p>
 
-    <div>
-        <p style="margin-top: 1rem; margin-bottom: 0.5rem">Yang bertanda tangan dibawah ini:</p>
-        <div style="display: flex; align-items: start;">
-            <p>1.</p>
+    <p style="margin-bottom: 15px;">Yang bertanda tangan di bawah ini:</p>
 
-            <table>
-                <tr>
-                    <td class="strip">-</td>
-                    <td class="label">Nama</td>
-                    <td class="colon">:</td>
-                    <td class="data">dummy</td>
-                </tr>
-                <tr>
-                    <td class="strip">-</td>
-                    <td class="label">TTL</td>
-                    <td class="colon">:</td>
-                    <td class="data">dummy</td>
-                </tr>
-                <tr>
-                    <td class="strip">-</td>
-                    <td class="label">NIK</td>
-                    <td class="colon">:</td>
-                    <td class="data">dummy</td>
-                </tr>
-                <tr>
-                    <td class="strip">-</td>
-                    <td class="label">Alamat</td>
-                    <td class="colon">:</td>
-                    <td class="data">dummy</td>
-                </tr>
-            </table>
-        </div>
+    <table class="table-pihak">
+        <tr>
+            <td class="nomor">1.</td>
+            <td class="label">Nama</td>
+            <td class="colon">:</td>
+            <td><strong>{{$data['buyer_name']}}</strong></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="label">Tempat, Tgl Lahir</td>
+            <td class="colon">:</td>
+            <td>{{$data['buyer_place_born']}}, {{\Carbon\Carbon::parse($data['buyer_date_born'])->locale('id')->translatedFormat('d F Y')}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="label">Alamat</td>
+            <td class="colon">:</td>
+            <td>{{$data['buyer_address']}}</td>
+        </tr>
+    </table>
+    <p>Selanjutnya disebut <strong>Pihak Pertama (Penjual)</strong></p>
 
-        <p style="margin-top: 1rem; margin-bottom: 0.5rem">Selanjutnya disebut Pihak Pertama ( Penjual )</p>
-        <div style="display: flex;">
-            <p>2.</p>
+    <table class="table-pihak" style="margin-top: 15px;">
+        <tr>
+            <td class="nomor">2.</td>
+            <td class="label">Nama</td>
+            <td class="colon">:</td>
+            <td><strong>{{$data['seller_name']}}</strong></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="label">Tempat, Tgl Lahir</td>
+            <td class="colon">:</td>
+            <td>{{$data['seller_place_born']}}, {{\Carbon\Carbon::parse($data['seller_date_born'])->locale('id')->translatedFormat('d F Y')}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="label">Alamat</td>
+            <td class="colon">:</td>
+            <td>{{$data['seller_address']}}</td>
+        </tr>
+    </table>
+    <p style="margin-bottom: 1rem;">Selanjutnya disebut <strong>Pihak Kedua (Pembeli)</strong></p>
 
-            <table>
-                <tr>
-                    <td class="strip">-</td>
-                    <td class="label">Nama</td>
-                    <td class="colon">:</td>
-                    <td class="data">dummy</td>
-                </tr>
-                <tr>
-                    <td class="strip">-</td>
-                    <td class="label">TTL</td>
-                    <td class="colon">:</td>
-                    <td class="data">dummy</td>
-                </tr>
-                <tr>
-                    <td class="strip">-</td>
-                    <td class="label">NIK</td>
-                    <td class="colon">:</td>
-                    <td class="data">dummy</td>
-                </tr>
-                <tr>
-                    <td class="strip">-</td>
-                    <td class="label">Alamat</td>
-                    <td class="colon">:</td>
-                    <td class="data">dummy</td>
-                </tr>
-            </table>
-        </div>
+    <p style="margin-bottom: 10px;">Kedua belah pihak mengadakan kesepakatan sebagai berikut:</p>
 
-    </div>
-
-    <p style="margin-top: 1rem;">Selanjutnya disebut Pihak Kedua ( Pembeli )</p>
-
-    <div style="margin-top: 1rem;">
-        <p>Kedua belah pihak mengadakan kesepakatan sebagai berikut :</p>
-
-        <ol style="margin-left: 2rem; margin-top: 0.5rem;">
-            <li>
-                Pada hari ini dummy Tanggal dummy Bulan dummy Tahun dummy. Pihak Pertama benar - benar menjual sebidang tanah miliknya kepada Pihak Kedua
-            </li>
-            <li>
-                Tanah dimaksut adalah dengan luas : dummy m<sup>2</sup> Persil Nomor : dummy SPPT Nomor : dummy / pada Sertifikat Tanah Hak Milik Nomor dummy atas Nama dummy Luas : dummy m<sup>2</sup>
-            </li>
-            <li>
-                Batas tanah dimaksut telah ditunjukkan oleh pihak Pertama yang disaksikan oleh Perangkat Desa dan Pemilik tanah perbatasan sebagai berikut :
-
-                <table style="margin-left: 0;">
+    <table style="padding-left: 20px;">
+        <tr>
+            <td style="width: 5%; vertical-align: top;">1.</td>
+            <td>Pada hari ini {{$dayOfWeek}} Tanggal {{$date->format('d')}} Bulan {{$date->translatedFormat('F')}} Tahun {{$date->format('Y')}}. Pihak Pertama benar-benar menjual sebidang tanah miliknya kepada Pihak Kedua.</td>
+        </tr>
+        <tr>
+            <td style="width: 5%; vertical-align: top;">2.</td>
+            <td>Tanah dimaksud adalah dengan luas : {{$data['land_area']}} m<sup>2</sup>, Persil Nomor: {{$data['no_persil']}}, SPPT Nomor: {{$data['no_sppt']}}, pada Sertifikat Tanah Hak Milik Nomor {{$data['no_certificate']}}.</td>
+        </tr>
+        <tr>
+            <td style="width: 5%; vertical-align: top;">3.</td>
+            <td>
+                Batas tanah dimaksud telah ditunjukkan oleh pihak Pertama yang disaksikan oleh Perangkat Desa dan Pemilik tanah perbatasan sebagai berikut:
+                <table class="table-batas">
                     <tr>
-                        <td class="direction">Utara</td>
-                        <td class="colon">:</td>
-                        <td>dummy</td>
-                        <td class="direction">Selatan</td>
-                        <td class="colon">:</td>
-                        <td>dummy</td>
+                        <td style="width: 15%;">Utara</td>
+                        <td style="width: 5%;">:</td>
+                        <td style="width: 30%;">{{$data['north_boundary']}}</td>
+                        <td style="width: 15%;">Selatan</td>
+                        <td style="width: 5%;">:</td>
+                        <td style="width: 30%;">{{$data['south_boundary']}}</td>
                     </tr>
                     <tr>
-                        <td class="direction">Timur</td>
-                        <td class="colon">:</td>
-                        <td>dummy</td>
-                        <td class="direction">Barat</td>
-                        <td class="colon">:</td>
-                        <td>dummy</td>
+                        <td>Timur</td>
+                        <td>:</td>
+                        <td>{{$data['east_boundary']}}</td>
+                        <td>Barat</td>
+                        <td>:</td>
+                        <td>{{$data['west_boundary']}}</td>
                     </tr>
                 </table>
-            </li>
-            <li>
-                Harga disepakati oleh kedua belah pihak adalah sebesar Rp. dummy ( dummy rupiah ) dan sudah dibayar lunas oleh Pihak Kedua kepada Pihak Pertama disaksikan oleh Para saksi yang tersebut dibawah.
-            </li>
-            <li>
-                Surat perjanjian ini dibuat sebagai bukti atas pemindahan hak atas tanah tersebut dari Pihak Pertama kepada Pihak Kedua.
-            </li>
-            <li>
-                Surat perjanjian ini dibuat atar dasar keikhlasan hati dan tidak ada paksaan dari pihak manapun.
-            </li>
-        </ol>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 5%; vertical-align: top;">4.</td>
+            <td>Harga disepakati oleh kedua belah pihak adalah sebesar Rp. {{number_format($data['land_price'], 0, ',', '.')}} <span style="text-transform: capitalize;">( {{terbilang($data['land_price'])}} )</span>  dan sudah dibayar lunas oleh Pihak Kedua kepada Pihak Pertama disaksikan oleh Para saksi yang tersebut di bawah.</td>
+        </tr>
+        <tr>
+            <td style="width: 5%; vertical-align: top;">5.</td>
+            <td>Surat perjanjian ini dibuat sebagai bukti atas pemindahan hak atas tanah tersebut dari Pihak Pertama kepada Pihak Kedua.</td>
+        </tr>
+        <tr>
+            <td style="width: 5%; vertical-align: top;">6.</td>
+            <td>Surat perjanjian ini dibuat atas dasar keikhlasan hati dan tidak ada paksaan dari pihak manapun.</td>
+        </tr>
+    </table>
+
+    <table class="signature-table no-break">
+        <tr>
+            <td style="width: 50%; padding-top: 1rem;">
+                <p style="text-align: center;">Pihak Kedua (Pembeli)</p>
+                <p style="padding-top: 80px; text-decoration: underline; font-weight: bold; text-align:center">{{$data['buyer_name']}}</p>
+            </td>
+            <td style="width: 50%;">
+                <p style="text-align: center;">Ngrayun, {{\Carbon\Carbon::parse($data['updated_at'])->locale('id')->translatedFormat('d F Y')}}</p>
+                <p style="text-align: center;">Pihak Pertama (Penjual)</p>
+                <p style="padding-top: 80px; text-decoration: underline; font-weight: bold; text-align: center;">{{$data['seller_name']}}</p>
+            </td>
+        </tr>
+    </table>
+
+    <p style="text-align: center; margin-top: 1rem;">
+        Rg. Nomor : 470/<span class="{{empty($data['no_letter']) ? 'min-width-23' : ''}}">{{isset($data['no_letter']) ? str_pad($data['no_letter'], 3, '0', STR_PAD_LEFT) : ''}}</span>/405.29.03.09.{{ date('Y') }}
+    </p>
+
+    <div class="no-break" style="margin-top: 40px;">
+        <p style="text-align: center;">Mengetahui,</p>
+        <p style="text-align: center; padding-bottom: 80px;">Kepala Desa Sambiganen</p>
+        <p style="text-align: center; font-weight: bold; text-decoration: underline;">A.E.THODOROS M.</p>
     </div>
+
+    <div class="no-break" style="margin-top: 40px;">
+        <p style="font-weight: bold; text-decoration: underline;">Para Saksi:</p>
+        <table class="table-saksi">
+            <thead>
+                <tr>
+                    <th style="width: 5%;">No</th>
+                    <th>Nama</th>
+                    <th>Keterangan Jabatan</th>
+                    <th style="width: 25%;">Tanda Tangan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1.</td>
+                    <td>{{$data['witness1_name']}}</td>
+                    <td>{{$data['witness1_job_position']}}</td>
+                    <td>1. .......................</td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td>{{$data['witness2_name']}}</td>
+                    <td>{{$data['witness2_job_position']}}</td>
+                    <td>2. .......................</td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td>{{$data['witness3_name']}}</td>
+                    <td>{{$data['witness3_job_position']}}</td>
+                    <td>3. .......................</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 </body>
 </html>

@@ -154,10 +154,9 @@
         <ol style="padding: 1rem;">
             <li>Tanah tersebut saat ini sudah bersertifikan atas Nama : {{$data['name']}}</li>
             <li>Tanah tersebut pada saat ini tidak sengan dalam sengketa.</li>
-            <li>Taksiran harga tanah tersebut pem m<sup>2</sup> Rp.{{$data['land_price']}}</li>
+            <li>Taksiran harga tanah tersebut pem m<sup>2</sup> Rp. {{number_format($data['land_price'])}}</li>
         </ol>
     </div>
-
 
     <div style="margin-top: 1.5rem;">
         <p>Demikian Surat Keterangan ini dibuat dengan sebenar-benarnya dan agar digunakan sebagaimana mestinya.</p>
