@@ -70,10 +70,10 @@
 <body>
     <div style="text-align:center; font-family: Time 'Times New Roman', Times, serif;">
         <p style="font-weight: bold;">PEMERINTAH KABUPATEN PONOROGO</p>
-        <p style="font-weight: bold;">KECAMATAN SAMBIT</p>
-        <p style="font-weight: bold; font-size:1.5rem;">DESA WRINGINANOM</p>
+        <p style="font-weight: bold;">KECAMATAN NGRAYUN</p>
+        <p style="font-weight: bold; font-size:1.5rem;">DESA SAMBIGANEN</p>
         <p>Jalan Kresno Nomor 41 Telephon ( 0352 ) 312896</p>
-        <p style="font-weight: bold; font-size:1.2rem;">WRINGINANOM</p>
+        <p style="font-weight: bold; font-size:1.2rem;">SAMBIGANEN</p>
     </div>
     <p style="position:absolute; right:0; font-family: Time 'Times New Roman', Times, serif;">Kode Pos 63474</p>
     <div style="position:absolute; left:0; top:0; width: 140px; height: 140px;">
@@ -84,7 +84,7 @@
 
     <div style="margin-top: 1.5rem; text-align:center">
         <p style="text-decoration: underline; letter-spacing: 1px; font-size:1.1rem; font-weight: bold; margin-bottom: 0;">
-            SURAT KETERANGAN
+            SURAT KETERANGAN KEHILANGAN
         </p>
         <p style="margin-top: 0">
             Nomor : 470/<span class="{{ empty($data['no_letter']) ? 'min-width-23' : '' }}">
@@ -94,7 +94,7 @@
     </div>
 
     <div style="margin-top: 2rem;">
-        <p style="margin-left:1rem;">Yang bertanda tangan di bawah ini Kepala Desa Wringinanom Kecamatan Sambit Kabupaten Ponorogo,</p>
+        <p style="margin-left:1rem;">Yang bertanda tangan di bawah ini Kepala Desa Sambiganen Kecamatan Ngrayun Kabupaten Ponorogo,</p>
         <p>menerangkan dengan sebenarnya bahwa :</p>
     </div>
 
@@ -214,7 +214,7 @@
 
     <div style="margin-top:3rem; position: relative">
         <div style="position: absolute; right: 5rem">
-            <p>Wringinanom, {{ \Carbon\Carbon::parse($data->updated_at)->locale('id')->translatedFormat('d F Y') }}</p>
+            <p>Sambiganen, {{ \Carbon\Carbon::parse($data->updated_at)->locale('id')->translatedFormat('d F Y') }}</p>
             <div style="text-align: left;">
                 <p style="margin-bottom: 4rem">Kepala Desa Wringinanom</p>
                 <p style="text-align: center; font-weight:bold; text-decoration: underline">SUTINI</p>
