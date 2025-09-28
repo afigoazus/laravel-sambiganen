@@ -216,7 +216,7 @@
         <div style="position: absolute; right: 5rem">
             <p>Sambiganen, {{ \Carbon\Carbon::parse($data->updated_at)->locale('id')->translatedFormat('d F Y') }}</p>
             <div style="text-align: left;">
-                <p style="margin-bottom: 4rem">Kepala Desa Wringinanom</p>
+                <p style="margin-bottom: 4rem">Kepala Desa Sambiganen</p>
                 <p style="text-align: center; font-weight:bold; text-decoration: underline">SUTINI</p>
             </div>
         </div>
