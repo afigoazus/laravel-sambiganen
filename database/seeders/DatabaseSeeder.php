@@ -18,14 +18,14 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
 
             // Document Seeder
-            // DocumentSeeder::class,
-            // BirthNoteSeeder::class,
-            // DeathNoteSeeder::class,
-            // LetterDeathSeeder::class,
-            // LetterBusinessSeeder::class,
-            // LetterFuelSeeder::class,
-            // LetterIncapacitiesSeeder::class,
-            // LetterLostSeeder::class,
+            DocumentSeeder::class,
+            BirthNoteSeeder::class,
+            DeathNoteSeeder::class,
+            LetterDeathSeeder::class,
+            LetterBusinessSeeder::class,
+            LetterFuelSeeder::class,
+            LetterIncapacitiesSeeder::class,
+            LetterLostSeeder::class,
 
             // Budget & Demographic Seeder
             BudgetCategorySeeder::class,
