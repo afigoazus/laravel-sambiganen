@@ -30,7 +30,7 @@ export default {
                 skyblue: "#B3E0FF4D"
             },
             backgroundImage: {
-                'hero-image' : "url('/public/assets/img/img-breadcrumb.svg')",
+                'hero-image' : "url('/public/assets/img/hero.JPG')",
                 'gradient-header': 'linear-gradient(to right, #003B4A, #0081A7)'
             },
             

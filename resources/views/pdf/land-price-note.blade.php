@@ -41,7 +41,7 @@
     </div>
     <p style="position:absolute; right:0; top: 40px;">Kode Pos 63474</p>
     <div style="position:absolute; left:0; top:0; width: 100px; height: 100px;">
-        <img style="width: 100%;" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('img/logo.png'))) }}" alt="Logo">
+        <img style="width: 100%;" src="data:image/jpeg;base64,{{ base64_encode(file_get_contents(public_path('1.jpg'))) }}" alt="Logo">
     </div>
     <div style="margin-top: 1rem; border-top: 1px solid black;"></div>
     <div style="margin-top: 2px; border-top: 3px solid black;"></div>

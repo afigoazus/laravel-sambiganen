@@ -92,7 +92,7 @@
             <!-- alamat -->
             <div class="font-poppins">
                 <p class="font-medium text-lg my-2">Alamat</p>
-                <p>Desa Sambiganen,</p>
+                <p>Jalan Trito Argo Desa Sambiganen,</p>
                 <p>Kecamatan Ngrayun, Kabupaten Ponorogo</p>
             </div>
         </div>
