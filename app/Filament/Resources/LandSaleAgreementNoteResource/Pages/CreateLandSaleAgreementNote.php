@@ -9,4 +9,5 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateLandSaleAgreementNote extends CreateRecord
 {
     protected static string $resource = LandSaleAgreementNoteResource::class;
+    protected static ?string $title = "Surat Perjanjian Jual Beli Tanah";
 }

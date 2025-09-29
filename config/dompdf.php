@@ -65,6 +65,7 @@ return [
          * using the PDFLib back end.
          */
         'temp_dir' => sys_get_temp_dir(),
+        // 'temp_dir' => storage_path('app/temp'),
 
         /**
          * ==== IMPORTANT ====

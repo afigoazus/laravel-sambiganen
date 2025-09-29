@@ -25,6 +25,7 @@
         <!-- Visi end -->
 
         <!-- misi -->
+        @if ($vision)
         <div>
             <h1 class="font-dusha text-4xl text-secondary text-center">Misi</h1>
             @if ($vision->mission->isNotEmpty())
@@ -33,23 +34,24 @@
                         <li class="my-4">{{$mission->mission}}</li>
                     @endforeach
                 </ol>
-
-            @else
-                <p class="text-center font-sans font font-normal">
-                    Tidak ada data misi.
-                </p>
             @endif
+        
+        @else
+            <p class="text-center font-sans font-normal">
+                Tidak ada data misi
+            </p>
         </div>
+        @endif
         <!-- misi end -->
 
         <!-- sejarah -->
-        <div class="bg-primary text-white py-2 rounded-xl">
+        <div class="bg-primary text-white py-2 rounded-xl mt-10">
             <!-- title -->
             <div class="w-11/12 mx-auto flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-36 sm:items-center">
                 <div>
                     <h1 class="font-dusha text-4xl text-center">Cerita Rakyat <br> Sambinganen</h1>
                 </div>
-                <img class="mx-auto sm:m-0 sm:w-1/2" src="{{asset('assets/img/bg-history.svg')}}" alt="">
+                <img class="mx-auto h-64 object-cover sm:m-0 sm:w-1/2" src="{{asset('assets/img/hero.JPG')}}" alt="">
             </div>
             <div class="w-11/12 mx-auto text-justify font-sans">
                 @if ($history)
@@ -57,7 +59,6 @@
                 @else
                     <p class="text-center">Tidak ada data sejarah.</p>
                 @endif
-                <p>diganti dengan filament</p>
             </div>
         </div>
         <!-- sejarah end -->

@@ -161,3 +161,9 @@ Route::controller(DocumentController::class)->prefix('download')->group(function
     // Special Documents
     Route::get('/dtks/{id}', 'downloadDTKS')->name('surat.dtks');
 });
+
+
+// tes gambar
+Route::get('/cek-php', function () {
+    phpinfo();
+});

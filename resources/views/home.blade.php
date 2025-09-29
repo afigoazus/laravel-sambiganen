@@ -379,14 +379,7 @@
         <section class="text-center space-y-6">
             <h2 class="font-dusha text-2xl text-cyan-700 lg:hidden">Geografis</h2>
             <div class="w-full h-[400px] rounded-lg overflow-hidden shadow-lg">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2285.628181002434!2d112.5296592561572!3d-7.399809071003929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1skantor%20kepala%20desa%20Kec.%20Wringinanom%20!5e0!3m2!1sid!2sid!4v1739505876770!5m2!1sid!2sid"
-                    class="w-full h-full"
-                    style="border:0"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d984.6915547389956!2d111.43196164117343!3d-8.107760400355172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e796d0174c409d7%3A0xb78a932f8ac7ef4a!2zUGFzYXIgU2FtYmkgLSDqpqXqprHqpoLqprHqpqnqp4DqpqfqprY!5e0!3m2!1sen!2sid!4v1759127929357!5m2!1sen!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
     </div>
